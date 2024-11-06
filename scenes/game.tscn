@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://i13tuxtcv2h8"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8qwj4"]
+
+[node name="Game" type="Node2D"]
+material = SubResource("ShaderMaterial_8qwj4")
