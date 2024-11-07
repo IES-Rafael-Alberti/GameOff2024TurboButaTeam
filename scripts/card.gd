@@ -3,6 +3,7 @@ extends TextureButton
 @export var face = Texture
 var back
 var isFlipped = false
+var countCouple = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -44,6 +45,13 @@ func isEqual(firstCard, secondCard):
 	if firstCard.get_texture_normal() != secondCard.get_texture_normal():
 		firstCard.voltear()
 		secondCard.voltear()
+	else:
+		GameManager.countCouple += 1
+	
+	if GameManager.countCouple == 8:
+		GameManager.BoardCompleted.emit()
+		GameManager.countCouple = 0
+	
 	GameManager.firstCardPicked = null
 	GameManager.secondCardPicked = null
 		

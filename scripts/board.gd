@@ -1,24 +1,23 @@
 extends Control
 
 var numCardsBoard = 8
+var finalCardList: Array
+var cardListSceneTemp
 
 # Cargamos la escena que contiene todas las cartas
 @onready var cardListScene = preload("res://scenes/cardList.tscn")
 
 func _ready():
+	# Instanciamos la lista
+	cardListSceneTemp = cardListScene.instantiate()
+	GameManager.BoardCompleted.connect(restartBoard)
 	initBoard()
 
-	
-	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
-	
+
 func initBoard():
-	# Instanciamos la lista
-	var cardListSceneTemp = cardListScene.instantiate()
-	var finalCardList: Array
-	
 	# Metemos la lista para comprobar sus hijos
 	add_child(cardListSceneTemp)
 	cardListSceneTemp.visible = false
@@ -38,4 +37,13 @@ func initBoard():
 		var cardTemp = i.duplicate()
 		$grid.add_child(cardTemp)
 		
-	
+
+func clearBoard():
+	var cardsInGrid = $grid.get_children()
+	for i in cardsInGrid:
+		$grid.remove_child(i)
+
+func restartBoard():
+	finalCardList = []
+	clearBoard()
+	initBoard()
