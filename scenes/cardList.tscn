@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bnmf1ucjb1p7o"]
+[gd_scene load_steps=13 format=3 uid="uid://bnmf1ucjb1p7o"]
 
 [ext_resource type="PackedScene" uid="uid://dup3wc5aw7n4e" path="res://scenes/card.tscn" id="1_c275a"]
 [ext_resource type="Texture2D" uid="uid://bhhnqxdinpgsp" path="res://assets/sprites/cards/card1.png" id="2_325ot"]
@@ -9,6 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://eiox44j3dq46" path="res://assets/sprites/cards/card6.png" id="7_yo2km"]
 [ext_resource type="Texture2D" uid="uid://0vmbnpyg1rc" path="res://assets/sprites/cards/card7.png" id="8_fek5y"]
 [ext_resource type="Texture2D" uid="uid://dwxfq6ox7ytws" path="res://assets/sprites/cards/card8.png" id="9_lu7ck"]
+[ext_resource type="Texture2D" uid="uid://b73nxglu15057" path="res://assets/sprites/cards/card9.png" id="10_0g6d0"]
+[ext_resource type="Texture2D" uid="uid://cb5cn28pj185b" path="res://assets/sprites/cards/card10.png" id="11_564cf"]
+[ext_resource type="Texture2D" uid="uid://cjtbhspy1js62" path="res://assets/sprites/cards/card11.png" id="12_itb5a"]
 
 [node name="CardList" type="Node2D"]
 
@@ -35,3 +38,12 @@ face = ExtResource("8_fek5y")
 
 [node name="Card8" parent="." instance=ExtResource("1_c275a")]
 face = ExtResource("9_lu7ck")
+
+[node name="Card9" parent="." instance=ExtResource("1_c275a")]
+face = ExtResource("10_0g6d0")
+
+[node name="Card10" parent="." instance=ExtResource("1_c275a")]
+face = ExtResource("11_564cf")
+
+[node name="Card11" parent="." instance=ExtResource("1_c275a")]
+face = ExtResource("12_itb5a")

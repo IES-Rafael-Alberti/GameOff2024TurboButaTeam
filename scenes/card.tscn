@@ -4,3 +4,5 @@
 
 [node name="Card" type="TextureButton"]
 script = ExtResource("1_ykaut")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
