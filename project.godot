@@ -11,12 +11,21 @@ config_version=5
 [application]
 
 config/name="gameoff2024"
-config/features=PackedStringArray("4.2", "Forward Plus")
+config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 GameManager="*res://scripts/gameManager.gd"
+
+[file_customization]
+
+folder_colors={
+"res://assets/": "purple",
+"res://builds/": "red",
+"res://scenes/": "green",
+"res://scripts/": "teal"
+}
 
 [rendering]
 
