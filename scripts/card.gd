@@ -49,10 +49,10 @@ func isEqual(firstCard, secondCard):
 		GameManager.countCouple += 1
 	
 	if GameManager.countCouple == 8:
+
 		GameManager.BoardCompleted.emit()
 		GameManager.countCouple = 0
 	
 	GameManager.firstCardPicked = null
 	GameManager.secondCardPicked = null
 		
-
