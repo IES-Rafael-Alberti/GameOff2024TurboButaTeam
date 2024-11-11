@@ -3,6 +3,8 @@ extends Control
 var numCardsBoard = 8
 var finalCardList: Array
 var cardListSceneTemp
+@onready var grid = $VBoxContainer/CenterContainer/grid
+
 
 # Cargamos la escena que contiene todas las cartas
 @onready var cardListScene = preload("res://scenes/cardList.tscn")
@@ -35,13 +37,13 @@ func initBoard():
 	# Tiramos las cartas al grid
 	for i in finalCardList:
 		var cardTemp = i.duplicate()
-		$grid.add_child(cardTemp)
+		grid.add_child(cardTemp)
 		
 
 func clearBoard():
-	var cardsInGrid = $grid.get_children()
+	var cardsInGrid = grid.get_children()
 	for i in cardsInGrid:
-		$grid.remove_child(i)
+		grid.remove_child(i)
 
 func restartBoard():
 	finalCardList = []
