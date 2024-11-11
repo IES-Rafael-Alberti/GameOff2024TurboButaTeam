@@ -10,11 +10,6 @@ func _ready():
 	back = GameManager.cardBack
 	set_texture_normal(back)
 
-	
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
 func voltear():
 	if isFlipped == false:
 		set_texture_normal(face)
@@ -26,7 +21,7 @@ func voltear():
 	
 func _on_pressed():
 		
-	if isFlipped == false && GameManager.canFlip:
+	if isFlipped == false && GameManager.canFlip && GameManager.isPlayerPhase:
 		voltear()
 		isFlipped = true
 
@@ -38,6 +33,8 @@ func _on_pressed():
 				await get_tree().create_timer(0.5).timeout
 				GameManager.canFlip = true
 				isEqual(GameManager.firstCardPicked , GameManager.secondCardPicked)
+				GameManager.isPlayerPhase = false
+				print(GameManager.isPlayerPhase)
 			
 	
 
@@ -47,12 +44,11 @@ func isEqual(firstCard, secondCard):
 		secondCard.voltear()
 	else:
 		GameManager.countCouple += 1
+		#TODO hacer que se realice la accion de las cartas flipeadas
 	
 	if GameManager.countCouple == 8:
-
 		GameManager.BoardCompleted.emit()
 		GameManager.countCouple = 0
-	
 	GameManager.firstCardPicked = null
 	GameManager.secondCardPicked = null
 		
