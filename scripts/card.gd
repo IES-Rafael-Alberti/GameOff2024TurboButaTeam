@@ -2,6 +2,7 @@ extends TextureButton
 
 @export var face = Texture
 @export var damage = 20
+@export var scriptAnimal: Script
 var back
 var isFlipped = false
 var countCouple = 0
@@ -45,9 +46,8 @@ func isEqual(firstCard, secondCard):
 	else:
 		GameManager.countCouple += 1
 		#TODO hacer que se realice la accion de las cartas flipeadas
-		
-		GameManager.healthBoss -= damage
-		GameManager.BossTakeDamage.emit()
+		var finalScriptAnimal = scriptAnimal.new()
+		finalScriptAnimal.action()
 	
 	if GameManager.countCouple == 8:
 		GameManager.BoardCompleted.emit()

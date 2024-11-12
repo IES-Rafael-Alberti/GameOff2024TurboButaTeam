@@ -34,3 +34,5 @@ signal BossTakeDamage
 signal PlayerTakeDamage
 
 var bossIsCharging
+
+var damageMultiply = 1
