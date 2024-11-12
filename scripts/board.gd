@@ -18,6 +18,8 @@ func _ready():
 	progress_bar.max_value = GameManager.healthPlayer
 	progress_bar.value = GameManager.healthPlayer
 	
+	GameManager.PlayerTakeDamage.connect(UpdateProgressBar)
+	
 	# Instanciamos la lista
 	cardListSceneTemp = cardListScene.instantiate()
 	GameManager.BoardCompleted.connect(restartBoard)
@@ -57,3 +59,11 @@ func restartBoard():
 	finalCardList = []
 	clearBoard()
 	initBoard()
+
+
+func UpdateProgressBar():
+	progress_bar.value = GameManager.healthPlayer
+	
+	if progress_bar.value <= 0:
+		#TODO hacer que el player se muera
+		print("perdiste")

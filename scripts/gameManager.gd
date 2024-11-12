@@ -27,5 +27,10 @@ var isPlayerPhase = true
 #Senal para volver a llenar el tablero
 signal BoardCompleted
 
-#Senal para ver cuando se hace dano
+#Senal para ver cuando se hace dano al boss
 signal BossTakeDamage
+
+#Senal para ver cuando se hace dano al player
+signal PlayerTakeDamage
+
+var bossIsCharging
