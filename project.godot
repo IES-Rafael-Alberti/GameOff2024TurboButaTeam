@@ -28,7 +28,7 @@ directories/dch_directory={
 directories/dtl_directory={
 "TestTL": "res://dialogue/timelines/TestTL.dtl"
 }
-layout/style_list=["res://dialogue/styles/textbubble.tres"]
+layout/style_list=["res://dialogue/styles/textbubble.tres", "res://dialogue/styles/boxTest.tres"]
 layout/default_style="res://dialogue/styles/textbubble.tres"
 extensions_folder="res://addons/dialogic_additions"
 text/letter_speed=0.01

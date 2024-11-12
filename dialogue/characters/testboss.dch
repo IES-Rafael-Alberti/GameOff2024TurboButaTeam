@@ -8,12 +8,22 @@
 "sound_moods": {},
 "style": "textbubble"
 },
-"default_portrait": "",
+"default_portrait": "test",
 "description": "",
 "display_name": "testboss",
 "mirror": false,
 "nicknames": [""],
 "offset": Vector2(0, 0),
-"portraits": {},
+"portraits": {
+"test": {
+"export_overrides": {
+"image": "\"\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+}
+},
 "scale": 1.0
 }

@@ -14,6 +14,5 @@ size_flags_vertical = 3
 
 [node name="Boss" parent="." instance=ExtResource("2_lkmhq")]
 
-[node name="DialoguePoint" type="Marker2D" parent="."]
-position = Vector2(252, -234)
+[node name="DialoguePoint" type="Node2D" parent="."]
 script = ExtResource("3_mae1x")

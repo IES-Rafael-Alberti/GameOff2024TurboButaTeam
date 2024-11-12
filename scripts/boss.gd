@@ -1,9 +1,9 @@
 extends Node2D
 
-@onready var timer: Timer = $Timer
+#@onready var timer: Timer = $Timer
 
 func _ready() -> void:
-	pass # Replace with function body.
+	pass
 
 func _process(delta: float) -> void:
 	if !GameManager.isPlayerPhase:
