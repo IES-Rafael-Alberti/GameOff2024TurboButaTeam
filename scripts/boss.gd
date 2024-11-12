@@ -2,11 +2,14 @@ extends Node2D
 
 @onready var timer: Timer = $Timer
 @onready var progress_bar: ProgressBar = $ProgressBar
+@onready var sprite_2d: Sprite2D = $Sprite2D
 
 @export var maxHealthBoss = 200
 @export var damage = 20
-@export var habilityBoss: String
-@export var nameBoss: String = "buey"
+@export var specialDamage = 20
+@export var scriptBoss: Script
+@export var textureBoss = Texture
+
 
 var habilityScript
 
@@ -16,15 +19,7 @@ func _ready() -> void:
 	progress_bar.max_value = GameManager.healthBoss
 	progress_bar.value = GameManager.healthBoss
 	
-	if nameBoss=="cobra":
-		habilityScript = preload("res://scripts/cobraHability.gd")
-	
-	if nameBoss=="buey":
-		habilityScript = preload("res://scripts/bueyHability.gd")
-	
-	if nameBoss=="lince":
-		habilityScript = preload("res://scripts/linceHability.gd")
-
+	sprite_2d.texture = textureBoss
 
 func _process(delta: float) -> void:
 	if !GameManager.isPlayerPhase:
@@ -42,8 +37,7 @@ func doAction():
 	if(randomNum <= 60):
 		attack(damage)
 	elif (randomNum <= 85 && randomNum > 60):
-		#shield()
-		print("def")
+		shield()
 	else:
 		useHability()
 
@@ -56,8 +50,8 @@ func shield():
 	print("usar escudo")
 
 func useHability():
-	var newHabilityScript = habilityScript.new()
-	newHabilityScript.specialAttack()
+	var newScriptBoss = scriptBoss.new()
+	newScriptBoss.specialAttack(specialDamage)
 
 func UpdateProgressBar():
 	progress_bar.value = GameManager.healthBoss

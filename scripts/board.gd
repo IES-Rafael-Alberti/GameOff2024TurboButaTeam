@@ -3,14 +3,18 @@ extends Control
 var numCardsBoard = 8
 var finalCardList: Array
 var cardListSceneTemp
+var bossListSceneTemp
+
 @export var maxHealthPlayer = 200
 
-@onready var grid = $VBoxContainer/CenterContainer/grid
 @onready var progress_bar: ProgressBar = $ProgressBar
+@onready var grid: GridContainer = $BoardContainer/CenterContainer/grid
+@onready var grid_container: GridContainer = $BossContainer/CenterContainer/GridContainer
 
 
 # Cargamos la escena que contiene todas las cartas
 @onready var cardListScene = preload("res://scenes/cardList.tscn")
+@onready var bossListScene = preload("res://scenes/bossList.tscn")
 
 func _ready():
 	#Ponerle la vida al player
@@ -19,6 +23,11 @@ func _ready():
 	progress_bar.value = GameManager.healthPlayer
 	
 	GameManager.PlayerTakeDamage.connect(UpdateProgressBar)
+	
+	bossListSceneTemp = bossListScene.instantiate()
+	
+	#Seleccionamos el boss teniendo en cuenta la eleccion del jugador en la narrativa
+	selectBoss()
 	
 	# Instanciamos la lista
 	cardListSceneTemp = cardListScene.instantiate()
@@ -67,3 +76,19 @@ func UpdateProgressBar():
 	if progress_bar.value <= 0:
 		#TODO hacer que el player se muera
 		print("perdiste")
+
+func selectBoss():
+	# Metemos la lista para comprobar sus hijos
+	add_child(bossListSceneTemp)
+	bossListSceneTemp.visible = false
+	# Almacenamos todos los nodos(cartas) para mezclarlas
+	var bossList = bossListSceneTemp.get_children()
+	bossList.shuffle()
+	
+	print(bossList)
+	
+	GameManager.pickedBoss = bossList[GameManager.bossNum]
+	
+	var bossTemp = GameManager.pickedBoss.duplicate()
+	
+	grid_container.add_child(bossTemp)
