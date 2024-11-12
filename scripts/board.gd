@@ -10,6 +10,7 @@ var bossListSceneTemp
 @onready var progress_bar: ProgressBar = $ProgressBar
 @onready var grid: GridContainer = $BoardContainer/CenterContainer/grid
 @onready var grid_container: GridContainer = $BossContainer/CenterContainer/GridContainer
+@onready var label: Label = $ProgressBar/Label
 
 
 # Cargamos la escena que contiene todas las cartas
@@ -21,6 +22,8 @@ func _ready():
 	GameManager.healthPlayer = maxHealthPlayer
 	progress_bar.max_value = GameManager.healthPlayer
 	progress_bar.value = GameManager.healthPlayer
+	
+	label.text = str(GameManager.healthPlayer) + " / " + str(GameManager.healthPlayer)
 	
 	GameManager.PlayerTakeDamage.connect(UpdateProgressBar)
 	
@@ -72,7 +75,7 @@ func restartBoard():
 
 func UpdateProgressBar():
 	progress_bar.value = GameManager.healthPlayer
-	
+	label.text = str(GameManager.healthPlayer) + " / " + str(progress_bar.max_value)
 	if progress_bar.value <= 0:
 		#TODO hacer que el player se muera
 		print("perdiste")

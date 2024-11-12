@@ -35,6 +35,7 @@ signal PlayerTakeDamage
 
 var bossIsCharging
 
+#Multi de daño que se vuelve a poner en 1 cuando el boss muere
 var damageMultiply = 1
 
 var pickedBoss

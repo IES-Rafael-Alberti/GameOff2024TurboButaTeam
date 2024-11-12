@@ -3,6 +3,7 @@ extends Node2D
 @onready var timer: Timer = $Timer
 @onready var progress_bar: ProgressBar = $ProgressBar
 @onready var sprite_2d: Sprite2D = $Sprite2D
+@onready var label: Label = $ProgressBar/Label
 
 @export var maxHealthBoss = 200
 @export var damage = 20
@@ -18,6 +19,8 @@ func _ready() -> void:
 	GameManager.healthBoss = maxHealthBoss
 	progress_bar.max_value = GameManager.healthBoss
 	progress_bar.value = GameManager.healthBoss
+	
+	label.text = str(GameManager.healthBoss) + " / " + str(GameManager.healthBoss)
 	
 	sprite_2d.texture = textureBoss
 
@@ -55,7 +58,7 @@ func useHability():
 
 func UpdateProgressBar():
 	progress_bar.value = GameManager.healthBoss
-	
+	label.text = str(GameManager.healthBoss) + " / " + str(progress_bar.max_value)
 	if progress_bar.value <= 0:
 		#TODO hacer que el boss se muera
 		print("ganaste")

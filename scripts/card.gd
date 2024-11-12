@@ -1,7 +1,6 @@
 extends TextureButton
 
 @export var face = Texture
-@export var damage = 20
 @export var scriptAnimal: Script
 var back
 var isFlipped = false
