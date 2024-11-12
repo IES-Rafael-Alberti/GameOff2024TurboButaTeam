@@ -34,3 +34,8 @@ signal BossTakeDamage
 signal PlayerTakeDamage
 
 var bossIsCharging
+
+var pickedBoss
+
+#Esta variable es la que hay que usar en el dialogo para saber que boss a seleccionado
+var bossNum = 0

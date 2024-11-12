@@ -1,8 +1,6 @@
 extends Node
 
-@export var specialDamage = 200
-
-func specialAttack():
+func specialAttack(specialDamage):
 	if !GameManager.bossIsCharging:
 		GameManager.bossIsCharging = true
 		return
