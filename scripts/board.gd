@@ -3,13 +3,23 @@ extends Control
 var numCardsBoard = 8
 var finalCardList: Array
 var cardListSceneTemp
+@export var maxHealthPlayer = 200
+
 @onready var grid = $VBoxContainer/CenterContainer/grid
+@onready var progress_bar: ProgressBar = $ProgressBar
 
 
 # Cargamos la escena que contiene todas las cartas
 @onready var cardListScene = preload("res://scenes/cardList.tscn")
 
 func _ready():
+	#Ponerle la vida al player
+	GameManager.healthPlayer = maxHealthPlayer
+	progress_bar.max_value = GameManager.healthPlayer
+	progress_bar.value = GameManager.healthPlayer
+	
+	GameManager.PlayerTakeDamage.connect(UpdateProgressBar)
+	
 	# Instanciamos la lista
 	cardListSceneTemp = cardListScene.instantiate()
 	GameManager.BoardCompleted.connect(restartBoard)
@@ -49,3 +59,11 @@ func restartBoard():
 	finalCardList = []
 	clearBoard()
 	initBoard()
+
+
+func UpdateProgressBar():
+	progress_bar.value = GameManager.healthPlayer
+	
+	if progress_bar.value <= 0:
+		#TODO hacer que el player se muera
+		print("perdiste")

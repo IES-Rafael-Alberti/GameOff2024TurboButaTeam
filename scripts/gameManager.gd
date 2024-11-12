@@ -1,5 +1,11 @@
 extends Node
 
+#Variable con la vida del boss
+var healthBoss
+
+#Variable con la vida del jugador
+var healthPlayer
+
 #Hace un preload del dorso de la carta
 var cardBack = preload("res://assets/sprites/cards/cardBack.png")
 
@@ -20,3 +26,11 @@ var isPlayerPhase = true
 
 #Senal para volver a llenar el tablero
 signal BoardCompleted
+
+#Senal para ver cuando se hace dano al boss
+signal BossTakeDamage
+
+#Senal para ver cuando se hace dano al player
+signal PlayerTakeDamage
+
+var bossIsCharging

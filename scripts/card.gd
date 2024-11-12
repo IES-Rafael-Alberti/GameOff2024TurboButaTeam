@@ -1,6 +1,7 @@
 extends TextureButton
 
 @export var face = Texture
+@export var damage = 20
 var back
 var isFlipped = false
 var countCouple = 0
@@ -34,7 +35,6 @@ func _on_pressed():
 				GameManager.canFlip = true
 				isEqual(GameManager.firstCardPicked , GameManager.secondCardPicked)
 				GameManager.isPlayerPhase = false
-				print(GameManager.isPlayerPhase)
 			
 	
 
@@ -45,6 +45,9 @@ func isEqual(firstCard, secondCard):
 	else:
 		GameManager.countCouple += 1
 		#TODO hacer que se realice la accion de las cartas flipeadas
+		
+		GameManager.healthBoss -= damage
+		GameManager.BossTakeDamage.emit()
 	
 	if GameManager.countCouple == 8:
 		GameManager.BoardCompleted.emit()
