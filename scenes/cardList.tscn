@@ -1,53 +1,54 @@
-[gd_scene load_steps=6 format=3 uid="uid://bnmf1ucjb1p7o"]
+[gd_scene load_steps=7 format=3 uid="uid://bnmf1ucjb1p7o"]
 
 [ext_resource type="PackedScene" uid="uid://dup3wc5aw7n4e" path="res://scenes/card.tscn" id="1_c275a"]
-[ext_resource type="Texture2D" uid="uid://t7lxgcylg0e0" path="res://assets/sprites/cards/pangolin.webp" id="2_1xuex"]
+[ext_resource type="Texture2D" uid="uid://bcfhluciou51s" path="res://assets/sprites/cards/pangolin.png" id="2_gs6ut"]
 [ext_resource type="Script" path="res://scripts/cards/cardAttack.gd" id="3_jmysu"]
 [ext_resource type="Script" path="res://scripts/cards/cardDecreaseDef.gd" id="3_wrheb"]
+[ext_resource type="Texture2D" uid="uid://cjtbhspy1js62" path="res://assets/sprites/cards/card11.png" id="12_itb5a"]
 [ext_resource type="Script" path="res://scripts/cards/cardShield.gd" id="13_qse35"]
 
 [node name="CardList" type="Node2D"]
 
 [node name="Card1" parent="." instance=ExtResource("1_c275a")]
-face = ExtResource("2_1xuex")
+face = ExtResource("2_gs6ut")
 scriptAnimal = ExtResource("3_jmysu")
 
 [node name="Card2" parent="." instance=ExtResource("1_c275a")]
-face = ExtResource("2_1xuex")
+face = ExtResource("2_gs6ut")
 scriptAnimal = ExtResource("3_jmysu")
 
 [node name="Card3" parent="." instance=ExtResource("1_c275a")]
-face = ExtResource("2_1xuex")
+face = ExtResource("2_gs6ut")
 scriptAnimal = ExtResource("3_jmysu")
 
 [node name="Card4" parent="." instance=ExtResource("1_c275a")]
-face = ExtResource("2_1xuex")
+face = ExtResource("2_gs6ut")
 scriptAnimal = ExtResource("3_jmysu")
 
 [node name="Card5" parent="." instance=ExtResource("1_c275a")]
-face = ExtResource("2_1xuex")
+face = ExtResource("2_gs6ut")
 scriptAnimal = ExtResource("3_jmysu")
 
 [node name="Card6" parent="." instance=ExtResource("1_c275a")]
-face = ExtResource("2_1xuex")
+face = ExtResource("2_gs6ut")
 scriptAnimal = ExtResource("3_wrheb")
 
 [node name="Card7" parent="." instance=ExtResource("1_c275a")]
-face = ExtResource("2_1xuex")
+face = ExtResource("2_gs6ut")
 scriptAnimal = ExtResource("3_wrheb")
 
 [node name="Card8" parent="." instance=ExtResource("1_c275a")]
-face = ExtResource("2_1xuex")
+face = ExtResource("2_gs6ut")
 scriptAnimal = ExtResource("3_wrheb")
 
 [node name="Card9" parent="." instance=ExtResource("1_c275a")]
-face = ExtResource("2_1xuex")
+face = ExtResource("12_itb5a")
 scriptAnimal = ExtResource("13_qse35")
 
 [node name="Card10" parent="." instance=ExtResource("1_c275a")]
-face = ExtResource("2_1xuex")
+face = ExtResource("12_itb5a")
 scriptAnimal = ExtResource("13_qse35")
 
 [node name="Card11" parent="." instance=ExtResource("1_c275a")]
-face = ExtResource("2_1xuex")
+face = ExtResource("12_itb5a")
 scriptAnimal = ExtResource("13_qse35")

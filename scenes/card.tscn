@@ -3,7 +3,9 @@
 [ext_resource type="Script" path="res://scripts/card.gd" id="1_ykaut"]
 
 [node name="Card" type="TextureButton"]
-offset_right = 300.0
+custom_minimum_size = Vector2(140, 198)
+offset_right = 140.0
+offset_bottom = 198.0
 script = ExtResource("1_ykaut")
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]

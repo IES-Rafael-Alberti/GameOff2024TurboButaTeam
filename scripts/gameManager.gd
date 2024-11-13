@@ -9,6 +9,7 @@ var healthPlayer
 #Variable con la vida del jugador
 var playerShield = 0
 
+
 #Hace un preload del dorso de la carta
 var cardBack = preload("res://assets/sprites/cards/cardBack.png")
 
@@ -35,6 +36,13 @@ signal BossTakeDamage
 
 #Senal para ver cuando se hace dano al player
 signal PlayerTakeDamage
+
+#Senal para ver cuando se hace dano al player
+signal PlayerShield
+
+signal QuitPlayerShield
+
+signal InitPlayerShield
 
 var bossIsCharging
 
