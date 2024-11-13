@@ -6,6 +6,9 @@ var healthBoss
 #Variable con la vida del jugador
 var healthPlayer
 
+#Variable con la vida del jugador
+var playerShield = 0
+
 #Hace un preload del dorso de la carta
 var cardBack = preload("res://assets/sprites/cards/cardBack.png")
 

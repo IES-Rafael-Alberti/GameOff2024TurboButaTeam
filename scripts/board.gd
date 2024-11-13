@@ -11,7 +11,7 @@ var bossListSceneTemp
 @onready var grid: GridContainer = $BoardContainer/CenterContainer/grid
 @onready var grid_container: GridContainer = $BossContainer/CenterContainer/GridContainer
 @onready var label: Label = $ProgressBar/Label
-
+@onready var progressBarShield = $ProgressBar/ProgressBarShield
 
 # Cargamos la escena que contiene todas las cartas
 @onready var cardListScene = preload("res://scenes/cardList.tscn")
@@ -22,6 +22,9 @@ func _ready():
 	GameManager.healthPlayer = maxHealthPlayer
 	progress_bar.max_value = GameManager.healthPlayer
 	progress_bar.value = GameManager.healthPlayer
+	
+	#Quitar visible al shield del player
+	progressBarShield.visible = false
 	
 	label.text = str(GameManager.healthPlayer) + " / " + str(GameManager.healthPlayer)
 	

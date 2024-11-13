@@ -1,18 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dup3wc5aw7n4e"]
+[gd_scene load_steps=2 format=3 uid="uid://dup3wc5aw7n4e"]
 
-[ext_resource type="Shader" path="res://scripts/shaders/cardBurn.gdshader" id="1_h38iw"]
 [ext_resource type="Script" path="res://scripts/card.gd" id="1_ykaut"]
-[ext_resource type="Texture2D" uid="uid://cgr064vblhvdg" path="res://assets/shadersTextures/burnNoise.tres" id="2_xtp0r"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_sdw7t"]
-shader = ExtResource("1_h38iw")
-shader_parameter/dissolve_value = 1.0
-shader_parameter/burn_size = 0.4
-shader_parameter/burn_color = null
-shader_parameter/dissolve_texture = ExtResource("2_xtp0r")
 
 [node name="Card" type="TextureButton"]
-material = SubResource("ShaderMaterial_sdw7t")
+offset_right = 300.0
 script = ExtResource("1_ykaut")
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]
