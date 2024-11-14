@@ -112,6 +112,7 @@ func updateShield():
 	
 func initShield():
 	GameManager.playerShield = shieldMaxValue
+	labelShield.text = str(GameManager.playerShield) + " / " + str(shieldMaxValue)
 	progressBarShield.visible = true
 	
 func removeShield():
