@@ -1,49 +1,54 @@
-[gd_scene load_steps=13 format=3 uid="uid://bnmf1ucjb1p7o"]
+[gd_scene load_steps=7 format=3 uid="uid://bnmf1ucjb1p7o"]
 
 [ext_resource type="PackedScene" uid="uid://dup3wc5aw7n4e" path="res://scenes/card.tscn" id="1_c275a"]
-[ext_resource type="Texture2D" uid="uid://bhhnqxdinpgsp" path="res://assets/sprites/cards/card1.png" id="2_325ot"]
-[ext_resource type="Texture2D" uid="uid://daa2odq7tvuu5" path="res://assets/sprites/cards/card2.png" id="3_5vb5s"]
-[ext_resource type="Texture2D" uid="uid://d0sggx17wkpyf" path="res://assets/sprites/cards/card3.png" id="4_176uk"]
-[ext_resource type="Texture2D" uid="uid://222xm28mkygh" path="res://assets/sprites/cards/card4.png" id="5_hprt7"]
-[ext_resource type="Texture2D" uid="uid://biff2lb2u6cg8" path="res://assets/sprites/cards/card5.png" id="6_rnikx"]
-[ext_resource type="Texture2D" uid="uid://eiox44j3dq46" path="res://assets/sprites/cards/card6.png" id="7_yo2km"]
-[ext_resource type="Texture2D" uid="uid://0vmbnpyg1rc" path="res://assets/sprites/cards/card7.png" id="8_fek5y"]
-[ext_resource type="Texture2D" uid="uid://dwxfq6ox7ytws" path="res://assets/sprites/cards/card8.png" id="9_lu7ck"]
-[ext_resource type="Texture2D" uid="uid://b73nxglu15057" path="res://assets/sprites/cards/card9.png" id="10_0g6d0"]
-[ext_resource type="Texture2D" uid="uid://cb5cn28pj185b" path="res://assets/sprites/cards/card10.png" id="11_564cf"]
+[ext_resource type="Texture2D" uid="uid://bcfhluciou51s" path="res://assets/sprites/cards/pangolin.png" id="2_gs6ut"]
+[ext_resource type="Script" path="res://scripts/cards/cardAttack.gd" id="3_jmysu"]
+[ext_resource type="Script" path="res://scripts/cards/cardDecreaseDef.gd" id="3_wrheb"]
 [ext_resource type="Texture2D" uid="uid://cjtbhspy1js62" path="res://assets/sprites/cards/card11.png" id="12_itb5a"]
+[ext_resource type="Script" path="res://scripts/cards/cardShield.gd" id="13_qse35"]
 
 [node name="CardList" type="Node2D"]
 
 [node name="Card1" parent="." instance=ExtResource("1_c275a")]
-face = ExtResource("2_325ot")
+face = ExtResource("2_gs6ut")
+scriptAnimal = ExtResource("3_jmysu")
 
 [node name="Card2" parent="." instance=ExtResource("1_c275a")]
-face = ExtResource("3_5vb5s")
+face = ExtResource("2_gs6ut")
+scriptAnimal = ExtResource("3_jmysu")
 
 [node name="Card3" parent="." instance=ExtResource("1_c275a")]
-face = ExtResource("4_176uk")
+face = ExtResource("2_gs6ut")
+scriptAnimal = ExtResource("3_jmysu")
 
 [node name="Card4" parent="." instance=ExtResource("1_c275a")]
-face = ExtResource("5_hprt7")
+face = ExtResource("2_gs6ut")
+scriptAnimal = ExtResource("3_jmysu")
 
 [node name="Card5" parent="." instance=ExtResource("1_c275a")]
-face = ExtResource("6_rnikx")
+face = ExtResource("2_gs6ut")
+scriptAnimal = ExtResource("3_jmysu")
 
 [node name="Card6" parent="." instance=ExtResource("1_c275a")]
-face = ExtResource("7_yo2km")
+face = ExtResource("2_gs6ut")
+scriptAnimal = ExtResource("3_wrheb")
 
 [node name="Card7" parent="." instance=ExtResource("1_c275a")]
-face = ExtResource("8_fek5y")
+face = ExtResource("2_gs6ut")
+scriptAnimal = ExtResource("3_wrheb")
 
 [node name="Card8" parent="." instance=ExtResource("1_c275a")]
-face = ExtResource("9_lu7ck")
+face = ExtResource("2_gs6ut")
+scriptAnimal = ExtResource("3_wrheb")
 
 [node name="Card9" parent="." instance=ExtResource("1_c275a")]
-face = ExtResource("10_0g6d0")
+face = ExtResource("12_itb5a")
+scriptAnimal = ExtResource("13_qse35")
 
 [node name="Card10" parent="." instance=ExtResource("1_c275a")]
-face = ExtResource("11_564cf")
+face = ExtResource("12_itb5a")
+scriptAnimal = ExtResource("13_qse35")
 
 [node name="Card11" parent="." instance=ExtResource("1_c275a")]
 face = ExtResource("12_itb5a")
+scriptAnimal = ExtResource("13_qse35")

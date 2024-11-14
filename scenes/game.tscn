@@ -1,10 +1,20 @@
-[gd_scene load_steps=2 format=3 uid="uid://c21ncn5vdp5ua"]
+[gd_scene load_steps=3 format=3 uid="uid://c21ncn5vdp5ua"]
 
 [ext_resource type="PackedScene" uid="uid://bnng3hk0wi7a" path="res://scenes/board.tscn" id="1_eg5mf"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_dntw1"]
+load_path = "res://.godot/imported/pangolin.webp-67c5fd12268a7f75d830d924889b83b1.ctex"
 
 [node name="Game" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+z_index = 1280
+position = Vector2(-17, 5)
+scale = Vector2(0.5, 0.5)
+texture = SubResource("CompressedTexture2D_dntw1")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

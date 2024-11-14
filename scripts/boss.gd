@@ -1,11 +1,11 @@
 extends Node2D
 
-@onready var timer: Timer = $Timer
 @onready var progress_bar: ProgressBar = $ProgressBar
 @onready var sprite_2d: Sprite2D = $Sprite2D
+@onready var label: Label = $ProgressBar/Label
 
 @export var maxHealthBoss = 200
-@export var damage = 20
+@export var damageBoss = 20
 @export var specialDamage = 20
 @export var scriptBoss: Script
 @export var textureBoss = Texture
@@ -18,6 +18,8 @@ func _ready() -> void:
 	GameManager.healthBoss = maxHealthBoss
 	progress_bar.max_value = GameManager.healthBoss
 	progress_bar.value = GameManager.healthBoss
+	
+	label.text = str(GameManager.healthBoss) + " / " + str(GameManager.healthBoss)
 	
 	sprite_2d.texture = textureBoss
 
@@ -34,16 +36,26 @@ func doAction():
 	if GameManager.bossIsCharging:
 		useHability()
 	
-	if(randomNum <= 60):
-		attack(damage)
-	elif (randomNum <= 85 && randomNum > 60):
+	if randomNum <= 60:
+		attack(damageBoss)
+	elif randomNum <= 85 && randomNum > 60:
 		shield()
 	else:
 		useHability()
 
-func attack(damage):
-	GameManager.healthPlayer -= damage
-	GameManager.PlayerTakeDamage.emit()
+func attack(damageBoss):
+	if GameManager.playerShield > 0:
+		var damageDiff = damageBoss - GameManager.playerShield
+		GameManager.playerShield -= damageBoss
+		GameManager.PlayerShield.emit()
+		
+		if damageDiff > 0:
+			GameManager.healthPlayer -= damageDiff
+			GameManager.PlayerTakeDamage.emit()
+		
+	else:	
+		GameManager.healthPlayer -= damageBoss
+		GameManager.PlayerTakeDamage.emit()
 	
 
 func shield():
@@ -55,7 +67,7 @@ func useHability():
 
 func UpdateProgressBar():
 	progress_bar.value = GameManager.healthBoss
-	
+	label.text = str(GameManager.healthBoss) + " / " + str(progress_bar.max_value)
 	if progress_bar.value <= 0:
 		#TODO hacer que el boss se muera
 		print("ganaste")
