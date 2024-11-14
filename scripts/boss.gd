@@ -1,6 +1,5 @@
 extends Node2D
 
-@onready var timer: Timer = $Timer
 @onready var progress_bar: ProgressBar = $ProgressBar
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var label: Label = $ProgressBar/Label
@@ -27,7 +26,6 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if !GameManager.isPlayerPhase:
 		doAction()
-		GameManager.QuitPlayerShield.emit()
 		GameManager.isPlayerPhase = true
 
 #TODO funcion que realice la accion del boss y al finalizar se ponga "GameManager.isPlayerPhase" en true
@@ -49,7 +47,6 @@ func attack(damageBoss):
 	if GameManager.playerShield > 0:
 		var damageDiff = damageBoss - GameManager.playerShield
 		GameManager.playerShield -= damageBoss
-		print(GameManager.playerShield)
 		GameManager.PlayerShield.emit()
 		
 		if damageDiff > 0:

@@ -28,6 +28,7 @@ func _on_pressed():
 
 		if !GameManager.firstCardPicked:
 				GameManager.firstCardPicked = self
+				GameManager.QuitPlayerShield.emit()
 		elif GameManager.firstCardPicked && !GameManager.secondCardPicked:
 				GameManager.secondCardPicked = self 
 				GameManager.canFlip = false

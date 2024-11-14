@@ -53,7 +53,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ProgressBarShield" type="ProgressBar" parent="ProgressBar"]
-unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
