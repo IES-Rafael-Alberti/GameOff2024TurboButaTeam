@@ -26,10 +26,11 @@ directories/dch_directory={
 "testboss": "res://dialogue/characters/testboss.dch"
 }
 directories/dtl_directory={
+"FirstCinematic": "res://dialogue/timelines/FirstCinematic.dtl",
 "TestTL": "res://dialogue/timelines/TestTL.dtl"
 }
-layout/style_list=["res://dialogue/styles/textbubble.tres", "res://dialogue/styles/boxTest.tres"]
-layout/default_style="res://dialogue/styles/textbubble.tres"
+layout/style_list=["res://dialogue/styles/textbubble.tres", "res://dialogue/styles/boxTest.tres", "res://dialogue/styles/cinematicsStyle.tres"]
+layout/default_style="res://dialogue/styles/cinematicsStyle.tres"
 extensions_folder="res://addons/dialogic_additions"
 text/letter_speed=0.01
 text/initial_text_reveal_skippable=true
@@ -56,6 +57,9 @@ translation/file_mode=1
 translation/translation_folder="res://dialogue/translations"
 translation/save_mode=0
 translation/add_separator=false
+variables={}
+translation/locales=[]
+translation/id_counter=16
 
 [display]
 
@@ -93,7 +97,7 @@ dialogic_default_action={
 [internationalization]
 
 locale/translation_remaps={}
-locale/translations=PackedStringArray("res://dialogue/translations/EXES TRANSLATIONS - Sheet1.en.translation", "res://dialogue/translations/EXES TRANSLATIONS - Sheet1.es.translation")
+locale/translations=PackedStringArray("res://dialogue/translations/EXES TRANSLATIONS - Sheet1.en.translation", "res://dialogue/translations/EXES TRANSLATIONS - Sheet1.es.translation", "res://dialogue/translations/EXES TRANSLATIONS - Sheet1.csv")
 locale/test="en"
 
 [rendering]
