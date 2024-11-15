@@ -3,27 +3,29 @@
 [ext_resource type="Script" path="res://scripts/boss.gd" id="1_0mmkp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tfjnu"]
-bg_color = Color(1, 0, 0, 0.568627)
+bg_color = Color(1, 0, 0, 0.780392)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1sngq"]
-bg_color = Color(1, 0, 0, 1)
+bg_color = Color(0.682353, 0.141176, 0.133333, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t5td4"]
 
 [node name="Boss" type="Node2D"]
+position = Vector2(0, -224)
 script = ExtResource("1_0mmkp")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, 140)
+position = Vector2(0, 323)
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -124.0
-offset_right = 124.0
-offset_bottom = 27.0
+offset_left = -470.0
+offset_right = 421.0
+offset_bottom = 71.0
 grow_horizontal = 2
+scale = Vector2(1.05589, 0.947368)
 theme_override_styles/background = SubResource("StyleBoxFlat_tfjnu")
 theme_override_styles/fill = SubResource("StyleBoxFlat_1sngq")
 show_percentage = false
@@ -35,21 +37,24 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset = Vector2(200.305, 23.2222)
 text = "10000000"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ProgressBarShield" type="ProgressBar" parent="ProgressBar"]
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = -1
+anchor_left = 0.925
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 207.0
+offset_left = -0.175049
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/background = SubResource("StyleBoxFlat_t5td4")
 max_value = 50.0
 show_percentage = false
+metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="ProgressBar/ProgressBarShield"]
 layout_mode = 1
@@ -59,5 +64,17 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "50"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="BattleLog" type="Label" parent="."]
+offset_left = -474.0
+offset_top = 99.0
+offset_right = 464.0
+offset_bottom = 168.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 24
+text = "dewdwe"
 horizontal_alignment = 1
 vertical_alignment = 1

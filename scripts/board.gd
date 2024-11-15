@@ -94,11 +94,14 @@ func selectBoss():
 	bossListSceneTemp.visible = false
 	# Almacenamos todos los nodos(cartas) para mezclarlas
 	var bossList = bossListSceneTemp.get_children()
-	bossList.shuffle()
+	
+	#bossList.shuffle()
 	
 	print(bossList)
 	
-	GameManager.pickedBoss = bossList[GameManager.bossNum]
+	#GameManager.pickedBoss = bossList[GameManager.bossNum]
+	#He cambiado esto para la primera demo, para que siempre salga el buey
+	GameManager.pickedBoss = bossList[0]
 	
 	var bossTemp = GameManager.pickedBoss.duplicate()
 	
@@ -112,6 +115,7 @@ func updateShield():
 	
 func initShield():
 	GameManager.playerShield = shieldMaxValue
+	labelShield.text = str(GameManager.playerShield) + " / " + str(shieldMaxValue)
 	progressBarShield.visible = true
 	
 func removeShield():
