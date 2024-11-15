@@ -8,6 +8,8 @@ func _ready() -> void:
 	await animation_player.animation_finished
 	Dialogic.start("res://dialogue/timelines/FirstCinematic.dtl")
 	await Dialogic.timeline_ended
+	animation_player.play("contappearing")
+	await animation_player.animation_finished
 	Dialogic.start("res://dialogue/timelines/FirstCinematic/FirstDialogue.dtl")
 	await Dialogic.timeline_ended
 	animation_player.play("end")
