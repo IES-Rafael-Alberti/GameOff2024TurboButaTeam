@@ -1,32 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://c21ncn5vdp5ua"]
+[gd_scene load_steps=2 format=3 uid="uid://c21ncn5vdp5ua"]
 
 [ext_resource type="PackedScene" uid="uid://bnng3hk0wi7a" path="res://scenes/board.tscn" id="1_eg5mf"]
-[ext_resource type="PackedScene" uid="uid://dmksqsg5bfdtd" path="res://scenes/boss.tscn" id="2_lkmhq"]
-[ext_resource type="Script" path="res://scenes/dialogue_point.gd" id="3_mae1x"]
 
 [node name="Game" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="ColorRect" type="ColorRect" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -864.0
-offset_top = -461.0
-offset_right = 878.0
-offset_bottom = 472.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_vertical = 3
-color = Color(0.0862745, 0, 0, 1)
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Board" parent="." instance=ExtResource("1_eg5mf")]
+[node name="Board" parent="CanvasLayer" instance=ExtResource("1_eg5mf")]
 size_flags_horizontal = 3
 size_flags_vertical = 3
-
-[node name="Boss" parent="." instance=ExtResource("2_lkmhq")]
-
-[node name="DialoguePoint" type="Marker2D" parent="."]
-position = Vector2(252, -234)
-script = ExtResource("3_mae1x")
