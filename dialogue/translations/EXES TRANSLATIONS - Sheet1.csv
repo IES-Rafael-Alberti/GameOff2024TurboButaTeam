@@ -16,8 +16,8 @@ C1D2,You've been sent to fight an evil spirit who's rotting the souls of nearby 
 C1D3,This spirit is known as contamination itself.,El espíritu es conocido como la contaminación en sí.
 ,,
 C1D4,How can someone walk so confidently into this realm?,¿Cómo puedes andar tan tranquilamente por este páramo?
-C1D5,I came here to understand you,He venido hasta aquí para entenderte
-C1D6,And how do you intend to get something so ethereal out of me,Y cómo pretendes sonsacarme algo tan etéreo
+C1D5,I came here to understand you.,He venido hasta aquí para entenderte
+C1D6,And how do you intend to get something so ethereal out of me?,Y cómo pretendes sonsacarme algo tan etéreo
 C1D7,I have some questions for you,Tengo unas preguntas para ti
 C1D8,I don't come off that easily. But you can try.,No soy tan fácil de convencer. Pero lo puedes intentar.
 C1D9,Eh… Why are you destroying the forest?,Eh... ¿por qué estás destruyendo el bosque?
@@ -38,7 +38,7 @@ C1D20,,
 ,,
 DIALOGUE,,
 BOSSFIGHT 1,,
-BF1D1,,
+BF1D1,The brute strength of the ox will take you down.,La fuerza bruta del buey te derrotará
 BF1D2,,
 BF1D3,,
 BF1D4,,

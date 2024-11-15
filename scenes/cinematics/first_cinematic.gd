@@ -8,5 +8,8 @@ func _ready() -> void:
 	await animation_player.animation_finished
 	Dialogic.start("res://dialogue/timelines/FirstCinematic.dtl")
 	await Dialogic.timeline_ended
-	#Dialogic.start()
+	Dialogic.start("res://dialogue/timelines/FirstCinematic/FirstDialogue.dtl")
+	await Dialogic.timeline_ended
+	animation_player.play("end")
+	await animation_player.animation_finished
 	get_tree().change_scene_to_file("res://scenes/game.tscn")

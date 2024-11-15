@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="gameoff2024"
-run/main_scene="res://scenes/game.tscn"
+run/main_scene="res://scenes/cinematics/first_cinematic.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -68,6 +68,7 @@ translation/id_counter=16
 
 window/size/viewport_width=1720
 window/size/viewport_height=920
+window/size/mode=3
 window/stretch/mode="canvas_items"
 
 [editor_plugins]
