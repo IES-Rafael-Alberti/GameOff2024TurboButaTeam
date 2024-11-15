@@ -26,18 +26,21 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.764706, 1, 1, 1)
+color = Color(0, 0, 0, 0.752941)
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
 layout_mode = 1
-anchors_preset = 5
+anchors_preset = 7
 anchor_left = 0.5
+anchor_top = 1.0
 anchor_right = 0.5
-offset_left = -163.0
-offset_top = 40.0
-offset_right = 164.0
-offset_bottom = 76.0
+anchor_bottom = 1.0
+offset_left = -447.0
+offset_top = -83.0
+offset_right = 444.0
+offset_bottom = -25.0
 grow_horizontal = 2
+grow_vertical = 0
 theme_override_styles/background = SubResource("StyleBoxFlat_83o6t")
 theme_override_styles/fill = SubResource("StyleBoxFlat_hqa7g")
 show_percentage = false
@@ -54,11 +57,12 @@ vertical_alignment = 1
 
 [node name="ProgressBarShield" type="ProgressBar" parent="ProgressBar"]
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = -1
+anchor_left = 0.886
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 279.0
-grow_horizontal = 2
+offset_left = -0.188049
+grow_horizontal = 0
 grow_vertical = 2
 theme_override_styles/background = SubResource("StyleBoxFlat_frf6y")
 max_value = 50.0

@@ -16,6 +16,8 @@ extends Node2D
 var habilityScript
 var shieldMaxValue = 50
 var action
+var newScriptBoss
+var shieldIsActive = false
 
 func _ready() -> void:
 	GameManager.BossTakeDamage.connect(UpdateProgressBar)
@@ -26,6 +28,8 @@ func _ready() -> void:
 	GameManager.healthBoss = maxHealthBoss
 	progress_bar.max_value = GameManager.healthBoss
 	progress_bar.value = GameManager.healthBoss
+	
+	newScriptBoss = scriptBoss.new()
 	
 	label.text = str(GameManager.healthBoss) + " / " + str(GameManager.healthBoss)
 	
@@ -39,6 +43,8 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if !GameManager.isPlayerPhase:
+		if shieldIsActive:
+			GameManager.QuitBossShield.emit()
 		doAction(action)
 		GameManager.isPlayerPhase = true
 		GameManager.SelectActionBoss.emit()
@@ -66,9 +72,9 @@ func doAction(action):
 	
 	if action == "atacar":
 		attack(damageBoss)
-	elif action == "escudo":
+	if action == "escudo":
 		shield()
-	else:
+	if action == "habilidad":
 		useHability()
 
 func attack(damageBoss):
@@ -87,9 +93,9 @@ func attack(damageBoss):
 
 func shield():
 	GameManager.InitBossShield.emit()
+	shieldIsActive = true
 
 func useHability():
-	var newScriptBoss = scriptBoss.new()
 	newScriptBoss.specialAttack(specialDamage)
 
 func UpdateProgressBar():
@@ -106,6 +112,7 @@ func updateShield():
 
 func initShield():
 	GameManager.bossShield = shieldMaxValue
+	progressBarShield.value = shieldMaxValue
 	labelShield.text = str(GameManager.bossShield) + " / " + str(shieldMaxValue)
 	progressBarShield.visible = true
 
