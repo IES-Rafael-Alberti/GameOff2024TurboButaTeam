@@ -23,13 +23,16 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 [dialogic]
 
 directories/dch_directory={
+"cinematicCont": "res://dialogue/characters/cinematicCont.dch",
 "testboss": "res://dialogue/characters/testboss.dch"
 }
 directories/dtl_directory={
+"BF1Start": "res://dialogue/timelines/BF1/BF1Start.dtl",
 "FirstCinematic": "res://dialogue/timelines/FirstCinematic.dtl",
+"FirstDialogue": "res://dialogue/timelines/FirstCinematic/FirstDialogue.dtl",
 "TestTL": "res://dialogue/timelines/TestTL.dtl"
 }
-layout/style_list=["res://dialogue/styles/textbubble.tres", "res://dialogue/styles/boxTest.tres", "res://dialogue/styles/cinematicStyle/cinematicStyle.tres"]
+layout/style_list=["res://dialogue/styles/textbubble.tres", "res://dialogue/styles/boxTest.tres", "res://dialogue/styles/cinematicStyle/cinematicStyle.tres", "res://dialogue/characters/cinematicCont.tres"]
 layout/default_style="res://dialogue/styles/cinematicStyle/cinematicStyle.tres"
 extensions_folder="res://addons/dialogic_additions"
 text/letter_speed=0.01

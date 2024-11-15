@@ -1,8 +1,11 @@
 extends Node2D
 
+@onready var animation_player = $AnimationPlayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	animation_player.play("start")
+	await animation_player.animation_finished
 	Dialogic.start("res://dialogue/timelines/FirstCinematic.dtl")
 	await Dialogic.timeline_ended
 	#Dialogic.start()

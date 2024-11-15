@@ -8,6 +8,19 @@
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -864.0
+offset_top = -461.0
+offset_right = 878.0
+offset_bottom = 472.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+color = Color(0.0862745, 0, 0, 1)
+
 [node name="Board" parent="." instance=ExtResource("1_eg5mf")]
 size_flags_horizontal = 3
 size_flags_vertical = 3
