@@ -2,6 +2,8 @@ extends TextureButton
 
 @export var face = Texture
 @export var scriptAnimal: Script
+@onready var animationPlayer = $AnimationPlayer
+
 var back
 var isFlipped = false
 var countCouple = 0
@@ -13,6 +15,8 @@ func _ready():
 
 func voltear():
 	if isFlipped == false:
+		animationPlayer.play("flip")
+		await get_tree().create_timer(0.5).timeout
 		set_texture_normal(face)
 		isFlipped = true
 	else:
@@ -29,10 +33,13 @@ func _on_pressed():
 		if !GameManager.firstCardPicked:
 				GameManager.firstCardPicked = self
 				GameManager.QuitPlayerShield.emit()
+				GameManager.canFlip = false
+				await get_tree().create_timer(1).timeout
+				GameManager.canFlip = true
 		elif GameManager.firstCardPicked && !GameManager.secondCardPicked:
 				GameManager.secondCardPicked = self 
 				GameManager.canFlip = false
-				await get_tree().create_timer(0.5).timeout
+				await get_tree().create_timer(1.5).timeout
 				GameManager.canFlip = true
 				isEqual(GameManager.firstCardPicked , GameManager.secondCardPicked)
 				GameManager.isPlayerPhase = false
@@ -40,6 +47,7 @@ func _on_pressed():
 	
 
 func isEqual(firstCard, secondCard):
+
 	if firstCard.get_texture_normal() != secondCard.get_texture_normal():
 		firstCard.voltear()
 		secondCard.voltear()
