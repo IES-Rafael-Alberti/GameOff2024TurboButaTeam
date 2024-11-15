@@ -1,5 +1,6 @@
 extends Node2D
 
+
 @onready var progress_bar: ProgressBar = $ProgressBar
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var label: Label = $ProgressBar/Label
