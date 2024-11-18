@@ -28,7 +28,7 @@ directories/dch_directory={
 }
 directories/dtl_directory={
 "BF1Start": "res://dialogue/timelines/BF1/BF1Start.dtl",
-"FirstCinematic": "res://dialogue/timelines/FirstCinematic.dtl",
+"FirstCinematic": "res://dialogue/timelines/FirstCinematic/FirstCinematic.dtl",
 "FirstDialogue": "res://dialogue/timelines/FirstCinematic/FirstDialogue.dtl",
 "TestTL": "res://dialogue/timelines/TestTL.dtl"
 }

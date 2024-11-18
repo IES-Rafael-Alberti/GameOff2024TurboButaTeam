@@ -6,7 +6,7 @@ extends Node2D
 func _ready() -> void:
 	animation_player.play("start")
 	await animation_player.animation_finished
-	Dialogic.start("res://dialogue/timelines/FirstCinematic.dtl")
+	Dialogic.start("res://dialogue/timelines/FirstCinematic/FirstCinematic.dtl")
 	await Dialogic.timeline_ended
 	animation_player.play("contappearing")
 	await animation_player.animation_finished
