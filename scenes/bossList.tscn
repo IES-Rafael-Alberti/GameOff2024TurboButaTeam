@@ -10,17 +10,15 @@
 
 [node name="bossList" type="Node2D"]
 
-[node name="Buey" parent="." instance=ExtResource("1_tme0w")]
-specialDamage = 40
-scriptBoss = ExtResource("2_u5jgy")
-textureBoss = ExtResource("3_hdkyq")
-
 [node name="Lince" parent="." instance=ExtResource("1_tme0w")]
-specialDamage = 40
 scriptBoss = ExtResource("2_c1ygr")
 textureBoss = ExtResource("3_ign37")
 
 [node name="Cobra" parent="." instance=ExtResource("1_tme0w")]
-specialDamage = 40
 scriptBoss = ExtResource("4_g0jtv")
 textureBoss = ExtResource("7_rxa5m")
+
+[node name="Buey" parent="." instance=ExtResource("1_tme0w")]
+specialDamage = 40
+scriptBoss = ExtResource("2_u5jgy")
+textureBoss = ExtResource("3_hdkyq")

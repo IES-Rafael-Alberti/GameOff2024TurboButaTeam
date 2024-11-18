@@ -9,7 +9,7 @@ extends Node2D
 
 @export var maxHealthBoss = 200
 @export var damageBoss = 20
-@export var specialDamage = 20
+@export var specialDamage = 10
 @export var scriptBoss: Script
 @export var textureBoss = Texture
 
@@ -45,6 +45,10 @@ func _process(delta: float) -> void:
 	if !GameManager.isPlayerPhase:
 		if shieldIsActive:
 			GameManager.QuitBossShield.emit()
+		#Si ya está envenenado, vuelve a hacer daño y quita el veneno
+		if GameManager.isPoisoned:
+			useHability()
+		
 		doAction(action)
 		GameManager.isPlayerPhase = true
 		GameManager.SelectActionBoss.emit()

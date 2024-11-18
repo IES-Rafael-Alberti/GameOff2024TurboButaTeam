@@ -45,10 +45,6 @@ func _ready():
 	GameManager.BoardCompleted.connect(restartBoard)
 	initBoard()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
 func initBoard():
 	# Metemos la lista para comprobar sus hijos
 	add_child(cardListSceneTemp)
@@ -80,7 +76,6 @@ func restartBoard():
 	clearBoard()
 	initBoard()
 
-
 func UpdateProgressBar():
 	progress_bar.value = GameManager.healthPlayer
 	label.text = str(GameManager.healthPlayer) + " / " + str(progress_bar.max_value)
@@ -107,17 +102,16 @@ func selectBoss():
 	
 	grid_container.add_child(bossTemp)
 
-
 func updateShield():
 	progressBarShield.max_value = shieldMaxValue
 	progressBarShield.value = GameManager.playerShield
 	labelShield.text = str(GameManager.playerShield) + " / " + str(shieldMaxValue)
-	
+
 func initShield():
 	GameManager.playerShield = shieldMaxValue
 	labelShield.text = str(GameManager.playerShield) + " / " + str(shieldMaxValue)
 	progressBarShield.visible = true
-	
+
 func removeShield():
 	progressBarShield.visible = false
 	GameManager.playerShield = 0
