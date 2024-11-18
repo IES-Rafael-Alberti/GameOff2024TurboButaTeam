@@ -16,7 +16,7 @@ func _ready():
 func voltear():
 	if isFlipped == false:
 		animationPlayer.play("flip")
-		await get_tree().create_timer(0.5).timeout
+		await get_tree().create_timer(0.3).timeout
 		set_texture_normal(face)
 		isFlipped = true
 	else:
@@ -34,12 +34,12 @@ func _on_pressed():
 				GameManager.firstCardPicked = self
 				GameManager.QuitPlayerShield.emit()
 				GameManager.canFlip = false
-				await get_tree().create_timer(1).timeout
+				await get_tree().create_timer(0.6).timeout
 				GameManager.canFlip = true
 		elif GameManager.firstCardPicked && !GameManager.secondCardPicked:
 				GameManager.secondCardPicked = self 
 				GameManager.canFlip = false
-				await get_tree().create_timer(1.5).timeout
+				await get_tree().create_timer(0.6).timeout
 				GameManager.canFlip = true
 				isEqual(GameManager.firstCardPicked , GameManager.secondCardPicked)
 				GameManager.isPlayerPhase = false
