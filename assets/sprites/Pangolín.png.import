@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bcfhluciou51s"
-path="res://.godot/imported/pangolin.png-a0f39ccee8d054ead79f1315dcab7e6f.ctex"
+uid="uid://0uapbypx8jf"
+path="res://.godot/imported/Pangolín.png-49727f37f8efbc8eb0e2ded42e14bcc1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/cards/pangolin.png"
-dest_files=["res://.godot/imported/pangolin.png-a0f39ccee8d054ead79f1315dcab7e6f.ctex"]
+source_file="res://assets/sprites/Pangolín.png"
+dest_files=["res://.godot/imported/Pangolín.png-49727f37f8efbc8eb0e2ded42e14bcc1.ctex"]
 
 [params]
 

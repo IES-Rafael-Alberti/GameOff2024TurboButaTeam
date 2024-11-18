@@ -56,6 +56,8 @@ signal SelectActionBoss
 
 var bossIsCharging
 
+var isPoisoned
+
 #Multi de daño que se vuelve a poner en 1 cuando el boss muere
 var damageMultiply = 1
 
