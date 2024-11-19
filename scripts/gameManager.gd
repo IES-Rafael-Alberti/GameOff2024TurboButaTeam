@@ -44,6 +44,8 @@ signal QuitPlayerShield
 
 signal InitPlayerShield
 
+signal BurnCards
+
 var bossIsCharging
 
 #Multi de daño que se vuelve a poner en 1 cuando el boss muere

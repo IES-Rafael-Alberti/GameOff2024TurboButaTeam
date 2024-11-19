@@ -3,13 +3,13 @@
 [ext_resource type="Shader" path="res://scripts/shaders/cardBurn.gdshader" id="1_e0daq"]
 [ext_resource type="Script" path="res://scripts/card.gd" id="1_ykaut"]
 [ext_resource type="Texture2D" uid="uid://bhhnqxdinpgsp" path="res://assets/sprites/cards/card1.png" id="2_1mpjs"]
-[ext_resource type="Texture2D" uid="uid://cocc1wntb32l4" path="res://assets/shadersTextures/burnNoise.tres" id="2_avwfg"]
+[ext_resource type="Texture2D" uid="uid://cgr064vblhvdg" path="res://assets/shadersTextures/burnNoise.tres" id="2_avwfg"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0xhi6"]
 shader = ExtResource("1_e0daq")
 shader_parameter/dissolve_value = 1.0
-shader_parameter/burn_size = 0.1
-shader_parameter/burn_color = Color(0.682353, 0.141176, 0.133333, 1)
+shader_parameter/burn_size = 0.0
+shader_parameter/burn_color = null
 shader_parameter/dissolve_texture = ExtResource("2_avwfg")
 
 [sub_resource type="Animation" id="Animation_ngog6"]

@@ -12,7 +12,9 @@ var countCouple = 0
 func _ready():
 	back = GameManager.cardBack
 	set_texture_normal(back)
+	GameManager.BurnCards.connect(burnCard)
 
+	
 func voltear():
 	if isFlipped == false:
 		animationPlayer.play("flip")
@@ -62,4 +64,33 @@ func isEqual(firstCard, secondCard):
 		GameManager.countCouple = 0
 	GameManager.firstCardPicked = null
 	GameManager.secondCardPicked = null
+		
+
+func burnCard():
+	var cardShaderDissolveValue = self.material.get_shader_parameter("dissolve_value")
+	var frames = 5
+	
+	for i in frames:
+		var timer = Timer.new()
+		timer.wait_time = 0.1
+		timer.one_shot = true
+		add_child(timer)
+		timer.start()
+		await timer.timeout
+		cardShaderDissolveValue -= 0.2
+		self.material.set_shader_parameter("dissolve_value", cardShaderDissolveValue)
+		timer.queue_free()
+		
+	await get_tree().create_timer(1).timeout
+	
+	for i in frames:
+		var timer = Timer.new()
+		timer.wait_time = 0.1
+		timer.one_shot = true
+		add_child(timer)
+		timer.start()
+		await timer.timeout
+		cardShaderDissolveValue += 0.2
+		self.material.set_shader_parameter("dissolve_value", cardShaderDissolveValue)
+		timer.queue_free()
 		
