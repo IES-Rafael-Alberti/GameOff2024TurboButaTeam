@@ -4,11 +4,14 @@ extends Control
 @onready var music_vol: HSlider = $VBoxContainer/VBoxContainer/HBoxContainer2/MusicVol
 @onready var sfx_vol: HSlider = $VBoxContainer/VBoxContainer/HBoxContainer3/SFXVol
 @onready var window_mode: OptionButton = $VBoxContainer/VBoxContainer2/HBoxContainer/WindowMode
+@onready var window_mode_hbox: HBoxContainer = $VBoxContainer/VBoxContainer2/WindowModeHbox
 
 var master_bus
 var music_bus
 var sfx_bus
 func _ready() -> void:
+	if OS.get_name()=="Web":
+		window_mode_hbox.hide()
 	master_bus = AudioServer.get_bus_index("Master")
 	music_bus = AudioServer.get_bus_index("Music")
 	sfx_bus = AudioServer.get_bus_index("SFX")
@@ -23,7 +26,6 @@ func _on_music_vol_value_changed(value: float) -> void:
 
 func _on_sfx_vol_value_changed(value: float) -> void:
 	AudioServer.set_bus_volume_db(sfx_bus,linear_to_db(value))
-
 
 func _on_option_button_item_selected(index: int) -> void:
 	match index:

@@ -66,16 +66,16 @@ layout_mode = 2
 size_flags_horizontal = 4
 alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/VBoxContainer2"]
+[node name="WindowModeHbox" type="HBoxContainer" parent="VBoxContainer/VBoxContainer2"]
 layout_mode = 2
 theme_override_constants/separation = 10
 alignment = 2
 
-[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer2/HBoxContainer"]
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer2/WindowModeHbox"]
 layout_mode = 2
 text = "Window"
 
-[node name="WindowMode" type="OptionButton" parent="VBoxContainer/VBoxContainer2/HBoxContainer"]
+[node name="WindowMode" type="OptionButton" parent="VBoxContainer/VBoxContainer2/WindowModeHbox"]
 layout_mode = 2
 item_count = 3
 popup/item_0/text = "Windowed"
@@ -99,5 +99,5 @@ text = "BACK_BUTTON"
 [connection signal="value_changed" from="VBoxContainer/VBoxContainer/HBoxContainer/MasterVol" to="." method="_on_master_vol_value_changed"]
 [connection signal="value_changed" from="VBoxContainer/VBoxContainer/HBoxContainer2/MusicVol" to="." method="_on_music_vol_value_changed"]
 [connection signal="value_changed" from="VBoxContainer/VBoxContainer/HBoxContainer3/SFXVol" to="." method="_on_sfx_vol_value_changed"]
-[connection signal="item_selected" from="VBoxContainer/VBoxContainer2/HBoxContainer/WindowMode" to="." method="_on_option_button_item_selected"]
+[connection signal="item_selected" from="VBoxContainer/VBoxContainer2/WindowModeHbox/WindowMode" to="." method="_on_option_button_item_selected"]
 [connection signal="pressed" from="MarginContainer/BackButton" to="." method="_on_back_button_pressed"]
