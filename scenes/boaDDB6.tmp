@@ -1,8 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://bnng3hk0wi7a"]
+[gd_scene load_steps=5 format=3 uid="uid://bnng3hk0wi7a"]
 
 [ext_resource type="Script" path="res://scripts/board.gd" id="1_s4gqu"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_frf6y"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_83o6t"]
 bg_color = Color(0.431228, 0.764041, 0.144401, 0.666667)
@@ -10,17 +8,7 @@ bg_color = Color(0.431228, 0.764041, 0.144401, 0.666667)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hqa7g"]
 bg_color = Color(0.509804, 0.901961, 0.164706, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k7gpb"]
-bg_color = Color(0, 0, 0, 1)
-expand_margin_left = 1.0
-expand_margin_top = 1.0
-expand_margin_right = 1.0
-expand_margin_bottom = 1.0
-shadow_color = Color(0, 0, 0, 0.27451)
-shadow_offset = Vector2(0, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_okxa8"]
-bg_color = Color(1, 1, 1, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_frf6y"]
 
 [node name="Board" type="Control"]
 layout_mode = 3
@@ -30,6 +18,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_s4gqu")
+maxHealthPlayer = null
+shieldMaxValue = null
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -40,36 +30,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.752941)
 
-[node name="ProgressBarShield" type="ProgressBar" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.24
-anchor_top = 0.912
-anchor_right = 0.347
-anchor_bottom = 0.935
-offset_left = 0.199982
-offset_top = -0.0400391
-offset_right = 0.159973
-offset_bottom = -0.200073
-grow_horizontal = 0
-grow_vertical = 2
-theme_override_styles/background = SubResource("StyleBoxFlat_frf6y")
-max_value = 50.0
-show_percentage = false
-
-[node name="Label" type="Label" parent="ProgressBarShield"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "50"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="ProgressBar" type="ProgressBar" parent="."]
-z_index = 1
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -77,7 +38,7 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -447.0
-offset_top = -53.0
+offset_top = -83.0
 offset_right = 444.0
 offset_bottom = -25.0
 grow_horizontal = 2
@@ -96,19 +57,29 @@ grow_vertical = 2
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="DamageBar" type="ProgressBar" parent="ProgressBar"]
-z_index = -1
+[node name="ProgressBarShield" type="ProgressBar" parent="ProgressBar"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.886
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -0.188049
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_frf6y")
+max_value = 50.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="ProgressBar/ProgressBarShield"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/background = SubResource("StyleBoxFlat_k7gpb")
-theme_override_styles/fill = SubResource("StyleBoxFlat_okxa8")
-
-[node name="Timer" type="Timer" parent="ProgressBar"]
-wait_time = 0.4
+text = "50"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="BossContainer" type="VBoxContainer" parent="."]
 layout_mode = 1

@@ -54,6 +54,8 @@ signal InitBossShield
 
 signal SelectActionBoss
 
+signal restartButtonVisible
+
 var bossIsCharging
 
 var isPoisoned

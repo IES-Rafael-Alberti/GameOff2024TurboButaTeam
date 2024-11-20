@@ -12,8 +12,9 @@ var bossListSceneTemp
 @onready var grid: GridContainer = $BoardContainer/CenterContainer/grid
 @onready var grid_container: GridContainer = $BossContainer/CenterContainer/GridContainer
 @onready var label: Label = $ProgressBar/Label
-@onready var progressBarShield = $ProgressBar/ProgressBarShield
-@onready var labelShield = $ProgressBar/ProgressBarShield/Label
+@onready var progressBarShield: ProgressBar = $ProgressBarShield
+@onready var labelShield: Label = $ProgressBarShield/Label
+@onready var resetBoard: Button = $ResetBoard
 
 # Cargamos la escena que contiene todas las cartas
 @onready var cardListScene = preload("res://scenes/cardList.tscn")
@@ -28,12 +29,16 @@ func _ready():
 	#Quitar visible al shield del player
 	progressBarShield.visible = false
 	
+	#Quitar visible al boton de reset
+	resetBoard.visible = false
+	
 	label.text = str(GameManager.healthPlayer) + " / " + str(GameManager.healthPlayer)
 	
 	GameManager.PlayerTakeDamage.connect(UpdateProgressBar)
 	GameManager.PlayerShield.connect(updateShield)
 	GameManager.InitPlayerShield.connect(initShield)
 	GameManager.QuitPlayerShield.connect(removeShield)
+	GameManager.restartButtonVisible.connect(restartButtonVisible)
 	
 	bossListSceneTemp = bossListScene.instantiate()
 	
@@ -76,6 +81,7 @@ func restartBoard():
 	clearBoard()
 	initBoard()
 	GameManager.doubleShift = true
+	resetBoard.visible = false
 
 func UpdateProgressBar():
 	progress_bar.value = GameManager.healthPlayer
@@ -93,11 +99,7 @@ func selectBoss():
 	
 	#bossList.shuffle()
 	
-	print(bossList)
-	
-	#GameManager.pickedBoss = bossList[GameManager.bossNum]
-	#He cambiado esto para la primera demo, para que siempre salga el buey
-	GameManager.pickedBoss = bossList[0]
+	GameManager.pickedBoss = bossList[2]
 	
 	var bossTemp = GameManager.pickedBoss.duplicate()
 	
@@ -116,3 +118,9 @@ func initShield():
 func removeShield():
 	progressBarShield.visible = false
 	GameManager.playerShield = 0
+
+func restartButtonVisible():
+	resetBoard.visible = true
+
+func _on_button_pressed() -> void:
+	GameManager.BoardCompleted.emit()
