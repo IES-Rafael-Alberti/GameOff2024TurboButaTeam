@@ -1,21 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://bnng3hk0wi7a"]
+[gd_scene load_steps=5 format=3 uid="uid://bnng3hk0wi7a"]
 
 [ext_resource type="Script" path="res://scripts/board.gd" id="1_s4gqu"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_83o6t"]
+bg_color = Color(0.431228, 0.764041, 0.144401, 0.666667)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hqa7g"]
+bg_color = Color(0.509804, 0.901961, 0.164706, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_frf6y"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5mgme"]
-bg_color = Color(0.725959, 0.583182, 7.70092e-07, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k7gpb"]
-bg_color = Color(0, 0, 0, 1)
-expand_margin_left = 1.0
-expand_margin_top = 1.0
-expand_margin_right = 1.0
-expand_margin_bottom = 1.0
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_okxa8"]
-bg_color = Color(1, 1, 1, 1)
 
 [node name="Board" type="Control"]
 layout_mode = 3
@@ -25,6 +18,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_s4gqu")
+maxHealthPlayer = null
+shieldMaxValue = null
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -35,36 +30,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.752941)
 
-[node name="ProgressBarShield" type="ProgressBar" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.24
-anchor_top = 0.912
-anchor_right = 0.347
-anchor_bottom = 0.935
-offset_left = 0.199982
-offset_top = -453.04
-offset_right = 0.159973
-offset_bottom = -453.2
-grow_horizontal = 0
-grow_vertical = 2
-theme_override_styles/background = SubResource("StyleBoxFlat_frf6y")
-max_value = 50.0
-show_percentage = false
-
-[node name="Label" type="Label" parent="ProgressBarShield"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "50"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="ProgressBar" type="ProgressBar" parent="."]
-z_index = 1
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -72,12 +38,13 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -447.0
-offset_top = -506.0
+offset_top = -83.0
 offset_right = 444.0
-offset_bottom = -478.0
+offset_bottom = -25.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_styles/fill = SubResource("StyleBoxFlat_5mgme")
+theme_override_styles/background = SubResource("StyleBoxFlat_83o6t")
+theme_override_styles/fill = SubResource("StyleBoxFlat_hqa7g")
 show_percentage = false
 
 [node name="Label" type="Label" parent="ProgressBar"]
@@ -90,20 +57,29 @@ grow_vertical = 2
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="DamageBar" type="ProgressBar" parent="ProgressBar"]
-z_index = -1
+[node name="ProgressBarShield" type="ProgressBar" parent="ProgressBar"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.886
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -0.188049
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_frf6y")
+max_value = 50.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="ProgressBar/ProgressBarShield"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/background = SubResource("StyleBoxFlat_k7gpb")
-theme_override_styles/fill = SubResource("StyleBoxFlat_okxa8")
-show_percentage = false
-
-[node name="Timer" type="Timer" parent="ProgressBar"]
-wait_time = 0.4
+text = "50"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="BossContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -146,5 +122,4 @@ offset_right = 1650.0
 offset_bottom = 448.0
 text = "RESET BOARD"
 
-[connection signal="timeout" from="ProgressBar/Timer" to="." method="_on_timer_timeout"]
 [connection signal="pressed" from="ResetBoard" to="." method="_on_button_pressed"]

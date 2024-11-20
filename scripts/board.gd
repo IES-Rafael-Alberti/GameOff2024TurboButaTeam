@@ -12,8 +12,11 @@ var bossListSceneTemp
 @onready var grid: GridContainer = $BoardContainer/CenterContainer/grid
 @onready var grid_container: GridContainer = $BossContainer/CenterContainer/GridContainer
 @onready var label: Label = $ProgressBar/Label
-@onready var progressBarShield = $ProgressBar/ProgressBarShield
-@onready var labelShield = $ProgressBar/ProgressBarShield/Label
+@onready var progressBarShield: ProgressBar = $ProgressBarShield
+@onready var labelShield: Label = $ProgressBarShield/Label
+@onready var resetBoard: Button = $ResetBoard
+@onready var timerDamage: Timer = $ProgressBar/Timer
+@onready var damage_bar: ProgressBar = $ProgressBar/DamageBar
 
 # Cargamos la escena que contiene todas las cartas
 @onready var cardListScene = preload("res://scenes/cardList.tscn")
@@ -24,9 +27,14 @@ func _ready():
 	GameManager.healthPlayer = maxHealthPlayer
 	progress_bar.max_value = GameManager.healthPlayer
 	progress_bar.value = GameManager.healthPlayer
+	damage_bar.max_value = GameManager.healthPlayer
+	damage_bar.value = GameManager.healthPlayer
 	
 	#Quitar visible al shield del player
 	progressBarShield.visible = false
+	
+	#Quitar visible al boton de reset
+	resetBoard.visible = false
 	
 	label.text = str(GameManager.healthPlayer) + " / " + str(GameManager.healthPlayer)
 	
@@ -34,6 +42,7 @@ func _ready():
 	GameManager.PlayerShield.connect(updateShield)
 	GameManager.InitPlayerShield.connect(initShield)
 	GameManager.QuitPlayerShield.connect(removeShield)
+	GameManager.restartButtonVisible.connect(restartButtonVisible)
 	
 	bossListSceneTemp = bossListScene.instantiate()
 	
@@ -76,10 +85,11 @@ func restartBoard():
 	clearBoard()
 	initBoard()
 	GameManager.doubleShift = true
+	resetBoard.visible = false
 
 func UpdateProgressBar():
+	timerDamage.start()
 	progress_bar.value = GameManager.healthPlayer
-	label.text = str(GameManager.healthPlayer) + " / " + str(progress_bar.max_value)
 	if progress_bar.value <= 0:
 		#TODO hacer que el player se muera
 		print("perdiste")
@@ -91,13 +101,9 @@ func selectBoss():
 	# Almacenamos todos los nodos(cartas) para mezclarlas
 	var bossList = bossListSceneTemp.get_children()
 	
-	#bossList.shuffle()
+	bossList.shuffle()
 	
-	print(bossList)
-	
-	#GameManager.pickedBoss = bossList[GameManager.bossNum]
-	#He cambiado esto para la primera demo, para que siempre salga el buey
-	GameManager.pickedBoss = bossList[0]
+	GameManager.pickedBoss = bossList[GameManager.bossNum]
 	
 	var bossTemp = GameManager.pickedBoss.duplicate()
 	
@@ -116,3 +122,14 @@ func initShield():
 func removeShield():
 	progressBarShield.visible = false
 	GameManager.playerShield = 0
+
+func restartButtonVisible():
+	resetBoard.visible = true
+
+func _on_button_pressed() -> void:
+	GameManager.BoardCompleted.emit()
+
+
+func _on_timer_timeout() -> void:
+	damage_bar.value = GameManager.healthPlayer
+	label.text = str(GameManager.healthPlayer) + " / " + str(progress_bar.max_value)
