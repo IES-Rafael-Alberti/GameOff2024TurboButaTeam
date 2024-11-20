@@ -3,6 +3,15 @@ extends Node
 @export var damage = 20
 
 func action():
-	print("Carta de ataque")
-	GameManager.healthBoss -= damage * GameManager.damageMultiply
-	GameManager.BossTakeDamage.emit()
+	if GameManager.bossShield > 0:
+		var damageDiff = damage - GameManager.bossShield
+		GameManager.bossShield -= damage
+		GameManager.BossShield.emit()
+		
+		if damageDiff > 0:
+			GameManager.healthPlayer -= damageDiff
+			GameManager.PlayerTakeDamage.emit()
+		
+	else:
+		GameManager.healthBoss -= damage
+		GameManager.BossTakeDamage.emit()

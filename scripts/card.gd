@@ -24,14 +24,11 @@ func voltear():
 	else:
 		set_texture_normal(back)
 		isFlipped = false
-		
-	
+
 func _on_pressed():
-		
 	if isFlipped == false && GameManager.canFlip && GameManager.isPlayerPhase:
 		voltear()
 		isFlipped = true
-
 		if !GameManager.firstCardPicked:
 				GameManager.firstCardPicked = self
 				GameManager.QuitPlayerShield.emit()
@@ -45,8 +42,6 @@ func _on_pressed():
 				GameManager.canFlip = true
 				isEqual(GameManager.firstCardPicked , GameManager.secondCardPicked)
 				GameManager.isPlayerPhase = false
-			
-	
 
 func isEqual(firstCard, secondCard):
 

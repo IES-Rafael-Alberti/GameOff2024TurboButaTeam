@@ -1,54 +1,46 @@
-[gd_scene load_steps=7 format=3 uid="uid://bnmf1ucjb1p7o"]
+[gd_scene load_steps=11 format=3 uid="uid://bnmf1ucjb1p7o"]
 
 [ext_resource type="PackedScene" uid="uid://dup3wc5aw7n4e" path="res://scenes/card.tscn" id="1_c275a"]
-[ext_resource type="Texture2D" uid="uid://bcfhluciou51s" path="res://assets/sprites/cards/pangolin.png" id="2_gs6ut"]
+[ext_resource type="Texture2D" uid="uid://0uapbypx8jf" path="res://assets/sprites/Pangolín.png" id="2_q32f4"]
 [ext_resource type="Script" path="res://scripts/cards/cardAttack.gd" id="3_jmysu"]
 [ext_resource type="Script" path="res://scripts/cards/cardDecreaseDef.gd" id="3_wrheb"]
-[ext_resource type="Texture2D" uid="uid://cjtbhspy1js62" path="res://assets/sprites/cards/card11.png" id="12_itb5a"]
+[ext_resource type="Texture2D" uid="uid://beycxabxco3rd" path="res://assets/sprites/Grulla.png" id="4_bdfnt"]
+[ext_resource type="Texture2D" uid="uid://d0sggx17wkpyf" path="res://assets/sprites/cards/card3.png" id="7_7gy5y"]
+[ext_resource type="Texture2D" uid="uid://dbw0bnugi6frl" path="res://assets/sprites/Rata.png" id="9_fnnb1"]
+[ext_resource type="Texture2D" uid="uid://222xm28mkygh" path="res://assets/sprites/cards/card4.png" id="9_m2jmn"]
+[ext_resource type="Script" path="res://scripts/cards/cardAttackUnderShield.gd" id="11_qu0kd"]
 [ext_resource type="Script" path="res://scripts/cards/cardShield.gd" id="13_qse35"]
 
 [node name="CardList" type="Node2D"]
 
 [node name="Card1" parent="." instance=ExtResource("1_c275a")]
-face = ExtResource("2_gs6ut")
-scriptAnimal = ExtResource("3_jmysu")
+face = ExtResource("2_q32f4")
+scriptAnimal = ExtResource("13_qse35")
 
 [node name="Card2" parent="." instance=ExtResource("1_c275a")]
-face = ExtResource("2_gs6ut")
-scriptAnimal = ExtResource("3_jmysu")
+face = ExtResource("2_q32f4")
+scriptAnimal = ExtResource("13_qse35")
 
 [node name="Card3" parent="." instance=ExtResource("1_c275a")]
-face = ExtResource("2_gs6ut")
+face = ExtResource("4_bdfnt")
 scriptAnimal = ExtResource("3_jmysu")
 
 [node name="Card4" parent="." instance=ExtResource("1_c275a")]
-face = ExtResource("2_gs6ut")
+face = ExtResource("4_bdfnt")
 scriptAnimal = ExtResource("3_jmysu")
 
 [node name="Card5" parent="." instance=ExtResource("1_c275a")]
-face = ExtResource("2_gs6ut")
-scriptAnimal = ExtResource("3_jmysu")
+face = ExtResource("7_7gy5y")
+scriptAnimal = ExtResource("3_wrheb")
 
 [node name="Card6" parent="." instance=ExtResource("1_c275a")]
-face = ExtResource("2_gs6ut")
+face = ExtResource("9_m2jmn")
 scriptAnimal = ExtResource("3_wrheb")
 
 [node name="Card7" parent="." instance=ExtResource("1_c275a")]
-face = ExtResource("2_gs6ut")
-scriptAnimal = ExtResource("3_wrheb")
+face = ExtResource("9_fnnb1")
+scriptAnimal = ExtResource("11_qu0kd")
 
 [node name="Card8" parent="." instance=ExtResource("1_c275a")]
-face = ExtResource("2_gs6ut")
-scriptAnimal = ExtResource("3_wrheb")
-
-[node name="Card9" parent="." instance=ExtResource("1_c275a")]
-face = ExtResource("12_itb5a")
-scriptAnimal = ExtResource("13_qse35")
-
-[node name="Card10" parent="." instance=ExtResource("1_c275a")]
-face = ExtResource("12_itb5a")
-scriptAnimal = ExtResource("13_qse35")
-
-[node name="Card11" parent="." instance=ExtResource("1_c275a")]
-face = ExtResource("12_itb5a")
-scriptAnimal = ExtResource("13_qse35")
+face = ExtResource("9_fnnb1")
+scriptAnimal = ExtResource("11_qu0kd")

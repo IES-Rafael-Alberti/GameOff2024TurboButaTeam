@@ -9,4 +9,3 @@ func specialAttack(specialDamage):
 		GameManager.healthPlayer -= specialDamage
 		GameManager.PlayerTakeDamage.emit()
 		GameManager.bossIsCharging = false
-	

@@ -6,9 +6,11 @@ var healthBoss
 #Variable con la vida del jugador
 var healthPlayer
 
-#Variable con la vida del jugador
+#Variable con el escudo del jugador
 var playerShield = 0
 
+#Variable con el escudo del boss
+var bossShield = 0
 
 #Hace un preload del dorso de la carta
 var cardBack = preload("res://assets/sprites/cards/cardBack.png")
@@ -46,7 +48,17 @@ signal InitPlayerShield
 
 signal BurnCards
 
+signal BossShield
+
+signal QuitBossShield
+
+signal InitBossShield
+
+signal SelectActionBoss
+
 var bossIsCharging
+
+var isPoisoned
 
 #Multi de daño que se vuelve a poner en 1 cuando el boss muere
 var damageMultiply = 1

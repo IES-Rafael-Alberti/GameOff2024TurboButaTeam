@@ -7,6 +7,8 @@
 # Imported translations (automatically generated from CSV files)
 *.translation
 
+# Ignore builds but not the folder
+export/
 # Mono-specific ignores
 .mono/
 data_*/

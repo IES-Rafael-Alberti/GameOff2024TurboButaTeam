@@ -3,24 +3,22 @@
 [ext_resource type="PackedScene" uid="uid://c1he8kika8fof" path="res://scenes/boss.tscn" id="1_tme0w"]
 [ext_resource type="Script" path="res://scripts/boss/linceHability.gd" id="2_c1ygr"]
 [ext_resource type="Script" path="res://scripts/boss/bueyHability.gd" id="2_u5jgy"]
+[ext_resource type="Texture2D" uid="uid://dyhaxnvkxkxl" path="res://assets/sprites/ai-generated-musk-oxes-isolated-on-transparent-background-png.webp" id="3_hdkyq"]
 [ext_resource type="Texture2D" uid="uid://bcwsxf7h8n38s" path="res://assets/sprites/cards/cardBack.png" id="3_ign37"]
 [ext_resource type="Script" path="res://scripts/boss/cobraHability.gd" id="4_g0jtv"]
-[ext_resource type="Texture2D" uid="uid://cjtbhspy1js62" path="res://assets/sprites/cards/card11.png" id="5_0tevj"]
 [ext_resource type="Texture2D" uid="uid://cb5cn28pj185b" path="res://assets/sprites/cards/card10.png" id="7_rxa5m"]
 
 [node name="bossList" type="Node2D"]
 
 [node name="Lince" parent="." instance=ExtResource("1_tme0w")]
-specialDamage = 40
 scriptBoss = ExtResource("2_c1ygr")
 textureBoss = ExtResource("3_ign37")
+
+[node name="Cobra" parent="." instance=ExtResource("1_tme0w")]
+scriptBoss = ExtResource("4_g0jtv")
+textureBoss = ExtResource("7_rxa5m")
 
 [node name="Buey" parent="." instance=ExtResource("1_tme0w")]
 specialDamage = 40
 scriptBoss = ExtResource("2_u5jgy")
-textureBoss = ExtResource("5_0tevj")
-
-[node name="Cobra" parent="." instance=ExtResource("1_tme0w")]
-specialDamage = 40
-scriptBoss = ExtResource("4_g0jtv")
-textureBoss = ExtResource("7_rxa5m")
+textureBoss = ExtResource("3_hdkyq")
