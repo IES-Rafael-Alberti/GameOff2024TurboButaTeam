@@ -77,6 +77,7 @@ func restartBoard():
 	await get_tree().create_timer(1.5).timeout
 	clearBoard()
 	initBoard()
+	GameManager.doubleShift = true
 
 func UpdateProgressBar():
 	progress_bar.value = GameManager.healthPlayer

@@ -2,6 +2,8 @@ extends TextureButton
 
 @export var face = Texture
 @export var scriptAnimal: Script
+@export var faceSpecial1 = Texture 
+@export var faceSpecial2 = Texture 
 @onready var animationPlayer = $AnimationPlayer
 
 var back
@@ -10,6 +12,7 @@ var countCouple = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	print(face)
 	back = GameManager.cardBack
 	set_texture_normal(back)
 	GameManager.BurnCards.connect(burnCard)
@@ -33,18 +36,23 @@ func _on_pressed():
 				GameManager.firstCardPicked = self
 				GameManager.QuitPlayerShield.emit()
 				GameManager.canFlip = false
-				await get_tree().create_timer(0.6).timeout
+				await get_tree().create_timer(1).timeout
+				isSpecialCard(GameManager.firstCardPicked)
 				GameManager.canFlip = true
 		elif GameManager.firstCardPicked && !GameManager.secondCardPicked:
 				GameManager.secondCardPicked = self 
 				GameManager.canFlip = false
-				await get_tree().create_timer(0.6).timeout
+				await get_tree().create_timer(1.5).timeout
+				if !isSpecialCard(GameManager.firstCardPicked, GameManager.secondCardPicked):
+					isEqual(GameManager.firstCardPicked , GameManager.secondCardPicked)
 				GameManager.canFlip = true
-				isEqual(GameManager.firstCardPicked , GameManager.secondCardPicked)
-				GameManager.isPlayerPhase = false
+				
+				if GameManager.doubleShift:
+					GameManager.doubleShift = false
+				else:
+					GameManager.isPlayerPhase = false
 
 func isEqual(firstCard, secondCard):
-
 	if firstCard.get_texture_normal() != secondCard.get_texture_normal():
 		firstCard.voltear()
 		secondCard.voltear()
@@ -89,3 +97,23 @@ func burnCard():
 		self.material.set_shader_parameter("dissolve_value", cardShaderDissolveValue)
 		timer.queue_free()
 		
+
+func isSpecialCard(firstCard: Object = null, secondCard: Object = null) -> bool:
+	if firstCard != null:
+		if firstCard.get_texture_normal() == faceSpecial2 || firstCard.get_texture_normal() == faceSpecial1:
+			var finalScriptAnimal = scriptAnimal.new()
+			finalScriptAnimal.action()
+			GameManager.firstCardPicked = null
+			GameManager.secondCardPicked = null
+			return true
+	
+	if secondCard != null:
+		if secondCard.get_texture_normal() == faceSpecial2 || secondCard.get_texture_normal() == faceSpecial1:
+			var finalScriptAnimal = scriptAnimal.new()
+			finalScriptAnimal.action()
+			firstCard.voltear()
+			GameManager.firstCardPicked = null
+			GameManager.secondCardPicked = null
+			return true
+	
+	return false
