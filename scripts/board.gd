@@ -32,7 +32,7 @@ func _ready():
 	progressBarShield.visible = false
 	
 	#Quitar visible al boton de reset
-	resetBoard.visible = false
+	resetBoard.disabled = true
 	
 	
 	GameManager.PlayerTakeDamage.connect(UpdateProgressBar)
@@ -82,7 +82,7 @@ func restartBoard():
 	clearBoard()
 	initBoard()
 	GameManager.doubleShift = true
-	resetBoard.visible = false
+	resetBoard.disabled = true
 
 func UpdateProgressBar():
 	timerDamage.start()
@@ -119,7 +119,7 @@ func removeShield():
 	GameManager.playerShield = 0
 
 func restartButtonVisible():
-	resetBoard.visible = true
+	resetBoard.disabled = false
 
 func _on_button_pressed() -> void:
 	GameManager.BoardCompleted.emit()

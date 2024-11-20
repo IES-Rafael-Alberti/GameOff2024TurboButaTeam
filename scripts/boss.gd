@@ -4,9 +4,9 @@ extends Node2D
 @onready var progress_bar: ProgressBar = $ProgressBar
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var progressBarShield: ProgressBar = $ProgressBarShield
-@onready var battleLog: Label = $BattleLog
 @onready var damage_bar: ProgressBar = $ProgressBar/DamageBar
 @onready var timerDamage: Timer = $ProgressBar/Timer
+@onready var battleLog: Label = $ColorRect/BattleLog
 
 @export var maxHealthBoss = 200
 @export var damageBoss = 20
