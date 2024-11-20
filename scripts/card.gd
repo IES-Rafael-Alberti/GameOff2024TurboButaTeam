@@ -5,6 +5,7 @@ extends TextureButton
 @export var faceSpecial1 = Texture 
 @export var faceSpecial2 = Texture 
 @onready var animationPlayer = $AnimationPlayer
+@onready var shadowAnimationPlayer = $Shadow/ShadowAnimationPlayer
 
 var back
 var isFlipped = false
@@ -20,6 +21,7 @@ func _ready():
 func voltear():
 	if isFlipped == false:
 		animationPlayer.play("flip")
+		shadowAnimationPlayer.play("flip")
 		await get_tree().create_timer(0.3).timeout
 		set_texture_normal(face)
 		isFlipped = true

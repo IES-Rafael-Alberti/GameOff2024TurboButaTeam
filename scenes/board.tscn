@@ -106,14 +106,6 @@ alignment = 1
 [node name="CenterContainer" type="CenterContainer" parent="BoardContainer"]
 layout_mode = 2
 
-[node name="DirectionalLight2D" type="DirectionalLight2D" parent="BoardContainer/CenterContainer"]
-position = Vector2(860, 0)
-color = Color(1, 1, 1, 0)
-energy = 50.0
-shadow_enabled = true
-shadow_color = Color(0.270588, 0.270588, 0.270588, 0.74902)
-height = 0.36
-
 [node name="grid" type="GridContainer" parent="BoardContainer/CenterContainer"]
 layout_mode = 2
 theme_override_constants/h_separation = 25
