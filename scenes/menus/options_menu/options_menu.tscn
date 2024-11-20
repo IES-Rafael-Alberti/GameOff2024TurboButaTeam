@@ -73,7 +73,7 @@ alignment = 2
 
 [node name="Label" type="Label" parent="VBoxContainer/VBoxContainer2/WindowModeHbox"]
 layout_mode = 2
-text = "Window"
+text = "WINDOW_MODE_LABEL"
 
 [node name="WindowMode" type="OptionButton" parent="VBoxContainer/VBoxContainer2/WindowModeHbox"]
 layout_mode = 2
@@ -83,6 +83,20 @@ popup/item_1/text = "Borderless Windowed"
 popup/item_1/id = 1
 popup/item_2/text = "Fullscreen"
 popup/item_2/id = 2
+
+[node name="LanguageHbox" type="HBoxContainer" parent="VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer2/LanguageHbox"]
+layout_mode = 2
+text = "LANGUAGE_LABEL"
+
+[node name="LanguageSel" type="OptionButton" parent="VBoxContainer/VBoxContainer2/LanguageHbox"]
+layout_mode = 2
+item_count = 2
+popup/item_0/text = "English"
+popup/item_1/text = "Español"
+popup/item_1/id = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 0
@@ -100,4 +114,5 @@ text = "BACK_BUTTON"
 [connection signal="value_changed" from="VBoxContainer/VBoxContainer/HBoxContainer2/MusicVol" to="." method="_on_music_vol_value_changed"]
 [connection signal="value_changed" from="VBoxContainer/VBoxContainer/HBoxContainer3/SFXVol" to="." method="_on_sfx_vol_value_changed"]
 [connection signal="item_selected" from="VBoxContainer/VBoxContainer2/WindowModeHbox/WindowMode" to="." method="_on_option_button_item_selected"]
+[connection signal="item_selected" from="VBoxContainer/VBoxContainer2/LanguageHbox/LanguageSel" to="." method="_on_language_sel_item_selected"]
 [connection signal="pressed" from="MarginContainer/BackButton" to="." method="_on_back_button_pressed"]

@@ -5,6 +5,7 @@ extends Control
 @onready var sfx_vol: HSlider = $VBoxContainer/VBoxContainer/HBoxContainer3/SFXVol
 @onready var window_mode: OptionButton = $VBoxContainer/VBoxContainer2/HBoxContainer/WindowMode
 @onready var window_mode_hbox: HBoxContainer = $VBoxContainer/VBoxContainer2/WindowModeHbox
+@onready var language_sel = $VBoxContainer/VBoxContainer2/LanguageHbox/LanguageSel
 
 var master_bus
 var music_bus
@@ -35,3 +36,11 @@ func _on_option_button_item_selected(index: int) -> void:
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 		2:
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN)
+
+
+func _on_language_sel_item_selected(index):
+	match index:
+		0:
+			TranslationServer.set_locale("en")
+		1:
+			TranslationServer.set_locale("es")
