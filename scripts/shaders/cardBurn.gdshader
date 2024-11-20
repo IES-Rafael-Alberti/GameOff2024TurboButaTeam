@@ -1,5 +1,6 @@
 shader_type canvas_item;
 
+
 uniform sampler2D dissolve_texture : source_color;
 uniform float dissolve_value : hint_range(0,1);
 uniform float burn_size: hint_range(0.0, 1.0, 0.01);
@@ -17,4 +18,6 @@ void fragment(){
 	
 	COLOR.a *= threshold;
 	COLOR.rgb = mix(burn_color.rgb, main_texture.rgb, border);
+	
+	
 }

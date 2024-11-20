@@ -95,8 +95,6 @@ func selectBoss():
 	
 	#bossList.shuffle()
 	
-	print(bossList)
-	
 	#GameManager.pickedBoss = bossList[GameManager.bossNum]
 	#He cambiado esto para la primera demo, para que siempre salga el buey
 	GameManager.pickedBoss = bossList[0]

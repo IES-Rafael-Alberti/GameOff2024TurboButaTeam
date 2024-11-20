@@ -1,9 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://dup3wc5aw7n4e"]
+[gd_scene load_steps=13 format=3 uid="uid://dup3wc5aw7n4e"]
 
 [ext_resource type="Shader" path="res://scripts/shaders/cardBurn.gdshader" id="1_e0daq"]
 [ext_resource type="Script" path="res://scripts/card.gd" id="1_ykaut"]
 [ext_resource type="Texture2D" uid="uid://bhhnqxdinpgsp" path="res://assets/sprites/cards/card1.png" id="2_1mpjs"]
 [ext_resource type="Texture2D" uid="uid://cocc1wntb32l4" path="res://assets/shadersTextures/burnNoise.tres" id="2_avwfg"]
+[ext_resource type="Shader" path="res://scripts/shaders/cardShadow.gdshader" id="5_xpvmt"]
+[ext_resource type="Texture2D" uid="uid://0uapbypx8jf" path="res://assets/sprites/cards/Pangolín.png" id="6_srhcg"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0xhi6"]
 shader = ExtResource("1_e0daq")
@@ -49,7 +51,15 @@ _data = {
 "flip": SubResource("Animation_0curm")
 }
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1bwd2"]
+shader = ExtResource("5_xpvmt")
+shader_parameter/look_right = true
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_1gp7w"]
+polygon = PackedVector2Array(144, 196, 1, 198, 1, 2, 144, 3)
+
 [node name="Card" type="TextureButton"]
+z_index = 1
 material = SubResource("ShaderMaterial_0xhi6")
 custom_minimum_size = Vector2(140, 198)
 offset_right = 140.0
@@ -62,5 +72,15 @@ face = ExtResource("2_1mpjs")
 libraries = {
 "": SubResource("AnimationLibrary_omwnu")
 }
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+z_index = -1
+material = SubResource("ShaderMaterial_1bwd2")
+position = Vector2(70, 99)
+texture = ExtResource("6_srhcg")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_1gp7w")
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]

@@ -12,7 +12,6 @@ var countCouple = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	print(face)
 	back = GameManager.cardBack
 	set_texture_normal(back)
 	GameManager.BurnCards.connect(burnCard)
@@ -62,7 +61,7 @@ func isEqual(firstCard, secondCard):
 		var finalScriptAnimal = scriptAnimal.new()
 		finalScriptAnimal.action()
 	
-	if GameManager.countCouple == 8:
+	if GameManager.countCouple == 7:
 		GameManager.BoardCompleted.emit()
 		GameManager.countCouple = 0
 	GameManager.firstCardPicked = null
