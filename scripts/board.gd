@@ -75,6 +75,7 @@ func restartBoard():
 	finalCardList = []
 	clearBoard()
 	initBoard()
+	GameManager.doubleShift = true
 
 func UpdateProgressBar():
 	progress_bar.value = GameManager.healthPlayer

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dbw0bnugi6frl"
-path="res://.godot/imported/Rata.png-7bca31522a4359d1a0e3ae9610aa7026.ctex"
+uid="uid://0uapbypx8jf"
+path="res://.godot/imported/Pangolín.png-bf7460ee5a9cb3547a4d07f4b12f0d22.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Rata.png"
-dest_files=["res://.godot/imported/Rata.png-7bca31522a4359d1a0e3ae9610aa7026.ctex"]
+source_file="res://assets/sprites/cards/Pangolín.png"
+dest_files=["res://.godot/imported/Pangolín.png-bf7460ee5a9cb3547a4d07f4b12f0d22.ctex"]
 
 [params]
 

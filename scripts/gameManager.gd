@@ -65,3 +65,5 @@ var pickedBoss
 
 #Esta variable es la que hay que usar en el dialogo para saber que boss a seleccionado
 var bossNum = 0
+
+var doubleShift = true
