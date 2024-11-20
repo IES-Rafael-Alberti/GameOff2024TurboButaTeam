@@ -11,9 +11,7 @@ var bossListSceneTemp
 @onready var progress_bar: ProgressBar = $ProgressBar
 @onready var grid: GridContainer = $BoardContainer/CenterContainer/grid
 @onready var grid_container: GridContainer = $BossContainer/CenterContainer/GridContainer
-@onready var label: Label = $ProgressBar/Label
 @onready var progressBarShield: ProgressBar = $ProgressBarShield
-@onready var labelShield: Label = $ProgressBarShield/Label
 @onready var resetBoard: Button = $ResetBoard
 @onready var timerDamage: Timer = $ProgressBar/Timer
 @onready var damage_bar: ProgressBar = $ProgressBar/DamageBar
@@ -36,7 +34,6 @@ func _ready():
 	#Quitar visible al boton de reset
 	resetBoard.visible = false
 	
-	label.text = str(GameManager.healthPlayer) + " / " + str(GameManager.healthPlayer)
 	
 	GameManager.PlayerTakeDamage.connect(UpdateProgressBar)
 	GameManager.PlayerShield.connect(updateShield)
@@ -112,11 +109,9 @@ func selectBoss():
 func updateShield():
 	progressBarShield.max_value = shieldMaxValue
 	progressBarShield.value = GameManager.playerShield
-	labelShield.text = str(GameManager.playerShield) + " / " + str(shieldMaxValue)
 
 func initShield():
 	GameManager.playerShield = shieldMaxValue
-	labelShield.text = str(GameManager.playerShield) + " / " + str(shieldMaxValue)
 	progressBarShield.visible = true
 
 func removeShield():
@@ -132,4 +127,3 @@ func _on_button_pressed() -> void:
 
 func _on_timer_timeout() -> void:
 	damage_bar.value = GameManager.healthPlayer
-	label.text = str(GameManager.healthPlayer) + " / " + str(progress_bar.max_value)

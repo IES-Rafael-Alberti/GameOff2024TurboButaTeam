@@ -3,8 +3,6 @@ extends Node2D
 
 @onready var progress_bar: ProgressBar = $ProgressBar
 @onready var sprite_2d: Sprite2D = $Sprite2D
-@onready var label: Label = $ProgressBar/Label
-@onready var labelShield: Label = $ProgressBarShield/Label
 @onready var progressBarShield: ProgressBar = $ProgressBarShield
 @onready var battleLog: Label = $BattleLog
 @onready var damage_bar: ProgressBar = $ProgressBar/DamageBar
@@ -37,7 +35,6 @@ func _ready() -> void:
 	
 	newScriptBoss = scriptBoss.new()
 	
-	label.text = str(GameManager.healthBoss) + " / " + str(GameManager.healthBoss)
 	
 	sprite_2d.texture = textureBoss
 	
@@ -118,12 +115,10 @@ func UpdateProgressBar():
 func updateShield():
 	progressBarShield.max_value = shieldMaxValue
 	progressBarShield.value = GameManager.bossShield
-	labelShield.text = str(GameManager.bossShield) + " / " + str(shieldMaxValue)
 
 func initShield():
 	GameManager.bossShield = shieldMaxValue
 	progressBarShield.value = shieldMaxValue
-	labelShield.text = str(GameManager.bossShield) + " / " + str(shieldMaxValue)
 	progressBarShield.visible = true
 
 func removeShield():
@@ -133,4 +128,3 @@ func removeShield():
 
 func _on_timer_timeout() -> void:
 	damage_bar.value = GameManager.healthBoss
-	label.text = str(GameManager.healthBoss) + " / " + str(progress_bar.max_value)
