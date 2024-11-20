@@ -1,14 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://bnng3hk0wi7a"]
+[gd_scene load_steps=6 format=3 uid="uid://bnng3hk0wi7a"]
 
 [ext_resource type="Script" path="res://scripts/board.gd" id="1_s4gqu"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_frf6y"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_83o6t"]
-bg_color = Color(0.431228, 0.764041, 0.144401, 0.666667)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hqa7g"]
-bg_color = Color(0.509804, 0.901961, 0.164706, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5mgme"]
+bg_color = Color(0.725959, 0.583182, 7.70092e-07, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k7gpb"]
 bg_color = Color(0, 0, 0, 1)
@@ -16,8 +13,6 @@ expand_margin_left = 1.0
 expand_margin_top = 1.0
 expand_margin_right = 1.0
 expand_margin_bottom = 1.0
-shadow_color = Color(0, 0, 0, 0.27451)
-shadow_offset = Vector2(0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_okxa8"]
 bg_color = Color(1, 1, 1, 1)
@@ -48,9 +43,9 @@ anchor_top = 0.912
 anchor_right = 0.347
 anchor_bottom = 0.935
 offset_left = 0.199982
-offset_top = -0.0400391
+offset_top = -453.04
 offset_right = 0.159973
-offset_bottom = -0.200073
+offset_bottom = -453.2
 grow_horizontal = 0
 grow_vertical = 2
 theme_override_styles/background = SubResource("StyleBoxFlat_frf6y")
@@ -77,13 +72,12 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -447.0
-offset_top = -53.0
+offset_top = -506.0
 offset_right = 444.0
-offset_bottom = -25.0
+offset_bottom = -478.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_styles/background = SubResource("StyleBoxFlat_83o6t")
-theme_override_styles/fill = SubResource("StyleBoxFlat_hqa7g")
+theme_override_styles/fill = SubResource("StyleBoxFlat_5mgme")
 show_percentage = false
 
 [node name="Label" type="Label" parent="ProgressBar"]
@@ -106,6 +100,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/background = SubResource("StyleBoxFlat_k7gpb")
 theme_override_styles/fill = SubResource("StyleBoxFlat_okxa8")
+show_percentage = false
 
 [node name="Timer" type="Timer" parent="ProgressBar"]
 wait_time = 0.4
@@ -151,4 +146,5 @@ offset_right = 1650.0
 offset_bottom = 448.0
 text = "RESET BOARD"
 
+[connection signal="timeout" from="ProgressBar/Timer" to="." method="_on_timer_timeout"]
 [connection signal="pressed" from="ResetBoard" to="." method="_on_button_pressed"]

@@ -1,14 +1,21 @@
-[gd_scene load_steps=5 format=3 uid="uid://c1he8kika8fof"]
+[gd_scene load_steps=6 format=3 uid="uid://c1he8kika8fof"]
 
 [ext_resource type="Script" path="res://scripts/boss.gd" id="1_0mmkp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t5td4"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tfjnu"]
-bg_color = Color(1, 0, 0, 0.780392)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1sngq"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xqulr"]
 bg_color = Color(0.682353, 0.141176, 0.133333, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1im14"]
+bg_color = Color(0, 0, 0, 1)
+expand_margin_left = 1.0
+expand_margin_top = 1.0
+expand_margin_right = 1.0
+expand_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v3kqx"]
+bg_color = Color(1, 1, 1, 1)
 
 [node name="Boss" type="Node2D"]
 position = Vector2(0, -224)
@@ -51,8 +58,7 @@ offset_right = 421.0
 offset_bottom = 80.0
 grow_horizontal = 2
 scale = Vector2(1.05589, 0.947368)
-theme_override_styles/background = SubResource("StyleBoxFlat_tfjnu")
-theme_override_styles/fill = SubResource("StyleBoxFlat_1sngq")
+theme_override_styles/fill = SubResource("StyleBoxFlat_xqulr")
 show_percentage = false
 
 [node name="Label" type="Label" parent="ProgressBar"]
@@ -68,6 +74,21 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
+[node name="Timer" type="Timer" parent="ProgressBar"]
+wait_time = 0.4
+
+[node name="DamageBar" type="ProgressBar" parent="ProgressBar"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_1im14")
+theme_override_styles/fill = SubResource("StyleBoxFlat_v3kqx")
+show_percentage = false
+
 [node name="BattleLog" type="Label" parent="."]
 offset_left = -474.0
 offset_top = 99.0
@@ -78,3 +99,5 @@ theme_override_font_sizes/font_size = 24
 text = "dewdwe"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[connection signal="timeout" from="ProgressBar/Timer" to="." method="_on_timer_timeout"]

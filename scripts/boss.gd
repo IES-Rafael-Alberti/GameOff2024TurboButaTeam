@@ -7,6 +7,8 @@ extends Node2D
 @onready var labelShield: Label = $ProgressBarShield/Label
 @onready var progressBarShield: ProgressBar = $ProgressBarShield
 @onready var battleLog: Label = $BattleLog
+@onready var damage_bar: ProgressBar = $ProgressBar/DamageBar
+@onready var timerDamage: Timer = $ProgressBar/Timer
 
 @export var maxHealthBoss = 200
 @export var damageBoss = 20
@@ -27,8 +29,11 @@ func _ready() -> void:
 	GameManager.QuitBossShield.connect(removeShield)
 	GameManager.SelectActionBoss.connect(selectAction)
 	GameManager.healthBoss = maxHealthBoss
+	
 	progress_bar.max_value = GameManager.healthBoss
 	progress_bar.value = GameManager.healthBoss
+	damage_bar.max_value = GameManager.healthBoss
+	damage_bar.value = GameManager.healthBoss
 	
 	newScriptBoss = scriptBoss.new()
 	
@@ -104,8 +109,8 @@ func useHability():
 	newScriptBoss.specialAttack(specialDamage)
 
 func UpdateProgressBar():
+	timerDamage.start()
 	progress_bar.value = GameManager.healthBoss
-	label.text = str(GameManager.healthBoss) + " / " + str(progress_bar.max_value)
 	if progress_bar.value <= 0:
 		#TODO hacer que el boss se muera
 		print("ganaste")
@@ -124,3 +129,8 @@ func initShield():
 func removeShield():
 	progressBarShield.visible = false
 	GameManager.bossShield = 0
+
+
+func _on_timer_timeout() -> void:
+	damage_bar.value = GameManager.healthBoss
+	label.text = str(GameManager.healthBoss) + " / " + str(progress_bar.max_value)
