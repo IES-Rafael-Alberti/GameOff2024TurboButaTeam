@@ -1,4 +1,10 @@
 extends Node
 
 func specialAttack(specialDamage):
-	print("cobra")
+	GameManager.healthPlayer -= specialDamage
+	GameManager.PlayerTakeDamage.emit()
+	
+	if GameManager.isPoisoned:
+		GameManager.isPoisoned = false
+	else:
+		GameManager.isPoisoned = true

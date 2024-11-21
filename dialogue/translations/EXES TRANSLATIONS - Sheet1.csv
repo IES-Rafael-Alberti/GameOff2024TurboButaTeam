@@ -5,14 +5,14 @@ PLAY_BUTTON,Play,Jugar
 OPTIONS_BUTTON,Options,Ajustes
 ,,
 GAME,,
-,,
-,,
+testboss_name,OX,BUEY
+secondboss,COBRA,COBRA
 ,,
 ,,
 CINEMATICS,,
 CINEMATIC 1,,
 C1D1,Extinction is coming by.,La extinción se acerca.
-C1D2,You've been sent to fight an evil spirit who's rotting the souls of nearby animals.,Has sido enviado para luchar con un espíritu maligno que está pudriendo las almas de los animales cercanos.
+C1D2,You've been sent to fight an evil spirit who's rotting the souls of nearby animals.,Has sido enviado para luchar con un espíritu maligno que está pudriendo las almas de los animales.
 C1D3,This spirit is known as contamination itself.,El espíritu es conocido como la contaminación en sí.
 ,,
 C1D4,How can someone walk so confidently into this realm?,¿Cómo puedes andar tan tranquilamente por este páramo?
@@ -26,21 +26,46 @@ C1D11,Why am I destroying the forest?,¿Por qué estoy destruyendo el bosque?
 C1D11O1,"¿Does your presence bring with it the shadow of destruction, sweeping everything away?","¿Tu presencia trae consigo la sombra de la destrucción, arrasando con todo?"
 C1D11O2,"¿Is it your own greediness, chasing your own objectives, what corrupts the forest passing by?","¿Es tu propia codicia, buscando tus propios objetivos, la que corrompe el bosque a su paso?"
 C1D11O3,"¿Do you dwell here just for mere entertainment, like who menaces their prey, but away from risk?","¿Moras aquí solo por entretenimiento, como quien acecha sin prisa a su presa, pero sin ser amenazado?"
-C1D14,,
-C1D15,,
-C1D16,,
-C1D17,,
-C1D18,,
-C1D19,,
-C1D20,,
-,,
-,,
+C1D14,My answers don't come for free though.,Mis respuestas tienen un precio.
+C1D15,Let the test begin.,Que comience la prueba.
 ,,
 DIALOGUE,,
-BOSSFIGHT 1,,
-BF1D1,The brute strength of the ox will take you down.,La fuerza bruta del buey te derrotará
-BF1D2,,
-BF1D3,,
-BF1D4,,
-BF1D5,,
-BF1D6,,
+OX BF,,
+OX_BF_START1,I possess this animals spirit to take down on you.,Poseo el espíritu de este animal para derrotarte.
+OX_BF_START2,The brute strength of the ox will shred you.,La fuerza bruta del buey te destrozará.
+OX_BF_90HP,My answers to your question will unfold as you take down this spirit.,Mis respuestas a tu pregunta se desarrollarán en lo que derrotas a este espíritu.
+OX_BF_80HP,"I will say I don't destroy this forest on purpose, it's just a consequence of my action.","Diré que no destruyo este bosque a propósito, sino como consecuencia de mi acción."
+OX_BF_70HP,"I don't feel remorse from my doing, since it's in the name of our best interest.","No siento remordimiento, ya que todo esto es a cambio de nuestros mejores intereses."
+OX_BF_60HP,"However, I'm not responsible from my existence. I've been created and fueled by greed.","Sin embargo, no soy responsable de mi existencia. Fui creado y alimentado por la codicia."
+OX_BF_50HP,"It's the ones who created me who's left to wonder what to should be done with me, not to fight me like an enemy","Son los que me crearon los que deben concluir qué hacer conmigo, no combatirme como un enemigo."
+,,
+,,
+OX_BF_DEFEAT,"So, the mighty ox, all strength and no mind, shall be defeated.","Así, el poderoso buey, todo fuerza y nada de intelecto, debe ser derrotado."
+,,
+CINEMATIC 2,,
+C2D1,"So, your own greediness is the cause of all this destruction?","Así que, ¿tu propia codicia es la causa de toda esta destrucción?"
+C2D2,Guess you could portray it that way.,Supongo que puedes decirlo así. Aunque esa codicia no me pertenece a mi. sino a ellos.
+C2D3,You've been talking about the ones who created you...,Has estado hablando de los que te crearon...
+C2D4,"Who that may be, ominous figure?","¿De quién se trata, figura ominosa?"
+C2D5,Come on... you already know it.,Venga... ya lo sabes
+C2D5O1,"Is it the weather, destroying everything in its path without a care?","¿Es la meteorología, destruyendo todo a su paso sin importarle nada?"
+C2D5O2,"Is it mankind, poisoning the world with its own interests?","¿Es la humanidad, envenenando el mundo con sus propios intereses?"
+C2D5O3,"Is it mother nature itself, being whimsical with its own creation?","¿Es la propia madre naturaleza, siendo caprichosa con su propia creación?"
+C2D6,Earn your answer.,Gánate tu respuesta
+,,
+Cobra BF,,
+CB_BF_START1,I possess this animals spirit to take down on you.,Poseo el espíritu de este animal para derrotarte.
+CB_BF_START2,The poison of the cobra will kill you on illness.,El veneno de la cobra te matará en enfermedad.
+CB_BF_90HP,To find about my creators you must scrape the surface of this spirit.,Para saber sobre mis creadores debes rascar la superficie de este espíritu.
+CB_BF_80HP,The ones who tried to create me are not happy with me anymore.,Los que me crearon ya no están contentos conmigo.
+CB_BF_70HP,"You could say that i was an accident. Or even more, a consequence.","Podrías decir que fui un accidente. O, mejor dicho, una consecuencia."
+CB_BF_60HP,"The same entity created me, and sent you here.","La misma entidad me creó, y te mandó aquí."
+CB_BF_50HP,"Mankind, is responsible for both of us.",La humanidad es el responsable de esto.
+,,
+,,
+CB_BF_DEFEAT,"So, the decieving cobra, once their tricks are discovered, shall be defeated.","Así, el poderoso buey, todo fuerza y nada de intelecto, debe ser derrotado."
+,,
+CINEMATIC 3,,
+C3D1,,
+C3D2,,
+C3D3,,
