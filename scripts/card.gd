@@ -38,15 +38,28 @@ func _on_pressed():
 				GameManager.firstCardPicked = self
 				GameManager.QuitPlayerShield.emit()
 				GameManager.canFlip = false
-				await get_tree().create_timer(1).timeout
-				isSpecialCard(GameManager.firstCardPicked)
+				await get_tree().create_timer(0.4).timeout
+				if isSpecialCard(GameManager.firstCardPicked):
+					GameManager.specialCard.material.set_shader_parameter("isHighlight", true)
+					await get_tree().create_timer(1).timeout
+					GameManager.specialCard.material.set_shader_parameter("isHighlight", false)
+					GameManager.specialCard = null
+				
 				GameManager.canFlip = true
 		elif GameManager.firstCardPicked && !GameManager.secondCardPicked:
 				GameManager.secondCardPicked = self 
 				GameManager.canFlip = false
-				await get_tree().create_timer(1.5).timeout
+				await get_tree().create_timer(0.8).timeout
 				if !isSpecialCard(GameManager.firstCardPicked, GameManager.secondCardPicked):
 					isEqual(GameManager.firstCardPicked , GameManager.secondCardPicked)
+					if(GameManager.isCouple):
+						await get_tree().create_timer(1).timeout
+						GameManager.isCouple = false
+				else:
+					GameManager.specialCard.material.set_shader_parameter("isHighlight", true)
+					await get_tree().create_timer(1).timeout
+					GameManager.specialCard.material.set_shader_parameter("isHighlight", false)
+					GameManager.specialCard = null
 				GameManager.canFlip = true
 				
 				if GameManager.doubleShift:
@@ -60,24 +73,28 @@ func isEqual(firstCard, secondCard):
 		secondCard.voltear()
 	else:
 		GameManager.countCouple += 1
+		GameManager.isCouple = true
 		var finalScriptAnimal = scriptAnimal.new()
 		finalScriptAnimal.action()
-		#TODO add timer al activar el shader del brillo
-		#firstCard.material.set_shader_parameter("isHighlight", true)
-		#secondCard.material.set_shader_parameter("isHighlight", true)
-		#await get_tree().create_timer(1).timeout
-		#firstCard.material.set_shader_parameter("isHighlight", false)
-		#secondCard.material.set_shader_parameter("isHighlight", false)
+		#Activar el brillo de la pareja de cartas
+		firstCard.material.set_shader_parameter("isHighlight", true)
+		secondCard.material.set_shader_parameter("isHighlight", true)
 	
 	if GameManager.countCouple == 3:
 		GameManager.restartButtonVisible.emit()
 	
+	GameManager.firstCardPicked = null
+	GameManager.secondCardPicked = null
+	
+	await get_tree().create_timer(1).timeout
+	#Desactivar el brillo de la pareja de cartas
+	firstCard.material.set_shader_parameter("isHighlight", false)
+	secondCard.material.set_shader_parameter("isHighlight", false)
+		
 	if GameManager.countCouple == 7:
 		GameManager.BoardCompleted.emit()
 		GameManager.countCouple = 0
-	GameManager.firstCardPicked = null
-	GameManager.secondCardPicked = null
-		
+	
 
 func burnCardsRestart():
 	var cardShaderDissolveValue = self.material.get_shader_parameter("dissolve_value")
@@ -87,6 +104,7 @@ func burnCardsRestart():
 		var timer = Timer.new()
 		timer.wait_time = 0.1
 		timer.one_shot = true
+		timer.autostart = true
 		add_child(timer)
 		timer.start()
 		await timer.timeout
@@ -101,6 +119,7 @@ func burnCardsRestart():
 		var timer = Timer.new()
 		timer.wait_time = 0.1
 		timer.one_shot = true
+		timer.autostart = true
 		add_child(timer)
 		timer.start()
 		await timer.timeout
@@ -118,6 +137,7 @@ func burnCardsInit():
 		var timer = Timer.new()
 		timer.wait_time = 0.1
 		timer.one_shot = true
+		timer.autostart = true
 		add_child(timer)
 		timer.start()
 		await timer.timeout
@@ -133,6 +153,7 @@ func isSpecialCard(firstCard: Object = null, secondCard: Object = null) -> bool:
 		if firstCard.get_texture_normal() == faceSpecial2 || firstCard.get_texture_normal() == faceSpecial1:
 			var finalScriptAnimal = scriptAnimal.new()
 			finalScriptAnimal.action()
+			GameManager.specialCard = firstCard
 			GameManager.firstCardPicked = null
 			GameManager.secondCardPicked = null
 			return true
@@ -142,6 +163,7 @@ func isSpecialCard(firstCard: Object = null, secondCard: Object = null) -> bool:
 			var finalScriptAnimal = scriptAnimal.new()
 			finalScriptAnimal.action()
 			firstCard.voltear()
+			GameManager.specialCard = secondCard
 			GameManager.firstCardPicked = null
 			GameManager.secondCardPicked = null
 			return true

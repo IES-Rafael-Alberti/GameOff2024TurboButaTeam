@@ -73,3 +73,7 @@ var pickedBoss
 var bossNum = 0
 
 var doubleShift = true
+
+var isCouple = false
+
+var specialCard
