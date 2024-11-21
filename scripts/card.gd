@@ -27,6 +27,9 @@ func voltear():
 		set_texture_normal(face)
 		isFlipped = true
 	else:
+		animationPlayer.play("flip")
+		shadowAnimationPlayer.play("flip")
+		await get_tree().create_timer(0.2).timeout
 		set_texture_normal(back)
 		isFlipped = false
 	
