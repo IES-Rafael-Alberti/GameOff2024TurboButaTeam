@@ -71,6 +71,7 @@ func initBoard():
 		var cardTemp = i.duplicate()
 		grid.add_child(cardTemp)
 		
+	GameManager.BurnCardsInit.emit()
 
 func clearBoard():
 	var cardsInGrid = grid.get_children()

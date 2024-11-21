@@ -48,6 +48,8 @@ signal InitPlayerShield
 
 signal BurnCards
 
+signal BurnCardsInit
+
 signal BossShield
 
 signal QuitBossShield

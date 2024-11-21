@@ -15,7 +15,8 @@ var countCouple = 0
 func _ready():
 	back = GameManager.cardBack
 	set_texture_normal(back)
-	GameManager.BurnCards.connect(burnCard)
+	GameManager.BurnCards.connect(burnCardsRestart)
+	GameManager.BurnCardsInit.connect(burnCardsInit)
 
 	
 func voltear():
@@ -28,7 +29,7 @@ func voltear():
 	else:
 		set_texture_normal(back)
 		isFlipped = false
-
+	
 func _on_pressed():
 	if isFlipped == false && GameManager.canFlip && GameManager.isPlayerPhase:
 		voltear()
@@ -61,6 +62,12 @@ func isEqual(firstCard, secondCard):
 		GameManager.countCouple += 1
 		var finalScriptAnimal = scriptAnimal.new()
 		finalScriptAnimal.action()
+		#TODO add timer al activar el shader del brillo
+		#firstCard.material.set_shader_parameter("isHighlight", true)
+		#secondCard.material.set_shader_parameter("isHighlight", true)
+		#await get_tree().create_timer(1).timeout
+		#firstCard.material.set_shader_parameter("isHighlight", false)
+		#secondCard.material.set_shader_parameter("isHighlight", false)
 	
 	if GameManager.countCouple == 3:
 		GameManager.restartButtonVisible.emit()
@@ -72,7 +79,7 @@ func isEqual(firstCard, secondCard):
 	GameManager.secondCardPicked = null
 		
 
-func burnCard():
+func burnCardsRestart():
 	var cardShaderDissolveValue = self.material.get_shader_parameter("dissolve_value")
 	var frames = 5
 	
@@ -87,6 +94,7 @@ func burnCard():
 		self.material.set_shader_parameter("dissolve_value", cardShaderDissolveValue)
 		timer.queue_free()
 		
+		
 	await get_tree().create_timer(1).timeout
 	
 	for i in frames:
@@ -100,6 +108,25 @@ func burnCard():
 		self.material.set_shader_parameter("dissolve_value", cardShaderDissolveValue)
 		timer.queue_free()
 		
+
+func burnCardsInit():
+	var cardShaderDissolveValue = self.material.get_shader_parameter("dissolve_value")
+	var frames = 5
+	cardShaderDissolveValue = 0
+	
+	for i in frames:
+		var timer = Timer.new()
+		timer.wait_time = 0.1
+		timer.one_shot = true
+		add_child(timer)
+		timer.start()
+		await timer.timeout
+		cardShaderDissolveValue += 0.2
+		self.material.set_shader_parameter("dissolve_value", cardShaderDissolveValue)
+		timer.queue_free()
+		
+		
+	await get_tree().create_timer(1).timeout
 
 func isSpecialCard(firstCard: Object = null, secondCard: Object = null) -> bool:
 	if firstCard != null:
