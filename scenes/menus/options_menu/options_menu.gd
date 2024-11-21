@@ -47,3 +47,11 @@ func _on_language_sel_item_selected(index):
 		1:
 			language = "es"
 	TranslationServer.set_locale(language)
+
+func save_settings():
+	SaveManager.settings_file.Language = language
+	SaveManager.settings_file.MasterVol = AudioServer.get_bus_volume_db(master_bus)
+	SaveManager.settings_file.MusicVol = AudioServer.get_bus_volume_db(music_bus)
+	SaveManager.settings_file.SFXVol = AudioServer.get_bus_volume_db(sfx_bus)
+	if OS.get_name() != "Web":
+		SaveManager.settings_file.windowMode = DisplayServer.window_get_mode()

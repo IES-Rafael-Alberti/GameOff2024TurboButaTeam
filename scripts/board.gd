@@ -29,7 +29,6 @@ func _ready():
 	progress_bar.value = GameManager.healthPlayer
 	damage_bar.max_value = GameManager.healthPlayer
 	damage_bar.value = GameManager.healthPlayer
-	
 	#Quitar visible al shield del player
 	progressBarShield.visible = false
 	
