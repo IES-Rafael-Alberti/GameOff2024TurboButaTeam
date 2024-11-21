@@ -3,22 +3,6 @@
 [ext_resource type="Script" path="res://scenes/cinematics/first_cinematic.gd" id="1_h5nmc"]
 [ext_resource type="Texture2D" uid="uid://x7dmuirc4lwf" path="res://assets/backgrounds/FirstCinematicBG.png" id="2_83y4j"]
 
-[sub_resource type="Animation" id="Animation_qp2gl"]
-resource_name = "start"
-length = 5.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ForestBG:self_modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-
 [sub_resource type="Animation" id="Animation_60kur"]
 length = 0.001
 tracks/0/type = "value"
@@ -50,6 +34,22 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_qp2gl"]
+resource_name = "start"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ForestBG:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5meh1"]
 _data = {
 "RESET": SubResource("Animation_60kur"),
@@ -67,8 +67,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -3.0
 offset_top = -2.0
-offset_right = 1729.0
-offset_bottom = 926.0
+offset_right = 1917.0
+offset_bottom = 1078.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
@@ -83,6 +83,6 @@ autoplay = "start"
 
 [node name="ForestBG" type="Sprite2D" parent="."]
 self_modulate = Color(1, 1, 1, 0)
-position = Vector2(860.956, 460)
-scale = Vector2(1.0087, 1.0087)
+position = Vector2(955.737, 535.999)
+scale = Vector2(1.11891, 1.17392)
 texture = ExtResource("2_83y4j")

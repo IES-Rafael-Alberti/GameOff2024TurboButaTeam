@@ -59,9 +59,11 @@ func isEqual(firstCard, secondCard):
 		secondCard.voltear()
 	else:
 		GameManager.countCouple += 1
-		#TODO hacer que se realice la accion de las cartas flipeadas
 		var finalScriptAnimal = scriptAnimal.new()
 		finalScriptAnimal.action()
+	
+	if GameManager.countCouple == 3:
+		GameManager.restartButtonVisible.emit()
 	
 	if GameManager.countCouple == 7:
 		GameManager.BoardCompleted.emit()
