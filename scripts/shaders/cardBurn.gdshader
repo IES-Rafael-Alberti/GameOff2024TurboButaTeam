@@ -22,19 +22,19 @@ uniform float offset = 2.0;
 /**/
 
 void fragment(){
-	
+
 /*
 	BURN SHADER
 */
 if(isBurning){
-	
+
     vec4 main_texture = texture(TEXTURE, UV);
     vec4 noise_texture = texture(dissolve_texture, UV);
 
 	float burn_size_step = burn_size * step(0.001, dissolve_value) * step(dissolve_value, 0.999);
 	float threshold = smoothstep(noise_texture.x-burn_size_step, noise_texture.x, dissolve_value);
 	float border = smoothstep(noise_texture.x, noise_texture.x + burn_size_step, dissolve_value);
-	
+
 	COLOR.a *= threshold;
 	COLOR.rgb = mix(burn_color.rgb, main_texture.rgb, border);
 }
@@ -44,11 +44,11 @@ if(isBurning){
 	HIGHLIGHT SHADER
 */
 if(isHighlight){
-	
+
 // Configuración del tiempo con pausa al final del recorrido
     float cycle_duration = offset + pause_duration; // Duración total del ciclo
     float adjusted_time = mod(TIME * speed, cycle_duration);
-    
+
     // Movimiento de la línea con pausa (invertido, de derecha a izquierda)
     float line_position;
     if (adjusted_time <= offset) {
@@ -56,7 +56,7 @@ if(isHighlight){
     } else {
         line_position = -0.3; // Pausa
     }
-    
+
     // Rotación diagonal de la línea
     vec2 rotated_uv = vec2(UV.x + UV.y, UV.y - UV.x) * 0.5;
     float dist = abs(rotated_uv.x - line_position);
@@ -75,5 +75,5 @@ if(isHighlight){
     COLOR = vec4(final_color, base_texture.a * alpha_mask);
 	/**/
 }
-	
+
 }
