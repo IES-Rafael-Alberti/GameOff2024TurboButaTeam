@@ -155,6 +155,7 @@ text = "PAUSE"
 
 [node name="FightMusic" type="AudioStreamPlayer2D" parent="Sounds/Music"]
 stream = ExtResource("5_y8wj6")
+volume_db = -20.0
 autoplay = true
 bus = &"Music"
 
@@ -162,10 +163,12 @@ bus = &"Music"
 
 [node name="FireReroll" type="AudioStreamPlayer2D" parent="Sounds/SFX"]
 stream = ExtResource("4_pnmuv")
+volume_db = 10.0
 bus = &"SFX"
 
 [node name="GettingHit" type="AudioStreamPlayer2D" parent="Sounds/SFX"]
 stream = ExtResource("6_sxty8")
+volume_db = 5.0
 
 [connection signal="timeout" from="ProgressBar/Timer" to="." method="_on_timer_timeout"]
 [connection signal="pressed" from="ResetBoard" to="." method="_on_button_pressed"]
