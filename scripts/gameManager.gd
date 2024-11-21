@@ -56,6 +56,10 @@ signal SelectActionBoss
 
 signal restartButtonVisible
 
+signal changeVisibleCadenas
+
+signal TurnBoss
+
 var bossIsCharging
 
 var isPoisoned
