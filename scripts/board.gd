@@ -71,6 +71,7 @@ func initBoard():
 		var cardTemp = i.duplicate()
 		grid.add_child(cardTemp)
 		
+	GameManager.BurnCardsInit.emit()
 
 func clearBoard():
 	var cardsInGrid = grid.get_children()
@@ -79,6 +80,8 @@ func clearBoard():
 
 func restartBoard():
 	finalCardList = []
+	GameManager.BurnCards.emit()
+	await get_tree().create_timer(1.5).timeout
 	clearBoard()
 	initBoard()
 	GameManager.doubleShift = true
@@ -100,6 +103,9 @@ func selectBoss():
 	
 	bossList.shuffle()
 	
+	#GameManager.pickedBoss = bossList[GameManager.bossNum]
+	#He cambiado esto para la primera demo, para que siempre salga el buey
+	GameManager.pickedBoss = bossList[0]
 	GameManager.pickedBoss = bossList[GameManager.bossNum]
 	
 	var bossTemp = GameManager.pickedBoss.duplicate()

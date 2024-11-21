@@ -46,6 +46,10 @@ signal QuitPlayerShield
 
 signal InitPlayerShield
 
+signal BurnCards
+
+signal BurnCardsInit
+
 signal BossShield
 
 signal QuitBossShield
@@ -69,3 +73,7 @@ var pickedBoss
 var bossNum = 0
 
 var doubleShift = true
+
+var isCouple = false
+
+var specialCard
