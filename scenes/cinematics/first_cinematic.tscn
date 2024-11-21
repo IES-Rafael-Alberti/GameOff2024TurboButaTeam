@@ -1,10 +1,15 @@
-[gd_scene load_steps=11 format=3 uid="uid://1e1e8jbgxyp0"]
+[gd_scene load_steps=16 format=3 uid="uid://1e1e8jbgxyp0"]
 
 [ext_resource type="Script" path="res://scenes/cinematics/first_cinematic.gd" id="1_h5nmc"]
 [ext_resource type="Texture2D" uid="uid://x7dmuirc4lwf" path="res://assets/backgrounds/FirstCinematicBG.png" id="2_83y4j"]
 [ext_resource type="Texture2D" uid="uid://bl3pktp7rf7bq" path="res://assets/sprites/figure.png" id="3_ogqs5"]
 [ext_resource type="Texture2D" uid="uid://ejepl1fvfn3j" path="res://assets/sprites/cuadrotextoCinematic.png" id="4_nqe1i"]
 [ext_resource type="AudioStream" uid="uid://c8eoaxir81vl6" path="res://assets/sound/music/dark_forest.ogg" id="5_i0ma7"]
+[ext_resource type="Texture2D" uid="uid://bpji0c018j42b" path="res://assets/backgrounds/firstCinematic/forestBG.png" id="6_d4xir"]
+[ext_resource type="Texture2D" uid="uid://cng70baed48wn" path="res://assets/backgrounds/firstCinematic/ab_der_plants.png" id="7_7ew3d"]
+[ext_resource type="Texture2D" uid="uid://dsott1fpgb5ov" path="res://assets/backgrounds/firstCinematic/ab_izq_plants.png" id="8_o4a5m"]
+[ext_resource type="Texture2D" uid="uid://ckiolotiijjtb" path="res://assets/backgrounds/firstCinematic/arr-izq.png" id="9_eemvw"]
+[ext_resource type="Texture2D" uid="uid://d0nxypabjathg" path="res://assets/backgrounds/firstCinematic/arr_der.png" id="10_rw8ho"]
 
 [sub_resource type="Animation" id="Animation_60kur"]
 length = 0.001
@@ -177,6 +182,7 @@ _data = {
 script = ExtResource("1_h5nmc")
 
 [node name="Background" type="ColorRect" parent="."]
+visible = false
 custom_minimum_size = Vector2(100, 50)
 anchors_preset = 15
 anchor_right = 1.0
@@ -221,3 +227,44 @@ volume_db = -30.0
 autoplay = true
 attenuation = 1e-05
 bus = &"Music"
+
+[node name="Background2" type="Node2D" parent="."]
+
+[node name="Parallax2D6" type="Parallax2D" parent="Background2"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Background2/Parallax2D6"]
+position = Vector2(959.111, 539.5)
+scale = Vector2(0.500463, 0.500463)
+texture = ExtResource("6_d4xir")
+
+[node name="Parallax2D3" type="Parallax2D" parent="Background2"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Background2/Parallax2D3"]
+position = Vector2(963.555, 542)
+scale = Vector2(0.498148, 0.498148)
+texture = ExtResource("9_eemvw")
+
+[node name="Parallax2D4" type="Parallax2D" parent="Background2"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Background2/Parallax2D4"]
+position = Vector2(965.333, 543)
+scale = Vector2(0.497222, 0.497222)
+texture = ExtResource("10_rw8ho")
+
+[node name="Parallax2D5" type="Parallax2D" parent="Background2"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Background2/Parallax2D5"]
+
+[node name="Parallax2D" type="Parallax2D" parent="Background2"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Background2/Parallax2D"]
+position = Vector2(960, 540)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7_7ew3d")
+
+[node name="Parallax2D2" type="Parallax2D" parent="Background2"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Background2/Parallax2D2"]
+position = Vector2(962.667, 541.5)
+scale = Vector2(0.498611, 0.498611)
+texture = ExtResource("8_o4a5m")
