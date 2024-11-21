@@ -7,6 +7,8 @@ extends TextureButton
 @onready var animationPlayer = $AnimationPlayer
 @onready var shadowAnimationPlayer = $Shadow/ShadowAnimationPlayer
 
+@onready var card_flip = $CardFlip
+
 var back
 var isFlipped = false
 var countCouple = 0
@@ -21,6 +23,7 @@ func _ready():
 	
 func voltear():
 	if isFlipped == false:
+		card_flip.play()
 		animationPlayer.play("flip")
 		shadowAnimationPlayer.play("flip")
 		await get_tree().create_timer(0.2).timeout
