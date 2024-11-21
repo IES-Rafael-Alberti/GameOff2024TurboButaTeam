@@ -3,14 +3,14 @@ extends Node2D
 
 @onready var progress_bar: ProgressBar = $ProgressBar
 @onready var sprite_2d: Sprite2D = $Sprite2D
-@onready var label: Label = $ProgressBar/Label
-@onready var labelShield: Label = $ProgressBar/ProgressBarShield/Label
-@onready var progressBarShield: ProgressBar = $ProgressBar/ProgressBarShield
-@onready var battleLog: Label = $BattleLog
+@onready var progressBarShield: ProgressBar = $ProgressBarShield
+@onready var damage_bar: ProgressBar = $ProgressBar/DamageBar
+@onready var timerDamage: Timer = $ProgressBar/Timer
+@onready var battleLog: Label = $ColorRect/BattleLog
 
 @export var maxHealthBoss = 200
 @export var damageBoss = 20
-@export var specialDamage = 20
+@export var specialDamage = 10
 @export var scriptBoss: Script
 @export var textureBoss = Texture
 
@@ -27,12 +27,14 @@ func _ready() -> void:
 	GameManager.QuitBossShield.connect(removeShield)
 	GameManager.SelectActionBoss.connect(selectAction)
 	GameManager.healthBoss = maxHealthBoss
+	
 	progress_bar.max_value = GameManager.healthBoss
 	progress_bar.value = GameManager.healthBoss
+	damage_bar.max_value = GameManager.healthBoss
+	damage_bar.value = GameManager.healthBoss
 	
 	newScriptBoss = scriptBoss.new()
 	
-	label.text = str(GameManager.healthBoss) + " / " + str(GameManager.healthBoss)
 	
 	sprite_2d.texture = textureBoss
 	
@@ -46,6 +48,10 @@ func _process(delta: float) -> void:
 	if !GameManager.isPlayerPhase:
 		if shieldIsActive:
 			GameManager.QuitBossShield.emit()
+		#Si ya está envenenado, vuelve a hacer daño y quita el veneno
+		if GameManager.isPoisoned:
+			useHability()
+		
 		doAction(action)
 		GameManager.isPlayerPhase = true
 		GameManager.SelectActionBoss.emit()
@@ -100,8 +106,8 @@ func useHability():
 	newScriptBoss.specialAttack(specialDamage)
 
 func UpdateProgressBar():
+	timerDamage.start()
 	progress_bar.value = GameManager.healthBoss
-	label.text = str(GameManager.healthBoss) + " / " + str(progress_bar.max_value)
 	if progress_bar.value <= 0:
 		#TODO hacer que el boss se muera
 		print("ganaste")
@@ -109,14 +115,16 @@ func UpdateProgressBar():
 func updateShield():
 	progressBarShield.max_value = shieldMaxValue
 	progressBarShield.value = GameManager.bossShield
-	labelShield.text = str(GameManager.bossShield) + " / " + str(shieldMaxValue)
 
 func initShield():
 	GameManager.bossShield = shieldMaxValue
 	progressBarShield.value = shieldMaxValue
-	labelShield.text = str(GameManager.bossShield) + " / " + str(shieldMaxValue)
 	progressBarShield.visible = true
 
 func removeShield():
 	progressBarShield.visible = false
 	GameManager.bossShield = 0
+
+
+func _on_timer_timeout() -> void:
+	damage_bar.value = GameManager.healthBoss

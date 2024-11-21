@@ -1,48 +1,64 @@
 [gd_scene load_steps=13 format=3 uid="uid://bnmf1ucjb1p7o"]
 
 [ext_resource type="PackedScene" uid="uid://dup3wc5aw7n4e" path="res://scenes/card.tscn" id="1_c275a"]
-[ext_resource type="Texture2D" uid="uid://bcfhluciou51s" path="res://assets/sprites/cards/pangolin.png" id="2_gs6ut"]
+[ext_resource type="Texture2D" uid="uid://0uapbypx8jf" path="res://assets/sprites/cards/Pangolín.png" id="2_q32f4"]
 [ext_resource type="Script" path="res://scripts/cards/cardAttack.gd" id="3_jmysu"]
-[ext_resource type="Script" path="res://scripts/cards/cardDecreaseDef.gd" id="3_wrheb"]
-[ext_resource type="Texture2D" uid="uid://bhhnqxdinpgsp" path="res://assets/sprites/cards/card1.png" id="4_htghg"]
-[ext_resource type="Texture2D" uid="uid://daa2odq7tvuu5" path="res://assets/sprites/cards/card2.png" id="6_btg4s"]
-[ext_resource type="Texture2D" uid="uid://d0sggx17wkpyf" path="res://assets/sprites/cards/card3.png" id="7_7gy5y"]
+[ext_resource type="Texture2D" uid="uid://beycxabxco3rd" path="res://assets/sprites/cards/Grulla.png" id="4_bdfnt"]
+[ext_resource type="Texture2D" uid="uid://biff2lb2u6cg8" path="res://assets/sprites/cards/card5.png" id="5_ec1na"]
+[ext_resource type="Script" path="res://scripts/cards/doubleShift.gd" id="8_yseqm"]
+[ext_resource type="Texture2D" uid="uid://dbw0bnugi6frl" path="res://assets/sprites/cards/Rata.png" id="9_fnnb1"]
 [ext_resource type="Texture2D" uid="uid://222xm28mkygh" path="res://assets/sprites/cards/card4.png" id="9_m2jmn"]
-[ext_resource type="Texture2D" uid="uid://biff2lb2u6cg8" path="res://assets/sprites/cards/card5.png" id="10_2476k"]
-[ext_resource type="Texture2D" uid="uid://eiox44j3dq46" path="res://assets/sprites/cards/card6.png" id="11_aonaa"]
+[ext_resource type="Texture2D" uid="uid://oci2bgr0e3gf" path="res://assets/sprites/cards/Mofeta.png" id="9_q0tic"]
+[ext_resource type="Script" path="res://scripts/cards/cardDecreaseDef.gd" id="10_1chyv"]
 [ext_resource type="Script" path="res://scripts/cards/cardAttackUnderShield.gd" id="11_qu0kd"]
 [ext_resource type="Script" path="res://scripts/cards/cardShield.gd" id="13_qse35"]
 
 [node name="CardList" type="Node2D"]
 
 [node name="Card1" parent="." instance=ExtResource("1_c275a")]
-face = ExtResource("2_gs6ut")
+face = ExtResource("2_q32f4")
 scriptAnimal = ExtResource("13_qse35")
+faceSpecial1 = ExtResource("9_m2jmn")
+faceSpecial2 = ExtResource("5_ec1na")
 
 [node name="Card2" parent="." instance=ExtResource("1_c275a")]
-face = ExtResource("2_gs6ut")
+face = ExtResource("2_q32f4")
 scriptAnimal = ExtResource("13_qse35")
+faceSpecial1 = ExtResource("9_m2jmn")
+faceSpecial2 = ExtResource("5_ec1na")
 
 [node name="Card3" parent="." instance=ExtResource("1_c275a")]
-face = ExtResource("4_htghg")
+face = ExtResource("4_bdfnt")
 scriptAnimal = ExtResource("3_jmysu")
+faceSpecial1 = ExtResource("9_m2jmn")
+faceSpecial2 = ExtResource("5_ec1na")
 
 [node name="Card4" parent="." instance=ExtResource("1_c275a")]
-face = ExtResource("6_btg4s")
+face = ExtResource("4_bdfnt")
 scriptAnimal = ExtResource("3_jmysu")
+faceSpecial1 = ExtResource("9_m2jmn")
+faceSpecial2 = ExtResource("5_ec1na")
 
 [node name="Card5" parent="." instance=ExtResource("1_c275a")]
-face = ExtResource("7_7gy5y")
-scriptAnimal = ExtResource("3_wrheb")
+face = ExtResource("9_m2jmn")
+scriptAnimal = ExtResource("8_yseqm")
+faceSpecial1 = ExtResource("9_m2jmn")
+faceSpecial2 = ExtResource("5_ec1na")
 
 [node name="Card6" parent="." instance=ExtResource("1_c275a")]
-face = ExtResource("9_m2jmn")
-scriptAnimal = ExtResource("3_wrheb")
+face = ExtResource("9_q0tic")
+scriptAnimal = ExtResource("10_1chyv")
+faceSpecial1 = ExtResource("9_m2jmn")
+faceSpecial2 = ExtResource("5_ec1na")
 
 [node name="Card7" parent="." instance=ExtResource("1_c275a")]
-face = ExtResource("10_2476k")
+face = ExtResource("9_fnnb1")
 scriptAnimal = ExtResource("11_qu0kd")
+faceSpecial1 = ExtResource("9_m2jmn")
+faceSpecial2 = ExtResource("5_ec1na")
 
 [node name="Card8" parent="." instance=ExtResource("1_c275a")]
-face = ExtResource("11_aonaa")
+face = ExtResource("9_fnnb1")
 scriptAnimal = ExtResource("11_qu0kd")
+faceSpecial1 = ExtResource("9_m2jmn")
+faceSpecial2 = ExtResource("5_ec1na")

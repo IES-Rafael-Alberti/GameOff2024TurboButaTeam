@@ -13,7 +13,7 @@ var playerShield = 0
 var bossShield = 0
 
 #Hace un preload del dorso de la carta
-var cardBack = preload("res://assets/sprites/cards/cardBack.png")
+var cardBack = preload("res://assets/sprites/cards/reverso.png")
 
 #Guarda el nodo de la primera carta
 var firstCardPicked
@@ -54,7 +54,11 @@ signal InitBossShield
 
 signal SelectActionBoss
 
+signal restartButtonVisible
+
 var bossIsCharging
+
+var isPoisoned
 
 #Multi de daño que se vuelve a poner en 1 cuando el boss muere
 var damageMultiply = 1
@@ -63,3 +67,5 @@ var pickedBoss
 
 #Esta variable es la que hay que usar en el dialogo para saber que boss a seleccionado
 var bossNum = 0
+
+var doubleShift = true

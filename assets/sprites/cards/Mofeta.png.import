@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bcfhluciou51s"
-path="res://.godot/imported/pangolin.png-a0f39ccee8d054ead79f1315dcab7e6f.ctex"
+uid="uid://oci2bgr0e3gf"
+path="res://.godot/imported/Mofeta.png-d6164da4d60a58afe506ea6026824e88.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/cards/pangolin.png"
-dest_files=["res://.godot/imported/pangolin.png-a0f39ccee8d054ead79f1315dcab7e6f.ctex"]
+source_file="res://assets/sprites/cards/Mofeta.png"
+dest_files=["res://.godot/imported/Mofeta.png-d6164da4d60a58afe506ea6026824e88.ctex"]
 
 [params]
 

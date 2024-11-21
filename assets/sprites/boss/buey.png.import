@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://xcm3kbwq63fx"
-path="res://.godot/imported/pangolin.webp-67c5fd12268a7f75d830d924889b83b1.ctex"
+uid="uid://c63ruxqgmk0bp"
+path="res://.godot/imported/buey.png-e25d6d847fec3f60a6bd6ef430f8350e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/cards/pangolin.webp"
-dest_files=["res://.godot/imported/pangolin.webp-67c5fd12268a7f75d830d924889b83b1.ctex"]
+source_file="res://assets/sprites/boss/buey.png"
+dest_files=["res://.godot/imported/buey.png-e25d6d847fec3f60a6bd6ef430f8350e.ctex"]
 
 [params]
 
