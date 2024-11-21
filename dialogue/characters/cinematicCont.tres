@@ -38,7 +38,7 @@ scene = ExtResource("5_kg6xp")
 overrides = {
 "box_color_custom": "Color(0, 0, 0, 0)",
 "box_color_use_global": "false",
-"box_margin_bottom": "90.0",
+"box_margin_bottom": "100.0",
 "box_size": "Vector2(800, 550)",
 "next_indicator_enabled": "false",
 "next_indicator_show_on_questions": "false",
@@ -62,6 +62,7 @@ overrides = {
 "font_custom": "\"res://assets/fonts/Colorfiction - Messy.ttf\"",
 "font_size_custom": "32.0",
 "font_use_global": "false",
+"sounds_volume": "-80.0",
 "text_color_use_global": "false"
 }
 
@@ -92,4 +93,4 @@ layer_info = {
 }
 base_overrides = {}
 layers = Array[ExtResource("1_l1vyd")]([])
-metadata/_latest_layer = "13"
+metadata/_latest_layer = "15"
