@@ -98,9 +98,10 @@ func selectBoss():
 	# Almacenamos todos los nodos(cartas) para mezclarlas
 	var bossList = bossListSceneTemp.get_children()
 	
-	bossList.shuffle()
+	#bossList.shuffle()
 	
-	GameManager.pickedBoss = bossList[GameManager.bossNum]
+	#GameManager.pickedBoss = bossList[GameManager.bossNum]
+	GameManager.pickedBoss = bossList[2]
 	
 	var bossTemp = GameManager.pickedBoss.duplicate()
 	
@@ -123,7 +124,6 @@ func restartButtonVisible():
 
 func _on_button_pressed() -> void:
 	GameManager.BoardCompleted.emit()
-
 
 func _on_timer_timeout() -> void:
 	damage_bar.value = GameManager.healthPlayer

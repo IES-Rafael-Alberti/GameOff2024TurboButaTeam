@@ -54,7 +54,10 @@ func _process(delta: float) -> void:
 		
 		doAction(action)
 		GameManager.isPlayerPhase = true
-		GameManager.SelectActionBoss.emit()
+		if !GameManager.bossIsCharging:
+			GameManager.SelectActionBoss.emit()
+		else:
+			battleLog.text = "BOSS_HABILITY_CHARGE"
 
 func selectAction():
 	var rng = RandomNumberGenerator.new()
@@ -62,27 +65,26 @@ func selectAction():
 	
 	if randomNum <= 60:
 		action = "atacar"
-		battleLog.text = "el boss va a usar atacar"
+		battleLog.text = "BOSS_ATTACK"
 		
 	elif randomNum <= 85 && randomNum > 60:
 		action = "escudo"
-		battleLog.text = "el boss va a usar escudo"
+		battleLog.text = "BOSS_SHIELD"
 	else:
 		action = "habilidad"
-		battleLog.text = "el boss va a usar habilidad"
+		battleLog.text = "BOSS_HABILITY"
 
 #TODO funcion que realice la accion del boss y al finalizar se ponga "GameManager.isPlayerPhase" en true
 func doAction(action):
-	
 	if GameManager.bossIsCharging:
 		useHability()
-	
-	if action == "atacar":
-		attack(damageBoss)
-	if action == "escudo":
-		shield()
-	if action == "habilidad":
-		useHability()
+	else:
+		if action == "atacar":
+			attack(damageBoss)
+		if action == "escudo":
+			shield()
+		if action == "habilidad":
+			useHability()
 
 func attack(damageBoss):
 	if GameManager.playerShield > 0:
