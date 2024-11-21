@@ -4,6 +4,8 @@ extends Control
 
 func _ready() -> void:
 	animation_player.play("splash_screen")
-
+	SaveManager.load_settings()
+	SaveManager.load_game()
+	
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	get_tree().change_scene_to_file("res://scenes/menus/main_menu/main_menu.tscn")

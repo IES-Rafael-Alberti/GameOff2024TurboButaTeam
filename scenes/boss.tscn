@@ -26,7 +26,6 @@ position = Vector2(0, 323)
 scale = Vector2(0.25, 0.25)
 
 [node name="ProgressBarShield" type="ProgressBar" parent="."]
-anchors_preset = -1
 offset_left = -469.0
 offset_top = 10.0
 offset_right = -304.0

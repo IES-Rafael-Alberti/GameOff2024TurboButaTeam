@@ -7,6 +7,7 @@ extends Control
 @onready var window_mode_hbox: HBoxContainer = $VBoxContainer/VBoxContainer2/WindowModeHbox
 @onready var language_sel = $VBoxContainer/VBoxContainer2/LanguageHbox/LanguageSel
 
+var language:String
 var master_bus
 var music_bus
 var sfx_bus
@@ -16,6 +17,7 @@ func _ready() -> void:
 	master_bus = AudioServer.get_bus_index("Master")
 	music_bus = AudioServer.get_bus_index("Music")
 	sfx_bus = AudioServer.get_bus_index("SFX")
+	language_sel
 func _on_back_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/menus/main_menu/main_menu.tscn")
 
@@ -41,6 +43,7 @@ func _on_option_button_item_selected(index: int) -> void:
 func _on_language_sel_item_selected(index):
 	match index:
 		0:
-			TranslationServer.set_locale("en")
+			language = "en"
 		1:
-			TranslationServer.set_locale("es")
+			language = "es"
+	TranslationServer.set_locale(language)
