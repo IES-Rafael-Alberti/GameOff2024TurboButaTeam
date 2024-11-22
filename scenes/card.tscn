@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://dup3wc5aw7n4e"]
+[gd_scene load_steps=14 format=3 uid="uid://dup3wc5aw7n4e"]
 
 [ext_resource type="Shader" path="res://scripts/shaders/cardBurn.gdshader" id="1_e0daq"]
 [ext_resource type="Script" path="res://scripts/card.gd" id="1_ykaut"]
 [ext_resource type="Texture2D" uid="uid://bhhnqxdinpgsp" path="res://assets/sprites/cards/card1.png" id="2_1mpjs"]
-[ext_resource type="Texture2D" uid="uid://cocc1wntb32l4" path="res://assets/shadersTextures/burnNoise.tres" id="2_avwfg"]
+[ext_resource type="Texture2D" uid="uid://cgr064vblhvdg" path="res://assets/shadersTextures/burnNoise.tres" id="2_avwfg"]
 [ext_resource type="Texture2D" uid="uid://dyfgvj3rviyac" path="res://assets/sprites/cards/sombra.png" id="5_rtvgj"]
+[ext_resource type="AudioStream" uid="uid://b1cpn7ik2rou1" path="res://assets/sound/sfx/cardFlip.wav" id="6_px46y"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0xhi6"]
 resource_local_to_scene = true
@@ -121,5 +122,10 @@ libraries = {
 "": SubResource("AnimationLibrary_t76fk")
 }
 autoplay = "RESET"
+
+[node name="CardFlip" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_px46y")
+volume_db = 9.0
+bus = &"SFX"
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]
