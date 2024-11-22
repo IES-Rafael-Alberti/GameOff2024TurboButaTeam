@@ -43,6 +43,7 @@ func _ready() -> void:
 	battleLog.text = ""
 	
 	selectAction()
+	print("elige primera accion")
 
 func _process(delta: float) -> void:
 	if !GameManager.isPlayerPhase:
@@ -54,12 +55,15 @@ func _process(delta: float) -> void:
 		
 		doAction(action)
 		GameManager.isPlayerPhase = true
+		GameManager.canFlip = true
 		GameManager.SelectActionBoss.emit()
 
 func selectAction():
 	var rng = RandomNumberGenerator.new()
 	var randomNum = int(rng.randf_range(1, 100.0))
 	
+	# TODO activar shader segun action
+
 	if randomNum <= 60:
 		action = "atacar"
 		battleLog.text = "el boss va a usar atacar"

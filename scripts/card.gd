@@ -71,6 +71,9 @@ func _on_pressed():
 				if GameManager.doubleShift:
 					GameManager.doubleShift = false
 				else:
+					GameManager.canFlip = false
+					print("empieza el turno del boss")
+					await get_tree().create_timer(3).timeout
 					GameManager.isPlayerPhase = false
 
 func isEqual(firstCard, secondCard):
