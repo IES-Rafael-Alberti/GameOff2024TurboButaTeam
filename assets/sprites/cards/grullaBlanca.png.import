@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0vmbnpyg1rc"
-path="res://.godot/imported/card7.png-850e65ef498b259a755afe0279852456.ctex"
+uid="uid://toq0mtxgfpop"
+path="res://.godot/imported/grullaBlanca.png-cc9be37f3f7689d80bccb707847f2aba.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/cards/card7.png"
-dest_files=["res://.godot/imported/card7.png-850e65ef498b259a755afe0279852456.ctex"]
+source_file="res://assets/sprites/cards/grullaBlanca.png"
+dest_files=["res://.godot/imported/grullaBlanca.png-cc9be37f3f7689d80bccb707847f2aba.ctex"]
 
 [params]
 

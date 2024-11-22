@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://biff2lb2u6cg8"
-path="res://.godot/imported/card5.png-ddf28647365e795ded66b23f3567f29a.ctex"
+uid="uid://caobsm7onjci6"
+path="res://.godot/imported/pangolinBlanco.png-0e9d90f2ca7c0cadaa147a86bc7c2cc2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/cards/card5.png"
-dest_files=["res://.godot/imported/card5.png-ddf28647365e795ded66b23f3567f29a.ctex"]
+source_file="res://assets/sprites/cards/pangolinBlanco.png"
+dest_files=["res://.godot/imported/pangolinBlanco.png-0e9d90f2ca7c0cadaa147a86bc7c2cc2.ctex"]
 
 [params]
 

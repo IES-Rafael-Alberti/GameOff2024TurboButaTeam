@@ -76,18 +76,19 @@ columns = 8
 [node name="ProgressBarShield" type="ProgressBar" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.851
-anchor_top = 0.017
-anchor_right = 0.958
-anchor_bottom = 0.04
-offset_left = 0.280029
-offset_top = 0.359999
-offset_right = 0.239868
-offset_bottom = 0.200058
+anchor_left = 0.883
+anchor_top = 0.022
+anchor_right = 0.908
+anchor_bottom = 0.141
+offset_left = 0.640015
+offset_top = 0.239998
+offset_right = 0.639893
+offset_bottom = -0.279999
 grow_horizontal = 0
 grow_vertical = 2
 theme_override_styles/background = SubResource("StyleBoxFlat_frf6y")
 max_value = 50.0
+fill_mode = 3
 show_percentage = false
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
@@ -113,7 +114,14 @@ metadata/_edit_lock_ = true
 
 [node name="DamageBar" type="ProgressBar" parent="ProgressBar"]
 z_index = -1
-layout_mode = 0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+fill_mode = 3
+show_percentage = false
 
 [node name="Timer" type="Timer" parent="ProgressBar"]
 wait_time = 0.4
