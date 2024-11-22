@@ -133,6 +133,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Label" type="Label" parent="Cards"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -147,7 +148,24 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "cards"
 
+[node name="HBoxContainer" type="HBoxContainer" parent="Cards"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button" type="Button" parent="Cards/HBoxContainer"]
+layout_mode = 2
+text = "<"
+
+[node name="TextureRect" type="TextureRect" parent="Cards/HBoxContainer"]
+layout_mode = 2
+
+[node name="Button2" type="Button" parent="Cards/HBoxContainer"]
+layout_mode = 2
+text = ">"
+
 [node name="Bosses" type="Control" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -175,6 +193,7 @@ grow_vertical = 2
 text = "bosses"
 
 [node name="Backgrounds" type="Control" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
