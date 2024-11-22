@@ -63,7 +63,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Background2:modulate")
+tracks/4/path = NodePath("ForestBG:modulate")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -75,10 +75,22 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath(".:modulate")
+tracks/5/path = NodePath("ForestBG/Details:modulate")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("ForestBG/ForestBG:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
@@ -115,15 +127,51 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_1ajnw"]
 resource_name = "end"
-length = 3.0
+length = 2.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
+tracks/0/path = NodePath("contaminationSprite:self_modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 3),
+"times": PackedFloat32Array(0, 1.43333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextBoxSprite:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.43333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ForestBG/Details:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.833333, 1.43333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ForestBG/ForestBG:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
@@ -171,7 +219,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Background2:modulate")
+tracks/3/path = NodePath("ForestBG:modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -192,58 +240,46 @@ _data = {
 [node name="FirstCinematic" type="Node2D"]
 script = ExtResource("1_h5nmc")
 
-[node name="Background" type="ColorRect" parent="."]
-custom_minimum_size = Vector2(100, 50)
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -3.0
-offset_top = -2.0
-offset_right = 1927.0
-offset_bottom = 1089.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0, 0, 0, 1)
+[node name="ForestBG" type="Node2D" parent="."]
 
-[node name="Background2" type="Node2D" parent="."]
+[node name="ForestBG" type="Parallax2D" parent="ForestBG"]
+scroll_scale = Vector2(0.9, 0.9)
 
-[node name="Parallax2D6" type="Parallax2D" parent="Background2"]
-
-[node name="Sprite2D" type="Sprite2D" parent="Background2/Parallax2D6"]
+[node name="Sprite2D" type="Sprite2D" parent="ForestBG/ForestBG"]
 position = Vector2(959.111, 539.5)
 scale = Vector2(0.500463, 0.500463)
 texture = ExtResource("6_d4xir")
 
-[node name="Parallax2D3" type="Parallax2D" parent="Background2"]
+[node name="Details" type="Node2D" parent="ForestBG"]
 
-[node name="Sprite2D" type="Sprite2D" parent="Background2/Parallax2D3"]
+[node name="ArrIzq" type="Parallax2D" parent="ForestBG/Details"]
+scroll_scale = Vector2(0.7, 0.7)
+
+[node name="Sprite2D" type="Sprite2D" parent="ForestBG/Details/ArrIzq"]
 position = Vector2(963.555, 542)
 scale = Vector2(0.498148, 0.498148)
 texture = ExtResource("9_eemvw")
 
-[node name="Parallax2D4" type="Parallax2D" parent="Background2"]
+[node name="ArrDer" type="Parallax2D" parent="ForestBG/Details"]
+scroll_scale = Vector2(0.8, 0.8)
 
-[node name="Sprite2D" type="Sprite2D" parent="Background2/Parallax2D4"]
+[node name="Sprite2D" type="Sprite2D" parent="ForestBG/Details/ArrDer"]
 position = Vector2(965.333, 543)
 scale = Vector2(0.497222, 0.497222)
 texture = ExtResource("10_rw8ho")
 
-[node name="Parallax2D5" type="Parallax2D" parent="Background2"]
+[node name="AbDer" type="Parallax2D" parent="ForestBG/Details"]
+scroll_scale = Vector2(0.8, 0.8)
 
-[node name="Sprite2D" type="Sprite2D" parent="Background2/Parallax2D5"]
-
-[node name="Parallax2D" type="Parallax2D" parent="Background2"]
-
-[node name="Sprite2D" type="Sprite2D" parent="Background2/Parallax2D"]
+[node name="Sprite2D" type="Sprite2D" parent="ForestBG/Details/AbDer"]
 position = Vector2(960, 540)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("7_7ew3d")
 
-[node name="Parallax2D2" type="Parallax2D" parent="Background2"]
+[node name="AbIzq" type="Parallax2D" parent="ForestBG/Details"]
+scroll_scale = Vector2(0.7, 0.7)
 
-[node name="Sprite2D" type="Sprite2D" parent="Background2/Parallax2D2"]
+[node name="Sprite2D" type="Sprite2D" parent="ForestBG/Details/AbIzq"]
 position = Vector2(962.667, 541.5)
 scale = Vector2(0.498611, 0.498611)
 texture = ExtResource("8_o4a5m")
@@ -261,6 +297,7 @@ scale = Vector2(0.479998, 0.479998)
 texture = ExtResource("3_ogqs5")
 
 [node name="TextBoxSprite" type="Sprite2D" parent="."]
+visible = false
 self_modulate = Color(1, 1, 1, 0)
 position = Vector2(959.333, 533.5)
 scale = Vector2(1.07685, 1.07685)

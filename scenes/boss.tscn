@@ -1,7 +1,49 @@
-[gd_scene load_steps=8 format=3 uid="uid://c1he8kika8fof"]
+[gd_scene load_steps=15 format=3 uid="uid://c1he8kika8fof"]
 
 [ext_resource type="Script" path="res://scripts/boss.gd" id="1_0mmkp"]
-[ext_resource type="Texture2D" uid="uid://bpwlra1srdd3x" path="res://assets/backgrounds/placeholder fondo boss.png" id="2_ksn16"]
+[ext_resource type="Texture2D" uid="uid://bpji0c018j42b" path="res://assets/backgrounds/firstCinematic/forestBG.png" id="2_wj4js"]
+[ext_resource type="Texture2D" uid="uid://ckiolotiijjtb" path="res://assets/backgrounds/firstCinematic/arr-izq.png" id="3_sco4r"]
+[ext_resource type="Texture2D" uid="uid://d0nxypabjathg" path="res://assets/backgrounds/firstCinematic/arr_der.png" id="4_ecdqa"]
+[ext_resource type="Texture2D" uid="uid://cng70baed48wn" path="res://assets/backgrounds/firstCinematic/ab_der_plants.png" id="5_fb0se"]
+[ext_resource type="Texture2D" uid="uid://dsott1fpgb5ov" path="res://assets/backgrounds/firstCinematic/ab_izq_plants.png" id="6_3u0y5"]
+
+[sub_resource type="Animation" id="Animation_xvr3h"]
+resource_name = "BackgroundFlashing"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.5, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.442911, 0.442911, 0.442911, 1), Color(0.303232, 0.303233, 0.303232, 1), Color(0.442911, 0.442911, 0.442911, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_fbyxy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.442911, 0.442911, 0.442911, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_aa1ra"]
+_data = {
+"BackgroundFlashing": SubResource("Animation_xvr3h"),
+"RESET": SubResource("Animation_fbyxy")
+}
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t5td4"]
 
@@ -24,9 +66,56 @@ bg_color = Color(1, 1, 1, 1)
 [node name="Boss" type="Node2D"]
 script = ExtResource("1_0mmkp")
 
-[node name="Background" type="Sprite2D" parent="."]
-z_index = -5
-texture = ExtResource("2_ksn16")
+[node name="ForestBG" type="Node2D" parent="."]
+modulate = Color(0.442911, 0.442911, 0.442911, 1)
+position = Vector2(-974, -333)
+scale = Vector2(1.065, 1.065)
+
+[node name="ForestBG" type="Parallax2D" parent="ForestBG"]
+scroll_scale = Vector2(0.9, 0.9)
+
+[node name="Sprite2D" type="Sprite2D" parent="ForestBG/ForestBG"]
+position = Vector2(959.111, 539.5)
+scale = Vector2(0.500463, 0.500463)
+texture = ExtResource("2_wj4js")
+
+[node name="ArrIzq" type="Parallax2D" parent="ForestBG"]
+scroll_scale = Vector2(0.7, 0.7)
+
+[node name="Sprite2D" type="Sprite2D" parent="ForestBG/ArrIzq"]
+position = Vector2(963.555, 542)
+scale = Vector2(0.498148, 0.498148)
+texture = ExtResource("3_sco4r")
+
+[node name="ArrDer" type="Parallax2D" parent="ForestBG"]
+scroll_scale = Vector2(0.8, 0.8)
+
+[node name="Sprite2D" type="Sprite2D" parent="ForestBG/ArrDer"]
+position = Vector2(965.333, 543)
+scale = Vector2(0.497222, 0.497222)
+texture = ExtResource("4_ecdqa")
+
+[node name="AbDer" type="Parallax2D" parent="ForestBG"]
+scroll_scale = Vector2(0.8, 0.8)
+
+[node name="Sprite2D" type="Sprite2D" parent="ForestBG/AbDer"]
+position = Vector2(960, 540)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_fb0se")
+
+[node name="AbIzq" type="Parallax2D" parent="ForestBG"]
+scroll_scale = Vector2(0.7, 0.7)
+
+[node name="Sprite2D" type="Sprite2D" parent="ForestBG/AbIzq"]
+position = Vector2(962.667, 541.5)
+scale = Vector2(0.498611, 0.498611)
+texture = ExtResource("6_3u0y5")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ForestBG"]
+libraries = {
+"": SubResource("AnimationLibrary_aa1ra")
+}
+autoplay = "BackgroundFlashing"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, 40)
