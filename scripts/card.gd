@@ -23,6 +23,7 @@ func _ready():
 	
 func voltear():
 	if isFlipped == false:
+		self.modulate = Color(1.0, 1.0, 1.0, 1)
 		card_flip.play()
 		animationPlayer.play("flip")
 		shadowAnimationPlayer.play("flip")
@@ -96,9 +97,8 @@ func isEqual(firstCard, secondCard):
 	#Desactivar el brillo de la pareja de cartas
 	firstCard.material.set_shader_parameter("isHighlight", false)
 	secondCard.material.set_shader_parameter("isHighlight", false)
-		
-	#TODO poner a 6 cuando tengamos todas las cartas
-	if GameManager.countCouple == 6:
+	
+	if GameManager.countCouple == 7:
 		GameManager.BoardCompleted.emit()
 		GameManager.countCouple = 0
 	
@@ -176,3 +176,11 @@ func isSpecialCard(firstCard: Object = null, secondCard: Object = null) -> bool:
 			return true
 	
 	return false
+
+func mostrarFace():
+	card_flip.play()
+	animationPlayer.play("flip")
+	shadowAnimationPlayer.play("flip")
+	await get_tree().create_timer(0.2).timeout
+	set_texture_normal(face)
+	self.modulate = Color(1.0, 1.0, 1.0, 0.78)
