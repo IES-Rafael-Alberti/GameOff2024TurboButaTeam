@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bewxte3f4lio7"
-path="res://.godot/imported/Grulla.png-a89e1bb4211429af7ca1e6ed6a959610.ctex"
+path="res://.godot/imported/grulla.png-eb84e0e11e82504e9c1b9378c4f5092a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/cards/Grulla.png"
-dest_files=["res://.godot/imported/Grulla.png-a89e1bb4211429af7ca1e6ed6a959610.ctex"]
+source_file="res://assets/sprites/cards/grulla.png"
+dest_files=["res://.godot/imported/grulla.png-eb84e0e11e82504e9c1b9378c4f5092a.ctex"]
 
 [params]
 
