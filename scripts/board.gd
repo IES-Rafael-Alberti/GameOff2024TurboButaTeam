@@ -16,6 +16,9 @@ var bossListSceneTemp
 @onready var timerDamage: Timer = $ProgressBar/Timer
 @onready var damage_bar: ProgressBar = $ProgressBar/DamageBar
 
+@onready var fire_reroll = $Sounds/SFX/FireReroll
+@onready var getting_hit = $Sounds/SFX/GettingHit
+
 # Cargamos la escena que contiene todas las cartas
 @onready var cardListScene = preload("res://scenes/cardList.tscn")
 @onready var bossListScene = preload("res://scenes/bossList.tscn")
@@ -27,7 +30,6 @@ func _ready():
 	progress_bar.value = GameManager.healthPlayer
 	damage_bar.max_value = GameManager.healthPlayer
 	damage_bar.value = GameManager.healthPlayer
-	
 	#Quitar visible al shield del player
 	progressBarShield.visible = false
 	
@@ -71,6 +73,7 @@ func initBoard():
 		var cardTemp = i.duplicate()
 		grid.add_child(cardTemp)
 		
+	GameManager.BurnCardsInit.emit()
 
 func clearBoard():
 	var cardsInGrid = grid.get_children()
@@ -78,13 +81,17 @@ func clearBoard():
 		grid.remove_child(i)
 
 func restartBoard():
+	fire_reroll.play()
 	finalCardList = []
+	GameManager.BurnCards.emit()
+	await get_tree().create_timer(1.5).timeout
 	clearBoard()
 	initBoard()
 	GameManager.doubleShift = true
 	resetBoard.disabled = true
 
 func UpdateProgressBar():
+	getting_hit.play()
 	timerDamage.start()
 	progress_bar.value = GameManager.healthPlayer
 	if progress_bar.value <= 0:
@@ -100,6 +107,9 @@ func selectBoss():
 	
 	bossList.shuffle()
 	
+	#GameManager.pickedBoss = bossList[GameManager.bossNum]
+	#He cambiado esto para la primera demo, para que siempre salga el buey
+	GameManager.pickedBoss = bossList[0]
 	GameManager.pickedBoss = bossList[GameManager.bossNum]
 	
 	var bossTemp = GameManager.pickedBoss.duplicate()
