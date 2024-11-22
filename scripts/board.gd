@@ -15,7 +15,6 @@ var bossListSceneTemp
 @onready var resetBoard: Button = $ResetBoard
 @onready var timerDamage: Timer = $ProgressBar/Timer
 @onready var damage_bar: ProgressBar = $ProgressBar/DamageBar
-@onready var cadenas: Node2D = $cadenas
 
 # Cargamos la escena que contiene todas las cartas
 @onready var cardListScene = preload("res://scenes/cardList.tscn")
@@ -35,14 +34,12 @@ func _ready():
 	#Quitar visible al boton de reset
 	resetBoard.disabled = true
 	
-	cadenas.visible = false
 	
 	GameManager.PlayerTakeDamage.connect(UpdateProgressBar)
 	GameManager.PlayerShield.connect(updateShield)
 	GameManager.InitPlayerShield.connect(initShield)
 	GameManager.QuitPlayerShield.connect(removeShield)
 	GameManager.restartButtonVisible.connect(restartButtonVisible)
-	GameManager.changeVisibleCadenas.connect(changeVisibleCadenas)
 	
 	bossListSceneTemp = bossListScene.instantiate()
 	
@@ -130,10 +127,3 @@ func _on_button_pressed() -> void:
 
 func _on_timer_timeout() -> void:
 	damage_bar.value = GameManager.healthPlayer
-
-func changeVisibleCadenas():
-	print("cadenas")
-	if !cadenas.visible:
-		cadenas.visible = true
-	else:
-		cadenas.visible = false

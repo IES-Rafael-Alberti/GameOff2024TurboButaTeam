@@ -1,7 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://bnng3hk0wi7a"]
+[gd_scene load_steps=7 format=3 uid="uid://bnng3hk0wi7a"]
 
 [ext_resource type="Script" path="res://scripts/board.gd" id="1_s4gqu"]
-[ext_resource type="Texture2D" uid="uid://5r3i46ylps8r" path="res://assets/sprites/cadena.png" id="2_r6ooj"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_frf6y"]
 
@@ -56,7 +55,7 @@ anchor_bottom = 1.0
 offset_top = 0.399963
 grow_horizontal = 2
 grow_vertical = 0
-color = Color(0.937255, 0.886275, 0.788235, 1)
+color = Color(0.25098, 0.25098, 0.25098, 1)
 
 [node name="BoardContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -159,44 +158,6 @@ offset_top = -0.440063
 offset_right = -1.04004
 offset_bottom = -2.36005
 text = "PAUSE"
-
-[node name="LabelTurn" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.308
-anchor_top = 0.437
-anchor_right = 0.691
-anchor_bottom = 0.563
-offset_left = 0.639954
-offset_top = 0.039978
-offset_right = -0.720093
-offset_bottom = -0.0400391
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 60
-text = "TU TURNO"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="cadenas" type="Node2D" parent="."]
-
-[node name="Panel" type="ColorRect" parent="cadenas"]
-offset_top = 616.0
-offset_right = 1920.0
-offset_bottom = 1080.0
-color = Color(0, 0, 0, 0.27451)
-
-[node name="Cadena2" type="Sprite2D" parent="cadenas"]
-position = Vector2(964.398, 821.653)
-rotation = 0.20485
-scale = Vector2(0.927183, 0.927183)
-texture = ExtResource("2_r6ooj")
-
-[node name="Cadena3" type="Sprite2D" parent="cadenas"]
-position = Vector2(961.551, 827.453)
-rotation = -0.218585
-scale = Vector2(0.92759, 0.92759)
-texture = ExtResource("2_r6ooj")
 
 [connection signal="timeout" from="ProgressBar/Timer" to="." method="_on_timer_timeout"]
 [connection signal="pressed" from="ResetBoard" to="." method="_on_button_pressed"]

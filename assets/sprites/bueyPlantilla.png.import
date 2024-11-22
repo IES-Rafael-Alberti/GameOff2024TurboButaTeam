@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5r3i46ylps8r"
-path="res://.godot/imported/cadena.png-cec31874c6412091d1ff34d40f050cab.ctex"
+uid="uid://cesa8yfymn8o0"
+path="res://.godot/imported/bueyPlantilla.png-0d116654a1bb748e5b66002c33f960fb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/cadena.png"
-dest_files=["res://.godot/imported/cadena.png-cec31874c6412091d1ff34d40f050cab.ctex"]
+source_file="res://assets/sprites/bueyPlantilla.png"
+dest_files=["res://.godot/imported/bueyPlantilla.png-0d116654a1bb748e5b66002c33f960fb.ctex"]
 
 [params]
 

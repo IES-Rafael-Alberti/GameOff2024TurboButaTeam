@@ -47,10 +47,7 @@ func _on_pressed():
 				if GameManager.doubleShift:
 					GameManager.doubleShift = false
 				else:
-					print("holaaa")
 					GameManager.isPlayerPhase = false
-					GameManager.changeVisibleCadenas.emit()
-					GameManager.TurnBoss.emit()
 
 func isEqual(firstCard, secondCard):
 	if firstCard.get_texture_normal() != secondCard.get_texture_normal():

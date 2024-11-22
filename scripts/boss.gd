@@ -7,7 +7,6 @@ extends Node2D
 @onready var damage_bar: ProgressBar = $ProgressBar/DamageBar
 @onready var timerDamage: Timer = $ProgressBar/Timer
 @onready var battleLog: Label = $ColorRect/BattleLog
-@onready var timerTurn: Timer = $TimerTurn
 
 @export var maxHealthBoss = 200
 @export var damageBoss = 20
@@ -27,7 +26,6 @@ func _ready() -> void:
 	GameManager.InitBossShield.connect(initShield)
 	GameManager.QuitBossShield.connect(removeShield)
 	GameManager.SelectActionBoss.connect(selectAction)
-	GameManager.TurnBoss.connect(turnBoss)
 	GameManager.healthBoss = maxHealthBoss
 	
 	progress_bar.max_value = GameManager.healthBoss
@@ -46,27 +44,20 @@ func _ready() -> void:
 	
 	selectAction()
 
-func turnBoss():
-	if shieldIsActive:
-		GameManager.QuitBossShield.emit()
-	#var timer = Timer.new()
-	#timer.wait_time = 1
-	#timer.one_shot = true
-	#add_child(timer)
-	#timer.start()
-	#await timer.timeout
-	#timer.queue_free()
-	
-	if GameManager.isPoisoned:
-		useHability()
-	
-	doAction(action)
-	GameManager.changeVisibleCadenas.emit()
-	if !GameManager.bossIsCharging:
-		GameManager.SelectActionBoss.emit()
-	else:
-		battleLog.text = "BOSS_HABILITY_CHARGE"
-	GameManager.isPlayerPhase = true
+func _process(delta: float) -> void:
+	if !GameManager.isPlayerPhase:
+		if shieldIsActive:
+			GameManager.QuitBossShield.emit()
+		#Si ya está envenenado, vuelve a hacer daño y quita el veneno
+		if GameManager.isPoisoned:
+			useHability()
+		
+		doAction(action)
+		GameManager.isPlayerPhase = true
+		if !GameManager.bossIsCharging:
+			GameManager.SelectActionBoss.emit()
+		else:
+			battleLog.text = "BOSS_HABILITY_CHARGE"
 
 func selectAction():
 	var rng = RandomNumberGenerator.new()
@@ -83,18 +74,16 @@ func selectAction():
 		action = "habilidad"
 		battleLog.text = "BOSS_HABILITY"
 
+#TODO funcion que realice la accion del boss y al finalizar se ponga "GameManager.isPlayerPhase" en true
 func doAction(action):
 	if GameManager.bossIsCharging:
 		useHability()
 	else:
 		if action == "atacar":
-			print("atacar")
 			attack(damageBoss)
 		if action == "escudo":
-			print("escudo")
 			shield()
 		if action == "habilidad":
-			print("habilidad")
 			useHability()
 
 func attack(damageBoss):
