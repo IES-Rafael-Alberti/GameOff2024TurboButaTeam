@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://oci2bgr0e3gf"
-path="res://.godot/imported/Mofeta.png-d6164da4d60a58afe506ea6026824e88.ctex"
+uid="uid://cwq17thvapoeu"
+path="res://.godot/imported/mofeta.png-0d44aa518f95821f0e1dde170b688678.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/cards/Mofeta.png"
-dest_files=["res://.godot/imported/Mofeta.png-d6164da4d60a58afe506ea6026824e88.ctex"]
+source_file="res://assets/sprites/cards/mofeta.png"
+dest_files=["res://.godot/imported/mofeta.png-0d44aa518f95821f0e1dde170b688678.ctex"]
 
 [params]
 
