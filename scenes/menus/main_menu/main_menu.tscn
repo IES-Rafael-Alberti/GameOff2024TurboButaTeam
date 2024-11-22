@@ -1,7 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://bwfhrm40fosdd"]
+[gd_scene load_steps=8 format=3 uid="uid://bwfhrm40fosdd"]
 
 [ext_resource type="Script" path="res://scenes/menus/main_menu/main_menu.gd" id="1_fjwii"]
-[ext_resource type="LabelSettings" uid="uid://bsjqw3m3umydi" path="res://resources/LabelSettings/big_textes.tres" id="2_gco2h"]
+[ext_resource type="FontFile" uid="uid://b3vfy2vwgidc4" path="res://assets/fonts/Colorfiction - Messy.ttf" id="2_8w52m"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_00c3h"]
+font = ExtResource("2_8w52m")
+font_size = 128
 
 [sub_resource type="Animation" id="Animation_20qhm"]
 length = 0.001
