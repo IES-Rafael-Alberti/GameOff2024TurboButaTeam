@@ -123,12 +123,13 @@ scale = Vector2(0.25, 0.25)
 metadata/_edit_lock_ = true
 
 [node name="ProgressBarShield" type="ProgressBar" parent="."]
-offset_left = -804.0
-offset_top = -451.0
-offset_right = -639.0
-offset_bottom = -419.0
+offset_left = -784.0
+offset_top = -216.0
+offset_right = -736.0
+offset_bottom = -80.0
 theme_override_styles/background = SubResource("StyleBoxFlat_t5td4")
 max_value = 50.0
+fill_mode = 3
 show_percentage = false
 
 [node name="ProgressBar" type="ProgressBar" parent="."]

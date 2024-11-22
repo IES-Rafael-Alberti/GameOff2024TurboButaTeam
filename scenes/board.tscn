@@ -45,7 +45,6 @@ position = Vector2(228, 30)
 script = ExtResource("2_1tfi2")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.57
@@ -54,7 +53,7 @@ anchor_bottom = 1.0
 offset_top = 0.399963
 grow_horizontal = 2
 grow_vertical = 0
-color = Color(0.25098, 0.25098, 0.25098, 1)
+color = Color(0.937255, 0.886275, 0.788235, 1)
 
 [node name="BoardContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -80,18 +79,19 @@ columns = 8
 [node name="ProgressBarShield" type="ProgressBar" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.851
-anchor_top = 0.017
-anchor_right = 0.958
-anchor_bottom = 0.04
-offset_left = 0.280029
-offset_top = 0.359999
-offset_right = 0.239868
-offset_bottom = 0.200058
+anchor_left = 0.892
+anchor_top = 0.022
+anchor_right = 0.912
+anchor_bottom = 0.138
+offset_left = -0.640015
+offset_top = 0.239998
+offset_right = 0.959839
+offset_bottom = -0.0400085
 grow_horizontal = 0
 grow_vertical = 2
 theme_override_styles/background = SubResource("StyleBoxFlat_frf6y")
 max_value = 50.0
+fill_mode = 3
 show_percentage = false
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
@@ -117,7 +117,14 @@ metadata/_edit_lock_ = true
 
 [node name="DamageBar" type="ProgressBar" parent="ProgressBar"]
 z_index = -1
-layout_mode = 0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+fill_mode = 3
+show_percentage = false
 
 [node name="Timer" type="Timer" parent="ProgressBar"]
 wait_time = 0.4

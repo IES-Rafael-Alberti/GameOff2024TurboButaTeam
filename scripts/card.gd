@@ -97,7 +97,8 @@ func isEqual(firstCard, secondCard):
 	firstCard.material.set_shader_parameter("isHighlight", false)
 	secondCard.material.set_shader_parameter("isHighlight", false)
 		
-	if GameManager.countCouple == 7:
+	#TODO poner a 6 cuando tengamos todas las cartas
+	if GameManager.countCouple == 6:
 		GameManager.BoardCompleted.emit()
 		GameManager.countCouple = 0
 	

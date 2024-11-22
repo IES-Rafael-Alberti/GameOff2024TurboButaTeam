@@ -36,7 +36,6 @@ func _ready():
 	#Quitar visible al boton de reset
 	resetBoard.disabled = true
 	
-	
 	GameManager.PlayerTakeDamage.connect(UpdateProgressBar)
 	GameManager.PlayerShield.connect(updateShield)
 	GameManager.InitPlayerShield.connect(initShield)
@@ -96,7 +95,7 @@ func UpdateProgressBar():
 	progress_bar.value = GameManager.healthPlayer
 	if progress_bar.value <= 0:
 		#TODO hacer que el player se muera
-		print("perdiste")
+		get_tree().change_scene_to_file("res://scenes/menus/game_over/game_over.tscn")
 
 func selectBoss():
 	# Metemos la lista para comprobar sus hijos

@@ -1,5 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://c21ncn5vdp5ua"]
 
+[ext_resource type="Script" path="res://scripts/canvasLayer.gd" id="1_76fr0"]
 [ext_resource type="PackedScene" uid="uid://bnng3hk0wi7a" path="res://scenes/board.tscn" id="1_eg5mf"]
 
 [sub_resource type="Animation" id="Animation_si246"]
@@ -41,6 +42,7 @@ _data = {
 [node name="Game" type="Node2D"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("1_76fr0")
 
 [node name="Board" parent="CanvasLayer" instance=ExtResource("1_eg5mf")]
 modulate = Color(1, 1, 1, 0)

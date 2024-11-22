@@ -2,7 +2,6 @@
 
 [ext_resource type="Shader" path="res://scripts/shaders/cardBurn.gdshader" id="1_e0daq"]
 [ext_resource type="Script" path="res://scripts/card.gd" id="1_ykaut"]
-[ext_resource type="Texture2D" uid="uid://bhhnqxdinpgsp" path="res://assets/sprites/cards/card1.png" id="2_1mpjs"]
 [ext_resource type="Texture2D" uid="uid://cgr064vblhvdg" path="res://assets/shadersTextures/burnNoise.tres" id="2_avwfg"]
 [ext_resource type="Texture2D" uid="uid://dyfgvj3rviyac" path="res://assets/sprites/cards/sombra.png" id="5_rtvgj"]
 [ext_resource type="AudioStream" uid="uid://b1cpn7ik2rou1" path="res://assets/sound/sfx/cardFlip.wav" id="6_px46y"]
@@ -21,6 +20,9 @@ shader_parameter/line_color = Vector4(1, 1, 1, 1)
 shader_parameter/pause_duration = 0.15
 shader_parameter/offset = 2.0
 shader_parameter/dissolve_texture = ExtResource("2_avwfg")
+
+[sub_resource type="Resource" id="Resource_u518w"]
+metadata/__load_path__ = "res://assets/sprites/cards/card1.png"
 
 [sub_resource type="Animation" id="Animation_ngog6"]
 length = 0.001
@@ -104,7 +106,7 @@ offset_right = 140.0
 offset_bottom = 198.0
 pivot_offset = Vector2(70, 99)
 script = ExtResource("1_ykaut")
-face = ExtResource("2_1mpjs")
+face = SubResource("Resource_u518w")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
