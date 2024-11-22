@@ -13,7 +13,7 @@ var playerShield = 0
 var bossShield = 0
 
 #Hace un preload del dorso de la carta
-var cardBack = preload("res://assets/sprites/cards/cardBack.png")
+var cardBack = preload("res://assets/sprites/cards/reverso.png")
 
 #Guarda el nodo de la primera carta
 var firstCardPicked
@@ -46,6 +46,10 @@ signal QuitPlayerShield
 
 signal InitPlayerShield
 
+signal BurnCards
+
+signal BurnCardsInit
+
 signal BossShield
 
 signal QuitBossShield
@@ -53,6 +57,8 @@ signal QuitBossShield
 signal InitBossShield
 
 signal SelectActionBoss
+
+signal restartButtonVisible
 
 var bossIsCharging
 
@@ -65,3 +71,9 @@ var pickedBoss
 
 #Esta variable es la que hay que usar en el dialogo para saber que boss a seleccionado
 var bossNum = 0
+
+var doubleShift = true
+
+var isCouple = false
+
+var specialCard
