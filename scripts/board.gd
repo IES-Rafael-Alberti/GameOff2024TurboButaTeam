@@ -36,7 +36,6 @@ func _ready():
 	#Quitar visible al boton de reset
 	resetBoard.disabled = true
 	
-	
 	GameManager.PlayerTakeDamage.connect(UpdateProgressBar)
 	GameManager.PlayerShield.connect(updateShield)
 	GameManager.InitPlayerShield.connect(initShield)
