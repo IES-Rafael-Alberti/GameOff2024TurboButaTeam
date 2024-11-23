@@ -60,6 +60,16 @@ signal SelectActionBoss
 
 signal restartButtonVisible
 
+signal EightyOfLife
+
+signal SixtyOfLife
+
+signal FortyOfLife
+
+signal TwentyOfLife
+
+signal TenOfLife
+
 var bossIsCharging
 
 var isPoisoned
