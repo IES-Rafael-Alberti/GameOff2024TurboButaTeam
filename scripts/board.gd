@@ -17,6 +17,8 @@ var bossListSceneTemp
 @onready var resetBoard: Button = $ResetBoard
 @onready var timerDamage: Timer = $ProgressBar/Timer
 @onready var damage_bar: ProgressBar = $ProgressBar/DamageBar
+@onready var scroll_container: ScrollContainer = $ScrollContainer
+@onready var historial: Label = $ScrollContainer/historial
 
 @onready var fire_reroll = $Sounds/SFX/FireReroll
 @onready var getting_hit = $Sounds/SFX/GettingHit
@@ -45,6 +47,7 @@ func _ready():
 	GameManager.QuitPlayerShield.connect(removeShield)
 	GameManager.restartButtonVisible.connect(restartButtonVisible)
 	GameManager.FlipTwoCard.connect(flipTwoCard)
+	GameManager.UpdateHistorial.connect(updateHistorial)
 	
 	bossListSceneTemp = bossListScene.instantiate()
 	
@@ -57,6 +60,7 @@ func _ready():
 	GameManager.BoardCompleted.connect(restartBoard)
 	initBoard()
 	
+	historial.text = ""
 
 func initBoard():
 	GameManager.doubleShift = true
@@ -113,7 +117,7 @@ func UpdateProgressBar():
 	progress_bar.value = GameManager.healthPlayer
 	if progress_bar.value <= 0:
 		#TODO hacer que el player se muera
-		get_tree().change_scene_to_file("res://scenes/menus/game_over/game_over.tscn")
+		get_tree().change_scene_to_file.bind("res://scenes/menus/game_over/game_over.tscn").call_deferred()
 
 func selectBoss():
 	# Metemos la lista para comprobar sus hijos
@@ -124,7 +128,6 @@ func selectBoss():
 	
 	#GameManager.pickedBoss = bossList[GameManager.bossNum]
 	#He cambiado esto para la primera demo, para que siempre salga el buey
-	GameManager.pickedBoss = bossList[0]
 	GameManager.pickedBoss = bossList[GameManager.bossNum]
 	
 	var bossTemp = GameManager.pickedBoss.duplicate()
@@ -169,3 +172,9 @@ func _on_button_pressed() -> void:
 
 func _on_timer_timeout() -> void:
 	damage_bar.value = GameManager.healthPlayer
+
+func updateHistorial(text, damage):
+	if damage != null:
+		historial.text += text + " " + str(damage) + "\n"
+	else:
+		historial.text += text + "\n"

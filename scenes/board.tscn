@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://bnng3hk0wi7a"]
+[gd_scene load_steps=10 format=3 uid="uid://bnng3hk0wi7a"]
 
 [ext_resource type="Script" path="res://scripts/board.gd" id="1_s4gqu"]
 [ext_resource type="Script" path="res://scenes/dialogue_point.gd" id="2_1tfi2"]
 [ext_resource type="AudioStream" uid="uid://e3eq16v3u58r" path="res://assets/sound/sfx/Fire.wav" id="4_pnmuv"]
 [ext_resource type="AudioStream" uid="uid://csu53guxew0wc" path="res://assets/sound/music/Forest Scary.mp3" id="5_y8wj6"]
 [ext_resource type="AudioStream" uid="uid://umrhj1fwf5ud" path="res://assets/sound/sfx/GettingHit.mp3" id="6_sxty8"]
+[ext_resource type="FontFile" uid="uid://b3vfy2vwgidc4" path="res://assets/fonts/Colorfiction - Messy.ttf" id="6_u7l7k"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_frf6y"]
 
@@ -130,18 +131,18 @@ show_percentage = false
 wait_time = 0.4
 
 [node name="ResetBoard" type="Button" parent="."]
+custom_minimum_size = Vector2(240, 0)
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.833
+anchor_left = 0.784
 anchor_top = 0.504
 anchor_right = 0.908
 anchor_bottom = 0.54
-offset_left = 0.639893
+offset_left = -0.280029
 offset_top = -0.320007
-offset_right = 0.639893
+offset_right = 1.64001
 offset_bottom = -0.200012
 text = "Reshuffle Board"
-metadata/_edit_lock_ = true
 
 [node name="Pause" type="Button" parent="."]
 layout_mode = 1
@@ -176,6 +177,73 @@ bus = &"SFX"
 [node name="GettingHit" type="AudioStreamPlayer2D" parent="Sounds/SFX"]
 stream = ExtResource("6_sxty8")
 volume_db = 5.0
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.007
+anchor_top = 0.588
+anchor_right = 0.121
+anchor_bottom = 0.979
+offset_left = 0.559999
+offset_top = -0.039978
+offset_right = 0.679993
+offset_bottom = -0.320068
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.584314)
+
+[node name="Label" type="Label" parent="ColorRect2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.126
+offset_bottom = -0.172001
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("6_u7l7k")
+text = "HISTORY_TITLE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 699.0
+offset_right = 223.0
+offset_bottom = 1056.0
+
+[node name="historial" type="Label" parent="ScrollContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "dddddddddddddddddddddddddd
+
+
+
+d
+d
+d
+d
+d
+
+d
+d
+d
+d
+d
+
+d
+d
+d
+d
+
+d
+d
+d
+
+d
+d
+d
+d"
 
 [connection signal="timeout" from="ProgressBar/Timer" to="." method="_on_timer_timeout"]
 [connection signal="pressed" from="ResetBoard" to="." method="_on_reset_board_pressed"]

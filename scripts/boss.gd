@@ -112,7 +112,8 @@ func UpdateProgressBar():
 	progress_bar.value = GameManager.healthBoss
 	if progress_bar.value <= 0:
 		#TODO hacer que el boss se muera
-		print("ganaste")
+		GameManager.bossNum = 1
+		get_tree().change_scene_to_file.bind("res://scenes/game.tscn").call_deferred()
 
 func updateShield():
 	progressBarShield.max_value = shieldMaxValue

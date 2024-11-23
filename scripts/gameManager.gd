@@ -62,6 +62,9 @@ signal restartButtonVisible
 
 signal FlipTwoCard
 
+signal UpdateHistorial(text, damage)
+
+
 var bossIsCharging
 
 var isPoisoned

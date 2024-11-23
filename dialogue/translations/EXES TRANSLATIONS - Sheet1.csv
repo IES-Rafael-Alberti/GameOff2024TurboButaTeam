@@ -40,8 +40,8 @@ C1D8,I don't come off that easily. But you can try.,No soy tan fácil de convenc
 C1D9,Eh… Why are you destroying the forest?,Eh... ¿por qué estás destruyendo el bosque?
 C1D10,Why do you think I’m doing it?,¿Por qué crees que lo estoy haciendo?
 C1D11,Why am I destroying the forest?,¿Por qué estoy destruyendo el bosque?
-C1D11O1,"¿Does your presence bring with it the shadow of destruction, sweeping everything away?","¿Tu presencia trae consigo la sombra de la destrucción, arrasando con todo?"
-C1D11O2,"¿Is it your own greediness, chasing your own objectives, what corrupts the forest passing by?","¿Es tu propia codicia, buscando tus propios objetivos, la que corrompe el bosque a su paso?"
+C1D11O1,"Does your presence bring destruction, leaving nothing behind?","¿Tu presencia trae destrucción, dejando nada detrás?"
+C1D11O2,"Is it your greed, chasing goals, that corrupts the forest?","¿Es tu codicia, persiguiendo objetivos, la que corrompe el bosque?"
 ,,
 C1D14,My answers don't come for free though.,Mis respuestas tienen un precio.
 C1D15,Let the test begin.,Que comience la prueba.
@@ -94,14 +94,21 @@ C3D5O3,"Finally, you understand it.",Por fin lo entiendes.
 C4D1,We've came this far. And I'll be the one asking you a question now. ,
 C4D3,Who are you?,
 ,,
-,,
-,,
-,,
-,,
-,,
-,,
+GAME HISTORY,,
+HISTORY_TITLE,Game history,Historial de juego
+ATTACK_HISTORY,The player has made an attack of,El jugador ha realizado un ataque de
+ATTACK_UNDER_HISTORY,The player has made an attack under the shield of,El jugador ha realizado un ataque por debajo del escudo de
+DRECREASE_HISTORY,Player has multiplied his attack by,El jugador ha multiplicado su ataque por
+SHIELD_HISTORY,The player has put on a shield,El jugador se ha puesto escudo
+DOUBLE_SHIFT_HISTORY,Player has a double turn,El jugador tiene doble turno
+FLIP_HISTORY,The player has revealed two cards,El jugador ha revelado dos cartas
 ,,
 DEPRECATED,DEPRECATED,DEPRECATED
+,,
+,,
+,,
+,"¿Does your presence bring with it the shadow of destruction, sweeping everything away?","¿Tu presencia trae consigo la sombra de la destrucción, arrasando con todo?"
+,"¿Is it your own greediness, chasing your own objectives, what corrupts the forest passing by?","¿Es tu propia codicia, buscando tus propios objetivos, la que corrompe el bosque a su paso?"
 C1D11O3,"¿Do you dwell here just for mere entertainment, like who menaces their prey, but away from risk?","¿Moras aquí solo por entretenimiento, como quien acecha sin prisa a su presa, pero sin ser amenazado?"
 Lynx BF,,
 LX_BF_START1,I possess this animals spirit to take down on you.,Poseo el espíritu de este animal para derrotarte.
