@@ -59,6 +59,7 @@ func _ready():
 	
 
 func initBoard():
+	GameManager.doubleShift = true
 	# Metemos la lista para comprobar sus hijos
 	add_child(cardListSceneTemp)
 	cardListSceneTemp.visible = false
@@ -97,6 +98,7 @@ func clearBoard():
 		grid.remove_child(i)
 
 func restartBoard():
+	resetBoard.disabled = true
 	fire_reroll.play()
 	finalCardList = []
 	GameManager.BurnCards.emit()
@@ -104,7 +106,6 @@ func restartBoard():
 	clearBoard()
 	initBoard()
 	GameManager.doubleShift = true
-	resetBoard.disabled = true
 
 func UpdateProgressBar():
 	getting_hit.play()
