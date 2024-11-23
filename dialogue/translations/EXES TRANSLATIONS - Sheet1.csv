@@ -5,19 +5,26 @@ PLAY_BUTTON,Play,Jugar
 OPTIONS_BUTTON,Options,Ajustes
 EXIT_BUTTON,Exit,Salir
 BACK_BUTTON,Back,Atrás
+RETRY_BUTTON,Retry,Reintentar
+WIKI_BUTTON,Wiki,Wiki
 MASTER_VOLUME_LABEL,Master Volume,Volumen General
 MUSIC_VOLUME_LABEL,Music,Música
 SFX_VOLUME_LABEL,SFX,Efectos de sonido
 WINDOW_MODE_LABEL,Window,Ventana
 LANGUAGE_LABEL,Language,Idioma
+FULLSCREEN_LABEL,Play in fullscreen with the button in the bottom right corner for the best experience!,¡Juega en pantalla completa con el botón de la esquina abajo-derecha para la mejor experiencia!
+SPOILER_ALERT_LABEL,"WARNING! DON'T BROWSE THIS WIKI UNLESS YOU'VE ALREADY PLAYED THE GAME, OR YOU WILL BE SPOILED!!","¡CUIDADO! NO INVESTIGUES ESTA WIKI SI NO HAS JUGADO YA EL JUEGO, O TE LO SPOILEARÁS"
+WIKI_CARDS_BUTTON,Cards,Cartas
+WIKI_BOSSES_BUTTON,Bosses,Jefes
+WIKI_BACKGROUNDS_BUTTON,Backgrounds,Fondos
 ,,
 GAME,,
 testboss_name,OX,BUEY
 secondboss,COBRA,COBRA
-BOSS_ATTACK,attack,ataque
-BOSS_SHIELD,shield,escudo
-BOSS_HABILITY,hability,habilidad
-BOSS_HABILITY_CHARGE,charging hability,cargando habilidad
+BOSS_ATTACK,The Ox starts charging torwards you,El Buey empieza a cargar hacia ti
+BOSS_SHIELD,The Ox stands his ground,El Buey mantiene su posición.
+BOSS_HABILITY,The Ox is reuniting forces...,El Buey está reuniendo fuerzas...
+BOSS_HABILITY_CHARGE,The Ox is going to attack with all his might!,¡El Buey va a atacar con todas sus fuerzas!
 ,,
 CINEMATICS,,
 CINEMATIC 1,,
@@ -35,7 +42,7 @@ C1D10,Why do you think I’m doing it?,¿Por qué crees que lo estoy haciendo?
 C1D11,Why am I destroying the forest?,¿Por qué estoy destruyendo el bosque?
 C1D11O1,"¿Does your presence bring with it the shadow of destruction, sweeping everything away?","¿Tu presencia trae consigo la sombra de la destrucción, arrasando con todo?"
 C1D11O2,"¿Is it your own greediness, chasing your own objectives, what corrupts the forest passing by?","¿Es tu propia codicia, buscando tus propios objetivos, la que corrompe el bosque a su paso?"
-C1D11O3,"¿Do you dwell here just for mere entertainment, like who menaces their prey, but away from risk?","¿Moras aquí solo por entretenimiento, como quien acecha sin prisa a su presa, pero sin ser amenazado?"
+,,
 C1D14,My answers don't come for free though.,Mis respuestas tienen un precio.
 C1D15,Let the test begin.,Que comience la prueba.
 ,,
@@ -50,7 +57,7 @@ BF_1_60HP,"However, I'm not responsible from my existence. I've been created and
 BF_1_50HP,"It's the ones who created me who's left to wonder what to should be done with me, not to fight me like an enemy","Son los que me crearon los que deben concluir qué hacer conmigo, no combatirme como un enemigo."
 ,,
 ,,
-OX_BF_DEFEAT,"So, the mighty ox, all strength and no mind, shall be defeated.","Así, el poderoso buey, todo fuerza y nada de intelecto, debe ser derrotado."
+OX_BF_DEFEAT,"So, the mighty ox, all strength and no mind, shall be defeated.","Así, el poderoso buey, todo fuerza y nada intelecto, debe ser derrotado."
 ,,
 CINEMATIC 2,,
 C2D1,"So, your own greediness is the cause of all this destruction?","Así que, ¿tu propia codicia es la causa de toda esta destrucción?"
@@ -84,7 +91,18 @@ C3D5,"I am you, you are me","Yo soy tú, tú eres yo."
 C3D5O1,"I am you, you are me","Yo soy tú, tú eres yo."
 C3D5O2,"I am you, you are me","Yo soy tú, tú eres yo."
 C3D5O3,"Finally, you understand it.",Por fin lo entiendes.
+C4D1,We've came this far. And I'll be the one asking you a question now. ,
+C4D3,Who are you?,
 ,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+DEPRECATED,DEPRECATED,DEPRECATED
+C1D11O3,"¿Do you dwell here just for mere entertainment, like who menaces their prey, but away from risk?","¿Moras aquí solo por entretenimiento, como quien acecha sin prisa a su presa, pero sin ser amenazado?"
 Lynx BF,,
 LX_BF_START1,I possess this animals spirit to take down on you.,Poseo el espíritu de este animal para derrotarte.
 LX_BF_START2,The wildness of the lynx will terminate your will,La fiereza del lince terminará contigo.
@@ -98,9 +116,9 @@ BF_3_50HP,,
 LX_BF_DEFEAT,"So, the decieving cobra, once their tricks are discovered, shall be defeated.","Así, el poderoso buey, todo fuerza y nada de intelecto, debe ser derrotado."
 ,,
 CINEMATIC 4,,
-C4D1,We've came this far. And I'll be the one asking you a question now. ,
+,,
 C4D2,I don't know if you've stopped and thought about this?,
-C4D3,Who are you?,
+,,
 C4D4,"Is the ""hero"" in this game the same entity as the person controlling it from their computer?",
 C4D5,,
 C4D6,,

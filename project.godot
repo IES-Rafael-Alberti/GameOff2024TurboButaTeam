@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="gameoff2024"
-run/main_scene="res://scenes/cinematics/first_cinematic.tscn"
+run/main_scene="res://scenes/menus/splash_screen/splash_screen.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -27,9 +27,13 @@ directories/dch_directory={
 "testboss": "res://dialogue/characters/testboss.dch"
 }
 directories/dtl_directory={
-"BF1Start": "res://dialogue/timelines/BF1/BF1Start.dtl",
-"FirstCinematic": "res://dialogue/timelines/FirstCinematic.dtl",
+"FirstCinematic": "res://dialogue/timelines/FirstCinematic/FirstCinematic.dtl",
 "FirstDialogue": "res://dialogue/timelines/FirstCinematic/FirstDialogue.dtl",
+"OxStart": "res://dialogue/timelines/BF1_OX/OxStart.dtl",
+"Ox_60HP": "res://dialogue/timelines/BF1_OX/Ox_60HP.dtl",
+"Ox_70HP": "res://dialogue/timelines/BF1_OX/Ox_70HP.dtl",
+"Ox_80HP": "res://dialogue/timelines/BF1_OX/Ox_80HP.dtl",
+"Ox_90HP": "res://dialogue/timelines/BF1_OX/Ox_90HP.dtl",
 "TestTL": "res://dialogue/timelines/TestTL.dtl"
 }
 layout/style_list=["res://dialogue/styles/textbubble.tres", "res://dialogue/styles/boxTest.tres", "res://dialogue/styles/cinematicStyle/cinematicStyle.tres", "res://dialogue/characters/cinematicCont.tres"]
@@ -69,7 +73,6 @@ translation/id_counter=16
 window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/size/mode=3
-window/stretch/mode="canvas_items"
 
 [editor_plugins]
 
@@ -85,6 +88,10 @@ folder_colors={
 "res://scenes/": "green",
 "res://scripts/": "teal"
 }
+
+[gui]
+
+theme/custom="res://resources/main_theme.tres"
 
 [input]
 
@@ -109,3 +116,4 @@ locale/test="en"
 textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)

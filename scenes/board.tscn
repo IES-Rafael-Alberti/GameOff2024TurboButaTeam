@@ -1,6 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://bnng3hk0wi7a"]
+[gd_scene load_steps=9 format=3 uid="uid://bnng3hk0wi7a"]
 
 [ext_resource type="Script" path="res://scripts/board.gd" id="1_s4gqu"]
+[ext_resource type="Script" path="res://scenes/dialogue_point.gd" id="2_1tfi2"]
+[ext_resource type="AudioStream" uid="uid://e3eq16v3u58r" path="res://assets/sound/sfx/Fire.wav" id="4_pnmuv"]
+[ext_resource type="AudioStream" uid="uid://csu53guxew0wc" path="res://assets/sound/music/Forest Scary.mp3" id="5_y8wj6"]
+[ext_resource type="AudioStream" uid="uid://umrhj1fwf5ud" path="res://assets/sound/sfx/GettingHit.mp3" id="6_sxty8"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_frf6y"]
 
@@ -9,16 +13,6 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5mgme"]
 bg_color = Color(0.937255, 0.886275, 0.788235, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k7gpb"]
-bg_color = Color(0, 0, 0, 1)
-expand_margin_left = 1.0
-expand_margin_top = 1.0
-expand_margin_right = 1.0
-expand_margin_bottom = 1.0
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_okxa8"]
-bg_color = Color(1, 1, 1, 1)
 
 [node name="Board" type="Control"]
 layout_mode = 3
@@ -46,6 +40,10 @@ layout_mode = 2
 [node name="GridContainer" type="GridContainer" parent="BossContainer/CenterContainer"]
 layout_mode = 2
 
+[node name="dialogue_point" type="Marker2D" parent="BossContainer/CenterContainer/GridContainer"]
+position = Vector2(228, 30)
+script = ExtResource("2_1tfi2")
+
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = -1
@@ -55,7 +53,7 @@ anchor_bottom = 1.0
 offset_top = 0.399963
 grow_horizontal = 2
 grow_vertical = 0
-color = Color(0.25098, 0.25098, 0.25098, 1)
+color = Color(0.937255, 0.886275, 0.788235, 1)
 
 [node name="BoardContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -81,18 +79,19 @@ columns = 8
 [node name="ProgressBarShield" type="ProgressBar" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.851
-anchor_top = 0.017
-anchor_right = 0.958
-anchor_bottom = 0.04
-offset_left = 0.280029
-offset_top = 0.359999
-offset_right = 0.239868
-offset_bottom = 0.200058
+anchor_left = 0.892
+anchor_top = 0.022
+anchor_right = 0.912
+anchor_bottom = 0.138
+offset_left = -0.640015
+offset_top = 0.239998
+offset_right = 0.959839
+offset_bottom = -0.0400085
 grow_horizontal = 0
 grow_vertical = 2
 theme_override_styles/background = SubResource("StyleBoxFlat_frf6y")
 max_value = 50.0
+fill_mode = 3
 show_percentage = false
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
@@ -124,8 +123,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/background = SubResource("StyleBoxFlat_k7gpb")
-theme_override_styles/fill = SubResource("StyleBoxFlat_okxa8")
 fill_mode = 3
 show_percentage = false
 
@@ -159,5 +156,27 @@ offset_right = -1.04004
 offset_bottom = -2.36005
 text = "PAUSE"
 
+[node name="Sounds" type="Node" parent="."]
+
+[node name="Music" type="Node" parent="Sounds"]
+
+[node name="FightMusic" type="AudioStreamPlayer2D" parent="Sounds/Music"]
+stream = ExtResource("5_y8wj6")
+volume_db = -20.0
+autoplay = true
+bus = &"Music"
+
+[node name="SFX" type="Node" parent="Sounds"]
+
+[node name="FireReroll" type="AudioStreamPlayer2D" parent="Sounds/SFX"]
+stream = ExtResource("4_pnmuv")
+volume_db = 10.0
+bus = &"SFX"
+
+[node name="GettingHit" type="AudioStreamPlayer2D" parent="Sounds/SFX"]
+stream = ExtResource("6_sxty8")
+volume_db = 5.0
+
 [connection signal="timeout" from="ProgressBar/Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="ResetBoard" to="." method="_on_reset_board_pressed"]
 [connection signal="pressed" from="ResetBoard" to="." method="_on_button_pressed"]
