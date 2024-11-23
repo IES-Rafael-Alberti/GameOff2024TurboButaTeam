@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://tej13qf6vn8h" path="res://assets/sprites/cardsFullResolution/especial1.png" id="10_73aqc"]
 [ext_resource type="Texture2D" uid="uid://c63ruxqgmk0bp" path="res://assets/sprites/boss/buey.png" id="11_ao6y2"]
 [ext_resource type="Texture2D" uid="uid://dtnu1ywt8h6i0" path="res://assets/backgrounds/backgroundEspinas.png" id="12_yml3x"]
-[ext_resource type="Texture2D" uid="uid://bpji0c018j42b" path="res://assets/backgrounds/firstCinematic/forestBG.png" id="13_umyl5"]
+[ext_resource type="Texture2D" uid="uid://dqq5f6tuc02qo" path="res://assets/backgrounds/firstCinematic/bgComplete.png" id="13_dee20"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jk85g"]
 bg_color = Color(0, 0, 0, 1)
@@ -28,7 +28,7 @@ grow_vertical = 2
 script = ExtResource("1_rmd21")
 cardImgList = Array[Texture]([ExtResource("2_2ij6p"), ExtResource("3_3oy84"), ExtResource("4_yt0g6"), ExtResource("5_icmom"), ExtResource("6_4dkke"), ExtResource("7_4i2of"), ExtResource("8_pqwgn"), ExtResource("9_qmgvc"), ExtResource("10_73aqc")])
 bossImgList = Array[Texture]([ExtResource("11_ao6y2")])
-bgImgList = Array[Texture]([ExtResource("12_yml3x"), ExtResource("13_umyl5")])
+bgImgList = Array[Texture]([ExtResource("12_yml3x"), ExtResource("13_dee20")])
 
 [node name="TextContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -248,6 +248,7 @@ horizontal_alignment = 1
 autowrap_mode = 3
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 theme_override_constants/margin_left = 20
