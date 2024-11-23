@@ -5,7 +5,7 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_00c3h"]
 font = ExtResource("2_8w52m")
-font_size = 128
+font_size = 156
 
 [sub_resource type="Animation" id="Animation_20qhm"]
 length = 0.001
@@ -80,7 +80,7 @@ offset_right = 75.5
 offset_bottom = 46.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 100
+theme_override_constants/separation = 200
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2

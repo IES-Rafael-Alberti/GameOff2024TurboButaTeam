@@ -57,6 +57,8 @@ overrides = {}
 script = ExtResource("1_dmgb8")
 scene = ExtResource("8_8jnf0")
 overrides = {
+"boxes_stylebox_hovered": "\"res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Choices/custom_choice_panel_hover.tres\"",
+"boxes_stylebox_normal": "\"res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Choices/custom_choice_panel_normal.tres\"",
 "font_size_custom": "32.0",
 "font_size_use_global": "false"
 }
@@ -88,4 +90,4 @@ layer_info = {
 }
 base_overrides = {}
 layers = Array[ExtResource("1_dmgb8")]([])
-metadata/_latest_layer = "13"
+metadata/_latest_layer = "15"
