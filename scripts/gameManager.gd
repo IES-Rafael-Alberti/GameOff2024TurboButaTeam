@@ -13,7 +13,7 @@ var playerShield = 0
 var bossShield = 0
 
 #Hace un preload del dorso de la carta
-var cardBack = preload("res://assets/sprites/cards/reverso.png")
+var cardBack = preload("res://assets/sprites/cards140x198/reverso.png")
 
 #Guarda el nodo de la primera carta
 var firstCardPicked
@@ -69,6 +69,7 @@ signal FortyOfLife
 signal TwentyOfLife
 
 signal TenOfLife
+
 
 var bossIsCharging
 

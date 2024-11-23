@@ -98,6 +98,10 @@ folder_colors={
 "res://scripts/": "teal"
 }
 
+[gui]
+
+theme/custom="res://resources/main_theme.tres"
+
 [input]
 
 dialogic_default_action={
