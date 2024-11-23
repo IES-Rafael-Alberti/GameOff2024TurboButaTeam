@@ -1,13 +1,57 @@
-[gd_resource type="Theme" load_steps=3 format=3 uid="uid://bqbxkd470gq5w"]
+[gd_resource type="Theme" load_steps=15 format=3 uid="uid://bt6ll6m2mh5i3"]
 
-[ext_resource type="Texture2D" uid="uid://1tui4oopulpi" path="res://assets/ui/Button.png" id="1_50lt3"]
+[ext_resource type="FontFile" uid="uid://c4s2a7yraa054" path="res://assets/fonts/Tomorrow-Regular.ttf" id="1_3vw85"]
+[ext_resource type="Texture2D" uid="uid://kvm46eu34hix" path="res://assets/ui/buttonTryHover.png" id="1_5r18u"]
+[ext_resource type="Texture2D" uid="uid://dwjmigxtb6pi1" path="res://assets/ui/buttonTry.svg" id="1_k21hc"]
+[ext_resource type="Texture2D" uid="uid://jjp7ie46urcy" path="res://assets/ui/slider_normal_resized.png" id="4_av8oi"]
+[ext_resource type="Texture2D" uid="uid://byyyqpe5kbvbw" path="res://assets/ui/slider_hover_resized.png" id="5_agbtj"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sc303"]
-content_margin_left = 2.0
-content_margin_top = 2.0
-content_margin_right = 2.0
-content_margin_bottom = 2.0
-texture = ExtResource("1_50lt3")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uywki"]
+texture = ExtResource("1_k21hc")
+expand_margin_top = 32.0
+expand_margin_bottom = 32.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ejplq"]
+texture = ExtResource("1_5r18u")
+expand_margin_top = 32.0
+expand_margin_bottom = 32.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7kx11"]
+texture = ExtResource("1_k21hc")
+expand_margin_top = 32.0
+expand_margin_bottom = 32.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yl3cf"]
+texture = ExtResource("1_k21hc")
+expand_margin_top = 32.0
+expand_margin_bottom = 32.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bdm7s"]
+bg_color = Color(0.682353, 0.141176, 0.133333, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ngwvp"]
+bg_color = Color(0.682353, 0.141176, 0.133333, 1)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_1lqx0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f0fbg"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_g3sq5"]
+color = Color(1, 1, 1, 1)
 
 [resource]
-Button/styles/normal = SubResource("StyleBoxTexture_sc303")
+Button/fonts/font = ExtResource("1_3vw85")
+Button/styles/focus = SubResource("StyleBoxTexture_uywki")
+Button/styles/hover = SubResource("StyleBoxTexture_ejplq")
+Button/styles/normal = SubResource("StyleBoxTexture_7kx11")
+Button/styles/pressed = SubResource("StyleBoxTexture_yl3cf")
+HSlider/icons/grabber = ExtResource("4_av8oi")
+HSlider/icons/grabber_highlight = ExtResource("5_agbtj")
+HSlider/styles/grabber_area = SubResource("StyleBoxFlat_bdm7s")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_ngwvp")
+HSlider/styles/slider = null
+OptionButton/fonts/font = ExtResource("1_3vw85")
+OptionButton/icons/arrow = SubResource("ViewportTexture_1lqx0")
+OptionButton/styles/hover = SubResource("StyleBoxFlat_f0fbg")
+PopupMenu/styles/panel = SubResource("StyleBoxLine_g3sq5")

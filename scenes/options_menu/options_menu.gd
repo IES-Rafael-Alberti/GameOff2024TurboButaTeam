@@ -6,6 +6,7 @@ extends Control
 @onready var window_mode: OptionButton = $VBoxContainer/VBoxContainer2/HBoxContainer/WindowMode
 @onready var window_mode_hbox: HBoxContainer = $VBoxContainer/VBoxContainer2/WindowModeHbox
 @onready var language_sel = $VBoxContainer/VBoxContainer2/LanguageHbox/LanguageSel
+@onready var test_sfx = $VBoxContainer/VBoxContainer3/VBoxContainer/HBoxContainer3/testSFX
 
 var master_bus
 var music_bus
@@ -28,7 +29,7 @@ func _on_music_vol_value_changed(value: float) -> void:
 
 func _on_sfx_vol_value_changed(value: float) -> void:
 	AudioServer.set_bus_volume_db(sfx_bus,linear_to_db(value))
-
+	test_sfx.play()
 func _on_option_button_item_selected(index: int) -> void:
 	match index:
 		0:
@@ -37,7 +38,6 @@ func _on_option_button_item_selected(index: int) -> void:
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 		2:
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN)
-
 
 func _on_language_sel_item_selected(index):
 	match index:
