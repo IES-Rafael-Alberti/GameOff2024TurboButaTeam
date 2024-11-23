@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" path="res://scenes/cinematics/first_cinematic.gd" id="1_h5nmc"]
 [ext_resource type="Texture2D" uid="uid://bl3pktp7rf7bq" path="res://assets/sprites/figure.png" id="3_ogqs5"]
-[ext_resource type="Texture2D" uid="uid://ejepl1fvfn3j" path="res://assets/sprites/cuadrotextoCinematic.png" id="4_nqe1i"]
 [ext_resource type="AudioStream" uid="uid://c8eoaxir81vl6" path="res://assets/sound/music/dark_forest.ogg" id="5_i0ma7"]
 [ext_resource type="Texture2D" uid="uid://bpji0c018j42b" path="res://assets/backgrounds/firstCinematic/forestBG.png" id="6_d4xir"]
 [ext_resource type="Texture2D" uid="uid://cng70baed48wn" path="res://assets/backgrounds/firstCinematic/ab_der_plants.png" id="7_7ew3d"]
+[ext_resource type="Texture2D" uid="uid://td8sq7wt0d02" path="res://assets/ui/marcoTexto.png" id="8_18lmm"]
 [ext_resource type="Texture2D" uid="uid://dsott1fpgb5ov" path="res://assets/backgrounds/firstCinematic/ab_izq_plants.png" id="8_o4a5m"]
 [ext_resource type="Texture2D" uid="uid://ckiolotiijjtb" path="res://assets/backgrounds/firstCinematic/arr-izq.png" id="9_eemvw"]
 [ext_resource type="Texture2D" uid="uid://d0nxypabjathg" path="res://assets/backgrounds/firstCinematic/arr_der.png" id="10_rw8ho"]
@@ -95,6 +95,18 @@ tracks/6/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("ColorRect:self_modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_n7x6l"]
@@ -228,6 +240,18 @@ tracks/3/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ColorRect:self_modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(3.53333, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5meh1"]
 _data = {
@@ -256,16 +280,16 @@ texture = ExtResource("6_d4xir")
 scroll_scale = Vector2(0.7, 0.7)
 
 [node name="Sprite2D" type="Sprite2D" parent="ForestBG/Details/ArrIzq"]
-position = Vector2(963.555, 542)
-scale = Vector2(0.498148, 0.498148)
+position = Vector2(959, 539.5)
+scale = Vector2(0.500521, 0.500463)
 texture = ExtResource("9_eemvw")
 
 [node name="ArrDer" type="Parallax2D" parent="ForestBG/Details"]
 scroll_scale = Vector2(0.8, 0.8)
 
 [node name="Sprite2D" type="Sprite2D" parent="ForestBG/Details/ArrDer"]
-position = Vector2(965.333, 543)
-scale = Vector2(0.497222, 0.497222)
+position = Vector2(965.333, 539.5)
+scale = Vector2(0.497222, 0.500463)
 texture = ExtResource("10_rw8ho")
 
 [node name="AbDer" type="Parallax2D" parent="ForestBG/Details"]
@@ -280,8 +304,8 @@ texture = ExtResource("7_7ew3d")
 scroll_scale = Vector2(0.7, 0.7)
 
 [node name="Sprite2D" type="Sprite2D" parent="ForestBG/Details/AbIzq"]
-position = Vector2(962.667, 541.5)
-scale = Vector2(0.498611, 0.498611)
+position = Vector2(959, 541.5)
+scale = Vector2(0.500521, 0.498611)
 texture = ExtResource("8_o4a5m")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -296,11 +320,19 @@ position = Vector2(1165, 491)
 scale = Vector2(0.479998, 0.479998)
 texture = ExtResource("3_ogqs5")
 
+[node name="ColorRect" type="ColorRect" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 389.0
+offset_top = 300.0
+offset_right = 1504.0
+offset_bottom = 836.0
+color = Color(0, 0, 0, 0.227451)
+
 [node name="TextBoxSprite" type="Sprite2D" parent="."]
 self_modulate = Color(1, 1, 1, 0)
 position = Vector2(942, 554)
-scale = Vector2(1.07685, 1.07685)
-texture = ExtResource("4_nqe1i")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_18lmm")
 
 [node name="ForestSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_i0ma7")
