@@ -60,7 +60,16 @@ signal SelectActionBoss
 
 signal restartButtonVisible
 
-signal FlipTwoCard
+signal EightyOfLife
+
+signal SixtyOfLife
+
+signal FortyOfLife
+
+signal TwentyOfLife
+
+signal TenOfLife
+
 
 var bossIsCharging
 
