@@ -59,6 +59,7 @@ func _ready():
 	
 
 func initBoard():
+	GameManager.doubleShift = true
 	# Metemos la lista para comprobar sus hijos
 	add_child(cardListSceneTemp)
 	cardListSceneTemp.visible = false

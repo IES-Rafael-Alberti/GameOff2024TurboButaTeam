@@ -90,3 +90,7 @@ func update_image():
 	
 	if bg_label.visible:
 		texture.texture = bgImgList[current_index_bg]
+
+
+func _on_back_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/menus/main_menu/main_menu.tscn")
