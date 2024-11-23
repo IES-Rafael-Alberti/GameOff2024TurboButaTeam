@@ -43,6 +43,7 @@ func _ready() -> void:
 	battleLog.text = ""
 	
 	selectAction()
+	print(get_tree())
 
 func _process(delta: float) -> void:
 	if !GameManager.isPlayerPhase:
@@ -110,7 +111,8 @@ func UpdateProgressBar():
 	progress_bar.value = GameManager.healthBoss
 	if progress_bar.value <= 0:
 		#TODO hacer que el boss se muera
-		print("ganaste")
+		GameManager.bossNum = 1
+		get_tree().change_scene_to_file("res://scenes/cinematics/first_cinematic.tscn")
 
 func updateShield():
 	progressBarShield.max_value = shieldMaxValue
@@ -124,7 +126,6 @@ func initShield():
 func removeShield():
 	progressBarShield.visible = false
 	GameManager.bossShield = 0
-
 
 func _on_timer_timeout() -> void:
 	damage_bar.value = GameManager.healthBoss

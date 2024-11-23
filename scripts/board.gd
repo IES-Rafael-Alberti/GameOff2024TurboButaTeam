@@ -5,6 +5,7 @@ var finalCardList: Array
 var cardListSceneTemp
 var cardListSpecialSceneTemp
 var bossListSceneTemp
+const GameOver = preload("res://scenes/menus/game_over/game_over.gd")
 
 @export var maxHealthPlayer = 200
 @export var shieldMaxValue = 50
@@ -56,7 +57,6 @@ func _ready():
 	cardListSpecialSceneTemp = cardListSpecialScene.instantiate()
 	GameManager.BoardCompleted.connect(restartBoard)
 	initBoard()
-	
 
 func initBoard():
 	GameManager.doubleShift = true
@@ -113,7 +113,7 @@ func UpdateProgressBar():
 	progress_bar.value = GameManager.healthPlayer
 	if progress_bar.value <= 0:
 		#TODO hacer que el player se muera
-		get_tree().change_scene_to_file("res://scenes/menus/game_over/game_over.tscn")
+		get_tree().change_scene(GameOver)
 
 func selectBoss():
 	# Metemos la lista para comprobar sus hijos
@@ -122,9 +122,7 @@ func selectBoss():
 	# Almacenamos todos los nodos(cartas) para mezclarlas
 	var bossList = bossListSceneTemp.get_children()
 	
-	#GameManager.pickedBoss = bossList[GameManager.bossNum]
 	#He cambiado esto para la primera demo, para que siempre salga el buey
-	GameManager.pickedBoss = bossList[0]
 	GameManager.pickedBoss = bossList[GameManager.bossNum]
 	
 	var bossTemp = GameManager.pickedBoss.duplicate()
@@ -166,6 +164,9 @@ func flipTwoCard():
 
 func _on_button_pressed() -> void:
 	GameManager.BoardCompleted.emit()
+	GameManager.countCouple = 0
+	GameManager.firstCardPicked = null
+	GameManager.secondCardPicked = null
 
 func _on_timer_timeout() -> void:
 	damage_bar.value = GameManager.healthPlayer
