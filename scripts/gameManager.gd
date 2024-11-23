@@ -60,6 +60,8 @@ signal SelectActionBoss
 
 signal restartButtonVisible
 
+signal FlipTwoCard
+
 var bossIsCharging
 
 var isPoisoned
