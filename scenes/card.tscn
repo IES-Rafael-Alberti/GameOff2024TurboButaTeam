@@ -3,7 +3,7 @@
 [ext_resource type="Shader" path="res://scripts/shaders/cardBurn.gdshader" id="1_e0daq"]
 [ext_resource type="Script" path="res://scripts/card.gd" id="1_ykaut"]
 [ext_resource type="Texture2D" uid="uid://cgr064vblhvdg" path="res://assets/shadersTextures/burnNoise.tres" id="2_avwfg"]
-[ext_resource type="Texture2D" uid="uid://dyfgvj3rviyac" path="res://assets/sprites/cards/sombra.png" id="5_rtvgj"]
+[ext_resource type="Texture2D" uid="uid://dyfgvj3rviyac" path="res://assets/sprites/cards140x198/sombra.png" id="5_rtvgj"]
 [ext_resource type="AudioStream" uid="uid://b1cpn7ik2rou1" path="res://assets/sound/sfx/cardFlip.wav" id="6_px46y"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0xhi6"]
