@@ -126,8 +126,6 @@ func selectBoss():
 	# Almacenamos todos los nodos(cartas) para mezclarlas
 	var bossList = bossListSceneTemp.get_children()
 	
-	#GameManager.pickedBoss = bossList[GameManager.bossNum]
-	#He cambiado esto para la primera demo, para que siempre salga el buey
 	GameManager.pickedBoss = bossList[GameManager.bossNum]
 	
 	var bossTemp = GameManager.pickedBoss.duplicate()

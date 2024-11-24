@@ -246,5 +246,5 @@ d
 d"
 
 [connection signal="timeout" from="ProgressBar/Timer" to="." method="_on_timer_timeout"]
-[connection signal="pressed" from="ResetBoard" to="." method="_on_reset_board_pressed"]
 [connection signal="pressed" from="ResetBoard" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="ResetBoard" to="." method="_on_reset_board_pressed"]
