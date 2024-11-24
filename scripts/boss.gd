@@ -1,6 +1,5 @@
 extends Node2D
 
-
 @onready var progress_bar: ProgressBar = $ProgressBar
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var progressBarShield: ProgressBar = $ProgressBarShield
@@ -65,21 +64,27 @@ func selectAction():
 	# TODO activar shader segun action
 
 	if randomNum <= 60:
+		resetShaders()
 		action = "atacar"
 		battleLog.text = "el boss va a usar atacar"
 		
 	elif randomNum <= 85 && randomNum > 60:
+		resetShaders()
 		action = "escudo"
 		battleLog.text = "el boss va a usar escudo"
+		sprite_2d.material.set_shader_parameter("isProtecting", true)
 	else:
+		resetShaders()
 		action = "habilidad"
 		battleLog.text = "el boss va a usar habilidad"
+		sprite_2d.material.set_shader_parameter("isSpecial", true)
 
 #TODO funcion que realice la accion del boss y al finalizar se ponga "GameManager.isPlayerPhase" en true
 func doAction(action):
 	
 	if GameManager.bossIsCharging:
 		useHability()
+		sprite_2d.material.set_shader_parameter("isSpecial", false)
 	
 	if action == "atacar":
 		attack(damageBoss)
@@ -132,3 +137,7 @@ func removeShield():
 
 func _on_timer_timeout() -> void:
 	damage_bar.value = GameManager.healthBoss
+	
+func resetShaders():
+	sprite_2d.material.set_shader_parameter("isSpecial", false)
+	sprite_2d.material.set_shader_parameter("isProtecting", false)
