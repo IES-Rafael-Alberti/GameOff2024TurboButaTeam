@@ -1,12 +1,10 @@
 extends Node2D
 
-
 @onready var progress_bar: ProgressBar = $ProgressBar
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var progressBarShield: ProgressBar = $ProgressBarShield
 @onready var damage_bar: ProgressBar = $ProgressBar/DamageBar
 @onready var timerDamage: Timer = $ProgressBar/Timer
-@onready var battleLog: Label = $ColorRect/BattleLog
 
 @export var maxHealthBoss = 200
 @export var damageBoss = 20
@@ -40,8 +38,6 @@ func _ready() -> void:
 	
 	progressBarShield.visible = false
 	
-	battleLog.text = ""
-	
 	selectAction()
 
 func _process(delta: float) -> void:
@@ -54,25 +50,27 @@ func _process(delta: float) -> void:
 		
 		doAction(action)
 		GameManager.isPlayerPhase = true
+		
 		if !GameManager.bossIsCharging:
 			GameManager.SelectActionBoss.emit()
 		else:
-			battleLog.text = "BOSS_HABILITY_CHARGE"
+			GameManager.emit_signal("UpdateHistorial", "BOSS_HABILITY_CHARGE", true)
 
 func selectAction():
 	var rng = RandomNumberGenerator.new()
 	var randomNum = int(rng.randf_range(1, 100.0))
-	
+	print(randomNum)
 	if randomNum <= 60:
 		action = "atacar"
-		battleLog.text = "BOSS_ATTACK"
+		GameManager.emit_signal("UpdateHistorial", "BOSS_ATTACK", true)
 		
 	elif randomNum <= 85 && randomNum > 60:
 		action = "escudo"
-		battleLog.text = "BOSS_SHIELD"
+		GameManager.emit_signal("UpdateHistorial", "BOSS_SHIELD", true)
 	else:
 		action = "habilidad"
-		battleLog.text = "BOSS_HABILITY"
+		GameManager.emit_signal("UpdateHistorial", "BOSS_HABILITY", true)
+		
 
 #TODO funcion que realice la accion del boss y al finalizar se ponga "GameManager.isPlayerPhase" en true
 func doAction(action):
@@ -81,8 +79,10 @@ func doAction(action):
 	else:
 		if action == "atacar":
 			attack(damageBoss)
+			GameManager.emit_signal("UpdateHistorial", "BOSS_ATTACK_DONE", true)
 		if action == "escudo":
 			shield()
+			GameManager.emit_signal("UpdateHistorial", "BOSS_SHIELD_DONE", true)
 		if action == "habilidad":
 			useHability()
 

@@ -62,7 +62,7 @@ signal restartButtonVisible
 
 signal FlipTwoCard
 
-signal UpdateHistorial(text, damage)
+signal UpdateHistorial(text, boss)
 
 
 var bossIsCharging

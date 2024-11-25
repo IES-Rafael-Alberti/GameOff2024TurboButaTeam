@@ -15,4 +15,4 @@ func action():
 	else:
 		GameManager.healthBoss -= damage
 		GameManager.BossTakeDamage.emit()
-		GameManager.emit_signal("UpdateHistorial", "ATTACK_HISTORY", damage)
+		GameManager.emit_signal("UpdateHistorial", "ATTACK_HISTORY", false)

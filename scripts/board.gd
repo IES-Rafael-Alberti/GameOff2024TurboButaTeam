@@ -18,7 +18,8 @@ var bossListSceneTemp
 @onready var timerDamage: Timer = $ProgressBar/Timer
 @onready var damage_bar: ProgressBar = $ProgressBar/DamageBar
 @onready var scroll_container: ScrollContainer = $ScrollContainer
-@onready var historial: Label = $ScrollContainer/historial
+@onready var historialContainer: VBoxContainer = $ScrollContainer/VBoxContainer
+
 
 @onready var fire_reroll = $Sounds/SFX/FireReroll
 @onready var getting_hit = $Sounds/SFX/GettingHit
@@ -59,8 +60,6 @@ func _ready():
 	cardListSpecialSceneTemp = cardListSpecialScene.instantiate()
 	GameManager.BoardCompleted.connect(restartBoard)
 	initBoard()
-	
-	historial.text = ""
 
 func initBoard():
 	GameManager.doubleShift = true
@@ -171,8 +170,14 @@ func _on_button_pressed() -> void:
 func _on_timer_timeout() -> void:
 	damage_bar.value = GameManager.healthPlayer
 
-func updateHistorial(text, damage):
-	if damage != null:
-		historial.text += text + " " + str(damage) + "\n"
-	else:
-		historial.text += text + "\n"
+func updateHistorial(text, boss):
+	var new_label = Label.new()
+	new_label.text = text
+	
+	new_label.add_theme_font_size_override("font_size", 12)
+	
+	if boss:
+		var font_color = Color(0.682, 0.141, 0.133)
+		new_label.add_theme_color_override("font_color", font_color)
+	
+	historialContainer.add_child(new_label)

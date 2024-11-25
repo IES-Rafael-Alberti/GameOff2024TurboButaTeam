@@ -9,3 +9,4 @@ func specialAttack(specialDamage):
 		GameManager.healthPlayer -= specialDamage
 		GameManager.PlayerTakeDamage.emit()
 		GameManager.bossIsCharging = false
+		GameManager.emit_signal("UpdateHistorial", "BOSS_HABILITY_DONE", true)

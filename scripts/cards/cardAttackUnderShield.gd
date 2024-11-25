@@ -6,4 +6,4 @@ func action():
 	GameManager.healthBoss -= damage * GameManager.damageMultiply
 	GameManager.BossTakeDamage.emit()
 	GameManager.BossShield.emit()
-	GameManager.emit_signal("UpdateHistorial", "ATTACK_UNDER_HISTORY", damage)
+	GameManager.emit_signal("UpdateHistorial", "ATTACK_UNDER_HISTORY", false)
