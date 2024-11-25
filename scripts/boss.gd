@@ -59,7 +59,6 @@ func _process(delta: float) -> void:
 func selectAction():
 	var rng = RandomNumberGenerator.new()
 	var randomNum = int(rng.randf_range(1, 100.0))
-	print(randomNum)
 	if randomNum <= 60:
 		action = "atacar"
 		GameManager.emit_signal("UpdateHistorial", "BOSS_ATTACK", true)

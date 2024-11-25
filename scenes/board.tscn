@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bnng3hk0wi7a"]
+[gd_scene load_steps=12 format=3 uid="uid://bnng3hk0wi7a"]
 
 [ext_resource type="Script" path="res://scripts/board.gd" id="1_s4gqu"]
 [ext_resource type="Script" path="res://scenes/dialogue_point.gd" id="2_1tfi2"]
@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://csu53guxew0wc" path="res://assets/sound/music/Forest Scary.mp3" id="5_y8wj6"]
 [ext_resource type="AudioStream" uid="uid://umrhj1fwf5ud" path="res://assets/sound/sfx/GettingHit.mp3" id="6_sxty8"]
 [ext_resource type="FontFile" uid="uid://b3vfy2vwgidc4" path="res://assets/fonts/Colorfiction - Messy.ttf" id="6_u7l7k"]
+[ext_resource type="Texture2D" uid="uid://td8sq7wt0d02" path="res://assets/ui/marcoTexto.png" id="8_nvw2g"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_frf6y"]
 
@@ -60,14 +61,15 @@ color = Color(0.937255, 0.886275, 0.788235, 1)
 [node name="BoardContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
+anchor_left = 0.11
 anchor_top = 0.6
 anchor_right = 1.0
 anchor_bottom = 0.97
+offset_left = 0.799988
 offset_bottom = 0.400024
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
-metadata/_edit_lock_ = true
 
 [node name="CenterContainer" type="CenterContainer" parent="BoardContainer"]
 layout_mode = 2
@@ -99,8 +101,8 @@ metadata/_edit_lock_ = true
 
 [node name="MarcoUiPrueba" type="Sprite2D" parent="."]
 z_index = 50
-position = Vector2(1834.5, 318)
-scale = Vector2(0.248333, 0.245)
+position = Vector2(1833.5, 317)
+scale = Vector2(0.251667, 0.245833)
 texture = ExtResource("3_en2ai")
 flip_h = true
 
@@ -190,26 +192,26 @@ volume_db = 5.0
 [node name="ColorRect2" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.007
-anchor_top = 0.588
-anchor_right = 0.121
-anchor_bottom = 0.979
-offset_left = 0.559999
-offset_top = -0.039978
-offset_right = 0.679993
-offset_bottom = -0.320068
+anchor_left = 0.008
+anchor_top = 0.586
+anchor_right = 0.16
+anchor_bottom = 0.984
+offset_left = -0.360001
+offset_top = 0.119995
+offset_right = 0.799988
+offset_bottom = 0.280029
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 0.584314)
-metadata/_edit_lock_ = true
+color = Color(1, 1, 1, 0.701961)
 
 [node name="Label" type="Label" parent="ColorRect2"]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 0.126
-offset_bottom = -0.172001
+offset_bottom = 5.82
 grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("6_u7l7k")
 text = "HISTORY_TITLE"
 horizontal_alignment = 1
@@ -217,14 +219,20 @@ vertical_alignment = 1
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 layout_mode = 0
-offset_left = 17.0
-offset_top = 699.0
-offset_right = 223.0
-offset_bottom = 1056.0
-metadata/_edit_lock_ = true
+offset_left = 57.0
+offset_top = 678.0
+offset_right = 278.0
+offset_bottom = 1041.0
+vertical_scroll_mode = 0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
 layout_mode = 2
+
+[node name="MarcoTexto" type="Sprite2D" parent="."]
+position = Vector2(169.5, 845)
+rotation = 1.5708
+scale = Vector2(0.189217, 0.265606)
+texture = ExtResource("8_nvw2g")
 
 [connection signal="timeout" from="ProgressBar/Timer" to="." method="_on_timer_timeout"]
 [connection signal="pressed" from="ResetBoard" to="." method="_on_reset_board_pressed"]

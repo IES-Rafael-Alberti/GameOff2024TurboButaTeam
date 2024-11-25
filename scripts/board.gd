@@ -173,11 +173,13 @@ func _on_timer_timeout() -> void:
 func updateHistorial(text, boss):
 	var new_label = Label.new()
 	new_label.text = text
-	
 	new_label.add_theme_font_size_override("font_size", 12)
+	var font_color_white = Color(0,0,0)
+	new_label.add_theme_color_override("font_color", font_color_white)
 	
 	if boss:
 		var font_color = Color(0.682, 0.141, 0.133)
 		new_label.add_theme_color_override("font_color", font_color)
 	
 	historialContainer.add_child(new_label)
+	historialContainer.move_child(new_label, 0)
