@@ -3,6 +3,6 @@ cinematicCont: C2D2
 C2D3
 C2D4
 cinematicCont: C2D5
-- C2D5O1
-- C2D5O2
+- C2D5O1 | [if {ox_selected} == false] [else="disable"]
+- C2D5O2 | [if {cobra_selected} == false] [else="disable"]
 cinematicCont: C2D6

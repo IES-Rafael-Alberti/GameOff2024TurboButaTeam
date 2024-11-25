@@ -74,7 +74,10 @@ translation/file_mode=1
 translation/translation_folder="res://dialogue/translations"
 translation/save_mode=0
 translation/add_separator=false
-variables={}
+variables={
+"cobra_selected": false,
+"ox_selected": false
+}
 translation/locales=[]
 translation/id_counter=16
 

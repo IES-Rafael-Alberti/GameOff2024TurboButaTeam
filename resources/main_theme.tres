@@ -6,6 +6,12 @@
 [ext_resource type="Texture2D" uid="uid://jjp7ie46urcy" path="res://assets/ui/slider_normal_resized.png" id="4_av8oi"]
 [ext_resource type="Texture2D" uid="uid://byyyqpe5kbvbw" path="res://assets/ui/slider_hover_resized.png" id="5_agbtj"]
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7kx11"]
+texture = ExtResource("1_k21hc")
+expand_margin_top = 32.0
+expand_margin_bottom = 32.0
+modulate_color = Color(1, 1, 1, 0.439216)
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uywki"]
 texture = ExtResource("1_k21hc")
 expand_margin_top = 32.0
@@ -13,11 +19,6 @@ expand_margin_bottom = 32.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ejplq"]
 texture = ExtResource("1_5r18u")
-expand_margin_top = 32.0
-expand_margin_bottom = 32.0
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7kx11"]
-texture = ExtResource("1_k21hc")
 expand_margin_top = 32.0
 expand_margin_bottom = 32.0
 
@@ -42,6 +43,7 @@ color = Color(1, 1, 1, 1)
 
 [resource]
 Button/fonts/font = ExtResource("1_3vw85")
+Button/styles/disabled = SubResource("StyleBoxTexture_7kx11")
 Button/styles/focus = SubResource("StyleBoxTexture_uywki")
 Button/styles/hover = SubResource("StyleBoxTexture_ejplq")
 Button/styles/normal = SubResource("StyleBoxTexture_7kx11")
