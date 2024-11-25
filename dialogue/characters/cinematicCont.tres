@@ -43,7 +43,9 @@ overrides = {
 "next_indicator_enabled": "false",
 "next_indicator_show_on_questions": "false",
 "normal_font": "\"res://assets/fonts/Colorfiction - Messy.ttf\"",
+"text_custom_color": "Color(0.682353, 0.141176, 0.133333, 1)",
 "text_size": "60.0",
+"text_use_global_color": "false",
 "text_use_global_font": "false",
 "text_use_global_size": "false",
 "typing_sounds_enabled": "false"
@@ -98,4 +100,4 @@ layer_info = {
 }
 base_overrides = {}
 layers = Array[ExtResource("1_l1vyd")]([])
-metadata/_latest_layer = "15"
+metadata/_latest_layer = "13"
