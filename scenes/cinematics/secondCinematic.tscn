@@ -1,7 +1,6 @@
-[gd_scene load_steps=14 format=3 uid="uid://vtsn0w8120pp"]
+[gd_scene load_steps=13 format=3 uid="uid://vtsn0w8120pp"]
 
 [ext_resource type="Script" path="res://scenes/cinematics/second_cinematic.gd" id="1_1lcf1"]
-[ext_resource type="Texture2D" uid="uid://dtnu1ywt8h6i0" path="res://assets/backgrounds/backgroundEspinas.png" id="2_gh5vh"]
 [ext_resource type="Texture2D" uid="uid://csbwnnj621623" path="res://assets/backgrounds/backgroundEspinas/1.png" id="3_tkhg6"]
 [ext_resource type="Texture2D" uid="uid://bf4ij02ikgci7" path="res://assets/backgrounds/backgroundEspinas/2.png" id="4_uqovv"]
 [ext_resource type="Texture2D" uid="uid://cyhumvgojaq34" path="res://assets/backgrounds/backgroundEspinas/3.png" id="5_1erft"]
@@ -210,11 +209,6 @@ libraries = {
 autoplay = "start2"
 
 [node name="ForestBG" type="Node2D" parent="."]
-
-[node name="Sprite2D" type="Sprite2D" parent="ForestBG"]
-position = Vector2(960, 540)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_gh5vh")
 
 [node name="Parallax2D" type="Parallax2D" parent="ForestBG"]
 
