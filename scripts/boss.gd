@@ -6,6 +6,7 @@ extends Node2D
 @onready var damage_bar: ProgressBar = $ProgressBar/DamageBar
 @onready var timerDamage: Timer = $ProgressBar/Timer
 @onready var battleLog: Label = $ColorRect/BattleLog
+@onready var animationBoss: AnimationPlayer = $Sprite2D/AnimationBoss
 
 @export var maxHealthBoss = 200
 @export var damageBoss = 20
@@ -25,6 +26,7 @@ func _ready() -> void:
 	GameManager.InitBossShield.connect(initShield)
 	GameManager.QuitBossShield.connect(removeShield)
 	GameManager.SelectActionBoss.connect(selectAction)
+	GameManager.isBossTurn.connect(attackAnimation)
 	GameManager.healthBoss = maxHealthBoss
 	
 	progress_bar.max_value = GameManager.healthBoss
@@ -72,12 +74,14 @@ func selectAction():
 		resetShaders()
 		action = "escudo"
 		battleLog.text = "el boss va a usar escudo"
-		sprite_2d.material.set_shader_parameter("isProtecting", true)
 	else:
 		resetShaders()
 		action = "habilidad"
 		battleLog.text = "el boss va a usar habilidad"
 		sprite_2d.material.set_shader_parameter("isSpecial", true)
+	
+	if progressBarShield.visible:
+		sprite_2d.material.set_shader_parameter("isProtecting", true)
 
 #TODO funcion que realice la accion del boss y al finalizar se ponga "GameManager.isPlayerPhase" en true
 func doAction(action):
@@ -90,6 +94,7 @@ func doAction(action):
 		attack(damageBoss)
 	if action == "escudo":
 		shield()
+		sprite_2d.material.set_shader_parameter("isProtecting", true)
 	if action == "habilidad":
 		useHability()
 
@@ -141,3 +146,10 @@ func _on_timer_timeout() -> void:
 func resetShaders():
 	sprite_2d.material.set_shader_parameter("isSpecial", false)
 	sprite_2d.material.set_shader_parameter("isProtecting", false)
+	
+func attackAnimation():
+	if action == "habilidad":
+		animationBoss.play("attack")
+	
+	if action == "atacar":
+		animationBoss.play("attack")

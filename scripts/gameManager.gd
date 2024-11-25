@@ -62,7 +62,7 @@ signal restartButtonVisible
 
 signal isBossTurn
 
-var bossIsCharging
+var bossIsCharging = false
 
 var isPoisoned
 

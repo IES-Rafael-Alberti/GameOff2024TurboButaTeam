@@ -6,6 +6,8 @@ extends TextureButton
 @export var faceSpecial2 = Texture 
 @onready var animationPlayer = $AnimationPlayer
 @onready var shadowAnimationPlayer = $Shadow/ShadowAnimationPlayer
+@onready var bossTurnShadow: Sprite2D = $BossTurnShadow
+@onready var bossTurnShadowAnimation: AnimationPlayer = $BossTurnShadow/BossTurnShadowAnimation
 
 @onready var card_flip = $CardFlip
 
@@ -19,7 +21,7 @@ func _ready():
 	set_texture_normal(back)
 	GameManager.BurnCards.connect(burnCardsRestart)
 	GameManager.BurnCardsInit.connect(burnCardsInit)
-
+	GameManager.isBossTurn.connect(bossTurnShadowCards)
 	
 func voltear():
 	if isFlipped == false:
@@ -73,6 +75,7 @@ func _on_pressed():
 				else:
 					GameManager.canFlip = false
 					print("empieza el turno del boss")
+					GameManager.isBossTurn.emit()
 					await get_tree().create_timer(3).timeout
 					GameManager.isPlayerPhase = false
 
@@ -179,3 +182,8 @@ func isSpecialCard(firstCard: Object = null, secondCard: Object = null) -> bool:
 			return true
 	
 	return false
+
+
+func bossTurnShadowCards():
+	bossTurnShadow.visible=true
+	bossTurnShadowAnimation.play("isBossTurn")
