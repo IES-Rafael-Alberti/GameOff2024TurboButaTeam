@@ -297,6 +297,7 @@ scale = Vector2(0.479998, 0.479998)
 texture = ExtResource("3_ogqs5")
 
 [node name="TextBoxSprite" type="Sprite2D" parent="."]
+visible = false
 self_modulate = Color(1, 1, 1, 0)
 position = Vector2(942, 554)
 scale = Vector2(1.07685, 1.07685)

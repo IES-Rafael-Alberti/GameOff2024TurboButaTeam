@@ -1,7 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://vtsn0w8120pp"]
+[gd_scene load_steps=14 format=3 uid="uid://vtsn0w8120pp"]
 
 [ext_resource type="Script" path="res://scenes/cinematics/second_cinematic.gd" id="1_1lcf1"]
 [ext_resource type="Texture2D" uid="uid://dtnu1ywt8h6i0" path="res://assets/backgrounds/backgroundEspinas.png" id="2_gh5vh"]
+[ext_resource type="Texture2D" uid="uid://csbwnnj621623" path="res://assets/backgrounds/backgroundEspinas/1.png" id="3_tkhg6"]
+[ext_resource type="Texture2D" uid="uid://bf4ij02ikgci7" path="res://assets/backgrounds/backgroundEspinas/2.png" id="4_uqovv"]
+[ext_resource type="Texture2D" uid="uid://cyhumvgojaq34" path="res://assets/backgrounds/backgroundEspinas/3.png" id="5_1erft"]
 [ext_resource type="Texture2D" uid="uid://bl3pktp7rf7bq" path="res://assets/sprites/figure.png" id="7_iud3s"]
 [ext_resource type="Texture2D" uid="uid://ejepl1fvfn3j" path="res://assets/sprites/cuadrotextoCinematic.png" id="8_wj2so"]
 [ext_resource type="AudioStream" uid="uid://c8eoaxir81vl6" path="res://assets/sound/music/dark_forest.ogg" id="9_827hr"]
@@ -124,6 +127,18 @@ tracks/1/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ForestBG:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.566667, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_qp2gl"]
 resource_name = "start"
@@ -200,6 +215,27 @@ autoplay = "start2"
 position = Vector2(960, 540)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_gh5vh")
+
+[node name="Parallax2D" type="Parallax2D" parent="ForestBG"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ForestBG/Parallax2D"]
+position = Vector2(959.111, 539.5)
+scale = Vector2(0.500463, 0.500463)
+texture = ExtResource("3_tkhg6")
+
+[node name="Parallax2D2" type="Parallax2D" parent="ForestBG"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ForestBG/Parallax2D2"]
+position = Vector2(959.111, 539.5)
+scale = Vector2(0.500463, 0.500463)
+texture = ExtResource("4_uqovv")
+
+[node name="Parallax2D3" type="Parallax2D" parent="ForestBG"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ForestBG/Parallax2D3"]
+position = Vector2(960, 540)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_1erft")
 
 [node name="contaminationSprite" type="Sprite2D" parent="."]
 position = Vector2(1165, 491)
