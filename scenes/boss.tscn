@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://c1he8kika8fof"]
+[gd_scene load_steps=16 format=3 uid="uid://c1he8kika8fof"]
 
 [ext_resource type="Script" path="res://scripts/boss.gd" id="1_0mmkp"]
 [ext_resource type="Texture2D" uid="uid://bpji0c018j42b" path="res://assets/backgrounds/firstCinematic/forestBG.png" id="2_wj4js"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://d0nxypabjathg" path="res://assets/backgrounds/firstCinematic/arr_der.png" id="4_ecdqa"]
 [ext_resource type="Texture2D" uid="uid://cng70baed48wn" path="res://assets/backgrounds/firstCinematic/ab_der_plants.png" id="5_fb0se"]
 [ext_resource type="Texture2D" uid="uid://dsott1fpgb5ov" path="res://assets/backgrounds/firstCinematic/ab_izq_plants.png" id="6_3u0y5"]
+[ext_resource type="Texture2D" uid="uid://hrki1mxvercd" path="res://assets/ui/MarcoVidaCrema.svg" id="7_5h8jf"]
 
 [sub_resource type="Animation" id="Animation_xvr3h"]
 resource_name = "BackgroundFlashing"
@@ -164,5 +165,11 @@ theme_override_styles/background = SubResource("StyleBoxFlat_1im14")
 theme_override_styles/fill = SubResource("StyleBoxFlat_v3kqx")
 fill_mode = 3
 show_percentage = false
+
+[node name="MarcoUiPrueba" type="Sprite2D" parent="."]
+z_index = 50
+position = Vector2(-871, 4.00015)
+scale = Vector2(0.1975, 0.1875)
+texture = ExtResource("7_5h8jf")
 
 [connection signal="timeout" from="ProgressBar/Timer" to="." method="_on_timer_timeout"]
