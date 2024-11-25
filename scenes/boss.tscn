@@ -48,7 +48,7 @@ _data = {
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t5td4"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_buh0b"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
+bg_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xqulr"]
 bg_color = Color(0.682353, 0.141176, 0.133333, 1)
@@ -124,13 +124,14 @@ metadata/_edit_lock_ = true
 
 [node name="ProgressBarShield" type="ProgressBar" parent="."]
 offset_left = -784.0
-offset_top = -216.0
+offset_top = -296.0
 offset_right = -736.0
-offset_bottom = -80.0
+offset_bottom = -160.0
 theme_override_styles/background = SubResource("StyleBoxFlat_t5td4")
 max_value = 50.0
 fill_mode = 3
 show_percentage = false
+metadata/_edit_lock_ = true
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
 anchors_preset = 5
@@ -146,6 +147,7 @@ theme_override_styles/background = SubResource("StyleBoxFlat_buh0b")
 theme_override_styles/fill = SubResource("StyleBoxFlat_xqulr")
 fill_mode = 3
 show_percentage = false
+metadata/_edit_lock_ = true
 
 [node name="Timer" type="Timer" parent="ProgressBar"]
 wait_time = 0.4
