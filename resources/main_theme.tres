@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=15 format=3 uid="uid://bt6ll6m2mh5i3"]
+[gd_resource type="Theme" load_steps=14 format=3 uid="uid://bt6ll6m2mh5i3"]
 
 [ext_resource type="FontFile" uid="uid://c4s2a7yraa054" path="res://assets/fonts/Tomorrow-Regular.ttf" id="1_3vw85"]
 [ext_resource type="Texture2D" uid="uid://kvm46eu34hix" path="res://assets/ui/buttonTryHover.png" id="1_5r18u"]
@@ -36,9 +36,6 @@ bg_color = Color(0.682353, 0.141176, 0.133333, 1)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_1lqx0"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f0fbg"]
-bg_color = Color(1, 1, 1, 1)
-
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_g3sq5"]
 color = Color(1, 1, 1, 1)
 
@@ -55,5 +52,4 @@ HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_ngwvp")
 HSlider/styles/slider = null
 OptionButton/fonts/font = ExtResource("1_3vw85")
 OptionButton/icons/arrow = SubResource("ViewportTexture_1lqx0")
-OptionButton/styles/hover = SubResource("StyleBoxFlat_f0fbg")
 PopupMenu/styles/panel = SubResource("StyleBoxLine_g3sq5")
