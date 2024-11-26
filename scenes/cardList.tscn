@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://tw844i3ew8b4" path="res://assets/sprites/cards140x198/pangolin.png" id="4_386j3"]
 [ext_resource type="Texture2D" uid="uid://fxugd6ktg6st" path="res://assets/sprites/cards140x198/pangolinBlanco.png" id="6_7evoq"]
 [ext_resource type="Texture2D" uid="uid://bewxte3f4lio7" path="res://assets/sprites/cards140x198/Grulla.png" id="7_456eg"]
-[ext_resource type="Script" path="res://scripts/cards/doubleShift.gd" id="8_yseqm"]
 [ext_resource type="Texture2D" uid="uid://bhdmps0frcbtk" path="res://assets/sprites/cards140x198/grullaBlanca.png" id="9_s434t"]
 [ext_resource type="Script" path="res://scripts/cards/cardDecreaseDef.gd" id="10_1chyv"]
 [ext_resource type="Texture2D" uid="uid://cj6gansknbcra" path="res://assets/sprites/cards140x198/especial1.png" id="10_noof8"]
