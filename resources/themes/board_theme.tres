@@ -1,0 +1,42 @@
+[gd_resource type="Theme" load_steps=8 format=3 uid="uid://pnjv7finl36r"]
+
+[ext_resource type="FontFile" uid="uid://c4s2a7yraa054" path="res://assets/fonts/Tomorrow-Regular.ttf" id="1_3ki4w"]
+[ext_resource type="Texture2D" uid="uid://sglrhos2pine" path="res://assets/ui/fantasyButtons/simple.svg" id="1_adasj"]
+[ext_resource type="Texture2D" uid="uid://dsr45ea8mmkw" path="res://assets/ui/fantasyButtons/simple-hover.svg" id="1_l2jrm"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ge4ir"]
+texture = ExtResource("1_adasj")
+texture_margin_left = 11.0
+texture_margin_top = 11.0
+texture_margin_right = 11.0
+texture_margin_bottom = 11.0
+modulate_color = Color(1, 1, 1, 0.47451)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lslyp"]
+texture = ExtResource("1_l2jrm")
+texture_margin_left = 11.0
+texture_margin_top = 11.0
+texture_margin_right = 11.0
+texture_margin_bottom = 11.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lrfwg"]
+texture = ExtResource("1_adasj")
+texture_margin_left = 11.0
+texture_margin_top = 11.0
+texture_margin_right = 11.0
+texture_margin_bottom = 11.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n27fc"]
+texture = ExtResource("1_adasj")
+texture_margin_left = 11.0
+texture_margin_top = 11.0
+texture_margin_right = 11.0
+texture_margin_bottom = 11.0
+
+[resource]
+Button/fonts/font = ExtResource("1_3ki4w")
+Button/styles/disabled = SubResource("StyleBoxTexture_ge4ir")
+Button/styles/hover = SubResource("StyleBoxTexture_lslyp")
+Button/styles/normal = SubResource("StyleBoxTexture_lrfwg")
+Button/styles/pressed = SubResource("StyleBoxTexture_lrfwg")
+FlatButton/styles/normal = SubResource("StyleBoxTexture_n27fc")

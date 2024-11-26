@@ -1,11 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://vtsn0w8120pp"]
+[gd_scene load_steps=13 format=3 uid="uid://bqbd12mw0aj5n"]
 
 [ext_resource type="Script" path="res://scenes/cinematics/second_cinematic.gd" id="1_1lcf1"]
 [ext_resource type="Texture2D" uid="uid://csbwnnj621623" path="res://assets/backgrounds/backgroundEspinas/1.png" id="3_tkhg6"]
 [ext_resource type="Texture2D" uid="uid://bf4ij02ikgci7" path="res://assets/backgrounds/backgroundEspinas/2.png" id="4_uqovv"]
 [ext_resource type="Texture2D" uid="uid://cyhumvgojaq34" path="res://assets/backgrounds/backgroundEspinas/3.png" id="5_1erft"]
+[ext_resource type="Texture2D" uid="uid://td8sq7wt0d02" path="res://assets/ui/marcoTexto.png" id="6_cw4jr"]
 [ext_resource type="Texture2D" uid="uid://bl3pktp7rf7bq" path="res://assets/sprites/figure.png" id="7_iud3s"]
-[ext_resource type="Texture2D" uid="uid://ejepl1fvfn3j" path="res://assets/sprites/cuadrotextoCinematic.png" id="8_wj2so"]
 [ext_resource type="AudioStream" uid="uid://c8eoaxir81vl6" path="res://assets/sound/music/dark_forest.ogg" id="9_827hr"]
 
 [sub_resource type="Animation" id="Animation_60kur"]
@@ -69,6 +69,18 @@ tracks/4/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("ColorRect:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_n7x6l"]
@@ -138,6 +150,18 @@ tracks/2/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ColorRect:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_qp2gl"]
 resource_name = "start"
@@ -190,6 +214,18 @@ tracks/3/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ColorRect:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 3.5, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5meh1"]
 _data = {
@@ -236,11 +272,19 @@ position = Vector2(1165, 491)
 scale = Vector2(0.479998, 0.479998)
 texture = ExtResource("7_iud3s")
 
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 395.0
+offset_top = 272.0
+offset_right = 1527.0
+offset_bottom = 791.0
+color = Color(0, 0, 0, 0.588235)
+
 [node name="TextBoxSprite" type="Sprite2D" parent="."]
 self_modulate = Color(1, 1, 1, 0)
-position = Vector2(942, 554)
-scale = Vector2(1.07685, 1.07685)
-texture = ExtResource("8_wj2so")
+position = Vector2(959, 530)
+scale = Vector2(0.505092, 0.505092)
+texture = ExtResource("6_cw4jr")
 
 [node name="ForestSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("9_827hr")

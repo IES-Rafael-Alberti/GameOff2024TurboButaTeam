@@ -1,5 +1,6 @@
-[gd_scene load_steps=16 format=3 uid="uid://xibnk2kph5sy"]
+[gd_scene load_steps=19 format=3 uid="uid://dbdcwg7debr0j"]
 
+[ext_resource type="Theme" uid="uid://b2eu4jujeud0y" path="res://resources/themes/wiki_theme.tres" id="1_ermmr"]
 [ext_resource type="LabelSettings" uid="uid://bsjqw3m3umydi" path="res://resources/LabelSettings/big_textes.tres" id="1_lgk1o"]
 [ext_resource type="Script" path="res://scenes/menus/wiki_screen/wiki_screen.gd" id="1_rmd21"]
 [ext_resource type="Texture2D" uid="uid://bngb571kcpnn1" path="res://assets/sprites/cardsFullResolution/reverso.png" id="2_2ij6p"]
@@ -12,7 +13,9 @@
 [ext_resource type="Texture2D" uid="uid://u1nqewt2tkmo" path="res://assets/sprites/cardsFullResolution/especial2.png" id="9_qmgvc"]
 [ext_resource type="Texture2D" uid="uid://tej13qf6vn8h" path="res://assets/sprites/cardsFullResolution/especial1.png" id="10_73aqc"]
 [ext_resource type="Texture2D" uid="uid://c63ruxqgmk0bp" path="res://assets/sprites/boss/buey.png" id="11_ao6y2"]
+[ext_resource type="Texture2D" uid="uid://dcei2ml5rej1u" path="res://assets/sprites/cardsFullResolution/lince.png" id="11_ccrck"]
 [ext_resource type="Texture2D" uid="uid://dtnu1ywt8h6i0" path="res://assets/backgrounds/backgroundEspinas.png" id="12_yml3x"]
+[ext_resource type="Texture2D" uid="uid://xmcdtew2w6a" path="res://assets/sprites/boss/cobra.png" id="13_bxnnb"]
 [ext_resource type="Texture2D" uid="uid://dqq5f6tuc02qo" path="res://assets/backgrounds/firstCinematic/bgComplete.png" id="13_dee20"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jk85g"]
@@ -25,9 +28,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_ermmr")
 script = ExtResource("1_rmd21")
-cardImgList = Array[Texture]([ExtResource("2_2ij6p"), ExtResource("3_3oy84"), ExtResource("4_yt0g6"), ExtResource("5_icmom"), ExtResource("6_4dkke"), ExtResource("7_4i2of"), ExtResource("8_pqwgn"), ExtResource("9_qmgvc"), ExtResource("10_73aqc")])
-bossImgList = Array[Texture]([ExtResource("11_ao6y2")])
+cardImgList = Array[Texture]([ExtResource("2_2ij6p"), ExtResource("3_3oy84"), ExtResource("4_yt0g6"), ExtResource("5_icmom"), ExtResource("6_4dkke"), ExtResource("7_4i2of"), ExtResource("8_pqwgn"), ExtResource("9_qmgvc"), ExtResource("10_73aqc"), ExtResource("11_ccrck")])
+bossImgList = Array[Texture]([ExtResource("11_ao6y2"), ExtResource("13_bxnnb")])
 bgImgList = Array[Texture]([ExtResource("12_yml3x"), ExtResource("13_dee20")])
 
 [node name="TextContainer" type="VBoxContainer" parent="."]
@@ -140,6 +144,8 @@ offset_right = -0.0800171
 offset_bottom = 0.159973
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_ermmr")
+theme_override_font_sizes/font_size = 64
 text = "<"
 
 [node name="CenterContainer" type="CenterContainer" parent="WikiHBox"]
@@ -169,6 +175,8 @@ offset_right = -17.1201
 offset_bottom = 4.15997
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_ermmr")
+theme_override_font_sizes/font_size = 64
 text = ">"
 
 [node name="CardsLabel" type="Label" parent="."]

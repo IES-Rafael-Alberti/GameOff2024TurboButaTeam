@@ -24,6 +24,7 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 directories/dch_directory={
 "cinematicCont": "res://dialogue/characters/cinematicCont.dch",
+"cobra": "res://dialogue/characters/cobra.dch",
 "testboss": "res://dialogue/characters/testboss.dch"
 }
 directories/dtl_directory={
@@ -88,6 +89,7 @@ glossary/default_case_sensitive=true
 window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/size/mode=3
+window/stretch/mode="canvas_items"
 
 [editor_plugins]
 
@@ -107,6 +109,7 @@ folder_colors={
 [gui]
 
 theme/custom="res://resources/main_theme.tres"
+theme/custom_font="res://assets/fonts/Tomorrow-Regular.ttf"
 
 [input]
 

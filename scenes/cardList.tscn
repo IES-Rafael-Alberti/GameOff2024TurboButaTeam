@@ -1,18 +1,21 @@
-[gd_scene load_steps=27 format=3 uid="uid://bnmf1ucjb1p7o"]
+[gd_scene load_steps=24 format=3 uid="uid://bnmf1ucjb1p7o"]
 
 [ext_resource type="PackedScene" uid="uid://dup3wc5aw7n4e" path="res://scenes/card.tscn" id="1_c275a"]
 [ext_resource type="Shader" path="res://scripts/shaders/cardBurn.gdshader" id="2_n83dj"]
 [ext_resource type="Texture2D" uid="uid://cgr064vblhvdg" path="res://assets/shadersTextures/burnNoise.tres" id="3_gbn4q"]
 [ext_resource type="Script" path="res://scripts/cards/cardAttack.gd" id="3_jmysu"]
-[ext_resource type="Texture2D" path="res://assets/sprites/cards/grulla.png" id="5_5fwo6"]
-[ext_resource type="Texture2D" uid="uid://cb3xt6r1jke5o" path="res://assets/sprites/cards140x198/especial1.png" id="5_fwgru"]
-[ext_resource type="Texture2D" uid="uid://bk474ycoe1y4e" path="res://assets/sprites/cards140x198/especial2.png" id="6_354v5"]
-[ext_resource type="Script" path="res://scripts/cards/doubleShift.gd" id="8_yseqm"]
+[ext_resource type="Texture2D" uid="uid://tw844i3ew8b4" path="res://assets/sprites/cards140x198/pangolin.png" id="4_rilkp"]
+[ext_resource type="Texture2D" uid="uid://cj6gansknbcra" path="res://assets/sprites/cards140x198/especial1.png" id="5_fwgru"]
+[ext_resource type="Texture2D" uid="uid://b3dh17nqxsqbv" path="res://assets/sprites/cards140x198/especial2.png" id="6_354v5"]
+[ext_resource type="Texture2D" uid="uid://fxugd6ktg6st" path="res://assets/sprites/cards140x198/pangolinBlanco.png" id="8_0ljpd"]
+[ext_resource type="Texture2D" uid="uid://4sxdmwsma3a" path="res://assets/sprites/cards140x198/Grulla.png" id="9_06jrk"]
 [ext_resource type="Script" path="res://scripts/cards/cardDecreaseDef.gd" id="10_1chyv"]
-[ext_resource type="Texture2D" path="res://assets/sprites/cards/mofeta.png" id="10_o2jvb"]
+[ext_resource type="Texture2D" uid="uid://bvj2alebiqgw1" path="res://assets/sprites/cards140x198/lince.png" id="11_3tg0a"]
+[ext_resource type="Texture2D" uid="uid://bhdmps0frcbtk" path="res://assets/sprites/cards140x198/grullaBlanca.png" id="11_ivge2"]
 [ext_resource type="Script" path="res://scripts/cards/cardAttackUnderShield.gd" id="11_qu0kd"]
-[ext_resource type="Texture2D" path="res://assets/sprites/cards/rata.png" id="12_nb5a2"]
+[ext_resource type="Texture2D" uid="uid://cwq17thvapoeu" path="res://assets/sprites/cards140x198/Mofeta.png" id="13_kpg6c"]
 [ext_resource type="Script" path="res://scripts/cards/cardShield.gd" id="13_qse35"]
+[ext_resource type="Texture2D" uid="uid://dxxg4hi6f58jy" path="res://assets/sprites/cards140x198/Rata.png" id="14_rgqma"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mfmug"]
 resource_local_to_scene = true
@@ -29,9 +32,6 @@ shader_parameter/pause_duration = 0.15
 shader_parameter/offset = 2.0
 shader_parameter/dissolve_texture = ExtResource("3_gbn4q")
 
-[sub_resource type="Resource" id="Resource_exy52"]
-metadata/__load_path__ = "res://assets/sprites/cards/pangolin.png"
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1qkai"]
 resource_local_to_scene = true
 shader = ExtResource("2_n83dj")
@@ -46,9 +46,6 @@ shader_parameter/line_color = Vector4(1, 1, 1, 1)
 shader_parameter/pause_duration = 0.15
 shader_parameter/offset = 2.0
 shader_parameter/dissolve_texture = ExtResource("3_gbn4q")
-
-[sub_resource type="Resource" id="Resource_53bbf"]
-metadata/__load_path__ = "res://assets/sprites/cards/pangolinBlanco.png"
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_p7hi5"]
 resource_local_to_scene = true
@@ -80,9 +77,6 @@ shader_parameter/pause_duration = 0.15
 shader_parameter/offset = 2.0
 shader_parameter/dissolve_texture = ExtResource("3_gbn4q")
 
-[sub_resource type="Resource" id="Resource_lpo5b"]
-metadata/__load_path__ = "res://assets/sprites/cards/grullaBlanca.png"
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_skj80"]
 resource_local_to_scene = true
 shader = ExtResource("2_n83dj")
@@ -97,9 +91,6 @@ shader_parameter/line_color = Vector4(1, 1, 1, 1)
 shader_parameter/pause_duration = 0.15
 shader_parameter/offset = 2.0
 shader_parameter/dissolve_texture = ExtResource("3_gbn4q")
-
-[sub_resource type="Resource" id="Resource_pq3nn"]
-metadata/__load_path__ = "res://assets/sprites/cards/especial1.png"
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6qty4"]
 resource_local_to_scene = true
@@ -131,78 +122,53 @@ shader_parameter/pause_duration = 0.15
 shader_parameter/offset = 2.0
 shader_parameter/dissolve_texture = ExtResource("3_gbn4q")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_1sxc7"]
-resource_local_to_scene = true
-shader = ExtResource("2_n83dj")
-shader_parameter/isBurning = true
-shader_parameter/isHighlight = false
-shader_parameter/dissolve_value = 1.0
-shader_parameter/burn_size = 0.1
-shader_parameter/burn_color = Color(0.682353, 0.141176, 0.133333, 1)
-shader_parameter/speed = 2.0
-shader_parameter/line_width = 0.15
-shader_parameter/line_color = Vector4(1, 1, 1, 1)
-shader_parameter/pause_duration = 0.15
-shader_parameter/offset = 2.0
-shader_parameter/dissolve_texture = ExtResource("3_gbn4q")
-
-[sub_resource type="Resource" id="Resource_0xkmm"]
-metadata/__load_path__ = "res://assets/sprites/cards/especial2.png"
-
 [node name="CardList" type="Node2D"]
 
 [node name="Card1" parent="." instance=ExtResource("1_c275a")]
 material = SubResource("ShaderMaterial_mfmug")
-face = SubResource("Resource_exy52")
+face = ExtResource("4_rilkp")
 scriptAnimal = ExtResource("13_qse35")
 faceSpecial1 = ExtResource("5_fwgru")
 faceSpecial2 = ExtResource("6_354v5")
 
 [node name="Card2" parent="." instance=ExtResource("1_c275a")]
 material = SubResource("ShaderMaterial_1qkai")
-face = SubResource("Resource_53bbf")
+face = ExtResource("8_0ljpd")
 scriptAnimal = ExtResource("13_qse35")
 faceSpecial1 = ExtResource("5_fwgru")
 faceSpecial2 = ExtResource("6_354v5")
 
 [node name="Card3" parent="." instance=ExtResource("1_c275a")]
 material = SubResource("ShaderMaterial_p7hi5")
-face = ExtResource("5_5fwo6")
+face = ExtResource("9_06jrk")
 scriptAnimal = ExtResource("3_jmysu")
 faceSpecial1 = ExtResource("5_fwgru")
 faceSpecial2 = ExtResource("6_354v5")
 
 [node name="Card4" parent="." instance=ExtResource("1_c275a")]
 material = SubResource("ShaderMaterial_pq3nt")
-face = SubResource("Resource_lpo5b")
+face = ExtResource("11_3tg0a")
 scriptAnimal = ExtResource("3_jmysu")
 faceSpecial1 = ExtResource("5_fwgru")
 faceSpecial2 = ExtResource("6_354v5")
 
 [node name="Card5" parent="." instance=ExtResource("1_c275a")]
 material = SubResource("ShaderMaterial_skj80")
-face = SubResource("Resource_pq3nn")
-scriptAnimal = ExtResource("8_yseqm")
+face = ExtResource("11_ivge2")
+scriptAnimal = ExtResource("10_1chyv")
 faceSpecial1 = ExtResource("5_fwgru")
 faceSpecial2 = ExtResource("6_354v5")
 
 [node name="Card6" parent="." instance=ExtResource("1_c275a")]
 material = SubResource("ShaderMaterial_6qty4")
-face = ExtResource("10_o2jvb")
+face = ExtResource("13_kpg6c")
 scriptAnimal = ExtResource("10_1chyv")
 faceSpecial1 = ExtResource("5_fwgru")
 faceSpecial2 = ExtResource("6_354v5")
 
 [node name="Card7" parent="." instance=ExtResource("1_c275a")]
 material = SubResource("ShaderMaterial_sxvok")
-face = ExtResource("12_nb5a2")
+face = ExtResource("14_rgqma")
 scriptAnimal = ExtResource("11_qu0kd")
-faceSpecial1 = ExtResource("5_fwgru")
-faceSpecial2 = ExtResource("6_354v5")
-
-[node name="Card8" parent="." instance=ExtResource("1_c275a")]
-material = SubResource("ShaderMaterial_1sxc7")
-face = SubResource("Resource_0xkmm")
-scriptAnimal = ExtResource("8_yseqm")
 faceSpecial1 = ExtResource("5_fwgru")
 faceSpecial2 = ExtResource("6_354v5")
