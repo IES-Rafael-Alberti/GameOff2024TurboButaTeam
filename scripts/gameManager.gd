@@ -74,8 +74,7 @@ signal TwentyOfLife
 
 signal TenOfLife
 
-
-var bossIsCharging
+signal FlipTwoCard
 
 var isPoisoned
 

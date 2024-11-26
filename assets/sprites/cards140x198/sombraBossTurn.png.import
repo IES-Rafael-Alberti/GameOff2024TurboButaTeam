@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b233wjmyi78ql"
-path="res://.godot/imported/sombraBossTurn.png-7a4605761fa592fc087506428138075f.ctex"
+path="res://.godot/imported/sombraBossTurn.png-599a03460647bf6db863b815c5cda97c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/cards/sombraBossTurn.png"
-dest_files=["res://.godot/imported/sombraBossTurn.png-7a4605761fa592fc087506428138075f.ctex"]
+source_file="res://assets/sprites/cards140x198/sombraBossTurn.png"
+dest_files=["res://.godot/imported/sombraBossTurn.png-599a03460647bf6db863b815c5cda97c.ctex"]
 
 [params]
 
