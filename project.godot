@@ -27,14 +27,23 @@ directories/dch_directory={
 "testboss": "res://dialogue/characters/testboss.dch"
 }
 directories/dtl_directory={
+"CB_50HP": "res://dialogue/timelines/BF2_COBRA/CB_50HP.dtl",
+"CB_60HP": "res://dialogue/timelines/BF2_COBRA/CB_60HP.dtl",
+"CB_70HP": "res://dialogue/timelines/BF2_COBRA/CB_70HP.dtl",
+"CB_80HP": "res://dialogue/timelines/BF2_COBRA/CB_80HP.dtl",
+"CB_90HP": "res://dialogue/timelines/BF2_COBRA/CB_90HP.dtl",
+"CB_defeat": "res://dialogue/timelines/BF2_COBRA/CB_defeat.dtl",
 "FirstCinematic": "res://dialogue/timelines/FirstCinematic/FirstCinematic.dtl",
 "FirstDialogue": "res://dialogue/timelines/FirstCinematic/FirstDialogue.dtl",
 "OxStart": "res://dialogue/timelines/BF1_OX/OxStart.dtl",
+"Ox_50HP": "res://dialogue/timelines/BF1_OX/Ox_50HP.dtl",
 "Ox_60HP": "res://dialogue/timelines/BF1_OX/Ox_60HP.dtl",
 "Ox_70HP": "res://dialogue/timelines/BF1_OX/Ox_70HP.dtl",
 "Ox_80HP": "res://dialogue/timelines/BF1_OX/Ox_80HP.dtl",
 "Ox_90HP": "res://dialogue/timelines/BF1_OX/Ox_90HP.dtl",
-"TestTL": "res://dialogue/timelines/TestTL.dtl"
+"Ox_Defeat": "res://dialogue/timelines/BF1_OX/Ox_Defeat.dtl",
+"TestTL": "res://dialogue/timelines/TestTL.dtl",
+"cobra_start": "res://dialogue/timelines/BF2_COBRA/cobra_start.dtl"
 }
 layout/style_list=["res://dialogue/styles/textbubble.tres", "res://dialogue/styles/boxTest.tres", "res://dialogue/styles/cinematicStyle/cinematicStyle.tres", "res://dialogue/characters/cinematicCont.tres"]
 layout/default_style="res://dialogue/styles/cinematicStyle/cinematicStyle.tres"
@@ -89,6 +98,10 @@ folder_colors={
 "res://scripts/": "teal"
 }
 
+[gui]
+
+theme/custom="res://resources/main_theme.tres"
+
 [input]
 
 dialogic_default_action={
@@ -112,3 +125,4 @@ locale/test="en"
 textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)

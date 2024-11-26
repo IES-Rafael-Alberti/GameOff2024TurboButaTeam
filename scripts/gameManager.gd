@@ -13,7 +13,7 @@ var playerShield = 0
 var bossShield = 0
 
 #Hace un preload del dorso de la carta
-var cardBack = preload("res://assets/sprites/cards/reverso.png")
+var cardBack = preload("res://assets/sprites/cards140x198/reverso.png")
 
 #Guarda el nodo de la primera carta
 var firstCardPicked
@@ -46,6 +46,10 @@ signal QuitPlayerShield
 
 signal InitPlayerShield
 
+signal BurnCards
+
+signal BurnCardsInit
+
 signal BossShield
 
 signal QuitBossShield
@@ -55,6 +59,17 @@ signal InitBossShield
 signal SelectActionBoss
 
 signal restartButtonVisible
+
+signal EightyOfLife
+
+signal SixtyOfLife
+
+signal FortyOfLife
+
+signal TwentyOfLife
+
+signal TenOfLife
+
 
 var bossIsCharging
 
@@ -69,3 +84,7 @@ var pickedBoss
 var bossNum = 0
 
 var doubleShift = true
+
+var isCouple = false
+
+var specialCard

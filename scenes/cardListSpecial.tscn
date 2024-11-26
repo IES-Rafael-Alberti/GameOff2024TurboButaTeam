@@ -1,0 +1,55 @@
+[gd_scene load_steps=10 format=3 uid="uid://boub0jnxmirqs"]
+
+[ext_resource type="PackedScene" uid="uid://dup3wc5aw7n4e" path="res://scenes/card.tscn" id="1_jsbgf"]
+[ext_resource type="Shader" path="res://scripts/shaders/cardBurn.gdshader" id="2_cntji"]
+[ext_resource type="Texture2D" uid="uid://cgr064vblhvdg" path="res://assets/shadersTextures/burnNoise.tres" id="3_dlhwx"]
+[ext_resource type="Texture2D" uid="uid://cj6gansknbcra" path="res://assets/sprites/cards/especial1.png" id="4_mnv0s"]
+[ext_resource type="Texture2D" uid="uid://b3dh17nqxsqbv" path="res://assets/sprites/cards/especial2.png" id="5_6qb6j"]
+[ext_resource type="Script" path="res://scripts/cards/doubleShift.gd" id="5_gfp2i"]
+[ext_resource type="Script" path="res://scripts/cards/flipTwoCards.gd" id="7_fh35b"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dhsoy"]
+resource_local_to_scene = true
+shader = ExtResource("2_cntji")
+shader_parameter/isBurning = true
+shader_parameter/isHighlight = false
+shader_parameter/dissolve_value = 1.0
+shader_parameter/burn_size = 0.1
+shader_parameter/burn_color = Color(0.682353, 0.141176, 0.133333, 1)
+shader_parameter/speed = 2.0
+shader_parameter/line_width = 0.15
+shader_parameter/line_color = Vector4(1, 1, 1, 1)
+shader_parameter/pause_duration = 0.15
+shader_parameter/offset = 2.0
+shader_parameter/dissolve_texture = ExtResource("3_dlhwx")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_i7ls7"]
+resource_local_to_scene = true
+shader = ExtResource("2_cntji")
+shader_parameter/isBurning = true
+shader_parameter/isHighlight = false
+shader_parameter/dissolve_value = 1.0
+shader_parameter/burn_size = 0.1
+shader_parameter/burn_color = Color(0.682353, 0.141176, 0.133333, 1)
+shader_parameter/speed = 2.0
+shader_parameter/line_width = 0.15
+shader_parameter/line_color = Vector4(1, 1, 1, 1)
+shader_parameter/pause_duration = 0.15
+shader_parameter/offset = 2.0
+shader_parameter/dissolve_texture = ExtResource("3_dlhwx")
+
+[node name="CardListSpecial" type="Node2D"]
+
+[node name="Especial1" parent="." instance=ExtResource("1_jsbgf")]
+material = SubResource("ShaderMaterial_dhsoy")
+face = ExtResource("4_mnv0s")
+scriptAnimal = ExtResource("5_gfp2i")
+faceSpecial1 = ExtResource("4_mnv0s")
+faceSpecial2 = ExtResource("5_6qb6j")
+
+[node name="Especial2" parent="." instance=ExtResource("1_jsbgf")]
+material = SubResource("ShaderMaterial_i7ls7")
+face = ExtResource("5_6qb6j")
+scriptAnimal = ExtResource("7_fh35b")
+faceSpecial1 = ExtResource("4_mnv0s")
+faceSpecial2 = ExtResource("5_6qb6j")
