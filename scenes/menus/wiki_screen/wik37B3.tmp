@@ -1,0 +1,232 @@
+[gd_scene load_steps=3 format=3 uid="uid://xibnk2kph5sy"]
+
+[ext_resource type="LabelSettings" uid="uid://bsjqw3m3umydi" path="res://resources/LabelSettings/big_textes.tres" id="1_lgk1o"]
+[ext_resource type="Script" path="res://scenes/menus/wiki_screen/wiki_screen.gd" id="1_rmd21"]
+
+[node name="WikiScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rmd21")
+
+[node name="TextContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -140.5
+offset_right = 140.5
+offset_bottom = 175.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="TextContainer"]
+layout_mode = 2
+text = "WIKI"
+label_settings = ExtResource("1_lgk1o")
+
+[node name="ButtonContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_right = 40.0
+offset_bottom = 20.0
+grow_vertical = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Cards" type="Button" parent="ButtonContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 10
+theme_override_font_sizes/font_size = 24
+text = "WIKI_CARDS_BUTTON"
+
+[node name="Bosses" type="Button" parent="ButtonContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 10
+theme_override_font_sizes/font_size = 24
+text = "WIKI_BOSSES_BUTTON"
+
+[node name="Backgrounds" type="Button" parent="ButtonContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 10
+theme_override_font_sizes/font_size = 24
+text = "WIKI_BACKGROUNDS_BUTTON"
+
+[node name="CardsContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BossesContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BackgroundsContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Warning" type="VBoxContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -79.5
+offset_right = 79.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Warning"]
+custom_minimum_size = Vector2(1000, 0)
+layout_mode = 2
+text = "SPOILER_ALERT_LABEL"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Cards" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Cards"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -21.0
+offset_top = -271.0
+offset_right = 21.0
+offset_bottom = -248.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "cards"
+
+[node name="CardsHBoxContainer" type="HBoxContainer" parent="Cards"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -4.95
+anchor_right = 5.95
+anchor_bottom = 1.0
+offset_left = 1.52588e-05
+offset_right = -1.52588e-05
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 200
+alignment = 1
+
+[node name="Button" type="Button" parent="Cards/CardsHBoxContainer"]
+layout_mode = 2
+text = "<"
+
+[node name="Button2" type="Button" parent="Cards/CardsHBoxContainer"]
+layout_mode = 2
+text = ">"
+
+[node name="Bosses" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_right = 40.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Bosses"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -26.5
+offset_top = -11.5
+offset_right = 26.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "bosses"
+
+[node name="Backgrounds" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Backgrounds"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -11.5
+offset_right = 50.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "backgrounds"
+
+[connection signal="pressed" from="ButtonContainer/Cards" to="." method="_on_cards_pressed"]
+[connection signal="pressed" from="ButtonContainer/Bosses" to="." method="_on_bosses_pressed"]
+[connection signal="pressed" from="ButtonContainer/Backgrounds" to="." method="_on_backgrounds_pressed"]

@@ -19,6 +19,11 @@ var shieldMaxValue = 50
 var action
 var newScriptBoss
 var shieldIsActive = false
+var hasEmited80 = false 
+var hasEmited60 = false 
+var hasEmited40 = false 
+var hasEmited20 = false 
+var hasEmited10 = false 
 
 func _ready() -> void:
 	GameManager.BossTakeDamage.connect(UpdateProgressBar)
@@ -125,6 +130,24 @@ func UpdateProgressBar():
 	if progress_bar.value <= 0:
 		#TODO hacer que el boss se muera
 		print("ganaste")
+	
+	var health_percentage = GameManager.healthBoss / progress_bar.max_value * 100
+	
+	if health_percentage <= 10 and !hasEmited10:
+		hasEmited10 = true
+		GameManager.TenOfLife.emit()
+	elif health_percentage <= 20 and !hasEmited20:
+		hasEmited20 = true
+		GameManager.TwentyOfLife.emit()
+	elif health_percentage <= 40 and !hasEmited40:
+		hasEmited40 = true
+		GameManager.FortyOfLife.emit()
+	elif health_percentage <= 60 and !hasEmited60:
+		hasEmited60 = true
+		GameManager.SixtyOfLife.emit()
+	elif health_percentage <= 80 and !hasEmited80:
+		hasEmited80 = true
+		GameManager.EightyOfLife.emit()
 
 func updateShield():
 	progressBarShield.max_value = shieldMaxValue
