@@ -62,6 +62,8 @@ signal restartButtonVisible
 
 signal isBossTurn
 
+signal isPlayerTurn
+
 var bossIsCharging = false
 
 signal EightyOfLife

@@ -6,6 +6,7 @@ extends Node2D
 @onready var damage_bar: ProgressBar = $ProgressBar/DamageBar
 @onready var timerDamage: Timer = $ProgressBar/Timer
 @onready var animationBoss: AnimationPlayer = $Sprite2D/AnimationBoss
+@onready var border: Sprite2D = $ProgressBar/Border
 
 @export var maxHealthBoss = 200
 @export var damageBoss = 20
@@ -65,6 +66,7 @@ func turnBoss():
 		GameManager.emit_signal("UpdateHistorial", "BOSS_HABILITY_CHARGE", true)
 	GameManager.canFlip = true
 	GameManager.isPlayerPhase = true
+	GameManager.isPlayerTurn.emit()
 
 func selectAction():
 	var rng = RandomNumberGenerator.new()
