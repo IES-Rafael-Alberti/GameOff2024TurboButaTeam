@@ -78,6 +78,8 @@ signal UpdateHistorial(text, boss)
 
 signal FlipTwoCard
 
+signal TurnBoss
+
 var isPoisoned
 
 #Multi de daño que se vuelve a poner en 1 cuando el boss muere

@@ -32,6 +32,7 @@ func _ready() -> void:
 	GameManager.SelectActionBoss.connect(selectAction)
 	GameManager.isBossTurn.connect(attackAnimation)
 	GameManager.healthBoss = maxHealthBoss
+	GameManager.TurnBoss.connect(turnBoss)
 	
 	progress_bar.max_value = GameManager.healthBoss
 	progress_bar.value = GameManager.healthBoss
@@ -40,37 +41,36 @@ func _ready() -> void:
 	
 	newScriptBoss = scriptBoss.new()
 	
-	
 	sprite_2d.texture = textureBoss
 	
 	progressBarShield.visible = false
 	
 	selectAction()
 	print("elige primera accion")
+	print(self)
 
-func _process(delta: float) -> void:
-	if !GameManager.isPlayerPhase:
-		if shieldIsActive:
-			GameManager.QuitBossShield.emit()
+func turnBoss():
+	if shieldIsActive:
+		GameManager.QuitBossShield.emit()
 		#Si ya está envenenado, vuelve a hacer daño y quita el veneno
-		if GameManager.isPoisoned:
-			useHability()
+	if GameManager.isPoisoned:
+		useHability()
 		
-		doAction(action)
-		GameManager.isPlayerPhase = true
+	doAction(action)
 		
-		if !GameManager.bossIsCharging:
-			GameManager.SelectActionBoss.emit()
-		else:
-			GameManager.emit_signal("UpdateHistorial", "BOSS_HABILITY_CHARGE", true)
-		GameManager.canFlip = true
+	if !GameManager.bossIsCharging:
+		print("emite select")
+		GameManager.SelectActionBoss.emit()
+	else:
+		GameManager.emit_signal("UpdateHistorial", "BOSS_HABILITY_CHARGE", true)
+	GameManager.canFlip = true
+	GameManager.isPlayerPhase = true
 
 func selectAction():
 	var rng = RandomNumberGenerator.new()
 	var randomNum = int(rng.randf_range(1, 100.0))
-	
-	# TODO activar shader segun action
-
+	print(randomNum)
+	# TODO activar shader segun actio
 	if randomNum <= 60:
 		resetShaders()
 		action = "atacar"

@@ -4,7 +4,8 @@ var numCardsBoard = 7
 var finalCardList: Array
 var cardListSceneTemp
 var cardListSpecialSceneTemp
-var bossListSceneTemp
+var bossOXTemp
+var bossCobraTemp
 
 @export var maxHealthPlayer = 200
 @export var shieldMaxValue = 50
@@ -27,7 +28,8 @@ var bossListSceneTemp
 # Cargamos la escena que contiene todas las cartas
 @onready var cardListScene = preload("res://scenes/cardList.tscn")
 @onready var cardListSpecialScene = preload("res://scenes/cardListSpecial.tscn")
-@onready var bossListScene = preload("res://scenes/bossList.tscn")
+@onready var bossOX = preload("res://scenes/OX.tscn")
+@onready var bossCobra = preload("res://scenes/cobra.tscn")
 
 func _ready():
 	#Ponerle la vida al player
@@ -50,7 +52,8 @@ func _ready():
 	GameManager.FlipTwoCard.connect(flipTwoCard)
 	GameManager.UpdateHistorial.connect(updateHistorial)
 	
-	bossListSceneTemp = bossListScene.instantiate()
+	bossOXTemp = bossOX.instantiate()
+	bossCobraTemp = bossCobra.instantiate()
 	
 	#Seleccionamos el boss teniendo en cuenta la eleccion del jugador en la narrativa
 	selectBoss()
@@ -119,17 +122,31 @@ func UpdateProgressBar():
 		get_tree().change_scene_to_file.bind("res://scenes/menus/game_over/game_over.tscn").call_deferred()
 
 func selectBoss():
-	# Metemos la lista para comprobar sus hijos
-	add_child(bossListSceneTemp)
-	bossListSceneTemp.visible = false
-	# Almacenamos todos los nodos(cartas) para mezclarlas
-	var bossList = bossListSceneTemp.get_children()
+	if GameManager.bossNum == 0:
+		# Metemos la lista para comprobar sus hijos
+		add_child(bossOXTemp)
+		
+		# Almacenamos todos los nodos (cartas) para mezclarlas
+		var boss = bossOXTemp.get_children()
+		
+		# Seleccionamos el jefe basado en el número de jefe elegido
+		GameManager.pickedBoss = boss[0]
+		
+		# Añadimos el jefe duplicado al grid
+		grid_container.add_child(GameManager.pickedBoss)
 	
-	GameManager.pickedBoss = bossList[GameManager.bossNum]
-	
-	var bossTemp = GameManager.pickedBoss.duplicate()
-	
-	grid_container.add_child(bossTemp)
+	if GameManager.bossNum == 1:
+		# Metemos la lista para comprobar sus hijos
+		add_child(bossCobraTemp)
+		
+		# Almacenamos todos los nodos (cartas) para mezclarlas
+		var boss = bossCobraTemp.get_children()
+		
+		# Seleccionamos el jefe basado en el número de jefe elegido
+		GameManager.pickedBoss = boss[0]
+		
+		# Añadimos el jefe duplicado al grid
+		grid_container.add_child(GameManager.pickedBoss)
 
 func updateShield():
 	progressBarShield.max_value = shieldMaxValue
@@ -165,7 +182,8 @@ func flipTwoCard():
 	card2.mostrarFace()
 
 func _on_button_pressed() -> void:
-	GameManager.BoardCompleted.emit()
+	if GameManager.canFlip:
+		GameManager.BoardCompleted.emit()
 
 func _on_timer_timeout() -> void:
 	damage_bar.value = GameManager.healthPlayer

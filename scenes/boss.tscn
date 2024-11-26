@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://c1he8kika8fof"]
+[gd_scene load_steps=27 format=3 uid="uid://c1he8kika8fof"]
 
 [ext_resource type="Script" path="res://scripts/boss.gd" id="1_0mmkp"]
 [ext_resource type="Shader" path="res://scripts/shaders/boss.gdshader" id="1_hrodq"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cng70baed48wn" path="res://assets/backgrounds/firstCinematic/ab_der_plants.png" id="5_fb0se"]
 [ext_resource type="Texture2D" uid="uid://dsott1fpgb5ov" path="res://assets/backgrounds/firstCinematic/ab_izq_plants.png" id="6_3u0y5"]
 [ext_resource type="Texture2D" uid="uid://db8sofyfwlvj5" path="res://assets/shadersTextures/smoke.png" id="8_g3lj1"]
+[ext_resource type="Texture2D" uid="uid://dtlyl6f1ea687" path="res://assets/sprites/ui/Ilustracion_sin_titulo.png" id="9_vrljt"]
 
 [sub_resource type="Animation" id="Animation_xvr3h"]
 resource_name = "BackgroundFlashing"
@@ -143,6 +144,17 @@ _data = {
 }
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t5td4"]
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ryx3i"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_buh0b"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -152,15 +164,12 @@ bg_color = Color(0.682353, 0.141176, 0.133333, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1im14"]
 bg_color = Color(0, 0, 0, 1)
-expand_margin_left = 1.0
-expand_margin_top = 1.0
-expand_margin_right = 1.0
-expand_margin_bottom = 1.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v3kqx"]
 bg_color = Color(1, 1, 1, 1)
 
 [node name="Boss" type="Node2D"]
+position = Vector2(971, 327)
 script = ExtResource("1_0mmkp")
 
 [node name="ForestBG" type="Node2D" parent="."]
@@ -226,11 +235,12 @@ libraries = {
 }
 
 [node name="ProgressBarShield" type="ProgressBar" parent="."]
-offset_left = -784.0
-offset_top = -216.0
-offset_right = -736.0
-offset_bottom = -80.0
+offset_left = -822.0
+offset_top = -307.0
+offset_right = -774.0
+offset_bottom = -171.0
 theme_override_styles/background = SubResource("StyleBoxFlat_t5td4")
+theme_override_styles/fill = SubResource("StyleBoxFlat_ryx3i")
 max_value = 50.0
 fill_mode = 3
 show_percentage = false
@@ -239,10 +249,10 @@ show_percentage = false
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -936.0
-offset_top = -296.0
-offset_right = 124.0
-offset_bottom = 320.0
+offset_left = -932.798
+offset_top = -306.0
+offset_right = -181.798
+offset_bottom = 310.0
 grow_horizontal = 2
 scale = Vector2(0.135885, 0.947368)
 theme_override_styles/background = SubResource("StyleBoxFlat_buh0b")
@@ -266,24 +276,10 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_v3kqx")
 fill_mode = 3
 show_percentage = false
 
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -784.0
-offset_top = -296.0
-offset_right = -440.0
-offset_bottom = -232.0
-color = Color(0, 0, 0, 1)
-
-[node name="BattleLog" type="Label" parent="ColorRect"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 24
-text = "dewdwe"
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="IlustracionSinTitulo" type="Sprite2D" parent="."]
+position = Vector2(-748.798, -110)
+rotation = -1.5708
+scale = Vector2(0.34, 0.34)
+texture = ExtResource("9_vrljt")
 
 [connection signal="timeout" from="ProgressBar/Timer" to="." method="_on_timer_timeout"]
