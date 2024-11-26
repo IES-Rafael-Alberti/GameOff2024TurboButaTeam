@@ -129,6 +129,10 @@ func useHability():
 func UpdateProgressBar():
 	timerDamage.start()
 	progress_bar.value = GameManager.healthBoss
+	sprite_2d.material.set_shader_parameter("bossTakeDmg", true)
+	
+	await get_tree().create_timer(3).timeout
+	sprite_2d.material.set_shader_parameter("bossTakeDmg", false)
 	if progress_bar.value <= 0:
 		#TODO hacer que el boss se muera
 		GameManager.bossNum = 1

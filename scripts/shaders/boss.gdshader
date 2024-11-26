@@ -1,8 +1,16 @@
 shader_type canvas_item;
 
-
 uniform bool isSpecial = true;
 uniform bool isProtecting = true;
+uniform bool bossTakeDmg = true;
+
+group_uniforms BossShake;
+uniform vec3 shock_color : source_color = vec3(1.0, 0.0, 0.0);//Color to use for the shock.
+uniform float amplitude = 30.0;//Initial amplitude of the shock. This will start at this amplitude and
+//gradually attenuate.
+uniform float frequecy = 10.0;//How fast shold it move side to side, more frequency means it'll move more quickly
+//side to side.
+group_uniforms;
 
 group_uniforms Outline;
 // Texture outline parameters
@@ -30,6 +38,11 @@ group_uniforms;
 
 // Compensate UV for outline.
 void vertex() {
+	if(bossTakeDmg){
+	float exponent = mod(TIME, 3.0);
+	VERTEX.x += amplitude * exp(-3.0*exponent) * sin(frequecy*exponent);
+	}
+	
 	if(isSpecial)
 		//VERTEX = vec2(VERTEX.x * (1.0 + TEXTURE_PIXEL_SIZE.x * thickness * 2.0), VERTEX.y * (1.0 + TEXTURE_PIXEL_SIZE.y * thickness * 2.0));
 		VERTEX = vec2(VERTEX.x * (1.0 + TEXTURE_PIXEL_SIZE.x * max(maxLineWidth, minLineWidth) * 2.0), VERTEX.y * (1.0 + TEXTURE_PIXEL_SIZE.y * max(maxLineWidth, minLineWidth) * 2.0));
@@ -110,6 +123,11 @@ float in_range(vec2 size, sampler2D tex, vec2 uv) {
 }
 
 void fragment() {
+	if(bossTakeDmg){
+	float exponent = mod(TIME, 3.0);
+	vec3 normal_color = texture(TEXTURE, UV).rgb;
+	COLOR.rgb = normal_color + shock_color * exp(-3.0*exponent);
+	}
 	
 	if(isSpecial) {
 		
