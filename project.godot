@@ -43,7 +43,9 @@ directories/dtl_directory={
 "Ox_90HP": "res://dialogue/timelines/BF1_OX/Ox_90HP.dtl",
 "Ox_Defeat": "res://dialogue/timelines/BF1_OX/Ox_Defeat.dtl",
 "TestTL": "res://dialogue/timelines/TestTL.dtl",
-"cobra_start": "res://dialogue/timelines/BF2_COBRA/cobra_start.dtl"
+"cobra_start": "res://dialogue/timelines/BF2_COBRA/cobra_start.dtl",
+"second_cinematic": "res://dialogue/timelines/SecondCinematic/second_cinematic.dtl",
+"third_cinematic": "res://dialogue/timelines/ThirdCinematic/third_cinematic.dtl"
 }
 layout/style_list=["res://dialogue/styles/textbubble.tres", "res://dialogue/styles/boxTest.tres", "res://dialogue/styles/cinematicStyle/cinematicStyle.tres", "res://dialogue/characters/cinematicCont.tres"]
 layout/default_style="res://dialogue/styles/cinematicStyle/cinematicStyle.tres"
@@ -73,7 +75,10 @@ translation/file_mode=1
 translation/translation_folder="res://dialogue/translations"
 translation/save_mode=0
 translation/add_separator=false
-variables={}
+variables={
+"cobra_selected": false,
+"ox_selected": false
+}
 translation/locales=[]
 translation/id_counter=16
 glossary/default_case_sensitive=true

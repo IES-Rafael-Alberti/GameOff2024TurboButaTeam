@@ -235,5 +235,5 @@ scale = Vector2(0.189217, 0.265606)
 texture = ExtResource("8_nvw2g")
 
 [connection signal="timeout" from="ProgressBar/Timer" to="." method="_on_timer_timeout"]
-[connection signal="pressed" from="ResetBoard" to="." method="_on_reset_board_pressed"]
 [connection signal="pressed" from="ResetBoard" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="ResetBoard" to="." method="_on_reset_board_pressed"]

@@ -329,6 +329,7 @@ offset_bottom = 836.0
 color = Color(0, 0, 0, 0.588235)
 
 [node name="TextBoxSprite" type="Sprite2D" parent="."]
+visible = false
 self_modulate = Color(1, 1, 1, 0)
 position = Vector2(942, 554)
 scale = Vector2(0.5, 0.5)

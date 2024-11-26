@@ -47,7 +47,8 @@ bg_color = Color(0.682353, 0.141176, 0.133333, 1)
 
 [resource]
 Button/fonts/font = ExtResource("1_3vw85")
-Button/styles/focus = SubResource("StyleBoxEmpty_72dxl")
+Button/styles/disabled = SubResource("StyleBoxTexture_7kx11")
+Button/styles/focus = SubResource("StyleBoxTexture_uywki")
 Button/styles/hover = SubResource("StyleBoxTexture_ejplq")
 Button/styles/normal = SubResource("StyleBoxTexture_7kx11")
 Button/styles/pressed = SubResource("StyleBoxTexture_yl3cf")
