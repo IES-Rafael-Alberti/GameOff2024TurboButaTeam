@@ -5,6 +5,7 @@ extends Node2D
 @onready var progressBarShield: ProgressBar = $ProgressBarShield
 @onready var damage_bar: ProgressBar = $ProgressBar/DamageBar
 @onready var timerDamage: Timer = $ProgressBar/Timer
+@onready var animationBoss: AnimationPlayer = $Sprite2D/AnimationBoss
 
 @export var maxHealthBoss = 200
 @export var damageBoss = 20
@@ -29,6 +30,7 @@ func _ready() -> void:
 	GameManager.InitBossShield.connect(initShield)
 	GameManager.QuitBossShield.connect(removeShield)
 	GameManager.SelectActionBoss.connect(selectAction)
+	GameManager.isBossTurn.connect(attackAnimation)
 	GameManager.healthBoss = maxHealthBoss
 	
 	progress_bar.max_value = GameManager.healthBoss
@@ -44,6 +46,7 @@ func _ready() -> void:
 	progressBarShield.visible = false
 	
 	selectAction()
+	print("elige primera accion")
 
 func _process(delta: float) -> void:
 	if !GameManager.isPlayerPhase:
@@ -60,21 +63,31 @@ func _process(delta: float) -> void:
 			GameManager.SelectActionBoss.emit()
 		else:
 			GameManager.emit_signal("UpdateHistorial", "BOSS_HABILITY_CHARGE", true)
+		GameManager.canFlip = true
 
 func selectAction():
 	var rng = RandomNumberGenerator.new()
 	var randomNum = int(rng.randf_range(1, 100.0))
+	
+	# TODO activar shader segun action
+
 	if randomNum <= 60:
+		resetShaders()
 		action = "atacar"
 		GameManager.emit_signal("UpdateHistorial", "BOSS_ATTACK", true)
 		
 	elif randomNum <= 85 && randomNum > 60:
+		resetShaders()
 		action = "escudo"
 		GameManager.emit_signal("UpdateHistorial", "BOSS_SHIELD", true)
 	else:
+		resetShaders()
 		action = "habilidad"
 		GameManager.emit_signal("UpdateHistorial", "BOSS_HABILITY", true)
-		
+		sprite_2d.material.set_shader_parameter("isSpecial", true)
+	
+	if progressBarShield.visible:
+		sprite_2d.material.set_shader_parameter("isProtecting", true)
 
 #TODO funcion que realice la accion del boss y al finalizar se ponga "GameManager.isPlayerPhase" en true
 func doAction(action):
@@ -86,9 +99,11 @@ func doAction(action):
 			GameManager.emit_signal("UpdateHistorial", "BOSS_ATTACK_DONE", true)
 		if action == "escudo":
 			shield()
+			sprite_2d.material.set_shader_parameter("isProtecting", true)
 			GameManager.emit_signal("UpdateHistorial", "BOSS_SHIELD_DONE", true)
 		if action == "habilidad":
 			useHability()
+			sprite_2d.material.set_shader_parameter("isSpecial", false)
 
 func attack(damageBoss):
 	if GameManager.playerShield > 0:
@@ -153,3 +168,14 @@ func removeShield():
 
 func _on_timer_timeout() -> void:
 	damage_bar.value = GameManager.healthBoss
+	
+func resetShaders():
+	sprite_2d.material.set_shader_parameter("isSpecial", false)
+	sprite_2d.material.set_shader_parameter("isProtecting", false)
+	
+func attackAnimation():
+	if action == "habilidad":
+		animationBoss.play("attack")
+	
+	if action == "atacar":
+		animationBoss.play("attack")

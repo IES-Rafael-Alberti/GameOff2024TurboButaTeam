@@ -3,9 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://dup3wc5aw7n4e" path="res://scenes/card.tscn" id="1_jsbgf"]
 [ext_resource type="Shader" path="res://scripts/shaders/cardBurn.gdshader" id="2_cntji"]
 [ext_resource type="Texture2D" uid="uid://cgr064vblhvdg" path="res://assets/shadersTextures/burnNoise.tres" id="3_dlhwx"]
-[ext_resource type="Texture2D" uid="uid://cj6gansknbcra" path="res://assets/sprites/cards/especial1.png" id="4_mnv0s"]
-[ext_resource type="Texture2D" uid="uid://b3dh17nqxsqbv" path="res://assets/sprites/cards/especial2.png" id="5_6qb6j"]
+[ext_resource type="Texture2D" uid="uid://cb3xt6r1jke5o" path="res://assets/sprites/cards140x198/especial1.png" id="4_j504v"]
 [ext_resource type="Script" path="res://scripts/cards/doubleShift.gd" id="5_gfp2i"]
+[ext_resource type="Texture2D" uid="uid://bk474ycoe1y4e" path="res://assets/sprites/cards140x198/especial2.png" id="6_umvsw"]
 [ext_resource type="Script" path="res://scripts/cards/flipTwoCards.gd" id="7_fh35b"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dhsoy"]
@@ -42,14 +42,14 @@ shader_parameter/dissolve_texture = ExtResource("3_dlhwx")
 
 [node name="Especial1" parent="." instance=ExtResource("1_jsbgf")]
 material = SubResource("ShaderMaterial_dhsoy")
-face = ExtResource("4_mnv0s")
+face = ExtResource("4_j504v")
 scriptAnimal = ExtResource("5_gfp2i")
-faceSpecial1 = ExtResource("4_mnv0s")
-faceSpecial2 = ExtResource("5_6qb6j")
+faceSpecial1 = ExtResource("4_j504v")
+faceSpecial2 = ExtResource("6_umvsw")
 
 [node name="Especial2" parent="." instance=ExtResource("1_jsbgf")]
 material = SubResource("ShaderMaterial_i7ls7")
-face = ExtResource("5_6qb6j")
+face = ExtResource("6_umvsw")
 scriptAnimal = ExtResource("7_fh35b")
-faceSpecial1 = ExtResource("4_mnv0s")
-faceSpecial2 = ExtResource("5_6qb6j")
+faceSpecial1 = ExtResource("4_j504v")
+faceSpecial2 = ExtResource("6_umvsw")
