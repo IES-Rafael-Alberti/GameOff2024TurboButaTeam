@@ -74,6 +74,8 @@ signal TwentyOfLife
 
 signal TenOfLife
 
+signal UpdateHistorial(text, boss)
+
 signal FlipTwoCard
 
 var isPoisoned

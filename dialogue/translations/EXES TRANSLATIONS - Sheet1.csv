@@ -40,8 +40,8 @@ C1D8,I don't come off that easily. But you can try.,No soy tan fácil de convenc
 C1D9,Eh… Why are you destroying the forest?,Eh... ¿por qué estás destruyendo el bosque?
 C1D10,Why do you think I’m doing it?,¿Por qué crees que lo estoy haciendo?
 C1D11,Why am I destroying the forest?,¿Por qué estoy destruyendo el bosque?
-C1D11O1,"¿Does your presence bring with it the shadow of destruction, sweeping everything away?","¿Tu presencia trae consigo la sombra de la destrucción, arrasando con todo?"
-C1D11O2,"¿Is it your own greediness, chasing your own objectives, what corrupts the forest passing by?","¿Es tu propia codicia, buscando tus propios objetivos, la que corrompe el bosque a su paso?"
+C1D11O1,"Does your presence bring destruction, leaving nothing behind?","¿Tu presencia trae destrucción, dejando nada detrás?"
+C1D11O2,"Is it your greed, chasing goals, that corrupts the forest?","¿Es tu codicia, persiguiendo objetivos, la que corrompe el bosque?"
 ,,
 C1D14,My answers don't come for free though.,Mis respuestas tienen un precio.
 C1D15,Let the test begin.,Que comience la prueba.
@@ -67,8 +67,8 @@ C2D4,"Who that may be, ominous figure?","¿De quién se trata, figura ominosa?"
 C2D5,Come on... you already know it.,Venga... ya lo sabes
 C2D5O1,"Is it the weather, destroying everything in its path without a care?","¿Es la meteorología, destruyendo todo a su paso sin importarle nada?"
 C2D5O2,"Is it mankind, poisoning the world with its own interests?","¿Es la humanidad, envenenando el mundo con sus propios intereses?"
-C2D5O3,"Is it mother nature itself, being whimsical with its own creation?","¿Es la propia madre naturaleza, siendo caprichosa con su propia creación?"
 C2D6,Earn your answer.,Gánate tu respuesta
+,,
 ,,
 Cobra BF,,
 CB_BF_START1,I possess this animals spirit to take down on you.,Poseo el espíritu de este animal para derrotarte.
@@ -94,14 +94,24 @@ C3D5O3,"Finally, you understand it.",Por fin lo entiendes.
 C4D1,We've came this far. And I'll be the one asking you a question now. ,
 C4D3,Who are you?,
 ,,
-,,
-,,
-,,
-,,
-,,
-,,
+GAME HISTORY,,
+HISTORY_TITLE,Game history,Historial de juego
+ATTACK_HISTORY,You have made an attack,Has realizado un ataque
+ATTACK_UNDER_HISTORY,You have made an attack below the shield,Has realizado un ataque por debajo del escudo
+DRECREASE_HISTORY,You lowered the boss's defence,Has bajado la defensa del jefe
+SHIELD_HISTORY,You have used shield,Has usado escudo
+DOUBLE_SHIFT_HISTORY,You have used double shifts,Has usado doble turno
+FLIP_HISTORY,You have revealed two cards,Has revelado dos cartas
+BOSS_ATTACK_DONE,The boss has made an attack,El jefe ha realizado un ataque
+BOSS_SHIELD_DONE,The boss has used shield,El jefe ha usado escudo
+BOSS_HABILITY_DONE,The boss has used ability,El jefe ha usado habilidad
 ,,
 DEPRECATED,DEPRECATED,DEPRECATED
+,,
+C2D5O3,"Is it mother nature itself, being whimsical with its own creation?","¿Es la propia madre naturaleza, siendo caprichosa con su propia creación?"
+,,
+,"¿Does your presence bring with it the shadow of destruction, sweeping everything away?","¿Tu presencia trae consigo la sombra de la destrucción, arrasando con todo?"
+,"¿Is it your own greediness, chasing your own objectives, what corrupts the forest passing by?","¿Es tu propia codicia, buscando tus propios objetivos, la que corrompe el bosque a su paso?"
 C1D11O3,"¿Do you dwell here just for mere entertainment, like who menaces their prey, but away from risk?","¿Moras aquí solo por entretenimiento, como quien acecha sin prisa a su presa, pero sin ser amenazado?"
 Lynx BF,,
 LX_BF_START1,I possess this animals spirit to take down on you.,Poseo el espíritu de este animal para derrotarte.
