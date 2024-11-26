@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://c1he8kika8fof"]
+[gd_scene load_steps=29 format=3 uid="uid://c1he8kika8fof"]
 
 [ext_resource type="Script" path="res://scripts/boss.gd" id="1_0mmkp"]
 [ext_resource type="Shader" path="res://scripts/shaders/boss.gdshader" id="1_hrodq"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dsott1fpgb5ov" path="res://assets/backgrounds/firstCinematic/ab_izq_plants.png" id="6_3u0y5"]
 [ext_resource type="Texture2D" uid="uid://db8sofyfwlvj5" path="res://assets/shadersTextures/smoke.png" id="8_g3lj1"]
 [ext_resource type="Texture2D" uid="uid://dtlyl6f1ea687" path="res://assets/sprites/ui/Ilustracion_sin_titulo.png" id="9_vrljt"]
+[ext_resource type="Shader" path="res://scripts/shaders/lifeBar.gdshader" id="9_xrrrm"]
 
 [sub_resource type="Animation" id="Animation_xvr3h"]
 resource_name = "BackgroundFlashing"
@@ -156,6 +157,14 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_883g4"]
+shader = ExtResource("9_xrrrm")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/thickness = 1.0
+shader_parameter/tolerance = 0.999
+shader_parameter/diagonals = true
+shader_parameter/rounded = true
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_buh0b"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
@@ -246,6 +255,7 @@ fill_mode = 3
 show_percentage = false
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
+material = SubResource("ShaderMaterial_883g4")
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
