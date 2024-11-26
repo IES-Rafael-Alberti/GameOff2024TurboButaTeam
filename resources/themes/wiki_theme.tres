@@ -1,3 +1,38 @@
-[gd_resource type="Theme" format=3 uid="uid://b2eu4jujeud0y"]
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://b2eu4jujeud0y"]
+
+[ext_resource type="Texture2D" uid="uid://cktfbfw1rpxh4" path="res://assets/ui/fantasyButtons/squaresInside.svg" id="1_2ifyk"]
+[ext_resource type="Texture2D" uid="uid://dbj5gubnuxm4l" path="res://assets/ui/fantasyButtons/squaresInside-hover.svg" id="1_w6ct8"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xx85a"]
+texture = ExtResource("1_2ifyk")
+texture_margin_left = 13.0
+texture_margin_top = 13.0
+texture_margin_right = 13.0
+texture_margin_bottom = 13.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qnihm"]
+texture = ExtResource("1_w6ct8")
+texture_margin_left = 13.0
+texture_margin_top = 13.0
+texture_margin_right = 13.0
+texture_margin_bottom = 13.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7xh28"]
+texture = ExtResource("1_2ifyk")
+texture_margin_left = 13.0
+texture_margin_top = 13.0
+texture_margin_right = 13.0
+texture_margin_bottom = 13.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c4i80"]
+texture = ExtResource("1_2ifyk")
+texture_margin_left = 13.0
+texture_margin_top = 13.0
+texture_margin_right = 13.0
+texture_margin_bottom = 13.0
 
 [resource]
+Button/styles/focus = SubResource("StyleBoxTexture_xx85a")
+Button/styles/hover = SubResource("StyleBoxTexture_qnihm")
+Button/styles/normal = SubResource("StyleBoxTexture_7xh28")
+Button/styles/pressed = SubResource("StyleBoxTexture_c4i80")
