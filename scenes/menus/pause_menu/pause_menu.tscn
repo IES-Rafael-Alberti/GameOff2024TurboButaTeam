@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://ce27df150yfsb"]
+[gd_scene load_steps=4 format=3 uid="uid://c4qb8abvjnj7l"]
 
 [ext_resource type="FontFile" uid="uid://b3vfy2vwgidc4" path="res://assets/fonts/Colorfiction - Messy.ttf" id="1_cj2fx"]
 [ext_resource type="Script" path="res://scenes/menus/pause_menu/pause_menu.gd" id="1_ui0sl"]

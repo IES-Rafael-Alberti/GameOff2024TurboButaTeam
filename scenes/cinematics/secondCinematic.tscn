@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://vtsn0w8120pp"]
+[gd_scene load_steps=13 format=3 uid="uid://bqbd12mw0aj5n"]
 
 [ext_resource type="Script" path="res://scenes/cinematics/second_cinematic.gd" id="1_1lcf1"]
 [ext_resource type="Texture2D" uid="uid://csbwnnj621623" path="res://assets/backgrounds/backgroundEspinas/1.png" id="3_tkhg6"]
