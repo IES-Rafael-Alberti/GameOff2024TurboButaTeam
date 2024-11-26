@@ -60,6 +60,10 @@ signal SelectActionBoss
 
 signal restartButtonVisible
 
+signal isBossTurn
+
+var bossIsCharging = false
+
 signal EightyOfLife
 
 signal SixtyOfLife
@@ -70,8 +74,9 @@ signal TwentyOfLife
 
 signal TenOfLife
 
+signal UpdateHistorial(text, boss)
 
-var bossIsCharging
+signal FlipTwoCard
 
 var isPoisoned
 

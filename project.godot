@@ -81,6 +81,7 @@ variables={
 }
 translation/locales=[]
 translation/id_counter=16
+glossary/default_case_sensitive=true
 
 [display]
 
