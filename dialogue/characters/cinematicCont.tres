@@ -60,8 +60,8 @@ scene = ExtResource("7_pkr7c")
 overrides = {
 "boxes_fill_width": "false",
 "boxes_stylebox_focused": "\"custom_choice_panel_normal.trestres\"",
-"boxes_stylebox_hovered": "\"custom_choice_panel_hover.treses\"",
-"boxes_stylebox_normal": "\"custom_choice_panel_normal.trestres\"",
+"boxes_stylebox_hovered": "\"res://resources/boxes/decision_hover.tres\"",
+"boxes_stylebox_normal": "\"decision_normal.tres\"",
 "boxes_v_separation": "50.0",
 "font_custom": "\"res://assets/fonts/Colorfiction - Messy.ttf\"",
 "font_size_custom": "32.0",
@@ -98,4 +98,4 @@ layer_info = {
 }
 base_overrides = {}
 layers = Array[ExtResource("1_l1vyd")]([])
-metadata/_latest_layer = "13"
+metadata/_latest_layer = "15"
