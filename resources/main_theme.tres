@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=15 format=3 uid="uid://bt6ll6m2mh5i3"]
+[gd_resource type="Theme" load_steps=16 format=3 uid="uid://bt6ll6m2mh5i3"]
 
 [ext_resource type="FontFile" uid="uid://c4s2a7yraa054" path="res://assets/fonts/Tomorrow-Regular.ttf" id="1_3vw85"]
 [ext_resource type="Texture2D" uid="uid://kvm46eu34hix" path="res://assets/ui/buttonTryHover.png" id="1_5r18u"]
@@ -6,20 +6,22 @@
 [ext_resource type="Texture2D" uid="uid://jjp7ie46urcy" path="res://assets/ui/slider_normal_resized.png" id="4_av8oi"]
 [ext_resource type="Texture2D" uid="uid://byyyqpe5kbvbw" path="res://assets/ui/slider_hover_resized.png" id="5_agbtj"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uywki"]
-texture = ExtResource("1_k21hc")
-expand_margin_top = 32.0
-expand_margin_bottom = 32.0
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_72dxl"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ejplq"]
+content_margin_left = 72.0
+content_margin_right = 72.0
 texture = ExtResource("1_5r18u")
 expand_margin_top = 32.0
 expand_margin_bottom = 32.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7kx11"]
+content_margin_left = 72.0
+content_margin_right = 72.0
 texture = ExtResource("1_k21hc")
 expand_margin_top = 32.0
 expand_margin_bottom = 32.0
+region_rect = Rect2(0, 0, 3489, 670)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yl3cf"]
 texture = ExtResource("1_k21hc")
@@ -34,15 +36,18 @@ bg_color = Color(0.682353, 0.141176, 0.133333, 1)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_1lqx0"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f0fbg"]
-bg_color = Color(1, 1, 1, 1)
-
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_g3sq5"]
 color = Color(1, 1, 1, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_731fm"]
+bg_color = Color(0.682353, 0.141176, 0.133333, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7odm4"]
+bg_color = Color(0.682353, 0.141176, 0.133333, 1)
+
 [resource]
 Button/fonts/font = ExtResource("1_3vw85")
-Button/styles/focus = SubResource("StyleBoxTexture_uywki")
+Button/styles/focus = SubResource("StyleBoxEmpty_72dxl")
 Button/styles/hover = SubResource("StyleBoxTexture_ejplq")
 Button/styles/normal = SubResource("StyleBoxTexture_7kx11")
 Button/styles/pressed = SubResource("StyleBoxTexture_yl3cf")
@@ -53,5 +58,8 @@ HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_ngwvp")
 HSlider/styles/slider = null
 OptionButton/fonts/font = ExtResource("1_3vw85")
 OptionButton/icons/arrow = SubResource("ViewportTexture_1lqx0")
-OptionButton/styles/hover = SubResource("StyleBoxFlat_f0fbg")
 PopupMenu/styles/panel = SubResource("StyleBoxLine_g3sq5")
+VSlider/icons/grabber = ExtResource("4_av8oi")
+VSlider/icons/grabber_highlight = ExtResource("5_agbtj")
+VSlider/styles/grabber_area = SubResource("StyleBoxFlat_731fm")
+VSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_7odm4")

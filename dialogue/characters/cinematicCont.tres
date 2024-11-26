@@ -59,9 +59,9 @@ script = ExtResource("1_l1vyd")
 scene = ExtResource("7_pkr7c")
 overrides = {
 "boxes_fill_width": "false",
-"boxes_stylebox_focused": "\"res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Choices/custom_choice_panel_normal.tres\"",
-"boxes_stylebox_hovered": "\"res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Choices/custom_choice_panel_normal.tres\"",
-"boxes_stylebox_normal": "\"res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Choices/custom_choice_panel_normal.tres\"",
+"boxes_stylebox_focused": "\"custom_choice_panel_normal.trestres\"",
+"boxes_stylebox_hovered": "\"custom_choice_panel_hover.treses\"",
+"boxes_stylebox_normal": "\"custom_choice_panel_normal.trestres\"",
 "boxes_v_separation": "50.0",
 "font_custom": "\"res://assets/fonts/Colorfiction - Messy.ttf\"",
 "font_size_custom": "32.0",
