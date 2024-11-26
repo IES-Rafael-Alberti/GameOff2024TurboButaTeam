@@ -95,3 +95,12 @@ var doubleShift = true
 var isCouple = false
 
 var specialCard
+
+func resetBossScene():
+	firstCardPicked = null
+	secondCardPicked = null
+	countCouple = 0
+	damageMultiply = 1
+	isPoisoned = false
+	bossIsCharging = false
+	isPlayerPhase = true
