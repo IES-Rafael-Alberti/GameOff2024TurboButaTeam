@@ -70,6 +70,7 @@ signal TwentyOfLife
 
 signal TenOfLife
 
+signal FlipTwoCard
 
 var bossIsCharging
 
