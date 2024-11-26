@@ -24,7 +24,6 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 directories/dch_directory={
 "cinematicCont": "res://dialogue/characters/cinematicCont.dch",
-"cobra": "res://dialogue/characters/cobra.dch",
 "testboss": "res://dialogue/characters/testboss.dch"
 }
 directories/dtl_directory={
