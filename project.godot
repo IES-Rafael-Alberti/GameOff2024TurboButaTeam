@@ -108,6 +108,7 @@ folder_colors={
 [gui]
 
 theme/custom="res://resources/main_theme.tres"
+theme/custom_font="res://assets/fonts/Tomorrow-Regular.ttf"
 
 [input]
 

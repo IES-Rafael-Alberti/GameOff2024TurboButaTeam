@@ -1,0 +1,10 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://ddsunesequim3"]
+
+[ext_resource type="Texture2D" uid="uid://dbj5gubnuxm4l" path="res://assets/ui/fantasyButtons/squaresInside-hover.svg" id="1_rrn12"]
+
+[resource]
+texture = ExtResource("1_rrn12")
+texture_margin_left = 13.0
+texture_margin_top = 13.0
+texture_margin_right = 13.0
+texture_margin_bottom = 13.0

@@ -4,6 +4,7 @@
 [ext_resource type="Script" path="res://scenes/dialogue_point.gd" id="2_1tfi2"]
 [ext_resource type="Texture2D" uid="uid://bx6qs7t6di7vc" path="res://assets/sprites/ui/Ilustracion_sin_titulo_2.png" id="3_2tikr"]
 [ext_resource type="AudioStream" uid="uid://e3eq16v3u58r" path="res://assets/sound/sfx/Fire.wav" id="4_pnmuv"]
+[ext_resource type="Theme" uid="uid://pnjv7finl36r" path="res://resources/themes/board_theme.tres" id="4_t0f75"]
 [ext_resource type="AudioStream" uid="uid://csu53guxew0wc" path="res://assets/sound/music/Forest Scary.mp3" id="5_y8wj6"]
 [ext_resource type="AudioStream" uid="uid://umrhj1fwf5ud" path="res://assets/sound/sfx/GettingHit.mp3" id="6_sxty8"]
 [ext_resource type="FontFile" uid="uid://b3vfy2vwgidc4" path="res://assets/fonts/Colorfiction - Messy.ttf" id="6_u7l7k"]
@@ -38,6 +39,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("4_t0f75")
 script = ExtResource("1_s4gqu")
 
 [node name="BossContainer" type="VBoxContainer" parent="."]
@@ -171,6 +173,7 @@ offset_left = -0.280029
 offset_top = -0.320007
 offset_right = 1.64001
 offset_bottom = -0.200012
+theme = ExtResource("4_t0f75")
 text = "Reshuffle Board"
 
 [node name="Pause" type="Button" parent="."]

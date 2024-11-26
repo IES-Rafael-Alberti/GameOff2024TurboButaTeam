@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://osm8q17wupyd"]
 
 [ext_resource type="Script" path="res://scenes/menus/splash_screen/splash_screen.gd" id="1_206vf"]
-[ext_resource type="Texture2D" uid="uid://cd52qs26af6kw" path="res://assets/logo/TurboButa Logo.png" id="1_uwwlc"]
+[ext_resource type="Texture2D" uid="uid://c27cmdibh8hih" path="res://assets/logo/miniborde.png" id="2_0dqfr"]
 [ext_resource type="Texture2D" uid="uid://c78x5u624qo6m" path="res://assets/logo/godotbluelogo.svg" id="2_uj170"]
 
 [sub_resource type="Animation" id="Animation_vk21d"]
@@ -100,7 +100,7 @@ grow_vertical = 2
 [node name="TBTLogo" type="TextureRect" parent="TBTLogo"]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
-texture = ExtResource("1_uwwlc")
+texture = ExtResource("2_0dqfr")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1

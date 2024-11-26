@@ -1,5 +1,6 @@
-[gd_scene load_steps=18 format=3 uid="uid://xibnk2kph5sy"]
+[gd_scene load_steps=17 format=3 uid="uid://xibnk2kph5sy"]
 
+[ext_resource type="Theme" uid="uid://b2eu4jujeud0y" path="res://resources/themes/wiki_theme.tres" id="1_ermmr"]
 [ext_resource type="LabelSettings" uid="uid://bsjqw3m3umydi" path="res://resources/LabelSettings/big_textes.tres" id="1_lgk1o"]
 [ext_resource type="Script" path="res://scenes/menus/wiki_screen/wiki_screen.gd" id="1_rmd21"]
 [ext_resource type="Texture2D" uid="uid://bngb571kcpnn1" path="res://assets/sprites/cardsFullResolution/reverso.png" id="2_2ij6p"]
@@ -27,6 +28,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_ermmr")
 script = ExtResource("1_rmd21")
 cardImgList = Array[Texture]([ExtResource("2_2ij6p"), ExtResource("3_3oy84"), ExtResource("4_yt0g6"), ExtResource("5_icmom"), ExtResource("6_4dkke"), ExtResource("7_4i2of"), ExtResource("8_pqwgn"), ExtResource("9_qmgvc"), ExtResource("10_73aqc"), ExtResource("11_ccrck")])
 bossImgList = Array[Texture]([ExtResource("11_ao6y2"), ExtResource("13_bxnnb")])
@@ -142,6 +144,8 @@ offset_right = -0.0800171
 offset_bottom = 0.159973
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_ermmr")
+theme_override_font_sizes/font_size = 64
 text = "<"
 
 [node name="CenterContainer" type="CenterContainer" parent="WikiHBox"]
@@ -171,6 +175,8 @@ offset_right = -17.1201
 offset_bottom = 4.15997
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_ermmr")
+theme_override_font_sizes/font_size = 64
 text = ">"
 
 [node name="CardsLabel" type="Label" parent="."]
