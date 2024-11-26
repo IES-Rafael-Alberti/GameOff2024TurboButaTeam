@@ -32,6 +32,7 @@ var bossCobraTemp
 @onready var bossCobra = preload("res://scenes/cobra.tscn")
 
 func _ready():
+	GameManager.numCombat += 1
 	#Ponerle la vida al player
 	GameManager.healthPlayer = maxHealthPlayer
 	progress_bar.max_value = GameManager.healthPlayer
@@ -95,7 +96,6 @@ func initBoard():
 		var cardTemp = i.duplicate()
 		grid.add_child(cardTemp)
 	
-	
 	GameManager.BurnCardsInit.emit()
 
 func clearBoard():
@@ -122,7 +122,7 @@ func UpdateProgressBar():
 		get_tree().change_scene_to_file.bind("res://scenes/menus/game_over/game_over.tscn").call_deferred()
 
 func selectBoss():
-	if GameManager.bossNum == 0:
+	if Dialogic.VAR.ox_selected:
 		# Metemos la lista para comprobar sus hijos
 		add_child(bossOXTemp)
 		
@@ -134,8 +134,10 @@ func selectBoss():
 		
 		# Añadimos el jefe duplicado al grid
 		grid_container.add_child(GameManager.pickedBoss)
+		Dialogic.VAR.ox_selected = false
+		Dialogic.VAR.cobra_selected = true
 	
-	if GameManager.bossNum == 1:
+	if Dialogic.VAR.cobra_selected:
 		# Metemos la lista para comprobar sus hijos
 		add_child(bossCobraTemp)
 		
@@ -147,6 +149,8 @@ func selectBoss():
 		
 		# Añadimos el jefe duplicado al grid
 		grid_container.add_child(GameManager.pickedBoss)
+		Dialogic.VAR.cobra_selected = false
+		Dialogic.VAR.ox_selected = true
 
 func updateShield():
 	progressBarShield.max_value = shieldMaxValue
