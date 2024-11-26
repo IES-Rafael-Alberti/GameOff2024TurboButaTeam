@@ -3,9 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://dup3wc5aw7n4e" path="res://scenes/card.tscn" id="1_jsbgf"]
 [ext_resource type="Shader" path="res://scripts/shaders/cardBurn.gdshader" id="2_cntji"]
 [ext_resource type="Texture2D" uid="uid://cgr064vblhvdg" path="res://assets/shadersTextures/burnNoise.tres" id="3_dlhwx"]
-[ext_resource type="Texture2D" uid="uid://cb3xt6r1jke5o" path="res://assets/sprites/cards140x198/especial1.png" id="4_j504v"]
+[ext_resource type="Texture2D" uid="uid://cj6gansknbcra" path="res://assets/sprites/cards140x198/especial1.png" id="4_j504v"]
 [ext_resource type="Script" path="res://scripts/cards/doubleShift.gd" id="5_gfp2i"]
-[ext_resource type="Texture2D" uid="uid://bk474ycoe1y4e" path="res://assets/sprites/cards140x198/especial2.png" id="6_umvsw"]
+[ext_resource type="Texture2D" uid="uid://b3dh17nqxsqbv" path="res://assets/sprites/cards140x198/especial2.png" id="6_umvsw"]
 [ext_resource type="Script" path="res://scripts/cards/flipTwoCards.gd" id="7_fh35b"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dhsoy"]
