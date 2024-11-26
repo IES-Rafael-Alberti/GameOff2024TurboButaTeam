@@ -1,25 +1,31 @@
-[gd_scene load_steps=17 format=3 uid="uid://xibnk2kph5sy"]
+[gd_scene load_steps=22 format=3 uid="uid://xibnk2kph5sy"]
 
 [ext_resource type="Theme" uid="uid://b2eu4jujeud0y" path="res://resources/themes/wiki_theme.tres" id="1_ermmr"]
 [ext_resource type="LabelSettings" uid="uid://bsjqw3m3umydi" path="res://resources/LabelSettings/big_textes.tres" id="1_lgk1o"]
 [ext_resource type="Script" path="res://scenes/menus/wiki_screen/wiki_screen.gd" id="1_rmd21"]
 [ext_resource type="Texture2D" uid="uid://bngb571kcpnn1" path="res://assets/sprites/cardsFullResolution/reverso.png" id="2_2ij6p"]
 [ext_resource type="Texture2D" uid="uid://dhoqckgn1k7fa" path="res://assets/sprites/cardsFullResolution/grulla.png" id="3_3oy84"]
-[ext_resource type="Texture2D" uid="uid://cegoluvhe0lar" path="res://assets/sprites/cardsFullResolution/grullaBlaca.png" id="4_yt0g6"]
 [ext_resource type="Texture2D" uid="uid://cq400hc5yk0t2" path="res://assets/sprites/cardsFullResolution/mofeta.png" id="5_icmom"]
+[ext_resource type="Texture2D" uid="uid://cvt3pcalakkqj" path="res://assets/sprites/cardsFullResolution/PandaRojo.png" id="5_qjfb1"]
 [ext_resource type="Texture2D" uid="uid://cnidyiytg70rf" path="res://assets/sprites/cardsFullResolution/pangolin.png" id="6_4dkke"]
 [ext_resource type="Texture2D" uid="uid://cwae01qcbgsmm" path="res://assets/sprites/cardsFullResolution/pangolinBlanco.png" id="7_4i2of"]
 [ext_resource type="Texture2D" uid="uid://cr0molg8b0pyp" path="res://assets/sprites/cardsFullResolution/rata.png" id="8_pqwgn"]
 [ext_resource type="Texture2D" uid="uid://u1nqewt2tkmo" path="res://assets/sprites/cardsFullResolution/especial2.png" id="9_qmgvc"]
 [ext_resource type="Texture2D" uid="uid://tej13qf6vn8h" path="res://assets/sprites/cardsFullResolution/especial1.png" id="10_73aqc"]
-[ext_resource type="Texture2D" uid="uid://c63ruxqgmk0bp" path="res://assets/sprites/boss/buey.png" id="11_ao6y2"]
 [ext_resource type="Texture2D" uid="uid://dcei2ml5rej1u" path="res://assets/sprites/cardsFullResolution/lince.png" id="11_ccrck"]
 [ext_resource type="Texture2D" uid="uid://dtnu1ywt8h6i0" path="res://assets/backgrounds/backgroundEspinas.png" id="12_yml3x"]
-[ext_resource type="Texture2D" uid="uid://xmcdtew2w6a" path="res://assets/sprites/boss/cobra.png" id="13_bxnnb"]
+[ext_resource type="Texture2D" uid="uid://bemvnyy1j0bc4" path="res://assets/sprites/boss/cobra wiki.png" id="13_6p8g8"]
 [ext_resource type="Texture2D" uid="uid://dqq5f6tuc02qo" path="res://assets/backgrounds/firstCinematic/bgComplete.png" id="13_dee20"]
+[ext_resource type="Texture2D" uid="uid://cfxydl116wgtb" path="res://assets/sprites/boss/buey wiki.png" id="14_uas08"]
+[ext_resource type="Texture2D" uid="uid://ctwh7j7yrnq7v" path="res://assets/sprites/cardsFullResolution/borde.png" id="18_nihod"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jk85g"]
 bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ciwwa"]
+font_size = 30
+
+[sub_resource type="LabelSettings" id="LabelSettings_wxh3e"]
 
 [node name="WikiScreen" type="Control"]
 layout_mode = 3
@@ -30,9 +36,17 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_ermmr")
 script = ExtResource("1_rmd21")
-cardImgList = Array[Texture]([ExtResource("2_2ij6p"), ExtResource("3_3oy84"), ExtResource("4_yt0g6"), ExtResource("5_icmom"), ExtResource("6_4dkke"), ExtResource("7_4i2of"), ExtResource("8_pqwgn"), ExtResource("9_qmgvc"), ExtResource("10_73aqc"), ExtResource("11_ccrck")])
-bossImgList = Array[Texture]([ExtResource("11_ao6y2"), ExtResource("13_bxnnb")])
-bgImgList = Array[Texture]([ExtResource("12_yml3x"), ExtResource("13_dee20")])
+cardImgList = Array[Texture]([ExtResource("2_2ij6p"), ExtResource("3_3oy84"), ExtResource("5_qjfb1"), ExtResource("5_icmom"), ExtResource("6_4dkke"), ExtResource("7_4i2of"), ExtResource("8_pqwgn"), ExtResource("9_qmgvc"), ExtResource("10_73aqc"), ExtResource("11_ccrck")])
+bossImgList = Array[Texture]([ExtResource("13_6p8g8"), ExtResource("14_uas08")])
+bgImgList = Array[Texture]([ExtResource("13_dee20"), ExtResource("12_yml3x")])
+cardNameList = Array[String](["REVERSO_NAME", "GRULLA_NAME", "PANDA_NAME", "MOFETA_NAME", "PANGOLIN_NAME", "TORTUGA_NAME", "RATA_NAME", "ESPECIAL_1_NAME", "ESPECIAL_2_NAME", "LINCE_NAME"])
+bossNameList = Array[String](["COBRA_NAME", "BUEY_NAME"])
+bgNameList = Array[String](["BOSQUE_NAME", "ESPINAS_NAME"])
+cardTextList = Array[String](["REVERSO_DATO", "GRULLA_DATO", "PANDA_DATO", "MOFETA_DATO", "PANGOLIN_DATO", "TORTUGA_DATO", "RATA_DATO", "ESPECIAL_1_DATO", "ESPECIAL_2_DATO", "LINCE_DATO"])
+bossTextList = Array[String](["COBRA_TEXT", "BUEY_TEXT"])
+bgTextList = Array[String](["BOSQUE_TEXT", "ESPINAS_TEXT"])
+cardHabilityList = Array[String](["REVERSO_HABILITY", "GRULLA_HABILITY", "PANDA_HABILITY", "MOFETA_HABILITY", "PANGOLIN_HABILITY", "TORTUGA_HABILITY", "RATA_HABILITY", "ESPECIAL_1_HABILITY", "ESPECIAL_2_HABILITY", "LINCE_HABILITY"])
+bossHabilityList = Array[String](["COBRA_HABILITY", "BUEY_HABILITY"])
 
 [node name="TextContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -47,6 +61,7 @@ alignment = 1
 
 [node name="Label" type="Label" parent="TextContainer"]
 layout_mode = 2
+size_flags_vertical = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_jk85g")
 text = "WIKI"
@@ -88,60 +103,18 @@ theme_override_constants/h_separation = 10
 theme_override_font_sizes/font_size = 24
 text = "WIKI_BACKGROUNDS_BUTTON"
 
-[node name="CardsContainer" type="VBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="BossesContainer" type="VBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="BackgroundsContainer" type="VBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-
 [node name="WikiHBox" type="Node" parent="."]
 
 [node name="CardButton" type="Button" parent="WikiHBox"]
 anchors_preset = -1
-anchor_left = 0.248
-anchor_top = 0.477
-anchor_right = 0.274
-anchor_bottom = 0.523
-offset_left = -0.160034
-offset_top = -0.160034
-offset_right = -0.0800171
-offset_bottom = 0.159973
+anchor_left = 0.083
+anchor_top = 0.452
+anchor_right = 0.111
+anchor_bottom = 0.548
+offset_left = -31.36
+offset_top = 23.84
+offset_right = -31.12
+offset_bottom = 23.16
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_ermmr")
@@ -154,6 +127,8 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
+offset_left = -314.0
+offset_right = -314.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.2, 0.2)
@@ -163,16 +138,71 @@ layout_mode = 2
 expand_mode = 1
 stretch_mode = 3
 
+[node name="infoPanel" type="Control" parent="WikiHBox"]
+layout_mode = 3
+anchor_left = 0.555
+anchor_top = 0.171
+anchor_right = 0.831
+anchor_bottom = 0.861
+offset_left = -1062.6
+offset_top = -184.68
+offset_right = -1592.52
+offset_bottom = -929.88
+
+[node name="ScrollContainer" type="ScrollContainer" parent="WikiHBox/infoPanel"]
+layout_mode = 0
+offset_left = 1122.0
+offset_top = 347.0
+offset_right = 1517.0
+offset_bottom = 870.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="WikiHBox/infoPanel/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 30
+
+[node name="nombre" type="Label" parent="WikiHBox/infoPanel/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+label_settings = SubResource("LabelSettings_ciwwa")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="utilidad" type="Label" parent="WikiHBox/infoPanel/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+label_settings = SubResource("LabelSettings_wxh3e")
+autowrap_mode = 2
+
+[node name="dato" type="Label" parent="WikiHBox/infoPanel/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+label_settings = SubResource("LabelSettings_wxh3e")
+autowrap_mode = 2
+
+[node name="Borde" type="Sprite2D" parent="WikiHBox/infoPanel"]
+position = Vector2(1322, 553)
+scale = Vector2(0.213426, 0.213426)
+texture = ExtResource("18_nihod")
+
 [node name="Button2" type="Button" parent="WikiHBox"]
 anchors_preset = -1
-anchor_left = 0.735
-anchor_top = 0.477
-anchor_right = 0.761
-anchor_bottom = 0.523
-offset_left = -17.2001
-offset_top = 3.83997
-offset_right = -17.1201
-offset_bottom = 4.15997
+anchor_left = 0.93
+anchor_top = 0.456
+anchor_right = 0.958
+anchor_bottom = 0.551
+offset_left = -49.6001
+offset_top = 19.52
+offset_right = -49.3601
+offset_bottom = 19.92
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_ermmr")
@@ -237,23 +267,23 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="WarningLabel" type="Label" parent="."]
-visible = false
-custom_minimum_size = Vector2(1000, 0)
+custom_minimum_size = Vector2(500, 0)
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -500.0
-offset_top = -11.5
-offset_right = 500.0
-offset_bottom = 11.5
+anchors_preset = -1
+anchor_left = 0.333
+anchor_top = 0.511
+anchor_right = 0.667
+anchor_bottom = 0.538
+offset_left = 0.640015
+offset_top = 0.119934
+offset_right = -0.640137
+offset_bottom = -0.0400391
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_font_sizes/font_size = 24
 text = "SPOILER_ALERT_LABEL"
 horizontal_alignment = 1
-autowrap_mode = 3
+autowrap_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 0
