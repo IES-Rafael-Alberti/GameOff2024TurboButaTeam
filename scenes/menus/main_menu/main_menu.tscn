@@ -5,7 +5,7 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_00c3h"]
 font = ExtResource("2_8w52m")
-font_size = 128
+font_size = 156
 
 [sub_resource type="Animation" id="Animation_20qhm"]
 length = 0.001
@@ -80,7 +80,7 @@ offset_right = 75.5
 offset_bottom = 46.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 100
+theme_override_constants/separation = 200
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
@@ -102,6 +102,11 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 64
 text = "OPTIONS_BUTTON"
 
+[node name="WikiButton" type="Button" parent="VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "WIKI_BUTTON"
+
 [node name="ExitButton" type="Button" parent="VBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 64
@@ -114,5 +119,6 @@ libraries = {
 
 [connection signal="pressed" from="VBoxContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/VBoxContainer/WikiButton" to="." method="_on_wiki_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

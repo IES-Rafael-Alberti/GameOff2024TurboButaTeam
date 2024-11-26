@@ -10,7 +10,6 @@ func _ready():
 	print(OS.get_name())
 	if OS.get_name()=="Web":
 		exit_button.hide()
-
 func _on_play_button_pressed():
 	animation_player.play("fade_out")
 	await animation_player.animation_finished
@@ -21,3 +20,6 @@ func _on_options_button_pressed():
 
 func _on_exit_button_pressed() -> void:
 	get_tree().quit()
+
+func _on_wiki_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/menus/wiki_screen/wiki_screen.tscn")

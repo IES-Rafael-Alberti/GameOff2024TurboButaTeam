@@ -1,4 +1,7 @@
-[gd_resource type="LabelSettings" format=3 uid="uid://bsjqw3m3umydi"]
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://bsjqw3m3umydi"]
+
+[ext_resource type="FontFile" uid="uid://b3vfy2vwgidc4" path="res://assets/fonts/Colorfiction - Messy.ttf" id="1_2v4qd"]
 
 [resource]
-font_size = 128
+font = ExtResource("1_2v4qd")
+font_size = 156
