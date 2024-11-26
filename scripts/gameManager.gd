@@ -30,6 +30,8 @@ var countCouple = 0
 #Gestionar los turnos
 var isPlayerPhase = true
 
+var numCombat = 0
+
 #Senal para volver a llenar el tablero
 signal BoardCompleted
 
@@ -104,3 +106,4 @@ func resetBossScene():
 	isPoisoned = false
 	bossIsCharging = false
 	isPlayerPhase = true
+	canFlip = true

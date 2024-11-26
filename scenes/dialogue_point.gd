@@ -14,22 +14,40 @@ func _ready():
 func eightyOfLife():
 	var layout = Dialogic.Styles.load_style("textbubble")
 	layout.register_character(load("res://dialogue/characters/testboss.dch"), $".")
-	Dialogic.start("res://dialogue/timelines/BF1_OX/OX_90HP.dtl")
+	if GameManager.numCombat == 1:
+		Dialogic.start("res://dialogue/timelines/BF1_OX/OX_90HP.dtl")
+	else:
+		Dialogic.start("res://dialogue/timelines/BF2_COBRA/CB_90HP.dtl")
+
 
 func sixtyOfLife():
 	var layout = Dialogic.Styles.load_style("textbubble")
 	layout.register_character(load("res://dialogue/characters/testboss.dch"), $".")
-	Dialogic.start("res://dialogue/timelines/BF1_OX/OX_80HP.dtl")
+	if GameManager.numCombat == 1:
+		Dialogic.start("res://dialogue/timelines/BF1_OX/OX_80HP.dtl")
+	else:
+		Dialogic.start("res://dialogue/timelines/BF2_COBRA/CB_80HP.dtl")
 
 func fortyOfLife():
 	var layout = Dialogic.Styles.load_style("textbubble")
 	layout.register_character(load("res://dialogue/characters/testboss.dch"), $".")
-	Dialogic.start("res://dialogue/timelines/BF1_OX/OX_70HP.dtl")
+	if GameManager.numCombat == 1:
+		Dialogic.start("res://dialogue/timelines/BF1_OX/OX_70HP.dtl")
+	else:
+		Dialogic.start("res://dialogue/timelines/BF2_COBRA/CB_70HP.dtl")
 
 func twentyOfLife():
 	var layout = Dialogic.Styles.load_style("textbubble")
 	layout.register_character(load("res://dialogue/characters/testboss.dch"), $".")
-	Dialogic.start("res://dialogue/timelines/BF1_OX/OX_60HP.dtl")
+	if GameManager.numCombat == 1:
+		Dialogic.start("res://dialogue/timelines/BF1_OX/OX_60HP.dtl")
+	else:
+		Dialogic.start("res://dialogue/timelines/BF2_COBRA/CB_60HP.dtl")
 
 func tenOfLife():
-	Dialogic.start("res://dialogue/timelines/BF1_OX/OX_50HP.dtl")
+	var layout = Dialogic.Styles.load_style("textbubble")
+	layout.register_character(load("res://dialogue/characters/testboss.dch"), $".")
+	if GameManager.numCombat == 1:
+		Dialogic.start("res://dialogue/timelines/BF1_OX/OX_50HP.dtl")
+	else:
+		Dialogic.start("res://dialogue/timelines/BF2_COBRA/CB_50HP.dtl")

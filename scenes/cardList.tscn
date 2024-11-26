@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://bnmf1ucjb1p7o"]
+[gd_scene load_steps=24 format=3 uid="uid://bnmf1ucjb1p7o"]
 
 [ext_resource type="PackedScene" uid="uid://dup3wc5aw7n4e" path="res://scenes/card.tscn" id="1_c275a"]
 [ext_resource type="Shader" path="res://scripts/shaders/cardBurn.gdshader" id="2_n83dj"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://fxugd6ktg6st" path="res://assets/sprites/cards140x198/pangolinBlanco.png" id="8_0ljpd"]
 [ext_resource type="Texture2D" uid="uid://4sxdmwsma3a" path="res://assets/sprites/cards140x198/Grulla.png" id="9_06jrk"]
 [ext_resource type="Script" path="res://scripts/cards/cardDecreaseDef.gd" id="10_1chyv"]
+[ext_resource type="Texture2D" uid="uid://bvj2alebiqgw1" path="res://assets/sprites/cards140x198/lince.png" id="11_3tg0a"]
 [ext_resource type="Texture2D" uid="uid://bhdmps0frcbtk" path="res://assets/sprites/cards140x198/grullaBlanca.png" id="11_ivge2"]
 [ext_resource type="Script" path="res://scripts/cards/cardAttackUnderShield.gd" id="11_qu0kd"]
 [ext_resource type="Texture2D" uid="uid://cwq17thvapoeu" path="res://assets/sprites/cards140x198/Mofeta.png" id="13_kpg6c"]
@@ -146,7 +147,7 @@ faceSpecial2 = ExtResource("6_354v5")
 
 [node name="Card4" parent="." instance=ExtResource("1_c275a")]
 material = SubResource("ShaderMaterial_pq3nt")
-face = ExtResource("11_ivge2")
+face = ExtResource("11_3tg0a")
 scriptAnimal = ExtResource("3_jmysu")
 faceSpecial1 = ExtResource("5_fwgru")
 faceSpecial2 = ExtResource("6_354v5")
