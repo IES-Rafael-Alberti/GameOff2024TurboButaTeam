@@ -7,7 +7,8 @@ EXIT_BUTTON,Exit,Salir
 BACK_BUTTON,Back,Atrás
 RETRY_BUTTON,Retry,Reintentar
 WIKI_BUTTON,Wiki,Wiki
-MASTER_VOLUME_LABEL,Master Volume,Volumen General
+VOLUME_LABEL,Volume,Volumen
+MASTER_VOLUME_LABEL,Master,General
 MUSIC_VOLUME_LABEL,Music,Música
 SFX_VOLUME_LABEL,SFX,Efectos de sonido
 WINDOW_MODE_LABEL,Window,Ventana
@@ -50,11 +51,11 @@ DIALOGUE,,
 OX BF,,
 OX_BF_START1,I possess this animals spirit to take down on you.,Poseo el espíritu de este animal para derrotarte.
 OX_BF_START2,The brute strength of the ox will shred you.,La fuerza bruta del buey te destrozará.
-BF_1_90HP,My answers to your question will unfold as you take down this spirit.,Mis respuestas a tu pregunta se desarrollarán en lo que derrotas a este espíritu.
-BF_1_80HP,"I will say I don't destroy this forest on purpose, it's just a consequence of my action.","Diré que no destruyo este bosque a propósito, sino como consecuencia de mi acción."
-BF_1_70HP,"I don't feel remorse from my doing, since it's in the name of our best interest.","No siento remordimiento, ya que todo esto es a cambio de nuestros mejores intereses."
-BF_1_60HP,"However, I'm not responsible from my existence. I've been created and fueled by greed.","Sin embargo, no soy responsable de mi existencia. Fui creado y alimentado por la codicia."
-BF_1_50HP,"It's the ones who created me who's left to wonder what to should be done with me, not to fight me like an enemy","Son los que me crearon los que deben concluir qué hacer conmigo, no combatirme como un enemigo."
+OX_BF_90HP,My answers to your question will unfold as you take down this spirit.,Mis respuestas a tu pregunta se desarrollarán en lo que derrotas a este espíritu.
+OX_BF_80HP,"I will say I don't destroy this forest on purpose, it's just a consequence of my action.","Diré que no destruyo este bosque a propósito, sino como consecuencia de mi acción."
+OX_BF_70HP,"I don't feel remorse from my doing, since it's in the name of our best interest.","No siento remordimiento, ya que todo esto es a cambio de nuestros mejores intereses."
+OX_BF_60HP,"However, I'm not responsible from my existence. I've been created and fueled by greed.","Sin embargo, no soy responsable de mi existencia. Fui creado y alimentado por la codicia."
+OX_BF_50HP,"It's the ones who created me who's left to wonder what to should be done with me, not to fight me like an enemy","Son los que me crearon los que deben concluir qué hacer conmigo, no combatirme como un enemigo."
 ,,
 ,,
 OX_BF_DEFEAT,"So, the mighty ox, all strength and no mind, shall be defeated.","Así, el poderoso buey, todo fuerza y nada intelecto, debe ser derrotado."
@@ -87,12 +88,38 @@ C3D1,"So, humanity created you?",Así que... ¿te ha creado la humanidad?
 C3D2,"Not on purpose, but they did.","No a propósito, pero sí."
 C3D3,"I have one last question. What are you, exactly?","Tengo una última pregunta. ¿Qué eres, exactamente?"
 C3D4,What am I?,¿Qué soy?
-C3D5,"I am you, you are me","Yo soy tú, tú eres yo."
 C3D5O1,"I am you, you are me","Yo soy tú, tú eres yo."
 C3D5O2,"I am you, you are me","Yo soy tú, tú eres yo."
-C3D5O3,"Finally, you understand it.",Por fin lo entiendes.
-C4D1,We've came this far. And I'll be the one asking you a question now. ,
-C4D3,Who are you?,
+C3D5O3,"I am you, you are me","Yo soy tú, tú eres yo."
+C3D6,"Finally, you understand it.",Por fin lo entiendes.
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
 ,,
 GAME HISTORY,,
 HISTORY_TITLE,Game history,Historial de juego
@@ -100,14 +127,15 @@ ATTACK_HISTORY,You have made an attack,Has realizado un ataque
 ATTACK_UNDER_HISTORY,You have made an attack below the shield,Has realizado un ataque por debajo del escudo
 DRECREASE_HISTORY,You lowered the boss's defence,Has bajado la defensa del jefe
 SHIELD_HISTORY,You have used shield,Has usado escudo
+FAIL_EQUAL_HISTORY,You have failed the parterns,Has fallado la pareja
 DOUBLE_SHIFT_HISTORY,You have used double shifts,Has usado doble turno
 FLIP_HISTORY,You have revealed two cards,Has revelado dos cartas
 BOSS_ATTACK_DONE,The boss has made an attack,El jefe ha realizado un ataque
 BOSS_SHIELD_DONE,The boss has used shield,El jefe ha usado escudo
 BOSS_HABILITY_DONE,The boss has used ability,El jefe ha usado habilidad
 ,,
-DEPRECATED,DEPRECATED,DEPRECATED
 ,,
+DEPRECATED,DEPRECATED,DEPRECATED
 C2D5O3,"Is it mother nature itself, being whimsical with its own creation?","¿Es la propia madre naturaleza, siendo caprichosa con su propia creación?"
 ,,
 ,"¿Does your presence bring with it the shadow of destruction, sweeping everything away?","¿Tu presencia trae consigo la sombra de la destrucción, arrasando con todo?"

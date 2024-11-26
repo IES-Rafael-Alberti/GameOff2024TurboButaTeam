@@ -78,12 +78,14 @@ func _on_pressed():
 					print("empieza el turno del boss")
 					GameManager.isBossTurn.emit()
 					await get_tree().create_timer(3).timeout
-					GameManager.isPlayerPhase = false
+					print("emite turno boss")
+					GameManager.TurnBoss.emit()
 
 func isEqual(firstCard, secondCard):
 	if firstCard.get_texture_normal() != secondCard.get_texture_normal():
 		firstCard.voltear()
 		secondCard.voltear()
+		GameManager.emit_signal("UpdateHistorial", "FAIL_EQUAL_HISTORY", false)
 	else:
 		GameManager.countCouple += 1
 		GameManager.isCouple = true

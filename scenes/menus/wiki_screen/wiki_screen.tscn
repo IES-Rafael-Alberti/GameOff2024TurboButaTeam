@@ -13,7 +13,9 @@
 [ext_resource type="Texture2D" uid="uid://u1nqewt2tkmo" path="res://assets/sprites/cardsFullResolution/especial2.png" id="9_qmgvc"]
 [ext_resource type="Texture2D" uid="uid://tej13qf6vn8h" path="res://assets/sprites/cardsFullResolution/especial1.png" id="10_73aqc"]
 [ext_resource type="Texture2D" uid="uid://c63ruxqgmk0bp" path="res://assets/sprites/boss/buey.png" id="11_ao6y2"]
+[ext_resource type="Texture2D" uid="uid://dcei2ml5rej1u" path="res://assets/sprites/cardsFullResolution/lince.png" id="11_ccrck"]
 [ext_resource type="Texture2D" uid="uid://dtnu1ywt8h6i0" path="res://assets/backgrounds/backgroundEspinas.png" id="12_yml3x"]
+[ext_resource type="Texture2D" uid="uid://xmcdtew2w6a" path="res://assets/sprites/boss/cobra.png" id="13_bxnnb"]
 [ext_resource type="Texture2D" uid="uid://dqq5f6tuc02qo" path="res://assets/backgrounds/firstCinematic/bgComplete.png" id="13_dee20"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jk85g"]
@@ -28,8 +30,8 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_ermmr")
 script = ExtResource("1_rmd21")
-cardImgList = Array[Texture]([ExtResource("2_2ij6p"), ExtResource("3_3oy84"), ExtResource("4_yt0g6"), ExtResource("5_icmom"), ExtResource("6_4dkke"), ExtResource("7_4i2of"), ExtResource("8_pqwgn"), ExtResource("9_qmgvc"), ExtResource("10_73aqc")])
-bossImgList = Array[Texture]([ExtResource("11_ao6y2")])
+cardImgList = Array[Texture]([ExtResource("2_2ij6p"), ExtResource("3_3oy84"), ExtResource("4_yt0g6"), ExtResource("5_icmom"), ExtResource("6_4dkke"), ExtResource("7_4i2of"), ExtResource("8_pqwgn"), ExtResource("9_qmgvc"), ExtResource("10_73aqc"), ExtResource("11_ccrck")])
+bossImgList = Array[Texture]([ExtResource("11_ao6y2"), ExtResource("13_bxnnb")])
 bgImgList = Array[Texture]([ExtResource("12_yml3x"), ExtResource("13_dee20")])
 
 [node name="TextContainer" type="VBoxContainer" parent="."]
