@@ -173,6 +173,7 @@ offset_left = -0.280029
 offset_top = -0.320007
 offset_right = 1.64001
 offset_bottom = -0.200012
+tooltip_text = "RESHUFFLE_BOARD_TOOLTIP"
 theme = ExtResource("4_t0f75")
 text = "Reshuffle Board"
 
@@ -225,6 +226,7 @@ offset_right = 0.799988
 offset_bottom = 0.280029
 grow_horizontal = 2
 grow_vertical = 2
+tooltip_text = "BATTLELOG_TOOLTIP"
 color = Color(1, 1, 1, 0.701961)
 
 [node name="Label" type="Label" parent="ColorRect2"]
