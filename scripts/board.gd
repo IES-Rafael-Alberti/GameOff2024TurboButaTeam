@@ -33,6 +33,8 @@ var bossCobraTemp
 @onready var bossCobra = preload("res://scenes/cobra.tscn")
 
 func _ready():
+	pause_menu.visible = false
+	
 	GameManager.numCombat += 1
 	#Ponerle la vida al player
 	GameManager.healthPlayer = maxHealthPlayer
@@ -122,10 +124,12 @@ func UpdateProgressBar():
 	progress_bar.value = GameManager.healthPlayer
 	if progress_bar.value <= 0:
 		#TODO hacer que el player se muera
+		GameManager.resetBossScene()
 		get_tree().change_scene_to_file.bind("res://scenes/menus/game_over/game_over.tscn").call_deferred()
 
 func selectBoss():
-	if Dialogic.VAR.ox_selected:
+	#if Dialogic.VAR.ox_selected:
+	if GameManager.numCombat == 1:
 		# Metemos la lista para comprobar sus hijos
 		add_child(bossOXTemp)
 		
@@ -139,8 +143,10 @@ func selectBoss():
 		grid_container.add_child(GameManager.pickedBoss)
 		Dialogic.VAR.ox_selected = false
 		Dialogic.VAR.cobra_selected = true
+		return
 	
-	if Dialogic.VAR.cobra_selected:
+	#if Dialogic.VAR.cobra_selected:
+	if GameManager.numCombat == 2:
 		# Metemos la lista para comprobar sus hijos
 		add_child(bossCobraTemp)
 		
@@ -154,6 +160,7 @@ func selectBoss():
 		grid_container.add_child(GameManager.pickedBoss)
 		Dialogic.VAR.cobra_selected = false
 		Dialogic.VAR.ox_selected = true
+		return
 
 func updateShield():
 	progressBarShield.max_value = shieldMaxValue
@@ -188,13 +195,6 @@ func flipTwoCard():
 	card1.mostrarFace()
 	card2.mostrarFace()
 
-func _on_button_pressed() -> void:
-	if GameManager.canFlip:
-		GameManager.BoardCompleted.emit()
-
-func _on_timer_timeout() -> void:
-	damage_bar.value = GameManager.healthPlayer
-
 func updateHistorial(text, boss):
 	var new_label = Label.new()
 	new_label.text = text
@@ -214,3 +214,12 @@ func quitPlayerHealthBorderShader():
 
 func putPlayerHealthBorderShader():
 	border.material.set_shader_parameter("isHighlight", true)
+func _on_pause_pressed() -> void:
+	pause_menu.visible = true
+
+func _on_button_pressed() -> void:
+	if GameManager.canFlip:
+		GameManager.BoardCompleted.emit()
+
+func _on_timer_timeout() -> void:
+	damage_bar.value = GameManager.healthPlayer

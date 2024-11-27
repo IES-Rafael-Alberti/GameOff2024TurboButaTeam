@@ -11,6 +11,7 @@
 [ext_resource type="AudioStream" uid="uid://umrhj1fwf5ud" path="res://assets/sound/sfx/GettingHit.mp3" id="6_sxty8"]
 [ext_resource type="FontFile" uid="uid://b3vfy2vwgidc4" path="res://assets/fonts/Colorfiction - Messy.ttf" id="6_u7l7k"]
 [ext_resource type="Texture2D" uid="uid://bslxfut1486oy" path="res://assets/sprites/ui/Ilustracion_sin_titulo_1.png" id="8_km3ka"]
+[ext_resource type="PackedScene" uid="uid://ce27df150yfsb" path="res://scenes/menus/pause_menu/pause_menu.tscn" id="10_yisfa"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_frf6y"]
 corner_radius_top_left = 8
@@ -240,11 +241,11 @@ layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.008
 anchor_top = 0.586
-anchor_right = 0.16
+anchor_right = 0.166
 anchor_bottom = 0.984
 offset_left = -0.360001
 offset_top = 0.119995
-offset_right = 0.799988
+offset_right = -0.720032
 offset_bottom = 0.280029
 grow_horizontal = 2
 grow_vertical = 2
@@ -271,7 +272,7 @@ offset_left = 57.0
 offset_top = 678.0
 offset_right = 278.0
 offset_bottom = 1041.0
-vertical_scroll_mode = 0
+horizontal_scroll_mode = 0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
 layout_mode = 2
@@ -283,6 +284,12 @@ rotation = 1.5708
 scale = Vector2(0.189217, 0.265606)
 texture = ExtResource("8_km3ka")
 
+[node name="PauseMenu" parent="." instance=ExtResource("10_yisfa")]
+visible = false
+z_index = 50
+layout_mode = 1
+
 [connection signal="timeout" from="ProgressBar/Timer" to="." method="_on_timer_timeout"]
 [connection signal="pressed" from="ResetBoard" to="." method="_on_reset_board_pressed"]
 [connection signal="pressed" from="ResetBoard" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Pause" to="." method="_on_pause_pressed"]
