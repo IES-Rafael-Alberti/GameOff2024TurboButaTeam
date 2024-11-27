@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bnng3hk0wi7a"]
+[gd_scene load_steps=20 format=3 uid="uid://bnng3hk0wi7a"]
 
 [ext_resource type="Script" path="res://scripts/board.gd" id="1_s4gqu"]
 [ext_resource type="Script" path="res://scenes/dialogue_point.gd" id="2_1tfi2"]
@@ -19,6 +19,17 @@ border_width_top = 4
 border_width_right = 4
 border_width_bottom = 4
 border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mt2uq"]
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.0352941, 0.0352941, 0.0352941, 1)
 corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
@@ -121,19 +132,21 @@ theme_override_constants/v_separation = 20
 columns = 8
 
 [node name="ProgressBarShield" type="ProgressBar" parent="."]
+z_index = 20
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.912
-anchor_top = 0.022
+anchor_top = 0.015
 anchor_right = 0.933
-anchor_bottom = 0.138
+anchor_bottom = 0.131
 offset_left = 0.959839
-offset_top = 0.239998
-offset_right = 0.639771
-offset_bottom = -0.0400085
+offset_top = -0.200001
+offset_right = 0.639893
+offset_bottom = -0.480026
 grow_horizontal = 0
 grow_vertical = 2
 theme_override_styles/background = SubResource("StyleBoxFlat_frf6y")
+theme_override_styles/fill = SubResource("StyleBoxFlat_mt2uq")
 max_value = 50.0
 fill_mode = 3
 show_percentage = false
@@ -150,14 +163,14 @@ flip_h = true
 z_index = 1
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.938354
-anchor_top = 0.022
-anchor_right = 0.991125
-anchor_bottom = 0.555074
+anchor_left = 0.937312
+anchor_top = 0.0145926
+anchor_right = 0.990083
+anchor_bottom = 0.548593
 offset_left = 0.359985
 offset_top = 0.239998
 offset_right = 0.039917
-offset_bottom = -0.480042
+offset_bottom = 4.51996
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_styles/background = SubResource("StyleBoxFlat_mepfe")
@@ -184,8 +197,8 @@ wait_time = 0.4
 
 [node name="Border" type="Sprite2D" parent="ProgressBar"]
 material = SubResource("ShaderMaterial_l14ma")
-position = Vector2(51.0004, 287)
-scale = Vector2(1.0495, 1.0087)
+position = Vector2(51.0004, 290.456)
+scale = Vector2(1.049, 1.02102)
 texture = ExtResource("4_lm17j")
 
 [node name="ResetBoard" type="Button" parent="."]
