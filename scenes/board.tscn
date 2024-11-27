@@ -1,5 +1,5 @@
+[gd_scene load_steps=19 format=3 uid="uid://bnng3hk0wi7a"]
 
-[gd_scene load_steps=18 format=3 uid="uid://bnng3hk0wi7a"]
 [ext_resource type="Script" path="res://scripts/board.gd" id="1_s4gqu"]
 [ext_resource type="Script" path="res://scenes/dialogue_point.gd" id="2_1tfi2"]
 [ext_resource type="Texture2D" uid="uid://bx6qs7t6di7vc" path="res://assets/sprites/ui/Ilustracion_sin_titulo_2.png" id="3_2tikr"]
@@ -14,6 +14,11 @@
 [ext_resource type="PackedScene" uid="uid://c4qb8abvjnj7l" path="res://scenes/menus/pause_menu/pause_menu.tscn" id="10_yisfa"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_frf6y"]
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
 corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
