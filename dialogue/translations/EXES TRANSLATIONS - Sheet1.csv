@@ -10,15 +10,16 @@ WIKI_BUTTON,Wiki,Wiki
 VOLUME_LABEL,Volume,Volumen
 MASTER_VOLUME_LABEL,Master,General
 MUSIC_VOLUME_LABEL,Music,Música
-SFX_VOLUME_LABEL,SFX,Efectos de sonido
+SFX_VOLUME_LABEL,SFX,Efectos
 WINDOW_MODE_LABEL,Window,Ventana
 LANGUAGE_LABEL,Language,Idioma
 FULLSCREEN_LABEL,Play in fullscreen with the button in the bottom right corner for the best experience!,¡Juega en pantalla completa con el botón de la esquina abajo-derecha para la mejor experiencia!
-SPOILER_ALERT_LABEL,"WARNING! DON'T BROWSE THIS WIKI UNLESS YOU'VE ALREADY PLAYED THE GAME, OR YOU WILL BE SPOILED!!","¡CUIDADO! NO INVESTIGUES ESTA WIKI SI NO HAS JUGADO YA EL JUEGO, O TE LO SPOILEARÁS"
+SPOILER_ALERT_LABEL,"WARNING! DON'T BROWSE THIS WIKI UNLESS YOU'VE ALREADY PLAYED THE GAME, SPOILERS AHEAD!","¡CUIDADO! NO INVESTIGUES ESTA WIKI SI NO HAS JUGADO YA EL JUEGO, O TE LO SPOILEARÁS"
 WIKI_CARDS_BUTTON,Cards,Cartas
 WIKI_BOSSES_BUTTON,Bosses,Jefes
 WIKI_BACKGROUNDS_BUTTON,Backgrounds,Fondos
 RESHUFFLE_BOARD_BUTTON,Reshuffle Board,Refrescar Tablero
+PAUSE_BUTTON,Pause,Parar
 ,,
 GAME,,
 testboss_name,OX,BUEY
@@ -29,8 +30,8 @@ BOSS_HABILITY,The spirit is reuniting forces...,El espíritu está reuniendo fue
 BOSS_HABILITY_CHARGE,The spirit is going to attack with all his might!,¡El espíritu va a atacar con todas sus fuerzas!
 RESHUFFLE_BOARD_TOOLTIP,You can reshuffle the board once you've made at least 3 successful pairs,Puedes refrescar el tablero una vez haces 3 parejas correctas.
 BATTLELOG_TOOLTIP,All actions made in the match until now. Newer actions appear above.,Todas las acciones tomadas en la partida hasta ahora. Las acciones más nuevas aparecen arriba.
-,,
-,,
+YOUR_HP_TOOLTIP,Your Health Bar.,Tu barra de vida.
+BOSS_HP_TOOLTIP,Boss Health Bar.,Barra de vida del boss.
 CINEMATICS,,
 CINEMATIC 1,,
 C1D1,Extinction is coming by.,La extinción se acerca.
@@ -103,10 +104,10 @@ C3D9O1,"Will only lead you to extinction, like the rest of us.","Solo os llevar�
 C3D9O2,"Will only lead you to extinction, like the rest of us.","Solo os llevará a la extinción, como al resto de nosotros."
 C3D9O3,"Will only lead you to extinction, like the rest of us.","Solo os llevará a la extinción, como al resto de nosotros."
 C3D10,But...,Pero...
-C3D11,"Remember that this is not just your fault, player.","Recuerda que esto no es solo tu culpa, jugador."
+C3D11,"Know that this is not just your fault, player.","Entiende que esto no es solo tu culpa, jugador."
 C3D12,Every human knows what they're responsible of.,Cada humano sabe de lo que son responsables.
 C3D13,Just remember:,Sólo recuerda:
-,"cuadro texto fuera, sprite grande:",
+,"cuadro texto fuera, sprite grande, aumentar pitch del sonido:",
 C3D14,YOU CAN'T,NO PUEDES
 C3D15,RUN AWAY,HUIR
 C3D16,FROM EXTINCTION.,DE LA EXTINCIÓN.
