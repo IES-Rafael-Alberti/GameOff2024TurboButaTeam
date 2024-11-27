@@ -18,14 +18,18 @@ SPOILER_ALERT_LABEL,"WARNING! DON'T BROWSE THIS WIKI UNLESS YOU'VE ALREADY PLAYE
 WIKI_CARDS_BUTTON,Cards,Cartas
 WIKI_BOSSES_BUTTON,Bosses,Jefes
 WIKI_BACKGROUNDS_BUTTON,Backgrounds,Fondos
+RESHUFFLE_BOARD_BUTTON,Reshuffle Board,Refrescar Tablero
 ,,
 GAME,,
 testboss_name,OX,BUEY
 secondboss,COBRA,COBRA
-BOSS_ATTACK,The Ox starts charging torwards you,El Buey empieza a cargar hacia ti
-BOSS_SHIELD,The Ox stands his ground,El Buey mantiene su posición.
-BOSS_HABILITY,The Ox is reuniting forces...,El Buey está reuniendo fuerzas...
-BOSS_HABILITY_CHARGE,The Ox is going to attack with all his might!,¡El Buey va a atacar con todas sus fuerzas!
+BOSS_ATTACK,The spirit starts charging torwards you,El espíritu empieza a cargar hacia ti
+BOSS_SHIELD,The spirit stands his ground,El espíritu mantiene su posición.
+BOSS_HABILITY,The spirit is reuniting forces...,El espíritu está reuniendo fuerzas...
+BOSS_HABILITY_CHARGE,The spirit is going to attack with all his might!,¡El espíritu va a atacar con todas sus fuerzas!
+RESHUFFLE_BOARD_TOOLTIP,You can reshuffle the board once you've made at least 3 successful pairs,Puedes refrescar el tablero una vez haces 3 parejas correctas.
+BATTLELOG_TOOLTIP,All actions made in the match until now. Newer actions appear above.,Todas las acciones tomadas en la partida hasta ahora. Las acciones más nuevas aparecen arriba.
+,,
 ,,
 CINEMATICS,,
 CINEMATIC 1,,
@@ -91,7 +95,21 @@ C3D4,What am I?,¿Qué soy?
 C3D5O1,"I am you, you are me","Yo soy tú, tú eres yo."
 C3D5O2,"I am you, you are me","Yo soy tú, tú eres yo."
 C3D5O3,"I am you, you are me","Yo soy tú, tú eres yo."
+,Todo se pone turbio,"Segundos pantalla en negro, para que se vea el player. C3D6. Entonces se muestra el fondo y está más mamado, y el fondo parpadea algo."
 C3D6,"Finally, you understand it.",Por fin lo entiendes.
+C3D7,"So, I'm just a futile try to take you down... which only makes you stronger?",Entonces... soy un intento futil de eliminarte... ¿el cual sólo te hace más fuerte? 
+C3D8,That's right. Trying to defeat me without changing your selfish desires...,Así es. Intentar derrotarme sin cambiar vuestros deseos egoístas...
+C3D9O1,"Will only lead you to extinction, like the rest of us.","Solo os llevará a la extinción, como al resto de nosotros."
+C3D9O2,"Will only lead you to extinction, like the rest of us.","Solo os llevará a la extinción, como al resto de nosotros."
+C3D9O3,"Will only lead you to extinction, like the rest of us.","Solo os llevará a la extinción, como al resto de nosotros."
+C3D10,But...,Pero...
+C3D11,"Remember that this is not just your fault, player.","Recuerda que esto no es solo tu culpa, jugador."
+C3D12,Every human knows what they're responsible of.,Cada humano sabe de lo que son responsables.
+C3D13,Just remember:,Sólo recuerda:
+,"cuadro texto fuera, sprite grande:",
+C3D14,YOU CAN'T,NO PUEDES
+C3D15,RUN AWAY,HUIR
+C3D16,FROM EXTINCTION.,DE LA EXTINCIÓN.
 ,,
 ,,
 ,,
@@ -99,27 +117,125 @@ C3D6,"Finally, you understand it.",Por fin lo entiendes.
 ,,
 ,,
 ,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
+REVERSO_NAME,Back of the card,Reverso de la carta
+GRULLA_NAME,Red-crested Crane,Grulla de Cresta Roja
+PANDA_NAME,,Panda Rojo
+MOFETA_NAME,Spotted Skunk,Mofeta Moteada
+PANGOLIN_NAME,Pangolin,Pangolín
+TORTUGA_NAME,Olive Ridley Turtle,Tortuga Lora
+RATA_NAME,4-toed gerbil,Jerbo de 4 dedos 
+ESPECIAL_1_NAME,,Carta Especial
+ESPECIAL_2_NAME,,Carta Especial
+LINCE_NAME,,Lince Ibérico
+COBRA_NAME,,
+BUEY_NAME,,
+BOSQUE_NAME,,
+ESPINAS_NAME,,
+REVERSO_DATO,,
+GRULLA_DATO,"Location: Eastern Russia, in the Amur River basin, and in China, Japan and other parts of Southeast Asia.
+
+Conservation status (year): Critically endangered according to the IUCN.  
+
+Brief description: These cranes have bright white plumage, with black neck and wings in the case of males, and rather greyish in the case of females. They have a bright red bare crown on their heads, which they may puff up to indicate their mood.
+  
+Fun fact: When the leader gets tired, it moves to the back of the formation while another bird takes the lead. The birds behind squawk (produce a sound peculiar to them) to encourage those in front to maintain speed.’","Localización: En el este de Rusia, en la cuenca del Río Amur, y en China, Japón y otras partes del sudeste asiático.
+
+Estado de conservación (año): En grave peligro de extinción según la IUCN.  
+
+Breve descripción: Estas grullas tienen el plumaje de color blanco brillante, con el cuello y las alas negras en el caso de los machos, y más bien grisáceas, en el de las hembras. En la cabeza tienen una coronilla desnuda de color rojo vivo, que pueden hinchar para indicar su estado de ánimo.
+  
+Fun fact: Cuando el líder se cansa, se traslada al final de la formación mientras otra asume la delantera. Las aves que van detrás graznan (producen un sonido propio de ellos) para alentar a las que están delante para mantener la velocidad."
+PANDA_DATO,"Location: Inhabits temperate climates, in the mountains of Nepal and northern Burma, as well as some regions of central China. 
+
+Conservation status: Endangered according to the IUCN Red List since 2015. 
+
+Brief description: Small mammal with reddish fur and a ringed tail. It is mainly arboreal and solitary, feeding on bamboo, fruits and insects.
+
+Fun fact: These adorable animals are great sleepers!
+Red pandas tend to spend the day dozing in the treetops and become active in the evening, when they forage for more food. It might seem that the red panda is a lazy animal, but it is because it cannot digest cellulose, and as its diet is largely made up of bamboo leaves and shoots, it has a slow metabolism to adapt.","Localización: habita climas templados, en las montañas de Nepal y del norte de Birmania, así como de algunas regiones del centro de China 
+
+Estado de conservación : En peligro de extinción según la Lista Roja de la UICN desde 2015 
+
+Breve descripción: Mamífero pequeño de pelaje rojizo y cola anillada. Es principalmente arbóreo y solitario, alimentándose de bambú, frutas e insectos.  
+
+Fun fact: Estos adorables animales son grandes unos dormilones!! Los pandas rojos suelen pasarse el día dormitando en las copas de los árboles y volverse activos al atardecer, que es cuando se afana en buscar más comida. Podría parecer que el panda rojo es un animal perezoso, pero lo que sucede es que no puede digerir la celulosa, y al estar su dieta constituida en gran parte por hojas y brotes de bambú, su adaptación pasa por tener un metabolismo lento."
+MOFETA_DATO,"Location: Found in Belize, Costa Rica, El Salvador, Guatemala, Honduras, Mexico, and Nicaragua.
+
+Conservation status (year): It is on the IUCN red list, but its numbers are now declining.
+
+Brief description: Small skunk with white spots instead of stripes. It is characterised by its ability to spray a liquid with an extremely strong odour.  
+
+Fun fact: The skunk lifts its hind legs and raises its tail, resting on its front legs: this is its way of warning what it is about to do, a gesture accompanied by a high-pitched warning sound. This mammal emits a liquid that can cause occasional blindness’.","Localización: Se encuentra en Belice, Costa Rica, El Salvador, Guatemala, Honduras, México, y Nicaragua.
+
+Estado de conservación (año): Se encuentra en la lista roja de la UICN, pero su número hoy en día es decreciente.
+
+Breve descripción: Pequeña mofeta con manchas blancas en lugar de rayas. Se caracteriza por su capacidad para rociar un líquido con un olor extremadamente fuerte.  
+
+Fun fact: La Mofeta levanta las patas traseras y eleva la cola, apoyándose en las patas delanteras: es su manera de advertir lo que va a hacer, un gesto que acompaña de un sonido agudo de alerta. Este mamífero emite un líquido que puede causar ceguera puntual "
+PANGOLIN_DATO,"Location: Its habitat is in the bushlands, central African forests and savannahs, and the Asian pangolin ranges from Borneo to Pakistan.
+
+Conservation status (year): Critically endangered between 2010 and 2015.
+
+Brief description: The pangolin is a solitary, nocturnal mammal. When it perceives a threat it covers its head with its front legs, revealing only its armour of scales... 
+ 
+Fun fact: Apart from being the apparent cause of the coronavirus. Their name ‘pangolin’ is derived from the Malay word ‘pengguling’, which loosely translates as ‘something that rolls up’, and indeed they do! To defend themselves when they feel threatened, the small mammals roll themselves into a ball, just like hedgehogs and armadillos.","Localización: Su hábitat se da en los bushlands, los bosques del centro de África y las sabanas, y el pangolín asiático habita entre Borneo hasta Pakistán.
+
+Estado de conservación (año): En peligro Crítico de extinción entre el año 2010 y 2015
+
+Breve descripción: El pangolín es un animal mamífero, solitario y de hábitos nocturnos. Cuando percibe una amenaza cubre la cabeza con sus patas delanteras, dejando ver únicamente su armadura de escamas.. 
+ 
+Fun fact: A parte de ser la aparente causa del coronavirus. Su nombre ""pangolín"" se deriva de la palabra malaya ""pengguling"", que se traduce vagamente como ""algo que se enrolla"", ¡y de hecho lo hacen! Para defenderse cuando se sienten amenazados, los pequeños mamíferos se enrollan en una bola, al igual que los erizos y los armadillos."
+TORTUGA_DATO,"Location: Primarily in the western North Atlantic Ocean, with the vast majority of adults occurring within the Gulf of Mexico. 
+
+Conservation status (year): IUCN classifies as Critically Endangered.
+
+Brief description: The olive ridley or bastard is a beautiful species visibly different from other sea turtles.
+
+Fun fact: The sex of turtle hatchlings depends on the temperature of the sand where the eggs are laid. Climate change may cause temperatures to rise. Higher temperatures could cause the sand to warm up, leading to an increase in the proportion of female hatchlings.’","Localización: principalmente en la zona oeste del océano Atlántico del Norte y la gran mayoría de los adultos ocurren dentro del Golfo de México 
+
+Estado de conservación (año): La UICN la clasifica como una especie en Peligro Critico de Extinción.
+
+Breve descripción: La tortuga lora, cotorra, bastarda o también llamada golfina, es una hermosa especie visiblemente diferente al resto de las tortugas marinas
+
+Fun fact: El sexo de las crías de las tortugas depende de la temperatura de la arena donde se ponen los huevos. El cambio climático puede provocar un aumento de las temperaturas. Temperaturas más altas podrían provocar que la arena se caliente, lo cual llevaría a un aumento de la proporción de crías hembra."
+RATA_DATO,"Location: Lives in coastal salt marshes and dry, clayey deserts (Egypt and Libya).
+
+Conservation status (year): Endangered by the IUCN in 2008.
+
+Brief description: A small desert rodent with long hind legs, adapted to jump and survive in arid climates.
+
+Fun fact: The four-toed gerbil has the incredible ability to leap up to 3 metres in a single stride, thanks to its powerful hind legs. This trait not only allows it to move quickly over sandy terrain, but is also its main strategy for escaping predators. In addition, its long, thin tail acts as a counterweight, helping it to maintain balance while in the air or when performing quick manoeuvres in its desert habitat.","Localización: Vive en las marismas salinas cercanas a las costas y desiertos (Egipto y Libia) arcillosos y secos.
+
+Estado de conservación (año):  En peligro de extinción por la UICN en 2008.
+
+Breve descripción: Es un pequeño roedor desértico de largas patas traseras, adaptado para saltar y sobrevivir en climas áridos.
+
+Fun fact: El jerbo de cuatro dedos tiene la increíble habilidad de realizar saltos de hasta 3 metros de distancia en una sola zancada, gracias a sus potentes patas traseras. Este rasgo no solo le permite moverse rápidamente en terrenos arenosos, sino que también es su principal estrategia para escapar de depredadores. Además, su cola larga y delgada actúa como un contrapeso, ayudándolo a mantener el equilibrio mientras está en el aire o al realizar maniobras rápidas en su hábitat desértico."
+ESPECIAL_1_DATO,,
+ESPECIAL_2_DATO,,
+LINCE_DATO,,"Localización: España y Portugal (bosques mediterráneos).  Su hábitat típico es el monte mediterráneo, en altitudes comprendidas entre 400 y 1.300 m. salvo en la región de Doñana, donde vive al nivel del mar.
+
+Estado de conservación (año): En peligro de extinción desde 1986, pero desde junio de 2024 ha pasado de “en peligro de extinción” a “vulnerable” en la Lista Roja de la IUCN
+
+Breve descripción: Es uno de los felinos más amenazados del mundo. Tiene un pelaje moteado y orejas con pinceles negros característicos. Se alimenta principalmente de conejos.  
+
+Fun fact: Cada lince tiene un patrón único de manchas, como si fuera una huella digital y además Una de las características más reconocibles del lince ibérico es su vista. Este felino se vale de ella para cazar y es que puede reconocer a un roedor a más de 75 metros de distancia, a un conejo a 300 metros y a un cervatillo a casi 500 metros."
+COBRA_TEXT,,
+BUEY_TEXT,,
+BOSQUE_TEXT,,
+ESPINAS_TEXT,,
+REVERSO_HABILITY,,.
+GRULLA_HABILITY,,Hace un ataque normal al boss
+PANDA_HABILITY,,Le baja la defensa al boss y tus siguientes ataques hacen más daño
+MOFETA_HABILITY,,Le baja la defensa al boss y tus siguientes ataques hacen más daño
+PANGOLIN_HABILITY,,Te pones un escudo que te protege durante un turno
+TORTUGA_HABILITY,,Te pones un escudo que te protege durante un turno
+RATA_HABILITY,,Hace un ataque por debajo del escudo del boss
+ESPECIAL_1_HABILITY,,Tienes un doble turno
+ESPECIAL_2_HABILITY,,Te revela dos cartas que no hayas usado todavia
+LINCE_HABILITY,,Hace un ataque normal al boss
+COBRA_HABILITY,,Te envena durante dos turnos
+BUEY_HABILITY,,Gasta un turno para cargar el ataque y el siguiente turno te hace un ataque cargado con más potencia
 ,,
 GAME HISTORY,,
 HISTORY_TITLE,Game history,Historial de juego
