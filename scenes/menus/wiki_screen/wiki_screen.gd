@@ -10,6 +10,9 @@ extends Control
 @onready var nombre: Label = $WikiHBox/infoPanel/ScrollContainer/VBoxContainer/nombre
 @onready var dato: Label = $WikiHBox/infoPanel/ScrollContainer/VBoxContainer/dato
 @onready var utilidad: Label = $WikiHBox/infoPanel/ScrollContainer/VBoxContainer/utilidad
+@onready var card_credits: Label = $CardCredits
+@onready var boss_credits: Label = $BossCredits
+@onready var bg_credits: Label = $BgCredits
 
 @export var cardImgList: Array[Texture] = []
 @export var bossImgList: Array[Texture] = []
@@ -37,6 +40,9 @@ var current_index_bg: int = 0
 func _ready():
 	warning_label.visible = true
 	info_panel.visible = false
+	card_credits.visible = false
+	boss_credits.visible = false
+	bg_credits.visible = false
 
 func _on_cards_pressed():
 	warning_label.visible = false
@@ -44,6 +50,9 @@ func _on_cards_pressed():
 	bg_label.visible = false
 	cards_label.visible = true
 	info_panel.visible = true
+	card_credits.visible = true
+	boss_credits.visible = false
+	bg_credits.visible = false
 	
 	if cardImgList.size() > 0:
 		update_image()
@@ -54,6 +63,9 @@ func _on_bosses_pressed():
 	bg_label.visible = false
 	cards_label.visible = false
 	info_panel.visible = true
+	card_credits.visible = false
+	boss_credits.visible = true
+	bg_credits.visible = false
 	
 	if bossImgList.size() > 0:
 		update_image()
@@ -64,6 +76,9 @@ func _on_backgrounds_pressed():
 	bg_label.visible = true
 	cards_label.visible = false
 	info_panel.visible = true
+	card_credits.visible = false
+	boss_credits.visible = false
+	bg_credits.visible = true
 	
 	if bgImgList.size() > 0:
 		update_image()
@@ -109,17 +124,20 @@ func update_image():
 		nombre.text = cardNameList[current_index_card]
 		dato.text = cardTextList[current_index_card]
 		utilidad.text = cardHabilityList[current_index_card]
+		card_credits.text = cardCreditsList[current_index_card]
 	
 	if bosses_label.visible:
 		texture.texture = bossImgList[current_index_boss]
 		nombre.text = bossNameList[current_index_boss]
 		dato.text = bossTextList[current_index_boss]
 		utilidad.text = bossHabilityList[current_index_boss]
+		boss_credits.text = bossCreditsList[current_index_boss]
 	
 	if bg_label.visible:
 		texture.texture = bgImgList[current_index_bg]
 		nombre.text = bgNameList[current_index_bg]
 		dato.text = bgTextList[current_index_bg]
+		bg_credits.text = bgCreditsList[current_index_bg]
 
 func _on_back_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/menus/main_menu/main_menu.tscn")
