@@ -45,9 +45,10 @@ C1D8,I don't come off that easily. But you can try.,No soy tan fácil de convenc
 C1D9,Eh… Why are you destroying the forest?,Eh... ¿por qué estás destruyendo el bosque?
 C1D10,Why do you think I’m doing it?,¿Por qué crees que lo estoy haciendo?
 C1D11,Why am I destroying the forest?,¿Por qué estoy destruyendo el bosque?
-C1D11O1,"Does your presence bring destruction, leaving nothing behind?","¿Tu presencia trae destrucción, dejando nada detrás?"
+C1D11O1,"Does your presence bring destruction, leaving nothing behind?","¿Es tu presencia la que trae destrucción, dejando un vacío por donde pasa?"
 C1D11O2,"Is it your greed, chasing goals, that corrupts the forest?","¿Es tu codicia, persiguiendo objetivos, la que corrompe el bosque?"
-,,
+C1D11O1D,"So, you've chosen the spirit of the ox.","Así que, has elegido el espíritu del buey."
+C1D11O2D,"So, you've chosen the spirit of the cobra.","Así que, has elegido el espíritu de la cobra."
 C1D14,My answers don't come for free though.,Mis respuestas tienen un precio.
 C1D15,Let the test begin.,Que comience la prueba.
 ,,
@@ -73,7 +74,6 @@ C2D5,Come on... you already know it.,Venga... ya lo sabes
 C2D5O1,"Is it the weather, destroying everything in its path without a care?","¿Es la meteorología, destruyendo todo a su paso sin importarle nada?"
 C2D5O2,"Is it mankind, poisoning the world with its own interests?","¿Es la humanidad, envenenando el mundo con sus propios intereses?"
 C2D6,Earn your answer.,Gánate tu respuesta
-,,
 ,,
 Cobra BF,,
 CB_BF_START1,I possess this animals spirit to take down on you.,Poseo el espíritu de este animal para derrotarte.
@@ -119,7 +119,7 @@ C3D16,FROM EXTINCTION.,DE LA EXTINCIÓN.
 ,,
 REVERSO_NAME,Back of the card,Reverso de la carta
 GRULLA_NAME,Red-crested Crane,Grulla de Cresta Roja
-PANDA_NAME,,Panda Rojo
+PANDA_NAME,Red panda,Panda Rojo
 MOFETA_NAME,Spotted Skunk,Mofeta Moteada
 PANGOLIN_NAME,Pangolin,Pangolín
 TORTUGA_NAME,Olive Ridley Turtle,Tortuga Lora
