@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cu0orhuihoftt"]
+[gd_scene load_steps=17 format=3 uid="uid://cu0orhuihoftt"]
 
 [ext_resource type="Script" path="res://scenes/cinematics/third_cinematic.gd" id="1_5v03v"]
 [ext_resource type="Texture2D" uid="uid://csbwnnj621623" path="res://assets/backgrounds/backgroundEspinas/1.png" id="2_hb7sv"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bl3pktp7rf7bq" path="res://assets/sprites/figure.png" id="5_j51a5"]
 [ext_resource type="Texture2D" uid="uid://td8sq7wt0d02" path="res://assets/ui/marcoTexto.png" id="6_8f3io"]
 [ext_resource type="AudioStream" uid="uid://c8eoaxir81vl6" path="res://assets/sound/music/dark_forest.ogg" id="7_j0fjw"]
+[ext_resource type="AudioStream" uid="uid://cj5ydjbsh5hc6" path="res://assets/sound/music/creepy_wind-loop.wav" id="8_xspod"]
 
 [sub_resource type="Animation" id="Animation_60kur"]
 length = 0.001
@@ -105,6 +106,30 @@ tracks/7/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("creepy_wind:playing")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("creepy_wind:volume_db")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
 }
 
 [sub_resource type="Animation" id="Animation_n7x6l"]
@@ -289,17 +314,45 @@ tracks/0/path = NodePath(".:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 5),
+"times": PackedFloat32Array(0, 2.03333),
 "transitions": PackedFloat32Array(4, 4),
 "update": 0,
-"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 1)]
+"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("creepy_wind:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.03333),
+"transitions": PackedFloat32Array(0.517632, 0.406126),
+"update": 0,
+"values": [-40.0, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("creepy_wind:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(-0.0666667),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_f7xib"]
+resource_name = "final_text_transition"
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5meh1"]
 _data = {
 "RESET": SubResource("Animation_60kur"),
 "contappearing": SubResource("Animation_n7x6l"),
 "end": SubResource("Animation_1ajnw"),
+"final_text_transition": SubResource("Animation_f7xib"),
 "finale_fade_in": SubResource("Animation_3w7ps"),
 "start2": SubResource("Animation_qp2gl"),
 "sudden_blackout": SubResource("Animation_2msnx")
@@ -362,4 +415,10 @@ stream = ExtResource("7_j0fjw")
 volume_db = -30.0
 autoplay = true
 attenuation = 1e-05
+bus = &"Music"
+
+[node name="creepy_wind" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_xspod")
+max_distance = 10000.0
+attenuation = 0.00497875
 bus = &"Music"

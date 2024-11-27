@@ -11,4 +11,7 @@ func _ready() -> void:
 	await animation_player.animation_finished
 	Dialogic.start("finale_start")
 	await Dialogic.timeline_ended
-	animation_player.play("start2")
+	animation_player.play("finale_fade_in")
+	await animation_player.animation_finished
+	Dialogic.start("finale_start_2")
+	await Dialogic.timeline_ended
