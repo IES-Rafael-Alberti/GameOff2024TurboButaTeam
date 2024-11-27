@@ -174,11 +174,11 @@ func removeShield():
 
 func _on_timer_timeout() -> void:
 	damage_bar.value = GameManager.healthBoss
-	
+
 func resetShaders():
 	sprite_2d.material.set_shader_parameter("isSpecial", false)
 	sprite_2d.material.set_shader_parameter("isProtecting", false)
-	
+
 func attackAnimation():
 	if action == "habilidad":
 		animationBoss.play("attack")

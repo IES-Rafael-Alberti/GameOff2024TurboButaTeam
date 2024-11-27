@@ -18,7 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://dqq5f6tuc02qo" path="res://assets/backgrounds/firstCinematic/bgComplete.png" id="13_dee20"]
 [ext_resource type="Texture2D" uid="uid://cfxydl116wgtb" path="res://assets/sprites/boss/buey wiki.png" id="14_uas08"]
 [ext_resource type="Texture2D" uid="uid://ctwh7j7yrnq7v" path="res://assets/sprites/cardsFullResolution/borde.png" id="18_nihod"]
-[ext_resource type="StyleBox" path="res://assets/new_style_box_flat.tres" id="19_mf3l7"]
+[ext_resource type="StyleBox" uid="uid://cdv67nndws6cv" path="res://assets/new_style_box_flat.tres" id="19_mf3l7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jk85g"]
 bg_color = Color(0, 0, 0, 1)
