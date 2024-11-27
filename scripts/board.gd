@@ -20,7 +20,7 @@ var bossCobraTemp
 @onready var damage_bar: ProgressBar = $ProgressBar/DamageBar
 @onready var scroll_container: ScrollContainer = $ScrollContainer
 @onready var historialContainer: VBoxContainer = $ScrollContainer/VBoxContainer
-
+@onready var border: Sprite2D = $ProgressBar/Border
 
 @onready var fire_reroll = $Sounds/SFX/FireReroll
 @onready var getting_hit = $Sounds/SFX/GettingHit
@@ -30,8 +30,11 @@ var bossCobraTemp
 @onready var cardListSpecialScene = preload("res://scenes/cardListSpecial.tscn")
 @onready var bossOX = preload("res://scenes/OX.tscn")
 @onready var bossCobra = preload("res://scenes/cobra.tscn")
+@onready var pause_menu = $PauseMenu
 
 func _ready():
+	pause_menu.visible = false
+	
 	GameManager.numCombat += 1
 	#Ponerle la vida al player
 	GameManager.healthPlayer = maxHealthPlayer
@@ -52,6 +55,8 @@ func _ready():
 	GameManager.restartButtonVisible.connect(restartButtonVisible)
 	GameManager.FlipTwoCard.connect(flipTwoCard)
 	GameManager.UpdateHistorial.connect(updateHistorial)
+	GameManager.isBossTurn.connect(quitPlayerHealthBorderShader)
+	GameManager.isPlayerTurn.connect(putPlayerHealthBorderShader)
 	
 	bossOXTemp = bossOX.instantiate()
 	bossCobraTemp = bossCobra.instantiate()
@@ -119,6 +124,8 @@ func UpdateProgressBar():
 	progress_bar.value = GameManager.healthPlayer
 	if progress_bar.value <= 0:
 		#TODO hacer que el player se muera
+		GameManager.resetBossScene()
+		GameManager.numCombat = 0
 		get_tree().change_scene_to_file.bind("res://scenes/menus/game_over/game_over.tscn").call_deferred()
 
 func selectBoss():
@@ -136,6 +143,7 @@ func selectBoss():
 		grid_container.add_child(GameManager.pickedBoss)
 		Dialogic.VAR.ox_selected = false
 		Dialogic.VAR.cobra_selected = true
+		return
 	
 	if Dialogic.VAR.cobra_selected:
 		# Metemos la lista para comprobar sus hijos
@@ -151,6 +159,7 @@ func selectBoss():
 		grid_container.add_child(GameManager.pickedBoss)
 		Dialogic.VAR.cobra_selected = false
 		Dialogic.VAR.ox_selected = true
+		return
 
 func updateShield():
 	progressBarShield.max_value = shieldMaxValue
@@ -185,13 +194,6 @@ func flipTwoCard():
 	card1.mostrarFace()
 	card2.mostrarFace()
 
-func _on_button_pressed() -> void:
-	if GameManager.canFlip:
-		GameManager.BoardCompleted.emit()
-
-func _on_timer_timeout() -> void:
-	damage_bar.value = GameManager.healthPlayer
-
 func updateHistorial(text, boss):
 	var new_label = Label.new()
 	new_label.text = text
@@ -205,3 +207,21 @@ func updateHistorial(text, boss):
 	
 	historialContainer.add_child(new_label)
 	historialContainer.move_child(new_label, 0)
+
+func quitPlayerHealthBorderShader():
+	border.material.set_shader_parameter("isHighlight", false)
+
+func putPlayerHealthBorderShader():
+	border.material.set_shader_parameter("isHighlight", true)
+func _on_pause_pressed() -> void:
+	pause_menu.visible = true
+
+func _on_button_pressed() -> void:
+	GameManager.firstCardPicked = null
+	GameManager.secondCardPicked = null
+	GameManager.countCouple = 0
+	if GameManager.canFlip:
+		GameManager.BoardCompleted.emit()
+
+func _on_timer_timeout() -> void:
+	damage_bar.value = GameManager.healthPlayer

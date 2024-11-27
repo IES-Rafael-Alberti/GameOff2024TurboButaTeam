@@ -77,7 +77,7 @@ func _on_pressed():
 					GameManager.canFlip = false
 					print("empieza el turno del boss")
 					GameManager.isBossTurn.emit()
-					await get_tree().create_timer(3).timeout
+					await get_tree().create_timer(2).timeout
 					print("emite turno boss")
 					GameManager.TurnBoss.emit()
 

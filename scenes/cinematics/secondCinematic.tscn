@@ -268,8 +268,8 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("5_1erft")
 
 [node name="contaminationSprite" type="Sprite2D" parent="."]
-position = Vector2(1165, 491)
-scale = Vector2(0.479998, 0.479998)
+position = Vector2(934, 471.675)
+scale = Vector2(0.346774, 0.346774)
 texture = ExtResource("7_iud3s")
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -279,6 +279,7 @@ offset_top = 272.0
 offset_right = 1527.0
 offset_bottom = 791.0
 color = Color(0, 0, 0, 0.588235)
+metadata/_edit_use_anchors_ = true
 
 [node name="TextBoxSprite" type="Sprite2D" parent="."]
 self_modulate = Color(1, 1, 1, 0)
