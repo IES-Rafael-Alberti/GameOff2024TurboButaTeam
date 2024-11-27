@@ -21,7 +21,7 @@ var bossCobraTemp
 @onready var scroll_container: ScrollContainer = $ScrollContainer
 @onready var historialContainer: VBoxContainer = $ScrollContainer/VBoxContainer
 @onready var border: Sprite2D = $ProgressBar/Border
-
+@onready var pause_menu: Control = $PauseMenu
 
 @onready var fire_reroll = $Sounds/SFX/FireReroll
 @onready var getting_hit = $Sounds/SFX/GettingHit
