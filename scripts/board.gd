@@ -233,7 +233,6 @@ func _on_timer_timeout() -> void:
 
 func _on_btn_cheat_pressed() -> void:
 	clicks += 1
-	print(clicks)
 	if clicks >= 5:
 		text_edit.visible = true
 
