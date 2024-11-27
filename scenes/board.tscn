@@ -295,6 +295,6 @@ z_index = 50
 layout_mode = 1
 
 [connection signal="timeout" from="ProgressBar/Timer" to="." method="_on_timer_timeout"]
-[connection signal="pressed" from="ResetBoard" to="." method="_on_reset_board_pressed"]
 [connection signal="pressed" from="ResetBoard" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="ResetBoard" to="." method="_on_reset_board_pressed"]
 [connection signal="pressed" from="Pause" to="." method="_on_pause_pressed"]

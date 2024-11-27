@@ -31,6 +31,7 @@ var bossCobraTemp
 @onready var cardListSpecialScene = preload("res://scenes/cardListSpecial.tscn")
 @onready var bossOX = preload("res://scenes/OX.tscn")
 @onready var bossCobra = preload("res://scenes/cobra.tscn")
+@onready var pause_menu = $PauseMenu
 
 func _ready():
 	pause_menu.visible = false
@@ -125,6 +126,7 @@ func UpdateProgressBar():
 	if progress_bar.value <= 0:
 		#TODO hacer que el player se muera
 		GameManager.resetBossScene()
+		GameManager.numCombat = 0
 		get_tree().change_scene_to_file.bind("res://scenes/menus/game_over/game_over.tscn").call_deferred()
 
 func selectBoss():
