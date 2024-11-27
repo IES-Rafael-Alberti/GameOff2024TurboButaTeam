@@ -21,7 +21,6 @@ var bossCobraTemp
 @onready var scroll_container: ScrollContainer = $ScrollContainer
 @onready var historialContainer: VBoxContainer = $ScrollContainer/VBoxContainer
 @onready var border: Sprite2D = $ProgressBar/Border
-@onready var pause_menu: Control = $PauseMenu
 
 @onready var fire_reroll = $Sounds/SFX/FireReroll
 @onready var getting_hit = $Sounds/SFX/GettingHit
@@ -218,6 +217,9 @@ func _on_pause_pressed() -> void:
 	pause_menu.visible = true
 
 func _on_button_pressed() -> void:
+	GameManager.firstCardPicked = null
+	GameManager.secondCardPicked = null
+	GameManager.countCouple = 0
 	if GameManager.canFlip:
 		GameManager.BoardCompleted.emit()
 
