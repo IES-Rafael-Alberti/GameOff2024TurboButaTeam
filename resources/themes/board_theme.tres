@@ -1,8 +1,9 @@
-[gd_resource type="Theme" load_steps=8 format=3 uid="uid://pnjv7finl36r"]
+[gd_resource type="Theme" load_steps=9 format=3 uid="uid://pnjv7finl36r"]
 
 [ext_resource type="FontFile" uid="uid://c4s2a7yraa054" path="res://assets/fonts/Tomorrow-Regular.ttf" id="1_3ki4w"]
 [ext_resource type="Texture2D" uid="uid://sglrhos2pine" path="res://assets/ui/fantasyButtons/simple.svg" id="1_adasj"]
 [ext_resource type="Texture2D" uid="uid://dsr45ea8mmkw" path="res://assets/ui/fantasyButtons/simple-hover.svg" id="1_l2jrm"]
+[ext_resource type="Texture2D" uid="uid://bq3xd27ixiwvw" path="res://assets/ui/fantasyButtons/simple-wbackground.svg" id="4_obx5q"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ge4ir"]
 texture = ExtResource("1_adasj")
@@ -20,7 +21,7 @@ texture_margin_right = 11.0
 texture_margin_bottom = 11.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lrfwg"]
-texture = ExtResource("1_adasj")
+texture = ExtResource("4_obx5q")
 texture_margin_left = 11.0
 texture_margin_top = 11.0
 texture_margin_right = 11.0

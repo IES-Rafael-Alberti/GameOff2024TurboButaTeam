@@ -2,6 +2,9 @@ extends Control
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var v_box_container: VBoxContainer = $VBoxContainer
+@onready var play_button: Button = $VBoxContainer/VBoxContainer/PlayButton
+@onready var options_button: Button = $VBoxContainer/VBoxContainer/OptionsButton
+@onready var wiki_button: Button = $VBoxContainer/VBoxContainer/WikiButton
 @onready var exit_button: Button = $VBoxContainer/VBoxContainer/ExitButton
 
 func _ready():
@@ -10,6 +13,7 @@ func _ready():
 	print(OS.get_name())
 	if OS.get_name()=="Web":
 		exit_button.hide()
+
 func _on_play_button_pressed():
 	animation_player.play("fade_out")
 	await animation_player.animation_finished
