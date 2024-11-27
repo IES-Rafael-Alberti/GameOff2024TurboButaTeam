@@ -362,7 +362,7 @@ offset_left = 389.0
 offset_top = 300.0
 offset_right = 1504.0
 offset_bottom = 836.0
-color = Color(0, 0, 0, 0.588235)
+color = Color(0, 0, 0, 0.901961)
 
 [node name="TextBoxSprite" type="Sprite2D" parent="."]
 visible = false
