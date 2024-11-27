@@ -20,7 +20,8 @@ var bossCobraTemp
 @onready var damage_bar: ProgressBar = $ProgressBar/DamageBar
 @onready var scroll_container: ScrollContainer = $ScrollContainer
 @onready var historialContainer: VBoxContainer = $ScrollContainer/VBoxContainer
-@onready var pause_menu: Control = $PauseMenu
+@onready var border: Sprite2D = $ProgressBar/Border
+
 
 @onready var fire_reroll = $Sounds/SFX/FireReroll
 @onready var getting_hit = $Sounds/SFX/GettingHit
@@ -54,6 +55,8 @@ func _ready():
 	GameManager.restartButtonVisible.connect(restartButtonVisible)
 	GameManager.FlipTwoCard.connect(flipTwoCard)
 	GameManager.UpdateHistorial.connect(updateHistorial)
+	GameManager.isBossTurn.connect(quitPlayerHealthBorderShader)
+	GameManager.isPlayerTurn.connect(putPlayerHealthBorderShader)
 	
 	bossOXTemp = bossOX.instantiate()
 	bossCobraTemp = bossCobra.instantiate()
@@ -206,6 +209,11 @@ func updateHistorial(text, boss):
 	historialContainer.add_child(new_label)
 	historialContainer.move_child(new_label, 0)
 
+func quitPlayerHealthBorderShader():
+	border.material.set_shader_parameter("isHighlight", false)
+
+func putPlayerHealthBorderShader():
+	border.material.set_shader_parameter("isHighlight", true)
 func _on_pause_pressed() -> void:
 	pause_menu.visible = true
 
