@@ -51,11 +51,11 @@ DIALOGUE,,
 OX BF,,
 OX_BF_START1,I possess this animals spirit to take down on you.,Poseo el espíritu de este animal para derrotarte.
 OX_BF_START2,The brute strength of the ox will shred you.,La fuerza bruta del buey te destrozará.
-BF_1_90HP,My answers to your question will unfold as you take down this spirit.,Mis respuestas a tu pregunta se desarrollarán en lo que derrotas a este espíritu.
-BF_1_80HP,"I will say I don't destroy this forest on purpose, it's just a consequence of my action.","Diré que no destruyo este bosque a propósito, sino como consecuencia de mi acción."
-BF_1_70HP,"I don't feel remorse from my doing, since it's in the name of our best interest.","No siento remordimiento, ya que todo esto es a cambio de nuestros mejores intereses."
-BF_1_60HP,"However, I'm not responsible from my existence. I've been created and fueled by greed.","Sin embargo, no soy responsable de mi existencia. Fui creado y alimentado por la codicia."
-BF_1_50HP,"It's the ones who created me who's left to wonder what to should be done with me, not to fight me like an enemy","Son los que me crearon los que deben concluir qué hacer conmigo, no combatirme como un enemigo."
+OX_BF_90HP,My answers to your question will unfold as you take down this spirit.,Mis respuestas a tu pregunta se desarrollarán en lo que derrotas a este espíritu.
+OX_BF_80HP,"I will say I don't destroy this forest on purpose, it's just a consequence of my action.","Diré que no destruyo este bosque a propósito, sino como consecuencia de mi acción."
+OX_BF_70HP,"I don't feel remorse from my doing, since it's in the name of our best interest.","No siento remordimiento, ya que todo esto es a cambio de nuestros mejores intereses."
+OX_BF_60HP,"However, I'm not responsible from my existence. I've been created and fueled by greed.","Sin embargo, no soy responsable de mi existencia. Fui creado y alimentado por la codicia."
+OX_BF_50HP,"It's the ones who created me who's left to wonder what to should be done with me, not to fight me like an enemy","Son los que me crearon los que deben concluir qué hacer conmigo, no combatirme como un enemigo."
 ,,
 ,,
 OX_BF_DEFEAT,"So, the mighty ox, all strength and no mind, shall be defeated.","Así, el poderoso buey, todo fuerza y nada intelecto, debe ser derrotado."

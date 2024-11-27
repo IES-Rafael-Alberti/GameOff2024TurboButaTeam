@@ -138,7 +138,8 @@ func UpdateProgressBar():
 	if progress_bar.value <= 0:
 		#TODO hacer que el boss se muera
 		GameManager.bossNum = 1
-		get_tree().change_scene_to_file.bind("res://scenes/game.tscn").call_deferred()
+		GameManager.resetBossScene()
+		get_tree().change_scene_to_file.bind("res://scenes/cinematics/secondCinematic.tscn").call_deferred()
 	
 	var health_percentage = GameManager.healthBoss / progress_bar.max_value * 100
 	

@@ -30,6 +30,8 @@ var countCouple = 0
 #Gestionar los turnos
 var isPlayerPhase = true
 
+var numCombat = 0
+
 #Senal para volver a llenar el tablero
 signal BoardCompleted
 
@@ -97,3 +99,13 @@ var doubleShift = true
 var isCouple = false
 
 var specialCard
+
+func resetBossScene():
+	firstCardPicked = null
+	secondCardPicked = null
+	countCouple = 0
+	damageMultiply = 1
+	isPoisoned = false
+	bossIsCharging = false
+	isPlayerPhase = true
+	canFlip = true
