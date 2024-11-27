@@ -43,7 +43,12 @@ directories/dtl_directory={
 "Ox_90HP": "res://dialogue/timelines/BF1_OX/Ox_90HP.dtl",
 "Ox_Defeat": "res://dialogue/timelines/BF1_OX/Ox_Defeat.dtl",
 "TestTL": "res://dialogue/timelines/TestTL.dtl",
+"big_finale_1": "res://dialogue/timelines/ThirdCinematic/big_finale_1.dtl",
+"big_finale_2": "res://dialogue/timelines/ThirdCinematic/big_finale_2.dtl",
+"big_finale_3": "res://dialogue/timelines/ThirdCinematic/big_finale_3.dtl",
 "cobra_start": "res://dialogue/timelines/BF2_COBRA/cobra_start.dtl",
+"finale_start": "res://dialogue/timelines/ThirdCinematic/finale_start.dtl",
+"finale_start_2": "res://dialogue/timelines/ThirdCinematic/finale_start_2.dtl",
 "second_cinematic": "res://dialogue/timelines/SecondCinematic/second_cinematic.dtl",
 "third_cinematic": "res://dialogue/timelines/ThirdCinematic/third_cinematic.dtl"
 }
