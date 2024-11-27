@@ -1,10 +1,12 @@
 extends Node2D
 
 @onready var animation_player = $AnimationPlayer
+@onready var respiration_animator = $RespirationAnimator
 
 func _ready() -> void:
 	animation_player.play("start2")
 	await animation_player.animation_finished
+	respiration_animator.play("backgroundRespiration")
 	Dialogic.start("res://dialogue/timelines/ThirdCinematic/third_cinematic.dtl")
 	await Dialogic.timeline_ended
 	animation_player.play("sudden_blackout")
@@ -26,4 +28,5 @@ func _ready() -> void:
 	animation_player.play("zoom3")
 	Dialogic.start("big_finale_3")
 	await Dialogic.timeline_ended
+	respiration_animator.stop()
 	animation_player.play("sudden_blackout_final")
