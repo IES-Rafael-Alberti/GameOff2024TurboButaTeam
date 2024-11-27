@@ -8,7 +8,9 @@ cinematicCont: C1D10
 cinematicCont: C1D11
 - C1D11O1
 	set {ox_selected} = true
+	cinematicCont: C1D11O1D
 - C1D11O2
+	cinematicCont: C1D11O2D
 	set {cobra_selected} = true
 cinematicCont: C1D14
 cinematicCont: C1D15
