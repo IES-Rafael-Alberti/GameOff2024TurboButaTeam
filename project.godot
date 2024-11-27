@@ -131,7 +131,7 @@ dialogic_default_action={
 
 locale/translation_remaps={}
 locale/translations=PackedStringArray("res://dialogue/translations/EXES TRANSLATIONS - Sheet1.en.translation", "res://dialogue/translations/EXES TRANSLATIONS - Sheet1.es.translation", "res://dialogue/translations/EXES TRANSLATIONS - Sheet1.csv")
-locale/test="en"
+locale/test="es"
 
 [rendering]
 
