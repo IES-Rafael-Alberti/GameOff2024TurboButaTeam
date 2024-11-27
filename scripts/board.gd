@@ -128,8 +128,7 @@ func UpdateProgressBar():
 		get_tree().change_scene_to_file.bind("res://scenes/menus/game_over/game_over.tscn").call_deferred()
 
 func selectBoss():
-	#if Dialogic.VAR.ox_selected:
-	if GameManager.numCombat == 1:
+	if Dialogic.VAR.ox_selected:
 		# Metemos la lista para comprobar sus hijos
 		add_child(bossOXTemp)
 		
@@ -145,8 +144,7 @@ func selectBoss():
 		Dialogic.VAR.cobra_selected = true
 		return
 	
-	#if Dialogic.VAR.cobra_selected:
-	if GameManager.numCombat == 2:
+	if Dialogic.VAR.cobra_selected:
 		# Metemos la lista para comprobar sus hijos
 		add_child(bossCobraTemp)
 		

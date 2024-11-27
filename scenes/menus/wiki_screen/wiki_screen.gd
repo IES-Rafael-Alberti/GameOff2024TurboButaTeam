@@ -26,6 +26,10 @@ extends Control
 @export var cardHabilityList: Array[String] = []
 @export var bossHabilityList: Array[String] = []
 
+@export var cardCreditsList: Array[String] = []
+@export var bossCreditsList: Array[String] = []
+@export var bgCreditsList: Array[String] = []
+
 var current_index_card: int = 0
 var current_index_boss: int = 0
 var current_index_bg: int = 0
