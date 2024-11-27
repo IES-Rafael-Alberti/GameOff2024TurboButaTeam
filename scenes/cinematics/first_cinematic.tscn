@@ -352,8 +352,8 @@ autoplay = "start"
 
 [node name="contaminationSprite" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(923, 572)
-scale = Vector2(0.295968, 0.295968)
+position = Vector2(922.5, 510.469)
+scale = Vector2(0.331048, 0.331048)
 texture = ExtResource("3_ogqs5")
 
 [node name="ColorRect" type="ColorRect" parent="."]

@@ -268,8 +268,8 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("4_o3mjf")
 
 [node name="contaminationSprite" type="Sprite2D" parent="."]
-position = Vector2(1165, 491)
-scale = Vector2(0.479998, 0.479998)
+position = Vector2(922.5, 510.469)
+scale = Vector2(0.346774, 0.346774)
 texture = ExtResource("5_j51a5")
 
 [node name="ColorRect" type="ColorRect" parent="."]
