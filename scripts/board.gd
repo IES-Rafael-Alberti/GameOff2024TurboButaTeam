@@ -24,6 +24,7 @@ var clicks = 0
 @onready var border: Sprite2D = $ProgressBar/Border
 @onready var text_edit: LineEdit = $TextEdit
 @onready var history_title: Label = $ColorRect2/HistoryTitle
+@onready var animation_board: AnimationPlayer = $"../../AnimationBoard"
 
 @onready var fire_reroll = $Sounds/SFX/FireReroll
 @onready var getting_hit = $Sounds/SFX/GettingHit
@@ -130,6 +131,8 @@ func UpdateProgressBar():
 		#TODO hacer que el player se muera
 		GameManager.resetBossScene()
 		GameManager.numCombat = 0
+		animation_board.play("game_over")
+		await get_tree().create_timer(1).timeout
 		get_tree().change_scene_to_file.bind("res://scenes/menus/game_over/game_over.tscn").call_deferred()
 
 func selectBoss():
