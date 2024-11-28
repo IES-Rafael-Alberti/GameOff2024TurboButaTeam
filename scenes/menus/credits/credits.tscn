@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://dud7s4icx8xhi"]
 
-[ext_resource type="FontFile" uid="uid://bo3573wf7sf1l" path="res://assets/fonts/IMFellDWPicaSC-Regular.ttf" id="1_1wv11"]
+[ext_resource type="FontFile" uid="uid://b8g5bl37fquk" path="res://assets/fonts/IMFellDWPicaSC-Regular.ttf" id="1_1wv11"]
 [ext_resource type="Script" path="res://scenes/menus/credits/credits.gd" id="1_natxt"]
 [ext_resource type="FontFile" uid="uid://c4s2a7yraa054" path="res://assets/fonts/Tomorrow-Regular.ttf" id="2_ntmwk"]
 [ext_resource type="Texture2D" uid="uid://bslxfut1486oy" path="res://assets/sprites/ui/Ilustracion_sin_titulo_1.png" id="4_6ohwt"]
@@ -122,3 +122,20 @@ offset_bottom = -0.0960007
 position = Vector2(961.788, 532)
 scale = Vector2(0.812383, 0.9)
 texture = ExtResource("4_6ohwt")
+
+[node name="BackButton" type="Button" parent="."]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.833
+anchor_top = 0.77
+anchor_right = 0.933
+anchor_bottom = 0.83
+offset_left = 0.639893
+offset_top = 0.399963
+offset_right = -0.360107
+offset_bottom = -0.400024
+theme_override_font_sizes/font_size = 20
+text = "BACK_BUTTON"
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
