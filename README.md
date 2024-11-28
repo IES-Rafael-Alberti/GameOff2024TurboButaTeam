@@ -1,4 +1,10 @@
-<h1 align="center">Extinc Spirit</h1>
+
+<h1 align="center">
+  
+![Extinc Spirit](https://media.discordapp.net/attachments/1300861339509723207/1311828480714866688/Ilustracion_sin_titulo.png?ex=674a46fa&is=6748f57a&hm=138a6217519c0b1bf35073faac06199eca2ae0cbdbbed6d735bb6c760e9e668a&=&format=webp&quality=lossless&width=810&height=339)
+
+
+</h1>
 
 <div align="center">
   <p> Participación en la Game Off 2024 </p>
@@ -13,9 +19,8 @@
 ![GitHub Pull Requests Badge](https://img.shields.io/github/issues-pr/IES-Rafael-Alberti/GameOff2024TurboButaTeam?style=for-the-badge)
 [![GitHub License Badge](https://img.shields.io/github/license/IES-Rafael-Alberti/GameOff2024TurboButaTeam?style=for-the-badge)](https://github.com/IES-Rafael-Alberti/GameOff2024TurboButaTeam/blob/main/LICENSE)
 
----
 
-<iframe frameborder="0" src="https://itch.io/embed/3094477?linkback=true&amp;border_width=0&amp;bg_color=f2e2c7&amp;fg_color=090909&amp;link_color=ae2422&amp;border_color=c4b499" width="550" height="165"><a href="https://turbobutateam.itch.io/extinct-spirit">Extinct Spirit by Turbo Buta Team</a></iframe>
+
 
 ### 🕵️ For more information about the game and the animals, visit our
 
