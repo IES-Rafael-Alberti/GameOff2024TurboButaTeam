@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/dark_forest.ogg-bbdf55583b567f14f53b6ae4dc49d
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0

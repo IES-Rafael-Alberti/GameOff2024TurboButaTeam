@@ -6,6 +6,6 @@
 
 [node name="Ox" type="Node2D"]
 
-[node name="Boss" parent="." instance=ExtResource("1_bo5ps")]
+[node name="OX" parent="." instance=ExtResource("1_bo5ps")]
 scriptBoss = ExtResource("2_16ho8")
 textureBoss = ExtResource("3_dwe0t")

@@ -47,8 +47,7 @@ func _ready() -> void:
 	progressBarShield.visible = false
 	
 	selectAction()
-	print("elige primera accion")
-	print(self)
+	
 
 func turnBoss():
 	if shieldIsActive:
@@ -56,14 +55,12 @@ func turnBoss():
 		#Si ya está envenenado, vuelve a hacer daño y quita el veneno
 	if GameManager.isPoisoned:
 		useHability()
-		
+	
 	doAction(action)
-		
+	
 	if !GameManager.bossIsCharging:
-		print("emite select")
 		GameManager.SelectActionBoss.emit()
-	else:
-		GameManager.emit_signal("UpdateHistorial", "BOSS_HABILITY_CHARGE", true)
+
 	GameManager.canFlip = true
 	GameManager.isPlayerPhase = true
 	GameManager.isPlayerTurn.emit()
@@ -71,7 +68,6 @@ func turnBoss():
 func selectAction():
 	var rng = RandomNumberGenerator.new()
 	var randomNum = int(rng.randf_range(1, 100.0))
-	print(randomNum)
 	# TODO activar shader segun actio
 	if randomNum <= 60:
 		resetShaders()
@@ -174,14 +170,18 @@ func removeShield():
 
 func _on_timer_timeout() -> void:
 	damage_bar.value = GameManager.healthBoss
-	
+
 func resetShaders():
 	sprite_2d.material.set_shader_parameter("isSpecial", false)
 	sprite_2d.material.set_shader_parameter("isProtecting", false)
-	
+
 func attackAnimation():
-	if action == "habilidad":
-		animationBoss.play("attack")
+	if GameManager.pickedBoss.name == "OX":
+		if action == "habilidad" && GameManager.bossIsCharging:
+			animationBoss.play("attack")
+	else:
+		if action == "habilidad":
+			animationBoss.play("attack")
 	
 	if action == "atacar":
 		animationBoss.play("attack")
