@@ -102,10 +102,6 @@ var isCouple = false
 
 var specialCard
 
-var tutorialCompleted = false
-
-signal tutorialCompletedSignal
-
 func resetBossScene():
 	firstCardPicked = null
 	secondCardPicked = null

@@ -6,12 +6,10 @@ func _ready():
 	GameManager.FortyOfLife.connect(fortyOfLife)
 	GameManager.TwentyOfLife.connect(twentyOfLife)
 	GameManager.TenOfLife.connect(tenOfLife)
-	GameManager.tutorialCompletedSignal.connect(tutorialComplete)
 	await get_tree().create_timer(2)
 	var layout = Dialogic.Styles.load_style("textbubble")
 	layout.register_character(load("res://dialogue/characters/testboss.dch"), $".")
-	if GameManager.tutorialCompleted:
-		Dialogic.start("res://dialogue/timelines/BF1_OX/OxStart.dtl")
+	Dialogic.start("res://dialogue/timelines/BF1_OX/OxStart.dtl")
 
 func eightyOfLife():
 	var layout = Dialogic.Styles.load_style("textbubble")
@@ -53,6 +51,3 @@ func tenOfLife():
 		Dialogic.start("res://dialogue/timelines/BF1_OX/OX_50HP.dtl")
 	else:
 		Dialogic.start("res://dialogue/timelines/BF2_COBRA/CB_50HP.dtl")
-
-func tutorialComplete():
-	Dialogic.start("res://dialogue/timelines/BF1_OX/OxStart.dtl")
