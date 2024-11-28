@@ -1,6 +1,7 @@
 extends Control
-
 @onready var richTextLabel: RichTextLabel = $RichTextLabel
+@onready var back_to_menu: Button = $BackToMenu
+
 var isMaxScrolled = false
 var maxOffset = 0
 var lastVscrollValue = 0
@@ -28,5 +29,6 @@ func _process(delta: float) -> void:
 			playFrame = true
 
 
-func _on_back_button_pressed() -> void:
+func _on_back_to_menu_pressed() -> void:
+	back_to_menu.disabled = true
 	get_tree().change_scene_to_file("res://scenes/menus/main_menu/main_menu.tscn")

@@ -8,7 +8,7 @@ extends Node2D
 @onready var animationBoss: AnimationPlayer = $Sprite2D/AnimationBoss
 @onready var border: Sprite2D = $ProgressBar/Border
 
-@export var maxHealthBoss = 200
+@export var maxHealthBoss = 100
 @export var damageBoss = 20
 @export var specialDamage = 10
 @export var scriptBoss: Script
@@ -141,21 +141,22 @@ func UpdateProgressBar():
 	
 	var health_percentage = GameManager.healthBoss / progress_bar.max_value * 100
 	
-	if health_percentage <= 10 and !hasEmited10:
-		hasEmited10 = true
-		GameManager.TenOfLife.emit()
-	elif health_percentage <= 20 and !hasEmited20:
-		hasEmited20 = true
-		GameManager.TwentyOfLife.emit()
-	elif health_percentage <= 40 and !hasEmited40:
-		hasEmited40 = true
-		GameManager.FortyOfLife.emit()
-	elif health_percentage <= 60 and !hasEmited60:
-		hasEmited60 = true
-		GameManager.SixtyOfLife.emit()
-	elif health_percentage <= 80 and !hasEmited80:
-		hasEmited80 = true
-		GameManager.EightyOfLife.emit()
+	if health_percentage > 0:
+		if health_percentage <= 10 and !hasEmited10:
+			hasEmited10 = true
+			GameManager.TenOfLife.emit()
+		elif health_percentage <= 20 and !hasEmited20:
+			hasEmited20 = true
+			GameManager.TwentyOfLife.emit()
+		elif health_percentage <= 40 and !hasEmited40:
+			hasEmited40 = true
+			GameManager.FortyOfLife.emit()
+		elif health_percentage <= 60 and !hasEmited60:
+			hasEmited60 = true
+			GameManager.SixtyOfLife.emit()
+		elif health_percentage <= 80 and !hasEmited80:
+			hasEmited80 = true
+			GameManager.EightyOfLife.emit()
 
 func updateShield():
 	progressBarShield.max_value = shieldMaxValue

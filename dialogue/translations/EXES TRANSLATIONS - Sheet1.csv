@@ -22,6 +22,23 @@ RESHUFFLE_BOARD_BUTTON,Reshuffle Board,Refrescar Tablero
 PAUSE_BUTTON,Pause,Pausar
 ,,
 ,,
+TUTORIAL,,
+FIRST_LABEL,"You've just got yourself into a lot of trouble, but don't 
+worry, the animals in this forest will help you 
+out of it of this forest will help you out of this predicament","Te acabas de meter en un buen lío pero tranquilo, los animales 
+de este bosque te ayudarán a salir de este aprieto"
+SECOND_LABEL,"In order for them to help you first, you will have to look for partners 
+of the same animal to get out of this situation","Para que estos te ayuden primero, deberás buscar las parejas
+del mismo animal para salir de esta situación"
+THIRD_LABEL,"Use your history to find out how they can help you and what
+ intentions the beast in front of you has.","Ayudate del historial para saber en que te pueden ayudar 
+y que intenciones tiene la bestia que tienes delante"
+FOURTH_LABEL,"If you see fit, every 3 pairs of animals you collect 
+you can reset the board.","Si lo ves oportuno, cada 3 parejas de animales que reúnas
+puedes reiniciar el tablero"
+FIFTH_LABEL,"Defeat the threat before it kills you. good luck to you, good luck","Consigue vencer la amenaza antes de que esta acabe 
+contigo, buena suerte"
+,,
 ,,
 ,,
 GAME,,
@@ -133,6 +150,7 @@ ESPECIAL_2_NAME,Special card,Carta Especial
 LINCE_NAME,Iberian Lynx,Lince Ibérico
 COBRA_NAME,Cobra,Cobra
 BUEY_NAME,Ox,Buey
+FINAL_BOSS_NAME,,
 BOSQUE_NAME,Forest background,Fondo de bosque
 ESPINAS_NAME,Thorny background,Fondo de espinas
 REVERSO_DATO,,
@@ -257,9 +275,10 @@ Descripción: Es uno de los felinos más amenazados del mundo. Tiene un pelaje m
 Curiosidad: Cada lince tiene un patrón único de manchas, como si fuera una huella digital y además una de las características más reconocibles del lince ibérico es su vista. Este felino se vale de ella para cazar y es que puede reconocer a un roedor a más de 75 metros de distancia, a un conejo a 300 metros y a un cervatillo a casi 500 metros."
 COBRA_TEXT,,
 BUEY_TEXT,,
+FINAL_BOSS_TEXT,,
 BOSQUE_TEXT,,
 ESPINAS_TEXT,,
-REVERSO_HABILITY,,
+REVERSO_HABILITY,"Ability: No specific skill, but look how cool it is!","Habilidad: No tiene ninguna habilidad específica, ¡pero, mira que guay!"
 GRULLA_HABILITY,Ability: Makes a normal attack on the boss,Habilidad: Hace un ataque normal al boss
 PANDA_HABILITY,Ability: Lowers the boss's defense and your next attacks do more damage.,Habilidad: Le baja la defensa al boss y tus siguientes ataques hacen más daño
 MOFETA_HABILITY,Ability: Lowers the boss' defence and your next attacks deal more damage,Habilidad: Le baja la defensa al boss y tus siguientes ataques hacen más daño
@@ -271,6 +290,8 @@ ESPECIAL_2_HABILITY,Ability: Reveals two cards you haven't used yet,Habilidad: T
 LINCE_HABILITY,Ability: Makes a normal attack on the boss,Habilidad: Hace un ataque normal al boss
 COBRA_HABILITY,Ability: Poison you for two turns,Habilidad: Te envena durante dos turnos
 BUEY_HABILITY,Ability: Spend a turn to charge the attack and the next turn it makes a charged attack with more power.,Habilidad: Gasta un turno para cargar el ataque y el siguiente turno te hace un ataque cargado con más potencia
+,,
+,,
 ,,
 GAME HISTORY,,
 HISTORY_TITLE,Game history,Historial de juego

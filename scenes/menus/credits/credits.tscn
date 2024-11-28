@@ -123,19 +123,13 @@ position = Vector2(961.788, 532)
 scale = Vector2(0.812383, 0.9)
 texture = ExtResource("4_6ohwt")
 
-[node name="BackButton" type="Button" parent="."]
-custom_minimum_size = Vector2(20, 0)
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.833
-anchor_top = 0.77
-anchor_right = 0.933
-anchor_bottom = 0.83
-offset_left = 0.639893
-offset_top = 0.399963
-offset_right = -0.360107
-offset_bottom = -0.400024
-theme_override_font_sizes/font_size = 20
+[node name="BackToMenu" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1524.0
+offset_top = 820.0
+offset_right = 1784.0
+offset_bottom = 900.0
+theme_override_font_sizes/font_size = 24
 text = "BACK_BUTTON"
 
-[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="BackToMenu" to="." method="_on_back_to_menu_pressed"]
