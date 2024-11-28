@@ -32,6 +32,8 @@ var isPlayerPhase = true
 
 var numCombat = 0
 
+var isFinalCinematic = false
+
 #Senal para volver a llenar el tablero
 signal BoardCompleted
 
@@ -84,7 +86,7 @@ signal FlipTwoCard
 
 signal TurnBoss
 
-var isPoisoned
+var isPoisoned = false
 
 #Multi de daño que se vuelve a poner en 1 cuando el boss muere
 var damageMultiply = 1
@@ -99,6 +101,10 @@ var doubleShift = true
 var isCouple = false
 
 var specialCard
+
+var tutorialCompleted = false
+
+signal tutorialCompletedSignal
 
 func resetBossScene():
 	firstCardPicked = null

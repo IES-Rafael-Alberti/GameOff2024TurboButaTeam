@@ -1,9 +1,5 @@
 extends Control
 
-func _ready():
-	pass # Replace with function body.
-
-
 func _on_retry_button_pressed():
 	GameManager.numCombat -= 1
 	if Dialogic.VAR.ox_selected:

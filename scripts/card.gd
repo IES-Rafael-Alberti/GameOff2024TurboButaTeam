@@ -75,10 +75,8 @@ func _on_pressed():
 					GameManager.doubleShift = false
 				else:
 					GameManager.canFlip = false
-					print("empieza el turno del boss")
 					GameManager.isBossTurn.emit()
 					await get_tree().create_timer(2).timeout
-					print("emite turno boss")
 					GameManager.TurnBoss.emit()
 
 func isEqual(firstCard, secondCard):
@@ -107,6 +105,7 @@ func isEqual(firstCard, secondCard):
 	secondCard.material.set_shader_parameter("isHighlight", false)
 	
 	if GameManager.countCouple == 7:
+		await get_tree().create_timer(2).timeout
 		GameManager.BoardCompleted.emit()
 		GameManager.countCouple = 0
 	
@@ -197,3 +196,10 @@ func mostrarFace():
 	await get_tree().create_timer(0.2).timeout
 	set_texture_normal(face)
 	self.modulate = Color(1.0, 1.0, 1.0, 0.78)
+
+
+func _on_mouse_entered():
+	self.scale = Vector2(1.1, 1.1)
+
+func _on_mouse_exited():
+	self.scale = Vector2(1, 1)
