@@ -1,29 +1,14 @@
-[gd_scene load_steps=9 format=3 uid="uid://uxbvlxwenb4i"]
+[gd_scene load_steps=8 format=3 uid="uid://bwfhrm40fosdd"]
 
 [ext_resource type="Script" path="res://scenes/menus/main_menu/main_menu.gd" id="1_fjwii"]
-[ext_resource type="Texture2D" uid="uid://bslxfut1486oy" path="res://assets/sprites/ui/Ilustracion_sin_titulo_1.png" id="2_rjp2q"]
-[ext_resource type="FontFile" uid="uid://b8g5bl37fquk" path="res://assets/fonts/IMFellDWPicaSC-Regular.ttf" id="3_1d0j5"]
+[ext_resource type="FontFile" uid="uid://b3vfy2vwgidc4" path="res://assets/fonts/Colorfiction - Messy.ttf" id="2_8w52m"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_00c3h"]
-font = ExtResource("3_1d0j5")
-font_size = 100
-outline_size = 10
-outline_color = Color(0, 0, 0, 1)
+font = ExtResource("2_8w52m")
+font_size = 128
 
 [sub_resource type="Animation" id="Animation_20qhm"]
 length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CenterContainer/IlustracionSinTitulo:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
 
 [sub_resource type="Animation" id="Animation_4r0ck"]
 resource_name = "fade_in"
@@ -40,18 +25,6 @@ tracks/0/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("CenterContainer/IlustracionSinTitulo:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
 
 [sub_resource type="Animation" id="Animation_aq85o"]
 resource_name = "fade_out"
@@ -63,18 +36,6 @@ tracks/0/path = NodePath("VBoxContainer:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("CenterContainer/IlustracionSinTitulo:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
 "times": PackedFloat32Array(0, 2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
@@ -106,39 +67,23 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="IlustracionSinTitulo" type="Sprite2D" parent="CenterContainer"]
-modulate = Color(1, 1, 1, 0)
-position = Vector2(961.788, 532)
-scale = Vector2(0.812383, 0.9)
-texture = ExtResource("2_rjp2q")
-
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -485.0
-offset_top = -361.0
-offset_right = 485.0
-offset_bottom = 407.0
+offset_left = -75.5
+offset_top = -46.5
+offset_right = 75.5
+offset_bottom = 46.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 50
+theme_override_constants/separation = 100
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 text = "EXTINCT SPIRIT"
 label_settings = SubResource("LabelSettings_00c3h")
 horizontal_alignment = 1

@@ -4,4 +4,4 @@ extends Node
 
 func action():
 	GameManager.damageMultiply += ratioMulti
-	GameManager.emit_signal("UpdateHistorial", "DRECREASE_HISTORY", false)
+	print(GameManager.damageMultiply)

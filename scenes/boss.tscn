@@ -1,16 +1,11 @@
-[gd_scene load_steps=30 format=3 uid="uid://c1he8kika8fof"]
+[gd_scene load_steps=15 format=3 uid="uid://c1he8kika8fof"]
 
 [ext_resource type="Script" path="res://scripts/boss.gd" id="1_0mmkp"]
-[ext_resource type="Shader" path="res://scripts/shaders/boss.gdshader" id="1_hrodq"]
 [ext_resource type="Texture2D" uid="uid://bpji0c018j42b" path="res://assets/backgrounds/firstCinematic/forestBG.png" id="2_wj4js"]
 [ext_resource type="Texture2D" uid="uid://ckiolotiijjtb" path="res://assets/backgrounds/firstCinematic/arr-izq.png" id="3_sco4r"]
 [ext_resource type="Texture2D" uid="uid://d0nxypabjathg" path="res://assets/backgrounds/firstCinematic/arr_der.png" id="4_ecdqa"]
 [ext_resource type="Texture2D" uid="uid://cng70baed48wn" path="res://assets/backgrounds/firstCinematic/ab_der_plants.png" id="5_fb0se"]
 [ext_resource type="Texture2D" uid="uid://dsott1fpgb5ov" path="res://assets/backgrounds/firstCinematic/ab_izq_plants.png" id="6_3u0y5"]
-[ext_resource type="Texture2D" uid="uid://db8sofyfwlvj5" path="res://assets/shadersTextures/smoke.png" id="8_g3lj1"]
-[ext_resource type="Texture2D" uid="uid://c63ruxqgmk0bp" path="res://assets/sprites/boss/buey.png" id="9_rmbif"]
-[ext_resource type="Texture2D" uid="uid://dtlyl6f1ea687" path="res://assets/sprites/ui/Ilustracion_sin_titulo.png" id="9_vrljt"]
-[ext_resource type="Texture2D" uid="uid://bw22m4sj2ybpw" path="res://assets/sprites/healthBorder.png" id="10_xs0jl"]
 
 [sub_resource type="Animation" id="Animation_xvr3h"]
 resource_name = "BackgroundFlashing"
@@ -50,158 +45,37 @@ _data = {
 "RESET": SubResource("Animation_fbyxy")
 }
 
-[sub_resource type="Gradient" id="Gradient_0g58o"]
-colors = PackedColorArray(0, 0, 0, 0.698039, 0.666568, 0.666569, 0.666568, 0.913725)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_bdii0"]
-gradient = SubResource("Gradient_0g58o")
-
-[sub_resource type="Gradient" id="Gradient_8in45"]
-offsets = PackedFloat32Array(0, 0.995305, 1)
-colors = PackedColorArray(0, 0, 0, 1, 0.593133, 0.593134, 0.593134, 1, 1, 1, 1, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_cam03"]
-gradient = SubResource("Gradient_8in45")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_gcfl5"]
-shader = ExtResource("1_hrodq")
-shader_parameter/isSpecial = false
-shader_parameter/isProtecting = false
-shader_parameter/bossTakeDmg = false
-shader_parameter/shock_color = Color(1, 0, 0, 1)
-shader_parameter/amplitude = 30.0
-shader_parameter/frequecy = 10.0
-shader_parameter/maxLineWidth = 80.0
-shader_parameter/minLineWidth = 10.0
-shader_parameter/speed = 3.0
-shader_parameter/blockSize = 12.0
-shader_parameter/textureScale = Vector2(0.1, 0.1)
-shader_parameter/angle = 90.0
-shader_parameter/textureSpeed = -0.4
-shader_parameter/tolerance = 0.1
-shader_parameter/scrollingTexture = ExtResource("8_g3lj1")
-shader_parameter/size_effect = 0.7
-shader_parameter/speed_highlight = 0.3
-shader_parameter/highlight_strength = 1.0
-shader_parameter/color_mode_toggle = false
-shader_parameter/is_horizontal = false
-shader_parameter/vertical_gradient = SubResource("GradientTexture2D_cam03")
-shader_parameter/color_gradient = SubResource("GradientTexture2D_bdii0")
-
-[sub_resource type="Animation" id="Animation_gkwaq"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0.25, 0.25)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 40)]
-}
-
-[sub_resource type="Animation" id="Animation_s4lpw"]
-resource_name = "attack"
-length = 2.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.5, 1.5, 1.66667, 2),
-"transitions": PackedFloat32Array(1, 1.5, 1.5, 1),
-"update": 0,
-"values": [Vector2(0.25, 0.25), Vector2(0.22, 0.22), Vector2(0.26, 0.26), Vector2(0.25, 0.25)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.5, 1.5, 1.66667, 2),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(0, 40), Vector2(10, 40), Vector2(-5, 40), Vector2(0, 40)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_7bx0p"]
-_data = {
-"RESET": SubResource("Animation_gkwaq"),
-"attack": SubResource("Animation_s4lpw")
-}
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t5td4"]
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 4
-border_color = Color(0.0352941, 0.0352941, 0.0352941, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ryx3i"]
-bg_color = Color(1, 1, 1, 1)
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 4
-border_color = Color(0.0352941, 0.0352941, 0.0352941, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_buh0b"]
-bg_color = Color(0.682353, 0.141176, 0.133333, 0.588235)
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xqulr"]
 bg_color = Color(0.682353, 0.141176, 0.133333, 1)
-border_color = Color(0.0352941, 0.0352941, 0.0352941, 1)
-corner_detail = 1
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1im14"]
 bg_color = Color(0, 0, 0, 1)
+expand_margin_left = 1.0
+expand_margin_top = 1.0
+expand_margin_right = 1.0
+expand_margin_bottom = 1.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v3kqx"]
 bg_color = Color(1, 1, 1, 1)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_6s3xr"]
-
 [node name="Boss" type="Node2D"]
-position = Vector2(971, 327)
 script = ExtResource("1_0mmkp")
 
 [node name="ForestBG" type="Node2D" parent="."]
 modulate = Color(0.442911, 0.442911, 0.442911, 1)
-position = Vector2(-984, -333)
+position = Vector2(-974, -333)
 scale = Vector2(1.065, 1.065)
 
 [node name="ForestBG" type="Parallax2D" parent="ForestBG"]
 scroll_scale = Vector2(0.9, 0.9)
 
 [node name="Sprite2D" type="Sprite2D" parent="ForestBG/ForestBG"]
-position = Vector2(954.111, 539.5)
+position = Vector2(959.111, 539.5)
 scale = Vector2(0.500463, 0.500463)
 texture = ExtResource("2_wj4js")
 
@@ -244,24 +118,16 @@ libraries = {
 autoplay = "BackgroundFlashing"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-material = SubResource("ShaderMaterial_gcfl5")
 position = Vector2(0, 40)
 scale = Vector2(0.25, 0.25)
-texture = ExtResource("9_rmbif")
 metadata/_edit_lock_ = true
 
-[node name="AnimationBoss" type="AnimationPlayer" parent="Sprite2D"]
-libraries = {
-"": SubResource("AnimationLibrary_7bx0p")
-}
-
 [node name="ProgressBarShield" type="ProgressBar" parent="."]
-offset_left = -835.0
-offset_top = -311.0
-offset_right = -787.0
-offset_bottom = -175.0
+offset_left = -784.0
+offset_top = -216.0
+offset_right = -736.0
+offset_bottom = -80.0
 theme_override_styles/background = SubResource("StyleBoxFlat_t5td4")
-theme_override_styles/fill = SubResource("StyleBoxFlat_ryx3i")
 max_value = 50.0
 fill_mode = 3
 show_percentage = false
@@ -270,16 +136,14 @@ show_percentage = false
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -955.0
-offset_top = -311.0
-offset_right = -204.0
-offset_bottom = 305.0
+offset_left = -936.0
+offset_top = -296.0
+offset_right = 124.0
+offset_bottom = 320.0
 grow_horizontal = 2
 scale = Vector2(0.135885, 0.947368)
-tooltip_text = "BOSS_HP_TOOLTIP"
 theme_override_styles/background = SubResource("StyleBoxFlat_buh0b")
 theme_override_styles/fill = SubResource("StyleBoxFlat_xqulr")
-value = 100.0
 fill_mode = 3
 show_percentage = false
 
@@ -294,23 +158,29 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-tooltip_text = "BOSS_HP_TOOLTIP"
 theme_override_styles/background = SubResource("StyleBoxFlat_1im14")
 theme_override_styles/fill = SubResource("StyleBoxFlat_v3kqx")
 fill_mode = 3
 show_percentage = false
 
-[node name="Border" type="Sprite2D" parent="ProgressBar"]
-material = SubResource("ShaderMaterial_6s3xr")
-position = Vector2(384.869, 308.222)
-scale = Vector2(7.94207, 1.07942)
-texture = ExtResource("10_xs0jl")
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -784.0
+offset_top = -296.0
+offset_right = -440.0
+offset_bottom = -232.0
+color = Color(0, 0, 0, 1)
 
-[node name="IlustracionSinTitulo" type="Sprite2D" parent="ProgressBar"]
-position = Vector2(1364.73, 203.722)
-rotation = -1.57082
-scale = Vector2(0.358889, 2.50212)
-skew = 2.46763e-05
-texture = ExtResource("9_vrljt")
+[node name="BattleLog" type="Label" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 24
+text = "dewdwe"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="timeout" from="ProgressBar/Timer" to="." method="_on_timer_timeout"]

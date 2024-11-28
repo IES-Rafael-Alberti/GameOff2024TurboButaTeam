@@ -1,6 +1,6 @@
 extends Node
 
-@export var damage = 100
+@export var damage = 20
 
 func action():
 	if GameManager.bossShield > 0:
@@ -15,4 +15,3 @@ func action():
 	else:
 		GameManager.healthBoss -= damage
 		GameManager.BossTakeDamage.emit()
-		GameManager.emit_signal("UpdateHistorial", "ATTACK_HISTORY", false)

@@ -30,10 +30,6 @@ var countCouple = 0
 #Gestionar los turnos
 var isPlayerPhase = true
 
-var numCombat = 0
-
-var isFinalCinematic = false
-
 #Senal para volver a llenar el tablero
 signal BoardCompleted
 
@@ -64,29 +60,9 @@ signal SelectActionBoss
 
 signal restartButtonVisible
 
-signal isBossTurn
+var bossIsCharging
 
-signal isPlayerTurn
-
-var bossIsCharging = false
-
-signal EightyOfLife
-
-signal SixtyOfLife
-
-signal FortyOfLife
-
-signal TwentyOfLife
-
-signal TenOfLife
-
-signal UpdateHistorial(text, boss)
-
-signal FlipTwoCard
-
-signal TurnBoss
-
-var isPoisoned = false
+var isPoisoned
 
 #Multi de daño que se vuelve a poner en 1 cuando el boss muere
 var damageMultiply = 1
@@ -101,13 +77,3 @@ var doubleShift = true
 var isCouple = false
 
 var specialCard
-
-func resetBossScene():
-	firstCardPicked = null
-	secondCardPicked = null
-	countCouple = 0
-	damageMultiply = 1
-	isPoisoned = false
-	bossIsCharging = false
-	isPlayerPhase = true
-	canFlip = true

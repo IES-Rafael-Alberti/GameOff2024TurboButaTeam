@@ -1,14 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://cef81phdrmqdd"]
+[gd_scene load_steps=3 format=3 uid="uid://sqvqmuhto83q"]
 
-[ext_resource type="Script" path="res://scenes/options_menu/options_menu.gd" id="1_aktqw"]
-[ext_resource type="LabelSettings" uid="uid://bsjqw3m3umydi" path="res://resources/LabelSettings/big_textes.tres" id="2_y043v"]
-[ext_resource type="FontFile" uid="uid://bti53ueuvr131" path="res://assets/fonts/Tomorrow-Bold.ttf" id="3_6m17d"]
-[ext_resource type="AudioStream" uid="uid://umrhj1fwf5ud" path="res://assets/sound/sfx/GettingHit.mp3" id="4_r8sqq"]
-[ext_resource type="AudioStream" uid="uid://c8eoaxir81vl6" path="res://assets/sound/music/dark_forest.ogg" id="5_hlb3b"]
+[ext_resource type="Script" path="res://scenes/menus/options_menu/options_menu.gd" id="1_aktqw"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_t8ipt"]
-font = ExtResource("3_6m17d")
-font_size = 50
+[sub_resource type="LabelSettings" id="LabelSettings_subjw"]
+font_size = 76
 
 [node name="OptionsMenu" type="Control"]
 layout_mode = 3
@@ -26,7 +21,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 100
+theme_override_constants/separation = 10
 alignment = 1
 
 [node name="Label" type="Label" parent="VBoxContainer"]
@@ -40,64 +35,43 @@ layout_mode = 2
 size_flags_horizontal = 4
 alignment = 1
 
-[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer3/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/VBoxContainer"]
 layout_mode = 2
-text = "VOLUME_LABEL"
-label_settings = SubResource("LabelSettings_t8ipt")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/VBoxContainer3/VBoxContainer"]
-custom_minimum_size = Vector2(1920, 0)
-layout_mode = 2
-alignment = 1
+alignment = 2
 
 [node name="Label" type="Label" parent="VBoxContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 text = "MASTER_VOLUME_LABEL"
 
-[node name="MasterVol" type="HSlider" parent="VBoxContainer/VBoxContainer3/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(500, 0)
+[node name="MasterVol" type="HSlider" parent="VBoxContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
-max_value = 1.0
-step = 0.001
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/VBoxContainer3/VBoxContainer"]
-custom_minimum_size = Vector2(1920, 0)
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/VBoxContainer"]
 layout_mode = 2
-alignment = 1
+alignment = 2
 
 [node name="Label" type="Label" parent="VBoxContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 text = "MUSIC_VOLUME_LABEL"
 
-[node name="MusicVol" type="HSlider" parent="VBoxContainer/VBoxContainer3/VBoxContainer/HBoxContainer2"]
-custom_minimum_size = Vector2(500, 0)
+[node name="MusicVol" type="HSlider" parent="VBoxContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
-max_value = 1.0
-step = 0.001
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer/VBoxContainer3/VBoxContainer"]
-custom_minimum_size = Vector2(1920, 0)
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer/VBoxContainer"]
 layout_mode = 2
-alignment = 1
+alignment = 2
 
 [node name="Label" type="Label" parent="VBoxContainer/VBoxContainer/HBoxContainer3"]
 layout_mode = 2
 text = "SFX_VOLUME_LABEL"
 
-[node name="SFXVol" type="HSlider" parent="VBoxContainer/VBoxContainer3/VBoxContainer/HBoxContainer3"]
-custom_minimum_size = Vector2(500, 0)
+[node name="SFXVol" type="HSlider" parent="VBoxContainer/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
-max_value = 1.0
-step = 0.001
 
-[node name="testSFX" type="AudioStreamPlayer2D" parent="VBoxContainer/VBoxContainer3/VBoxContainer/HBoxContainer3"]
-stream = ExtResource("4_r8sqq")
-attenuation = 0.000644293
-bus = &"SFX"
-
-[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/VBoxContainer3"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 alignment = 1
@@ -146,17 +120,9 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 35
 text = "BACK_BUTTON"
 
-[node name="MusicPlayer" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("5_hlb3b")
-autoplay = true
-max_distance = 10000.0
-attenuation = 0.0126915
-bus = &"Music"
-
-[connection signal="value_changed" from="VBoxContainer/VBoxContainer3/VBoxContainer/HBoxContainer/MasterVol" to="." method="_on_master_vol_value_changed"]
-[connection signal="value_changed" from="VBoxContainer/VBoxContainer3/VBoxContainer/HBoxContainer2/MusicVol" to="." method="_on_music_vol_value_changed"]
-[connection signal="drag_ended" from="VBoxContainer/VBoxContainer3/VBoxContainer/HBoxContainer3/SFXVol" to="." method="_on_sfx_vol_drag_ended"]
-[connection signal="value_changed" from="VBoxContainer/VBoxContainer3/VBoxContainer/HBoxContainer3/SFXVol" to="." method="_on_sfx_vol_value_changed"]
-[connection signal="item_selected" from="VBoxContainer/VBoxContainer3/VBoxContainer2/WindowModeHbox/WindowMode" to="." method="_on_option_button_item_selected"]
-[connection signal="item_selected" from="VBoxContainer/VBoxContainer3/VBoxContainer2/LanguageHbox/LanguageSel" to="." method="_on_language_sel_item_selected"]
+[connection signal="value_changed" from="VBoxContainer/VBoxContainer/HBoxContainer/MasterVol" to="." method="_on_master_vol_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/VBoxContainer/HBoxContainer2/MusicVol" to="." method="_on_music_vol_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/VBoxContainer/HBoxContainer3/SFXVol" to="." method="_on_sfx_vol_value_changed"]
+[connection signal="item_selected" from="VBoxContainer/VBoxContainer2/WindowModeHbox/WindowMode" to="." method="_on_option_button_item_selected"]
+[connection signal="item_selected" from="VBoxContainer/VBoxContainer2/LanguageHbox/LanguageSel" to="." method="_on_language_sel_item_selected"]
 [connection signal="pressed" from="MarginContainer/BackButton" to="." method="_on_back_button_pressed"]
