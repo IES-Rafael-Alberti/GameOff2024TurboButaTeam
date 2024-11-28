@@ -1,0 +1,141 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="gameoff2024"
+run/main_scene="res://scenes/menus/splash_screen/splash_screen.tscn"
+config/features=PackedStringArray("4.3", "Forward Plus")
+config/icon="res://icon.svg"
+
+[autoload]
+
+GameManager="*res://scripts/gameManager.gd"
+Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
+
+[dialogic]
+
+directories/dch_directory={
+"cinematicCont": "res://dialogue/characters/cinematicCont.dch",
+"testboss": "res://dialogue/characters/testboss.dch"
+}
+directories/dtl_directory={
+"CB_50HP": "res://dialogue/timelines/BF2_COBRA/CB_50HP.dtl",
+"CB_60HP": "res://dialogue/timelines/BF2_COBRA/CB_60HP.dtl",
+"CB_70HP": "res://dialogue/timelines/BF2_COBRA/CB_70HP.dtl",
+"CB_80HP": "res://dialogue/timelines/BF2_COBRA/CB_80HP.dtl",
+"CB_90HP": "res://dialogue/timelines/BF2_COBRA/CB_90HP.dtl",
+"CB_defeat": "res://dialogue/timelines/BF2_COBRA/CB_defeat.dtl",
+"FirstCinematic": "res://dialogue/timelines/FirstCinematic/FirstCinematic.dtl",
+"FirstDialogue": "res://dialogue/timelines/FirstCinematic/FirstDialogue.dtl",
+"OxStart": "res://dialogue/timelines/BF1_OX/OxStart.dtl",
+"Ox_50HP": "res://dialogue/timelines/BF1_OX/Ox_50HP.dtl",
+"Ox_60HP": "res://dialogue/timelines/BF1_OX/Ox_60HP.dtl",
+"Ox_70HP": "res://dialogue/timelines/BF1_OX/Ox_70HP.dtl",
+"Ox_80HP": "res://dialogue/timelines/BF1_OX/Ox_80HP.dtl",
+"Ox_90HP": "res://dialogue/timelines/BF1_OX/Ox_90HP.dtl",
+"Ox_Defeat": "res://dialogue/timelines/BF1_OX/Ox_Defeat.dtl",
+"TestTL": "res://dialogue/timelines/TestTL.dtl",
+"big_finale_1": "res://dialogue/timelines/ThirdCinematic/big_finale_1.dtl",
+"big_finale_2": "res://dialogue/timelines/ThirdCinematic/big_finale_2.dtl",
+"big_finale_3": "res://dialogue/timelines/ThirdCinematic/big_finale_3.dtl",
+"cobra_start": "res://dialogue/timelines/BF2_COBRA/cobra_start.dtl",
+"finale_start": "res://dialogue/timelines/ThirdCinematic/finale_start.dtl",
+"finale_start_2": "res://dialogue/timelines/ThirdCinematic/finale_start_2.dtl",
+"second_cinematic": "res://dialogue/timelines/SecondCinematic/second_cinematic.dtl",
+"third_cinematic": "res://dialogue/timelines/ThirdCinematic/third_cinematic.dtl"
+}
+layout/style_list=["res://dialogue/styles/textbubble.tres", "res://dialogue/styles/boxTest.tres", "res://dialogue/styles/cinematicStyle/cinematicStyle.tres", "res://dialogue/characters/cinematicCont.tres", "res://dialogue/styles/cinematicStyle/finale_style.tres"]
+layout/default_style="res://dialogue/styles/cinematicStyle/cinematicStyle.tres"
+extensions_folder="res://addons/dialogic_additions"
+text/letter_speed=0.01
+text/initial_text_reveal_skippable=true
+text/text_reveal_skip_delay=0.1
+text/advance_delay=0.1
+text/autoadvance_per_character_delay=0.1
+text/autoadvance_ignored_characters_enabled=true
+audio/max_channels=4.0
+animations/join_default_length=0.5
+animations/join_default_wait=true
+animations/leave_default_length=0.5
+animations/leave_default_wait=true
+animations/cross_fade_default_length=0.5
+choices/autofocus_first=true
+choices/delay=0.2
+choices/reveal_delay=0
+choices/reveal_by_input=false
+save/autosave_delay=60.0
+save/encryption_on_exports_only=true
+text/autopauses={}
+translation/enabled=true
+translation/original_locale="en"
+translation/file_mode=1
+translation/translation_folder="res://dialogue/translations"
+translation/save_mode=0
+translation/add_separator=false
+variables={
+"cobra_selected": false,
+"ox_selected": false
+}
+translation/locales=[]
+translation/id_counter=16
+glossary/default_case_sensitive=true
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/mode=3
+window/stretch/mode="canvas_items"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
+
+[file_customization]
+
+folder_colors={
+"res://addons/": "gray",
+"res://assets/": "purple",
+"res://builds/": "red",
+"res://dialogue/": "pink",
+"res://scenes/": "green",
+"res://scripts/": "teal"
+}
+
+[gui]
+
+theme/custom="res://resources/main_theme.tres"
+theme/custom_font="res://assets/fonts/Tomorrow-Regular.ttf"
+
+[input]
+
+dialogic_default_action={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":4194309,"physical_keycode":0,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+, Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":1,"canceled":false,"pressed":true,"double_click":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":32,"physical_keycode":0,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":88,"physical_keycode":0,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":0,"pressure":0.0,"pressed":false,"script":null)
+]
+}
+
+[internationalization]
+
+locale/translation_remaps={}
+locale/translations=PackedStringArray("res://dialogue/translations/EXES TRANSLATIONS - Sheet1.en.translation", "res://dialogue/translations/EXES TRANSLATIONS - Sheet1.es.translation", "res://dialogue/translations/EXES TRANSLATIONS - Sheet1.csv")
+locale/test="es"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)

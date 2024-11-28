@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://c21ncn5vdp5ua"]
+
+[ext_resource type="PackedScene" uid="uid://bnng3hk0wi7a" path="res://scenes/board.tscn" id="1_eg5mf"]
+[ext_resource type="PackedScene" uid="uid://dmksqsg5bfdtd" path="res://scenes/boss.tscn" id="2_lkmhq"]
+[ext_resource type="Script" path="res://scenes/dialogue_point.gd" id="3_mae1x"]
+
+[node name="Game" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Board" parent="." instance=ExtResource("1_eg5mf")]
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Boss" parent="." instance=ExtResource("2_lkmhq")]
+
+[node name="DialoguePoint" type="Node2D" parent="."]
+script = ExtResource("3_mae1x")

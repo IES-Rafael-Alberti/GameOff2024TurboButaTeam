@@ -1,0 +1,166 @@
+[gd_scene load_steps=16 format=3 uid="uid://dup3wc5aw7n4e"]
+
+[ext_resource type="Shader" path="res://scripts/shaders/cardBurn.gdshader" id="1_e0daq"]
+[ext_resource type="Script" path="res://scripts/card.gd" id="1_ykaut"]
+[ext_resource type="Texture2D" uid="uid://cgr064vblhvdg" path="res://assets/shadersTextures/burnNoise.tres" id="2_avwfg"]
+[ext_resource type="Texture2D" uid="uid://b233wjmyi78ql" path="res://assets/sprites/cards140x198/sombraBossTurn.png" id="4_fyksg"]
+[ext_resource type="Texture2D" uid="uid://dyfgvj3rviyac" path="res://assets/sprites/cards140x198/sombra.png" id="5_rtvgj"]
+[ext_resource type="AudioStream" uid="uid://b1cpn7ik2rou1" path="res://assets/sound/sfx/cardFlip.wav" id="6_px46y"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0xhi6"]
+resource_local_to_scene = true
+shader = ExtResource("1_e0daq")
+shader_parameter/isBurning = true
+shader_parameter/isHighlight = false
+shader_parameter/dissolve_value = 1.0
+shader_parameter/burn_size = 0.1
+shader_parameter/burn_color = Color(0.682353, 0.141176, 0.133333, 1)
+shader_parameter/speed = 2.0
+shader_parameter/line_width = 0.15
+shader_parameter/line_color = Vector4(1, 1, 1, 1)
+shader_parameter/pause_duration = 0.15
+shader_parameter/offset = 2.0
+shader_parameter/dissolve_texture = ExtResource("2_avwfg")
+
+[sub_resource type="Resource" id="Resource_u518w"]
+metadata/__load_path__ = "res://assets/sprites/cards/card1.png"
+
+[sub_resource type="Animation" id="Animation_ngog6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_0curm"]
+resource_name = "flip"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1.5, 1.5, 1.5),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0, 1.2), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_omwnu"]
+_data = {
+"RESET": SubResource("Animation_ngog6"),
+"flip": SubResource("Animation_0curm")
+}
+
+[sub_resource type="Animation" id="Animation_1oo51"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_qq3t3"]
+resource_name = "flip"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1.5, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.15, 1.1), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_0xg8u"]
+resource_name = "isBossTurn"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_t76fk"]
+_data = {
+"RESET": SubResource("Animation_1oo51"),
+"flip": SubResource("Animation_qq3t3"),
+"isBossTurn": SubResource("Animation_0xg8u")
+}
+
+[node name="Card" type="TextureButton"]
+z_index = 20
+material = SubResource("ShaderMaterial_0xhi6")
+custom_minimum_size = Vector2(140, 198)
+offset_right = 140.0
+offset_bottom = 198.0
+pivot_offset = Vector2(70, 99)
+script = ExtResource("1_ykaut")
+face = SubResource("Resource_u518w")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_omwnu")
+}
+
+[node name="BossTurnShadow" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0.482353)
+z_index = 25
+position = Vector2(70, 200)
+texture = ExtResource("4_fyksg")
+offset = Vector2(0, -99)
+
+[node name="BossTurnShadowAnimation" type="AnimationPlayer" parent="BossTurnShadow"]
+libraries = {
+"": SubResource("AnimationLibrary_t76fk")
+}
+
+[node name="Shadow" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.482353)
+z_index = -1
+position = Vector2(75, 104)
+texture = ExtResource("5_rtvgj")
+
+[node name="ShadowAnimationPlayer" type="AnimationPlayer" parent="Shadow"]
+libraries = {
+"": SubResource("AnimationLibrary_t76fk")
+}
+autoplay = "RESET"
+
+[node name="CardFlip" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_px46y")
+volume_db = 9.0
+bus = &"SFX"
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="pressed" from="." to="." method="_on_pressed"]
