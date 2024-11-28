@@ -31,4 +31,4 @@ func _ready() -> void:
 	respiration_animator.stop()
 	animation_player.play("sudden_blackout_final")
 	await get_tree().create_timer(4).timeout
-	get_tree().change_scene_to_file("res://scenes/menus/credits/credits.tscn")
+	get_tree().change_scene_to_file("res://scenes/menus/main_menu/main_menu.tscn")

@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://uxbvlxwenb4i"]
+[gd_scene load_steps=10 format=3 uid="uid://uxbvlxwenb4i"]
 
 [ext_resource type="Script" path="res://scenes/menus/main_menu/main_menu.gd" id="1_fjwii"]
 [ext_resource type="Texture2D" uid="uid://bslxfut1486oy" path="res://assets/sprites/ui/Ilustracion_sin_titulo_1.png" id="2_rjp2q"]
 [ext_resource type="FontFile" uid="uid://b8g5bl37fquk" path="res://assets/fonts/IMFellDWPicaSC-Regular.ttf" id="3_1d0j5"]
+[ext_resource type="Texture2D" uid="uid://brpyh61voue0j" path="res://assets/icons/scroll.png" id="4_ck1k8"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_00c3h"]
 font = ExtResource("3_1d0j5")
@@ -23,30 +24,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("VBoxContainer2/CreditsButton:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("VBoxContainer2:modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_4r0ck"]
@@ -76,30 +53,6 @@ tracks/1/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("VBoxContainer2/CreditsButton:modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("VBoxContainer2:modulate")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
 
 [sub_resource type="Animation" id="Animation_aq85o"]
 resource_name = "fade_out"
@@ -123,30 +76,6 @@ tracks/1/path = NodePath("CenterContainer/IlustracionSinTitulo:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("VBoxContainer2/CreditsButton:modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("VBoxContainer2:modulate")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
 "times": PackedFloat32Array(0, 2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
@@ -233,37 +162,33 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 64
 text = "WIKI_BUTTON"
 
+[node name="ExitButton" type="Button" parent="VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "EXIT_BUTTON"
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_tc5d4")
 }
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+[node name="creditsButton" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.779
-anchor_top = 0.178
-anchor_right = 0.933
-anchor_bottom = 0.307
-offset_left = 0.319946
-offset_top = -0.240005
-offset_right = -2.36011
-offset_bottom = 0.440002
-
-[node name="CreditsButton" type="Button" parent="VBoxContainer2"]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 2
-theme_override_font_sizes/font_size = 30
-text = "CREDITS_BUTTON"
-
-[node name="ExitButton" type="Button" parent="VBoxContainer2"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 30
-text = "EXIT_BUTTON"
+anchor_left = 0.067
+anchor_top = 0.77
+anchor_right = 0.109
+anchor_bottom = 0.846
+offset_left = -0.639999
+offset_top = 0.399963
+offset_right = 462.72
+offset_bottom = 462.32
+scale = Vector2(0.15, 0.15)
+icon = ExtResource("4_ck1k8")
 
 [connection signal="pressed" from="VBoxContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/VBoxContainer/WikiButton" to="." method="_on_wiki_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
-[connection signal="pressed" from="VBoxContainer2/CreditsButton" to="." method="_on_credits_button_pressed"]
-[connection signal="pressed" from="VBoxContainer2/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="creditsButton" to="." method="_on_credits_button_pressed"]

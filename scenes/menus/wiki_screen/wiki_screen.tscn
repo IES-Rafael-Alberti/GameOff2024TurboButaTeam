@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://xibnk2kph5sy"]
+[gd_scene load_steps=23 format=3 uid="uid://xibnk2kph5sy"]
 
 [ext_resource type="Theme" uid="uid://b2eu4jujeud0y" path="res://resources/themes/wiki_theme.tres" id="1_ermmr"]
 [ext_resource type="LabelSettings" uid="uid://bsjqw3m3umydi" path="res://resources/LabelSettings/big_textes.tres" id="1_lgk1o"]
@@ -17,9 +17,8 @@
 [ext_resource type="Texture2D" uid="uid://bemvnyy1j0bc4" path="res://assets/sprites/boss/cobra wiki.png" id="13_6p8g8"]
 [ext_resource type="Texture2D" uid="uid://dqq5f6tuc02qo" path="res://assets/backgrounds/firstCinematic/bgComplete.png" id="13_dee20"]
 [ext_resource type="Texture2D" uid="uid://cfxydl116wgtb" path="res://assets/sprites/boss/buey wiki.png" id="14_uas08"]
-[ext_resource type="Texture2D" uid="uid://bl3pktp7rf7bq" path="res://assets/sprites/figure.png" id="15_y700j"]
 [ext_resource type="Texture2D" uid="uid://ctwh7j7yrnq7v" path="res://assets/sprites/cardsFullResolution/borde.png" id="18_nihod"]
-[ext_resource type="StyleBox" uid="uid://cdv67nndws6cv" path="res://assets/new_style_box_flat.tres" id="19_mf3l7"]
+[ext_resource type="StyleBox" path="res://assets/new_style_box_flat.tres" id="19_mf3l7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jk85g"]
 bg_color = Color(0, 0, 0, 1)
@@ -39,18 +38,18 @@ grow_vertical = 2
 theme = ExtResource("1_ermmr")
 script = ExtResource("1_rmd21")
 cardImgList = Array[Texture]([ExtResource("2_2ij6p"), ExtResource("3_3oy84"), ExtResource("5_0mg26"), ExtResource("5_icmom"), ExtResource("7_ai28s"), ExtResource("8_wxpqe"), ExtResource("9_nkxks"), ExtResource("11_ccrck"), ExtResource("10_73aqc"), ExtResource("9_qmgvc")])
-bossImgList = Array[Texture]([ExtResource("13_6p8g8"), ExtResource("14_uas08"), ExtResource("15_y700j")])
+bossImgList = Array[Texture]([ExtResource("13_6p8g8"), ExtResource("14_uas08")])
 bgImgList = Array[Texture]([ExtResource("13_dee20"), ExtResource("12_yml3x")])
 cardNameList = Array[String](["REVERSO_NAME", "GRULLA_NAME", "PANDA_NAME", "MOFETA_NAME", "PANGOLIN_NAME", "TORTUGA_NAME", "RATA_NAME", "LINCE_NAME", "ESPECIAL_1_NAME", "ESPECIAL_2_NAME"])
-bossNameList = Array[String](["COBRA_NAME", "BUEY_NAME", "FINAL_BOSS_NAME"])
+bossNameList = Array[String](["COBRA_NAME", "BUEY_NAME"])
 bgNameList = Array[String](["BOSQUE_NAME", "ESPINAS_NAME"])
 cardTextList = Array[String](["REVERSO_DATO", "GRULLA_DATO", "PANDA_DATO", "MOFETA_DATO", "PANGOLIN_DATO", "TORTUGA_DATO", "RATA_DATO", "LINCE_DATO", "ESPECIAL_1_DATO", "ESPECIAL_2_DATO"])
-bossTextList = Array[String](["COBRA_TEXT", "BUEY_TEXT", "FINAL_BOSS_TEXT"])
+bossTextList = Array[String](["COBRA_TEXT", "BUEY_TEXT"])
 bgTextList = Array[String](["BOSQUE_TEXT", "ESPINAS_TEXT"])
 cardHabilityList = Array[String](["REVERSO_HABILITY", "GRULLA_HABILITY", "PANDA_HABILITY", "MOFETA_HABILITY", "PANGOLIN_HABILITY", "TORTUGA_HABILITY", "RATA_HABILITY", "LINCE_HABILITY", "ESPECIAL_1_HABILITY", "ESPECIAL_2_HABILITY"])
-bossHabilityList = Array[String](["COBRA_HABILITY", "BUEY_HABILITY", ""])
+bossHabilityList = Array[String](["COBRA_HABILITY", "BUEY_HABILITY"])
 cardCreditsList = Array[String](["@alicegomrev", "@alicegomrev", "@alicegomrev", "@alicegomrev", "@alicegomrev", "@alicegomrev", "@alicegomrev", "@alicegomrev", "@alicegomrev", "@alicegomrev"])
-bossCreditsList = Array[String](["@alicegomrev", "@alicegomrev", "@alicegomrev"])
+bossCreditsList = Array[String](["@alicegomrev", "@alicegomrev"])
 bgCreditsList = Array[String](["Paula Rumeu", "@alicegomrev"])
 
 [node name="TextContainer" type="VBoxContainer" parent="."]
@@ -154,32 +153,28 @@ offset_top = -184.68
 offset_right = -1592.52
 offset_bottom = -929.88
 
-[node name="nombre" type="Label" parent="WikiHBox/infoPanel"]
-custom_minimum_size = Vector2(200, 0)
-layout_mode = 2
-offset_left = 1157.0
-offset_top = 304.0
-offset_right = 1485.0
-offset_bottom = 340.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 20
-label_settings = SubResource("LabelSettings_ciwwa")
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 2
-
 [node name="ScrollContainer" type="ScrollContainer" parent="WikiHBox/infoPanel"]
 layout_mode = 0
-offset_left = 1133.0
-offset_top = 384.0
-offset_right = 1509.0
-offset_bottom = 864.0
+offset_left = 1122.0
+offset_top = 347.0
+offset_right = 1517.0
+offset_bottom = 870.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="WikiHBox/infoPanel/ScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/separation = 30
+
+[node name="nombre" type="Label" parent="WikiHBox/infoPanel/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+label_settings = SubResource("LabelSettings_ciwwa")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="utilidad" type="Label" parent="WikiHBox/infoPanel/ScrollContainer/VBoxContainer"]
 custom_minimum_size = Vector2(200, 0)
@@ -310,9 +305,9 @@ text = "BACK_BUTTON"
 layout_mode = 0
 offset_left = 400.0
 offset_top = 896.0
-offset_right = 592.0
+offset_right = 440.0
 offset_bottom = 926.0
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = ExtResource("19_mf3l7")
 vertical_alignment = 1
 
@@ -320,19 +315,19 @@ vertical_alignment = 1
 layout_mode = 0
 offset_left = 816.0
 offset_top = 800.0
-offset_right = 992.0
+offset_right = 903.0
 offset_bottom = 830.0
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 25
 text = "edwfwf"
 vertical_alignment = 1
 
 [node name="BgCredits" type="Label" parent="."]
 layout_mode = 0
-offset_left = 800.0
+offset_left = 848.0
 offset_top = 768.0
-offset_right = 1024.0
+offset_right = 1008.0
 offset_bottom = 804.0
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 25
 text = "Paula Rumeu"
 vertical_alignment = 1
 
