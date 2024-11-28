@@ -77,6 +77,104 @@ grow_vertical = 2
 theme = ExtResource("4_t0f75")
 script = ExtResource("1_s4gqu")
 
+[node name="Tutorial" type="Control" parent="."]
+z_index = 50
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Tutorial"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 48.0
+anchor_bottom = 27.0
+offset_right = -0.00012207
+offset_bottom = -0.00012207
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0352941, 0.0352941, 0.0352941, 0.941176)
+
+[node name="LabelList" type="Control" parent="Tutorial"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Tutorial/LabelList"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 8.6
+anchor_top = 9.8
+anchor_right = 39.6
+anchor_bottom = 12.425
+offset_right = -0.00012207
+theme_override_font_sizes/font_size = 42
+text = "FIRST_LABEL"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="Tutorial/LabelList"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 9.0
+anchor_top = 12.8
+anchor_right = 39.6
+anchor_bottom = 15.425
+offset_left = -8.0
+offset_right = 7.99988
+offset_bottom = -6.10352e-05
+theme_override_font_sizes/font_size = 42
+text = "SECOND_LABEL"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="Tutorial/LabelList"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 9.6
+anchor_top = 19.2
+anchor_right = 40.4
+anchor_bottom = 21.8
+offset_right = 8.0
+offset_bottom = 0.999939
+theme_override_font_sizes/font_size = 42
+text = "THIRD_LABEL"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="Tutorial/LabelList"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 9.6
+anchor_top = 19.2
+anchor_right = 40.4
+anchor_bottom = 21.8
+offset_left = -160.0
+offset_top = -256.0
+offset_right = -152.0
+offset_bottom = -255.0
+theme_override_font_sizes/font_size = 42
+text = "FOURTH_LABEL"
+horizontal_alignment = 1
+
+[node name="Label5" type="Label" parent="Tutorial/LabelList"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 9.6
+anchor_top = 19.2
+anchor_right = 40.4
+anchor_bottom = 21.8
+offset_left = 96.0
+offset_top = -696.0
+offset_right = 104.0
+offset_bottom = -695.0
+theme_override_font_sizes/font_size = 42
+text = "FIFTH_LABEL"
+horizontal_alignment = 1
+
 [node name="BossContainer" type="VBoxContainer" parent="."]
 z_index = -1
 layout_mode = 1
@@ -148,7 +246,7 @@ fill_mode = 3
 show_percentage = false
 
 [node name="MarcoUiPrueba" type="Sprite2D" parent="."]
-z_index = 50
+z_index = 5
 position = Vector2(1722, 208)
 rotation = 1.5708
 scale = Vector2(0.34, 0.333)
@@ -338,6 +436,7 @@ offset_top = 0.119995
 offset_right = -0.720032
 offset_bottom = 0.039978
 
+[connection signal="gui_input" from="Tutorial" to="." method="_on_tutorial_gui_input"]
 [connection signal="timeout" from="ProgressBar/Timer" to="." method="_on_timer_timeout"]
 [connection signal="pressed" from="ResetBoard" to="." method="_on_reset_board_pressed"]
 [connection signal="pressed" from="Pause" to="." method="_on_pause_pressed"]
