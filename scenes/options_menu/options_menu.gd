@@ -17,9 +17,9 @@ func _ready() -> void:
 	master_bus = AudioServer.get_bus_index("Master")
 	music_bus = AudioServer.get_bus_index("Music")
 	sfx_bus = AudioServer.get_bus_index("SFX")
-	master_vol.value = db_to_linear(AudioServer.get_bus_volume_db(master_bus))
-	music_vol.value = db_to_linear(AudioServer.get_bus_volume_db(music_bus))
-	sfx_vol.value = db_to_linear(AudioServer.get_bus_volume_db(sfx_bus))
+	master_vol.value = AudioServer.get_bus_volume_db(master_bus)
+	music_vol.value = AudioServer.get_bus_volume_db(music_bus)
+	sfx_vol.value = AudioServer.get_bus_volume_db(sfx_bus)
 func _on_back_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/menus/main_menu/main_menu.tscn")
 
@@ -31,6 +31,7 @@ func _on_music_vol_value_changed(value: float) -> void:
 
 func _on_sfx_vol_value_changed(value: float) -> void:
 	AudioServer.set_bus_volume_db(sfx_bus,linear_to_db(value))
+	test_sfx.play()
 func _on_option_button_item_selected(index: int) -> void:
 	match index:
 		0:
@@ -46,7 +47,3 @@ func _on_language_sel_item_selected(index):
 			TranslationServer.set_locale("en")
 		1:
 			TranslationServer.set_locale("es")
-
-
-func _on_sfx_vol_drag_ended(value_changed):
-	test_sfx.play()
