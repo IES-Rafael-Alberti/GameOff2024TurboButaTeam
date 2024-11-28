@@ -21,6 +21,9 @@ WIKI_BACKGROUNDS_BUTTON,Backgrounds,Fondos
 RESHUFFLE_BOARD_BUTTON,Reshuffle Board,Refrescar Tablero
 PAUSE_BUTTON,Pause,Parar
 ,,
+,,
+,,
+,,
 GAME,,
 testboss_name,OX,BUEY
 secondboss,COBRA,COBRA
@@ -98,6 +101,7 @@ C3D5O2,"I am you, you are me","Yo soy tú, tú eres yo."
 C3D5O3,"I am you, you are me","Yo soy tú, tú eres yo."
 ,Todo se pone turbio,"Segundos pantalla en negro, para que se vea el player. C3D6. Entonces se muestra el fondo y está más mamado, y el fondo parpadea algo."
 C3D6,"Finally, you understand it.",Por fin lo entiendes.
+C3D62,Look at yourself.,Mírate.
 C3D7,"So, I'm just a futile try to take you down... which only makes you stronger?",Entonces... soy un intento futil de eliminarte... ¿el cual sólo te hace más fuerte? 
 C3D8,That's right. Trying to defeat me without changing your selfish desires...,Así es. Intentar derrotarme sin cambiar vuestros deseos egoístas...
 C3D9O1,"Will only lead you to extinction, like the rest of us.","Solo os llevará a la extinción, como al resto de nosotros."
@@ -111,7 +115,6 @@ C3D13,Just remember:,Sólo recuerda:
 C3D14,YOU CAN'T,NO PUEDES
 C3D15,RUN AWAY,HUIR
 C3D16,FROM EXTINCTION.,DE LA EXTINCIÓN.
-,,
 ,,
 ,,
 ,,
