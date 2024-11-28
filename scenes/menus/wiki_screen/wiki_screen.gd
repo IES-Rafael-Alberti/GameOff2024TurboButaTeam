@@ -138,11 +138,19 @@ func update_image():
 		card_credits.text = cardCreditsList[current_index_card]
 	
 	if bosses_label.visible:
+		boss_credits.visible = true
+		card_credits.visible = false
 		texture.texture = bossImgList[current_index_boss]
 		nombre.text = bossNameList[current_index_boss]
 		dato.text = bossTextList[current_index_boss]
 		utilidad.text = bossHabilityList[current_index_boss]
 		boss_credits.text = bossCreditsList[current_index_boss]
+		if current_index_boss == 2:
+			boss_credits.visible = false
+			card_credits.visible = true
+			card_credits.text = bossCreditsList[current_index_boss]
+		else:
+			boss_credits.text = bossCreditsList[current_index_boss]
 	
 	if bg_label.visible:
 		texture.texture = bgImgList[current_index_bg]
