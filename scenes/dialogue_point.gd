@@ -11,10 +11,7 @@ func _ready():
 	var layout = Dialogic.Styles.load_style("textbubble")
 	layout.register_character(load("res://dialogue/characters/testboss.dch"), $".")
 	if GameManager.tutorialCompleted:
-		if Dialogic.VAR.cobra_selected:
-			Dialogic.start("res://dialogue/timelines/BF1_OX/OxStart.dtl")
-		else:
-			Dialogic.start("res://dialogue/timelines/BF2_COBRA/cobra_start.dtl")
+		Dialogic.start("res://dialogue/timelines/BF1_OX/OxStart.dtl")
 
 func eightyOfLife():
 	var layout = Dialogic.Styles.load_style("textbubble")
@@ -58,11 +55,4 @@ func tenOfLife():
 		Dialogic.start("res://dialogue/timelines/BF2_COBRA/CB_50HP.dtl")
 
 func tutorialComplete():
-	if Dialogic.VAR.cobra_selected:
-		Dialogic.VAR.testboss_name = "ox"
-		#Dialogic.set_variable("testboss_name","ox")
-		Dialogic.start("res://dialogue/timelines/BF1_OX/OxStart.dtl")
-	else:
-		Dialogic.VAR.testboss_name = "cobra"
-		#Dialogic.set_variable("testboss_name","cobra")
-		Dialogic.start("res://dialogue/timelines/BF2_COBRA/cobra_start.dtl")
+	Dialogic.start("res://dialogue/timelines/BF1_OX/OxStart.dtl")
