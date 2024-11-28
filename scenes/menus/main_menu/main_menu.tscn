@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://uxbvlxwenb4i"]
 
 [ext_resource type="Script" path="res://scenes/menus/main_menu/main_menu.gd" id="1_fjwii"]
-[ext_resource type="Texture2D" uid="uid://bslxfut1486oy" path="res://assets/sprites/ui/Ilustracion_sin_titulo_1.png" id="2_rjp2q"]
+[ext_resource type="Texture2D" uid="uid://72b24x5xnfgn" path="res://assets/backgrounds/mainMenuBackground.png" id="2_7aqd4"]
 [ext_resource type="FontFile" uid="uid://b8g5bl37fquk" path="res://assets/fonts/IMFellDWPicaSC-Regular.ttf" id="3_1d0j5"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_00c3h"]
@@ -115,9 +115,9 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="IlustracionSinTitulo" type="Sprite2D" parent="CenterContainer"]
-position = Vector2(961.788, 532)
-scale = Vector2(0.812383, 0.9)
-texture = ExtResource("2_rjp2q")
+position = Vector2(962.086, 539)
+scale = Vector2(0.499955, 0.501852)
+texture = ExtResource("2_7aqd4")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
