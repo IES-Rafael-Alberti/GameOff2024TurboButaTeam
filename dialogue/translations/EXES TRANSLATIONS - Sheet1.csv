@@ -23,30 +23,27 @@ PAUSE_BUTTON,Pause,Pausar
 ,,
 ,,
 TUTORIAL,,
-FIRST_LABEL,"You've just got yourself into a lot of trouble, but don't 
-worry, the animals in this forest will help you 
-out of it of this forest will help you out of this predicament","Te acabas de meter en un buen lío pero tranquilo, los animales 
+FIRST_LABEL,"You've just got yourself into a lot of trouble but don't 
+worry, The animals in this forest will help you.
+get out of this predicament","Te acabas de meter en un buen lío pero tranquilo, los animales 
 de este bosque te ayudarán a salir de este aprieto"
-SECOND_LABEL,"In order for them to help you first, you will have to look for partners 
-of the same animal to get out of this situation","Para que estos te ayuden primero, deberás buscar las parejas
-del mismo animal para salir de esta situación"
-THIRD_LABEL,"Use your history to find out how they can help you and what
- intentions the beast in front of you has.","Ayudate del historial para saber en que te pueden ayudar 
-y que intenciones tiene la bestia que tienes delante"
-FOURTH_LABEL,"If you see fit, every 3 pairs of animals you collect 
+SECOND_LABEL,"In order for them to help you though, you will have to look for partners 
+of the same animal to activate their secret power","Para que estos te ayuden, primero deberás buscar las parejas
+del mismo animal para activar su poder secreto."
+THIRD_LABEL,"Use the battle history to find out how they can help you and what
+ intentions the beast in front of you has.","Ayudate del historial de pelea para saber en qué te pueden ayudar,
+y qué intenciones tiene la bestia que tienes delante"
+FOURTH_LABEL,"If you see fit, for every 3 pairs of animals you collect,
 you can reset the board.","Si lo ves oportuno, cada 3 parejas de animales que reúnas
 puedes reiniciar el tablero"
-FIFTH_LABEL,"Defeat the threat before it kills you. good luck to you, good luck","Consigue vencer la amenaza antes de que esta acabe 
+FIFTH_LABEL,Defeat the evil spirit before it kills you. good luck.,"Consigue vencer la amenaza antes de que esta acabe 
 contigo, buena suerte"
 ,,
 ,,
 ,,
-,,
-,,
-,,
 GAME,,
-testboss_name,OX,BUEY
-secondboss,COBRA,COBRA
+ox,OX,BUEY
+cobra,COBRA,COBRA
 BOSS_ATTACK,The spirit starts charging torwards you,El espíritu empieza a cargar hacia ti
 BOSS_SHIELD,The spirit stands his ground,El espíritu mantiene su posición.
 BOSS_HABILITY,The spirit is reuniting forces...,El espíritu está reuniendo fuerzas...
@@ -71,7 +68,7 @@ C1D10,Why do you think I’m doing it?,¿Por qué crees que lo estoy haciendo?
 C1D11,Why am I destroying the forest?,¿Por qué estoy destruyendo el bosque?
 C1D11O1,"Does your presence bring destruction, leaving nothing behind?","¿Es tu presencia la que trae destrucción, dejando un vacío por donde pasa?"
 C1D11O2,"Is it your greed, chasing goals, that corrupts the forest?","¿Es tu codicia, persiguiendo objetivos, la que corrompe el bosque?"
-C1D11O1D,"So, you've chosen the spirit of the ox.","Así que, has elegido el espíritu del buey."
+C1D11O1D,"So, you've chosen the spirit of the Buffalo.","Así que, has elegido el espíritu del Búfalo."
 C1D11O2D,"So, you've chosen the spirit of the cobra.","Así que, has elegido el espíritu de la cobra."
 C1D14,My answers don't come for free though.,Mis respuestas tienen un precio.
 C1D15,Let the test begin.,Que comience la prueba.
@@ -79,7 +76,7 @@ C1D15,Let the test begin.,Que comience la prueba.
 DIALOGUE,,
 OX BF,,
 OX_BF_START1,I possess this animals spirit to take down on you.,Poseo el espíritu de este animal para derrotarte.
-OX_BF_START2,The brute strength of the ox will shred you.,La fuerza bruta del buey te destrozará.
+OX_BF_START2,The brute strength of the Buffalo will shred you.,La fuerza bruta del Búfalo te destrozará.
 OX_BF_90HP,My answers to your question will unfold as you take down this spirit.,Mis respuestas a tu pregunta se desarrollarán en lo que derrotas a este espíritu.
 OX_BF_80HP,"I will say I don't destroy this forest on purpose, it's just a consequence of my action.","Diré que no destruyo este bosque a propósito, sino como consecuencia de mi acción."
 OX_BF_70HP,"I don't feel remorse from my doing, since it's in the name of our best interest.","No siento remordimiento, ya que todo esto es a cambio de nuestros mejores intereses."
@@ -87,7 +84,7 @@ OX_BF_60HP,"However, I'm not responsible from my existence. I've been created an
 OX_BF_50HP,"It's the ones who created me who's left to wonder what to should be done with me, not to fight me like an enemy","Son los que me crearon los que deben concluir qué hacer conmigo, no combatirme como un enemigo."
 ,,
 ,,
-OX_BF_DEFEAT,"So, the mighty ox, all strength and no mind, shall be defeated.","Así, el poderoso buey, todo fuerza y nada intelecto, debe ser derrotado."
+OX_BF_DEFEAT,"So, the mighty Buffalo, all strength and no mind, shall be defeated.","Así, el poderoso Búfalo, todo fuerza y nada intelecto, debe ser derrotado."
 ,,
 CINEMATIC 2,,
 C2D1,"So, your own greediness is the cause of all this destruction?","Así que, ¿tu propia codicia es la causa de toda esta destrucción?"
@@ -109,7 +106,7 @@ BF_2_60HP,"The same entity created me, and sent you here.","La misma entidad me 
 BF_2_50HP,"Mankind, is responsible for both of us.",La humanidad es el responsable de esto.
 ,,
 ,,
-CB_BF_DEFEAT,"So, the decieving cobra, once their tricks are discovered, shall be defeated.","Así, el poderoso buey, todo fuerza y nada de intelecto, debe ser derrotado."
+CB_BF_DEFEAT,"So, the decieving cobra, once their tricks are discovered, shall be defeated.","Así, el poderoso Búfalo, todo fuerza y nada de intelecto, debe ser derrotado."
 ,,
 CINEMATIC 3,,
 C3D1,"So, humanity created you?",Así que... ¿te ha creado la humanidad?
@@ -151,9 +148,9 @@ RATA_NAME,4-toed gerbil,Jerbo de 4 dedos
 ESPECIAL_1_NAME,Special card,Carta Especial
 ESPECIAL_2_NAME,Special card,Carta Especial
 LINCE_NAME,Iberian Lynx,Lince Ibérico
-COBRA_NAME,Cobra,Cobra
-BUEY_NAME,Ox,Buey
-FINAL_BOSS_NAME,,
+COBRA_NAME,King Cobra,Cobra Real
+BUEY_NAME,Wild Water Buffalo,Búfalo de Agua
+FINAL_BOSS_NAME,Shadow,Sombra
 BOSQUE_NAME,Forest background,Fondo de bosque
 ESPINAS_NAME,Thorny background,Fondo de espinas
 REVERSO_DATO,,
@@ -276,8 +273,34 @@ Estado de conservación: En peligro de extinción desde 1986, pero desde junio d
 Descripción: Es uno de los felinos más amenazados del mundo. Tiene un pelaje moteado y orejas con pinceles negros característicos. Se alimenta principalmente de conejos.
 
 Curiosidad: Cada lince tiene un patrón único de manchas, como si fuera una huella digital y además una de las características más reconocibles del lince ibérico es su vista. Este felino se vale de ella para cazar y es que puede reconocer a un roedor a más de 75 metros de distancia, a un conejo a 300 metros y a un cervatillo a casi 500 metros."
-COBRA_TEXT,,
-BUEY_TEXT,,
+COBRA_TEXT,"Location: Distributed in India, Bangladesh, Burma, southern China, Vietnam, Laos, Cambodia, Thailand, Malaysia, Indonesia and the Philippines.
+
+Conservation status: Vulnerable according to the IUCN Red List of Threatened Species since 2011.
+
+Brief description:  It is a large snake, with a hood (typical of cobras) not as pronounced as the cobras of the genus Naja. Its colouring is usually brownish or olive, sometimes yellowish, with lighter coloured ventral patches; the scales on the head are bordered with black.
+
+Fun fact: There are hundreds of species of venomous snakes in the animal kingdom, but the king cobra is the longest of them all. It is on average three to four metres long and usually weighs around 6 kilograms.
+When a king cobra ‘stands up’, it can come face to face with a human of average height.","localización: Se distribuye por India, Bangladés, Birmania, sur de China, Vietnam, Laos, Camboya, Tailandia, Malasia, Indonesia y Filipinas.
+
+Estado de conservación: Se encuentra en estado vulnerable según la lista roja de especies amenazadas de la UICN desde 2011
+
+Breve descripción:  Es una serpiente de gran tamaño, con una capucha (propia de las cobras) no tan pronunciada como las cobras del género Naja. Su coloración suele ser parda u olivácea, a veces amarillenta, con parches ventrales de un color más claro; las escamas de la cabeza están orladas de negro.
+
+Curiosidad: Hay cientos de especies de serpientes venenosas en el reino animal, pero la cobra real es la más larga de todas. Tiene de media entre tres y cuatro metros de largo y por lo general pesa alrededor de 6 kilogramos de peso.
+Cuando una cobra real ""se pone de pie"", puede estar cara a cara con un humano de estatura media"
+BUEY_TEXT,"Location: found in India, Nepal, Bhutan, Thailand and Cambodia with an undetermined population in Burma.
+
+Conservation status: Endangered according to the IUCN red list of threatened species since 2016.
+
+Brief description:  The wild water buffalo is larger and heavier than the domestic buffalo. The coat ranges from ash grey to black. The hair is moderately long, with a tuft on the forehead. The ears are relatively small. The tip of the tail is hairy. The hooves are large and open.
+
+Fun fact: The nickname ‘water buffalo’ or ‘water buffalo’ comes from its preference for waterlogged or swampy areas, where it partially submerges and walks on the muddy bottom without difficulty, thanks to its broad hooves which prevent it from sinking too deep.","localización: se encuentran en India, Nepal, Bután, Tailandia y Camboya con una población indeterminada en Birmania.
+
+Estado de conservación: En peligro de extinción según la lista roja de especies amenazadas de la UICN desde 2016
+
+Breve descripción:  El búfalo de agua salvaje es mayor y más pesado que el doméstico. La capa va del gris ceniza al negro. El pelo es moderadamente largo, con un mechón en la frente. Las orejas son relativamente pequeñas. La punta de la cola es peluda. Las pezuñas son grandes y abiertas.
+
+Fun fact: El apelativo de «búfalo acuático» o «búfalo de agua» procede de su preferencia por las áreas encharcadas o pantanosas, donde se sumerge parcialmente y camina sobre el lodo del fondo sin dificultad, gracias a sus anchas pezuñas que le impiden hundirse en exceso."
 FINAL_BOSS_TEXT,,
 BOSQUE_TEXT,,
 ESPINAS_TEXT,,
@@ -291,7 +314,7 @@ RATA_HABILITY,Ability: Makes an attack under the boss' shield,Habilidad: Hace un
 ESPECIAL_1_HABILITY,Ability: You have a double turn,Habilidad: Tienes un doble turno
 ESPECIAL_2_HABILITY,Ability: Reveals two cards you haven't used yet,Habilidad: Te revela dos cartas que no hayas usado todavia
 LINCE_HABILITY,Ability: Makes a normal attack on the boss,Habilidad: Hace un ataque normal al boss
-COBRA_HABILITY,Ability: Poison you for two turns,Habilidad: Te envena durante dos turnos
+COBRA_HABILITY,Ability: It makes an attack that leaves you poisoned for two rounds.,Habilidad: Te hace un ataque que te deja envenenado durante dos rondas
 BUEY_HABILITY,Ability: Spend a turn to charge the attack and the next turn it makes a charged attack with more power.,Habilidad: Gasta un turno para cargar el ataque y el siguiente turno te hace un ataque cargado con más potencia
 ,,
 ,,
@@ -326,7 +349,7 @@ BF_3_60HP,,
 BF_3_50HP,,
 ,,
 ,,
-LX_BF_DEFEAT,"So, the decieving cobra, once their tricks are discovered, shall be defeated.","Así, el poderoso buey, todo fuerza y nada de intelecto, debe ser derrotado."
+LX_BF_DEFEAT,"So, the decieving cobra, once their tricks are discovered, shall be defeated.","Así, el poderoso Búfalo, todo fuerza y nada de intelecto, debe ser derrotado."
 ,,
 CINEMATIC 4,,
 ,,

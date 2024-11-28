@@ -82,7 +82,8 @@ translation/save_mode=0
 translation/add_separator=false
 variables={
 "cobra_selected": false,
-"ox_selected": false
+"ox_selected": false,
+"testboss_name": ""
 }
 translation/locales=[]
 translation/id_counter=16
