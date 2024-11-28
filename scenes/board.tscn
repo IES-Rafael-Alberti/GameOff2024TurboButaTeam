@@ -218,7 +218,7 @@ offset_right = 1.64001
 offset_bottom = -0.200012
 tooltip_text = "RESHUFFLE_BOARD_TOOLTIP"
 theme = ExtResource("4_t0f75")
-text = "Reshuffle Board"
+text = "RESHUFFLE_BOARD_BUTTON"
 
 [node name="Pause" type="Button" parent="."]
 z_index = 5
@@ -232,7 +232,7 @@ offset_left = -0.320068
 offset_top = -0.440063
 offset_right = -1.04004
 offset_bottom = -2.36005
-text = "PAUSE"
+text = "PAUSE_BUTTON"
 
 [node name="Sounds" type="Node" parent="."]
 
