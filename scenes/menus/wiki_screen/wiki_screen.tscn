@@ -4,15 +4,15 @@
 [ext_resource type="LabelSettings" uid="uid://bsjqw3m3umydi" path="res://resources/LabelSettings/big_textes.tres" id="1_lgk1o"]
 [ext_resource type="Script" path="res://scenes/menus/wiki_screen/wiki_screen.gd" id="1_rmd21"]
 [ext_resource type="Texture2D" uid="uid://bngb571kcpnn1" path="res://assets/sprites/cardsFullResolution/reverso.png" id="2_2ij6p"]
-[ext_resource type="Texture2D" uid="uid://dhoqckgn1k7fa" path="res://assets/sprites/cardsFullResolution/grulla.png" id="3_3oy84"]
-[ext_resource type="Texture2D" uid="uid://cq400hc5yk0t2" path="res://assets/sprites/cardsFullResolution/mofeta.png" id="5_icmom"]
-[ext_resource type="Texture2D" uid="uid://cvt3pcalakkqj" path="res://assets/sprites/cardsFullResolution/PandaRojo.png" id="5_qjfb1"]
-[ext_resource type="Texture2D" uid="uid://cnidyiytg70rf" path="res://assets/sprites/cardsFullResolution/pangolin.png" id="6_4dkke"]
-[ext_resource type="Texture2D" uid="uid://cwae01qcbgsmm" path="res://assets/sprites/cardsFullResolution/pangolinBlanco.png" id="7_4i2of"]
-[ext_resource type="Texture2D" uid="uid://cr0molg8b0pyp" path="res://assets/sprites/cardsFullResolution/rata.png" id="8_pqwgn"]
-[ext_resource type="Texture2D" uid="uid://u1nqewt2tkmo" path="res://assets/sprites/cardsFullResolution/especial2.png" id="9_qmgvc"]
-[ext_resource type="Texture2D" uid="uid://tej13qf6vn8h" path="res://assets/sprites/cardsFullResolution/especial1.png" id="10_73aqc"]
-[ext_resource type="Texture2D" uid="uid://dcei2ml5rej1u" path="res://assets/sprites/cardsFullResolution/lince.png" id="11_ccrck"]
+[ext_resource type="Texture2D" uid="uid://6ave4onby881" path="res://assets/sprites/cardsFullResolution/grulla.png" id="3_3oy84"]
+[ext_resource type="Texture2D" uid="uid://ci8qdphoe3dwr" path="res://assets/sprites/cardsFullResolution/panda.png" id="5_0mg26"]
+[ext_resource type="Texture2D" uid="uid://bvu7q8dbflisn" path="res://assets/sprites/cardsFullResolution/mofeta.png" id="5_icmom"]
+[ext_resource type="Texture2D" uid="uid://b2p42888csxjn" path="res://assets/sprites/cardsFullResolution/pangolin.png" id="7_ai28s"]
+[ext_resource type="Texture2D" uid="uid://chjsg3uqlg3wu" path="res://assets/sprites/cardsFullResolution/tortuga.png" id="8_wxpqe"]
+[ext_resource type="Texture2D" uid="uid://cairqtcwkbt25" path="res://assets/sprites/cardsFullResolution/jerbo.png" id="9_nkxks"]
+[ext_resource type="Texture2D" uid="uid://cqn60ekjj8jmp" path="res://assets/sprites/cardsFullResolution/especial2.png" id="9_qmgvc"]
+[ext_resource type="Texture2D" uid="uid://bnf222ri1upp1" path="res://assets/sprites/cardsFullResolution/especial1.png" id="10_73aqc"]
+[ext_resource type="Texture2D" uid="uid://bn3te4j12vyfi" path="res://assets/sprites/cardsFullResolution/lince.png" id="11_ccrck"]
 [ext_resource type="Texture2D" uid="uid://dtnu1ywt8h6i0" path="res://assets/backgrounds/backgroundEspinas.png" id="12_yml3x"]
 [ext_resource type="Texture2D" uid="uid://bemvnyy1j0bc4" path="res://assets/sprites/boss/cobra wiki.png" id="13_6p8g8"]
 [ext_resource type="Texture2D" uid="uid://dqq5f6tuc02qo" path="res://assets/backgrounds/firstCinematic/bgComplete.png" id="13_dee20"]
@@ -37,7 +37,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_ermmr")
 script = ExtResource("1_rmd21")
-cardImgList = Array[Texture]([ExtResource("2_2ij6p"), ExtResource("3_3oy84"), ExtResource("5_qjfb1"), ExtResource("5_icmom"), ExtResource("6_4dkke"), ExtResource("7_4i2of"), ExtResource("8_pqwgn"), ExtResource("11_ccrck"), ExtResource("9_qmgvc"), ExtResource("10_73aqc")])
+cardImgList = Array[Texture]([ExtResource("2_2ij6p"), ExtResource("3_3oy84"), ExtResource("5_0mg26"), ExtResource("5_icmom"), ExtResource("7_ai28s"), ExtResource("8_wxpqe"), ExtResource("9_nkxks"), ExtResource("11_ccrck"), ExtResource("10_73aqc"), ExtResource("9_qmgvc")])
 bossImgList = Array[Texture]([ExtResource("13_6p8g8"), ExtResource("14_uas08")])
 bgImgList = Array[Texture]([ExtResource("13_dee20"), ExtResource("12_yml3x")])
 cardNameList = Array[String](["REVERSO_NAME", "GRULLA_NAME", "PANDA_NAME", "MOFETA_NAME", "PANGOLIN_NAME", "TORTUGA_NAME", "RATA_NAME", "LINCE_NAME", "ESPECIAL_1_NAME", "ESPECIAL_2_NAME"])

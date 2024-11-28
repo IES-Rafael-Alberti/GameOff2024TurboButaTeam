@@ -6,6 +6,7 @@ var cardListSceneTemp
 var cardListSpecialSceneTemp
 var bossOXTemp
 var bossCobraTemp
+var clicks = 0
 
 @export var maxHealthPlayer = 200
 @export var shieldMaxValue = 50
@@ -21,6 +22,19 @@ var bossCobraTemp
 @onready var scroll_container: ScrollContainer = $ScrollContainer
 @onready var historialContainer: VBoxContainer = $ScrollContainer/VBoxContainer
 @onready var border: Sprite2D = $ProgressBar/Border
+@onready var text_edit: LineEdit = $TextEdit
+@onready var history_title: Label = $ColorRect2/HistoryTitle
+@onready var animation_board: AnimationPlayer = $"../../AnimationBoard"
+# Tutorial
+@onready var tutorial: Control = $Tutorial
+@onready var label_list: Control = $Tutorial/LabelList
+@onready var skip_button: Button = $Tutorial/SkipButton
+@onready var backHistorial: ColorRect = $ColorRect2
+@onready var marcoHistorial: Sprite2D = $MarcoTexto
+@onready var marcoHealthBar: Sprite2D = $MarcoUiPrueba
+
+var labelCount = 0
+var labelListContent 
 
 @onready var fire_reroll = $Sounds/SFX/FireReroll
 @onready var getting_hit = $Sounds/SFX/GettingHit
@@ -33,6 +47,7 @@ var bossCobraTemp
 @onready var pause_menu = $PauseMenu
 
 func _ready():
+	text_edit.visible = false
 	pause_menu.visible = false
 	
 	GameManager.numCombat += 1
@@ -69,6 +84,10 @@ func _ready():
 	cardListSpecialSceneTemp = cardListSpecialScene.instantiate()
 	GameManager.BoardCompleted.connect(restartBoard)
 	initBoard()
+	
+	labelListContent = label_list.get_children()
+	if GameManager.tutorialCompleted:
+		tutorial.visible = false
 
 func initBoard():
 	GameManager.doubleShift = true
@@ -126,6 +145,8 @@ func UpdateProgressBar():
 		#TODO hacer que el player se muera
 		GameManager.resetBossScene()
 		GameManager.numCombat = 0
+		animation_board.play("game_over")
+		await get_tree().create_timer(1).timeout
 		get_tree().change_scene_to_file.bind("res://scenes/menus/game_over/game_over.tscn").call_deferred()
 
 func selectBoss():
@@ -213,10 +234,11 @@ func quitPlayerHealthBorderShader():
 
 func putPlayerHealthBorderShader():
 	border.material.set_shader_parameter("isHighlight", true)
+
 func _on_pause_pressed() -> void:
 	pause_menu.visible = true
 
-func _on_button_pressed() -> void:
+func _on_reset_board_pressed() -> void:
 	GameManager.firstCardPicked = null
 	GameManager.secondCardPicked = null
 	GameManager.countCouple = 0
@@ -225,3 +247,85 @@ func _on_button_pressed() -> void:
 
 func _on_timer_timeout() -> void:
 	damage_bar.value = GameManager.healthPlayer
+
+func _on_btn_cheat_pressed() -> void:
+	clicks += 1
+	if clicks >= 5:
+		text_edit.visible = true
+
+func _on_text_edit_text_submitted(new_text: String) -> void:
+	if new_text == "flip":
+		flipAllCards()
+		text_edit.visible = true
+	
+	if new_text == "kill":
+		killBoss()
+	
+	if new_text == "reshuffle":
+		reshuffle()
+	
+	text_edit.text = ""
+	text_edit.visible = false
+
+func flipAllCards():
+	var cardNoFlip: Array
+	for i in grid.get_child_count():
+		var child = grid.get_child(i)
+		if child.isFlipped == false:
+			cardNoFlip.append(child)
+	
+	if cardNoFlip != null:
+		for k in cardNoFlip:
+			k.mostrarFace()
+
+func killBoss():
+	GameManager.healthBoss = 0
+	GameManager.BossTakeDamage.emit()
+
+func reshuffle():
+	GameManager.firstCardPicked = null
+	GameManager.secondCardPicked = null
+	GameManager.countCouple = 0
+	if GameManager.canFlip:
+		GameManager.BoardCompleted.emit()
+
+func _on_btn_cheat_mouse_entered() -> void:
+	history_title.add_theme_font_size_override("font_size", 20)
+
+func _on_btn_cheat_mouse_exited() -> void:
+	history_title.add_theme_font_size_override("font_size", 16)
+
+
+func _input(event):
+	if !GameManager.tutorialCompleted:
+		GameManager.canFlip = false
+		if event is InputEventMouseButton and event.pressed:
+			if labelCount < labelListContent.size():
+				label_list.get_child(labelCount).visible = false
+				labelCount = labelCount + 1
+				if label_list.get_child(labelCount):
+					label_list.get_child(labelCount).visible = true
+					
+				if labelCount == 1:
+					grid.z_index = 51
+				elif labelCount == 2:
+					grid.z_index = 0
+					historialContainer.z_index = 51
+					backHistorial.z_index = 51
+					marcoHistorial.z_index = 51
+				elif labelCount == 3:
+					historialContainer.z_index = 5
+					backHistorial.z_index = 5
+					marcoHistorial.z_index = 5
+					resetBoard.z_index = 51
+				elif labelCount == 4:
+					resetBoard.z_index = 5
+					progress_bar.z_index = 51
+					marcoHealthBar.z_index = 52
+				elif labelCount == 5:
+					progress_bar.z_index = 1
+					marcoHealthBar.z_index = 5
+					GameManager.tutorialCompleted = true
+					tutorial.visible = false
+					GameManager.canFlip = true
+					GameManager.tutorialCompletedSignal.emit()

@@ -162,6 +162,11 @@ corner_radius_bottom_left = 8
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ryx3i"]
 bg_color = Color(1, 1, 1, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.0352941, 0.0352941, 0.0352941, 1)
 corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
@@ -189,14 +194,14 @@ script = ExtResource("1_0mmkp")
 
 [node name="ForestBG" type="Node2D" parent="."]
 modulate = Color(0.442911, 0.442911, 0.442911, 1)
-position = Vector2(-974, -333)
+position = Vector2(-984, -333)
 scale = Vector2(1.065, 1.065)
 
 [node name="ForestBG" type="Parallax2D" parent="ForestBG"]
 scroll_scale = Vector2(0.9, 0.9)
 
 [node name="Sprite2D" type="Sprite2D" parent="ForestBG/ForestBG"]
-position = Vector2(959.111, 539.5)
+position = Vector2(954.111, 539.5)
 scale = Vector2(0.500463, 0.500463)
 texture = ExtResource("2_wj4js")
 
@@ -251,10 +256,10 @@ libraries = {
 }
 
 [node name="ProgressBarShield" type="ProgressBar" parent="."]
-offset_left = -822.0
-offset_top = -307.0
-offset_right = -774.0
-offset_bottom = -171.0
+offset_left = -835.0
+offset_top = -311.0
+offset_right = -787.0
+offset_bottom = -175.0
 theme_override_styles/background = SubResource("StyleBoxFlat_t5td4")
 theme_override_styles/fill = SubResource("StyleBoxFlat_ryx3i")
 max_value = 50.0
@@ -265,10 +270,10 @@ show_percentage = false
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -932.798
-offset_top = -306.0
-offset_right = -181.798
-offset_bottom = 310.0
+offset_left = -955.0
+offset_top = -311.0
+offset_right = -204.0
+offset_bottom = 305.0
 grow_horizontal = 2
 scale = Vector2(0.135885, 0.947368)
 tooltip_text = "BOSS_HP_TOOLTIP"
@@ -301,10 +306,11 @@ position = Vector2(384.869, 308.222)
 scale = Vector2(7.94207, 1.07942)
 texture = ExtResource("10_xs0jl")
 
-[node name="IlustracionSinTitulo" type="Sprite2D" parent="."]
-position = Vector2(-748.798, -110)
-rotation = -1.5708
-scale = Vector2(0.34, 0.34)
+[node name="IlustracionSinTitulo" type="Sprite2D" parent="ProgressBar"]
+position = Vector2(1364.73, 203.722)
+rotation = -1.57082
+scale = Vector2(0.358889, 2.50212)
+skew = 2.46763e-05
 texture = ExtResource("9_vrljt")
 
 [connection signal="timeout" from="ProgressBar/Timer" to="." method="_on_timer_timeout"]

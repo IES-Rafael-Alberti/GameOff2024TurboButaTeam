@@ -1,6 +1,6 @@
 extends Node
 
-@export var damage = 100
+@export var damage = 20
 
 func action():
 	GameManager.healthBoss -= damage * GameManager.damageMultiply
