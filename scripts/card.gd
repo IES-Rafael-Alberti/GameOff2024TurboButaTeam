@@ -105,6 +105,7 @@ func isEqual(firstCard, secondCard):
 	secondCard.material.set_shader_parameter("isHighlight", false)
 	
 	if GameManager.countCouple == 7:
+		await get_tree().create_timer(2).timeout
 		GameManager.BoardCompleted.emit()
 		GameManager.countCouple = 0
 	
