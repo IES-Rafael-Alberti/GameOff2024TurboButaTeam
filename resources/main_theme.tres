@@ -1,10 +1,17 @@
-[gd_resource type="Theme" load_steps=14 format=3 uid="uid://c6qpt0gqj04fh"]
+[gd_resource type="Theme" load_steps=15 format=3 uid="uid://c6qpt0gqj04fh"]
 
 [ext_resource type="FontFile" uid="uid://c4s2a7yraa054" path="res://assets/fonts/Tomorrow-Regular.ttf" id="1_3vw85"]
 [ext_resource type="Texture2D" uid="uid://cfmr6hqoijshl" path="res://assets/ui/fantasyButtons/firstchosenoverlap-hover.svg" id="3_4ujmi"]
 [ext_resource type="Texture2D" uid="uid://crs1tjvdp501x" path="res://assets/ui/fantasyButtons/firstchosenoverlap.svg" id="3_vgktk"]
 [ext_resource type="Texture2D" uid="uid://jjp7ie46urcy" path="res://assets/ui/slider_normal_resized.png" id="4_av8oi"]
 [ext_resource type="Texture2D" uid="uid://byyyqpe5kbvbw" path="res://assets/ui/slider_hover_resized.png" id="5_agbtj"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4ktk3"]
+texture = ExtResource("3_vgktk")
+texture_margin_left = 16.0
+texture_margin_top = 16.0
+texture_margin_right = 16.0
+texture_margin_bottom = 16.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1inq0"]
 texture = ExtResource("3_vgktk")
@@ -40,7 +47,9 @@ bg_color = Color(0.682353, 0.141176, 0.133333, 1)
 bg_color = Color(0.682353, 0.141176, 0.133333, 1)
 
 [resource]
+Button/colors/font_disabled_color = Color(0.87451, 0.87451, 0.87451, 1)
 Button/fonts/font = ExtResource("1_3vw85")
+Button/styles/disabled = SubResource("StyleBoxTexture_4ktk3")
 Button/styles/focus = SubResource("StyleBoxTexture_1inq0")
 Button/styles/hover = SubResource("StyleBoxTexture_ejplq")
 Button/styles/normal = SubResource("StyleBoxTexture_1inq0")
