@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="gameoff2024"
+config/version="1.0"
 run/main_scene="res://scenes/menus/splash_screen/splash_screen.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
@@ -35,6 +36,11 @@ directories/dtl_directory={
 "CB_defeat": "res://dialogue/timelines/BF2_COBRA/CB_defeat.dtl",
 "FirstCinematic": "res://dialogue/timelines/FirstCinematic/FirstCinematic.dtl",
 "FirstDialogue": "res://dialogue/timelines/FirstCinematic/FirstDialogue.dtl",
+"OX_50HP": "res://dialogue/timelines/BF1_OX/OX_50HP.dtl",
+"OX_60HP": "res://dialogue/timelines/BF1_OX/OX_60HP.dtl",
+"OX_70HP": "res://dialogue/timelines/BF1_OX/OX_70HP.dtl",
+"OX_80HP": "res://dialogue/timelines/BF1_OX/OX_80HP.dtl",
+"OX_90HP": "res://dialogue/timelines/BF1_OX/OX_90HP.dtl",
 "OxStart": "res://dialogue/timelines/BF1_OX/OxStart.dtl",
 "Ox_50HP": "res://dialogue/timelines/BF1_OX/Ox_50HP.dtl",
 "Ox_60HP": "res://dialogue/timelines/BF1_OX/Ox_60HP.dtl",
@@ -82,7 +88,8 @@ translation/save_mode=0
 translation/add_separator=false
 variables={
 "cobra_selected": false,
-"ox_selected": false
+"ox_selected": false,
+"testboss_name": ""
 }
 translation/locales=[]
 translation/id_counter=16
@@ -138,4 +145,5 @@ locale/test="es"
 textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true
 environment/defaults/default_clear_color=Color(0, 0, 0, 1)
