@@ -322,6 +322,7 @@ func _input(event):
 					resetBoard.z_index = 5
 					progress_bar.z_index = 51
 					marcoHealthBar.z_index = 52
+				elif labelCount == 5:
 					progress_bar.z_index = 1
 					marcoHealthBar.z_index = 5
 					GameManager.tutorialCompleted = true
