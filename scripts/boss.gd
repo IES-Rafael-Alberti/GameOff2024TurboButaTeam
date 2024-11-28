@@ -8,7 +8,7 @@ extends Node2D
 @onready var animationBoss: AnimationPlayer = $Sprite2D/AnimationBoss
 @onready var border: Sprite2D = $ProgressBar/Border
 
-@export var maxHealthBoss = 200
+@export var maxHealthBoss = 100
 @export var damageBoss = 20
 @export var specialDamage = 10
 @export var scriptBoss: Script
@@ -47,8 +47,7 @@ func _ready() -> void:
 	progressBarShield.visible = false
 	
 	selectAction()
-	print("elige primera accion")
-	print(self)
+	
 
 func turnBoss():
 	if shieldIsActive:
@@ -56,14 +55,12 @@ func turnBoss():
 		#Si ya está envenenado, vuelve a hacer daño y quita el veneno
 	if GameManager.isPoisoned:
 		useHability()
-		
+	
 	doAction(action)
-		
+	
 	if !GameManager.bossIsCharging:
-		print("emite select")
 		GameManager.SelectActionBoss.emit()
-	else:
-		GameManager.emit_signal("UpdateHistorial", "BOSS_HABILITY_CHARGE", true)
+
 	GameManager.canFlip = true
 	GameManager.isPlayerPhase = true
 	GameManager.isPlayerTurn.emit()
@@ -71,7 +68,6 @@ func turnBoss():
 func selectAction():
 	var rng = RandomNumberGenerator.new()
 	var randomNum = int(rng.randf_range(1, 100.0))
-	print(randomNum)
 	# TODO activar shader segun actio
 	if randomNum <= 60:
 		resetShaders()
@@ -136,27 +132,31 @@ func UpdateProgressBar():
 	sprite_2d.material.set_shader_parameter("bossTakeDmg", false)
 	if progress_bar.value <= 0:
 		#TODO hacer que el boss se muera
-		GameManager.bossNum = 1
-		GameManager.resetBossScene()
-		get_tree().change_scene_to_file.bind("res://scenes/cinematics/secondCinematic.tscn").call_deferred()
+		if !GameManager.isFinalCinematic:
+			GameManager.bossNum = 1
+			GameManager.resetBossScene()
+			get_tree().change_scene_to_file.bind("res://scenes/cinematics/secondCinematic.tscn").call_deferred()
+		else:
+			get_tree().change_scene_to_file.bind("res://scenes/cinematics/third_cinematic.tscn").call_deferred()
 	
 	var health_percentage = GameManager.healthBoss / progress_bar.max_value * 100
 	
-	if health_percentage <= 10 and !hasEmited10:
-		hasEmited10 = true
-		GameManager.TenOfLife.emit()
-	elif health_percentage <= 20 and !hasEmited20:
-		hasEmited20 = true
-		GameManager.TwentyOfLife.emit()
-	elif health_percentage <= 40 and !hasEmited40:
-		hasEmited40 = true
-		GameManager.FortyOfLife.emit()
-	elif health_percentage <= 60 and !hasEmited60:
-		hasEmited60 = true
-		GameManager.SixtyOfLife.emit()
-	elif health_percentage <= 80 and !hasEmited80:
-		hasEmited80 = true
-		GameManager.EightyOfLife.emit()
+	if health_percentage > 0:
+		if health_percentage <= 10 and !hasEmited10:
+			hasEmited10 = true
+			GameManager.TenOfLife.emit()
+		elif health_percentage <= 20 and !hasEmited20:
+			hasEmited20 = true
+			GameManager.TwentyOfLife.emit()
+		elif health_percentage <= 40 and !hasEmited40:
+			hasEmited40 = true
+			GameManager.FortyOfLife.emit()
+		elif health_percentage <= 60 and !hasEmited60:
+			hasEmited60 = true
+			GameManager.SixtyOfLife.emit()
+		elif health_percentage <= 80 and !hasEmited80:
+			hasEmited80 = true
+			GameManager.EightyOfLife.emit()
 
 func updateShield():
 	progressBarShield.max_value = shieldMaxValue
@@ -174,14 +174,18 @@ func removeShield():
 
 func _on_timer_timeout() -> void:
 	damage_bar.value = GameManager.healthBoss
-	
+
 func resetShaders():
 	sprite_2d.material.set_shader_parameter("isSpecial", false)
 	sprite_2d.material.set_shader_parameter("isProtecting", false)
-	
+
 func attackAnimation():
-	if action == "habilidad":
-		animationBoss.play("attack")
+	if GameManager.pickedBoss.name == "OX":
+		if action == "habilidad" && GameManager.bossIsCharging:
+			animationBoss.play("attack")
+	else:
+		if action == "habilidad":
+			animationBoss.play("attack")
 	
 	if action == "atacar":
 		animationBoss.play("attack")

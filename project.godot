@@ -10,11 +10,12 @@ config_version=5
 
 [application]
 
-config/name="gameoff2024"
+
+config/name="Extinct Spirit"
 config/version="1.0"
 run/main_scene="res://scenes/menus/splash_screen/splash_screen.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://assets/logo/ESLogo.svg"
 
 [autoload]
 
@@ -42,11 +43,11 @@ directories/dtl_directory={
 "OX_80HP": "res://dialogue/timelines/BF1_OX/OX_80HP.dtl",
 "OX_90HP": "res://dialogue/timelines/BF1_OX/OX_90HP.dtl",
 "OxStart": "res://dialogue/timelines/BF1_OX/OxStart.dtl",
-"Ox_50HP": "res://dialogue/timelines/BF1_OX/Ox_50HP.dtl",
-"Ox_60HP": "res://dialogue/timelines/BF1_OX/Ox_60HP.dtl",
-"Ox_70HP": "res://dialogue/timelines/BF1_OX/Ox_70HP.dtl",
-"Ox_80HP": "res://dialogue/timelines/BF1_OX/Ox_80HP.dtl",
-"Ox_90HP": "res://dialogue/timelines/BF1_OX/Ox_90HP.dtl",
+"Ox_50HP": "res://dialogue/timelines/BF1_OX/OX_50HP.dtl",
+"Ox_60HP": "res://dialogue/timelines/BF1_OX/OX_60HP.dtl",
+"Ox_70HP": "res://dialogue/timelines/BF1_OX/OX_70HP.dtl",
+"Ox_80HP": "res://dialogue/timelines/BF1_OX/OX_80HP.dtl",
+"Ox_90HP": "res://dialogue/timelines/BF1_OX/OX_90HP.dtl",
 "Ox_Defeat": "res://dialogue/timelines/BF1_OX/Ox_Defeat.dtl",
 "TestTL": "res://dialogue/timelines/TestTL.dtl",
 "big_finale_1": "res://dialogue/timelines/ThirdCinematic/big_finale_1.dtl",
