@@ -1,0 +1,25 @@
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://b2eu4jujeud0y"]
+
+[ext_resource type="Texture2D" uid="uid://cktfbfw1rpxh4" path="res://assets/ui/fantasyButtons/squaresInside.svg" id="1_2ifyk"]
+[ext_resource type="StyleBox" uid="uid://ddsunesequim3" path="res://resources/boxes/decision_hover.tres" id="2_o3mg5"]
+[ext_resource type="StyleBox" uid="uid://dvx47cwf81bkq" path="res://resources/boxes/decision_normal.tres" id="3_dqrgi"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xx85a"]
+texture = ExtResource("1_2ifyk")
+texture_margin_left = 13.0
+texture_margin_top = 13.0
+texture_margin_right = 13.0
+texture_margin_bottom = 13.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c4i80"]
+texture = ExtResource("1_2ifyk")
+texture_margin_left = 13.0
+texture_margin_top = 13.0
+texture_margin_right = 13.0
+texture_margin_bottom = 13.0
+
+[resource]
+Button/styles/focus = SubResource("StyleBoxTexture_xx85a")
+Button/styles/hover = ExtResource("2_o3mg5")
+Button/styles/normal = ExtResource("3_dqrgi")
+Button/styles/pressed = SubResource("StyleBoxTexture_c4i80")

@@ -6,6 +6,8 @@ extends TextureButton
 @export var faceSpecial2 = Texture 
 @onready var animationPlayer = $AnimationPlayer
 @onready var shadowAnimationPlayer = $Shadow/ShadowAnimationPlayer
+@onready var bossTurnShadow: Sprite2D = $BossTurnShadow
+@onready var bossTurnShadowAnimation: AnimationPlayer = $BossTurnShadow/BossTurnShadowAnimation
 
 @onready var card_flip = $CardFlip
 
@@ -19,7 +21,7 @@ func _ready():
 	set_texture_normal(back)
 	GameManager.BurnCards.connect(burnCardsRestart)
 	GameManager.BurnCardsInit.connect(burnCardsInit)
-
+	GameManager.isBossTurn.connect(bossTurnShadowCards)
 	
 func voltear():
 	if isFlipped == false:
@@ -71,12 +73,16 @@ func _on_pressed():
 				if GameManager.doubleShift:
 					GameManager.doubleShift = false
 				else:
-					GameManager.isPlayerPhase = false
+					GameManager.canFlip = false
+					GameManager.isBossTurn.emit()
+					await get_tree().create_timer(2).timeout
+					GameManager.TurnBoss.emit()
 
 func isEqual(firstCard, secondCard):
 	if firstCard.get_texture_normal() != secondCard.get_texture_normal():
 		firstCard.voltear()
 		secondCard.voltear()
+		GameManager.emit_signal("UpdateHistorial", "FAIL_EQUAL_HISTORY", false)
 	else:
 		GameManager.countCouple += 1
 		GameManager.isCouple = true
@@ -176,3 +182,23 @@ func isSpecialCard(firstCard: Object = null, secondCard: Object = null) -> bool:
 			return true
 	
 	return false
+
+
+func bossTurnShadowCards():
+	bossTurnShadow.visible=true
+	bossTurnShadowAnimation.play("isBossTurn")
+	
+func mostrarFace():
+	card_flip.play()
+	animationPlayer.play("flip")
+	shadowAnimationPlayer.play("flip")
+	await get_tree().create_timer(0.2).timeout
+	set_texture_normal(face)
+	self.modulate = Color(1.0, 1.0, 1.0, 0.78)
+
+
+func _on_mouse_entered():
+	self.scale = Vector2(1.1, 1.1)
+
+func _on_mouse_exited():
+	self.scale = Vector2(1, 1)

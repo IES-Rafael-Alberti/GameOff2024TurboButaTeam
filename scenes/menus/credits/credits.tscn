@@ -1,0 +1,124 @@
+[gd_scene load_steps=7 format=3 uid="uid://dud7s4icx8xhi"]
+
+[ext_resource type="FontFile" uid="uid://b8g5bl37fquk" path="res://assets/fonts/IMFellDWPicaSC-Regular.ttf" id="1_1wv11"]
+[ext_resource type="Script" path="res://scenes/menus/credits/credits.gd" id="1_natxt"]
+[ext_resource type="FontFile" uid="uid://c4s2a7yraa054" path="res://assets/fonts/Tomorrow-Regular.ttf" id="2_ntmwk"]
+[ext_resource type="Texture2D" uid="uid://bslxfut1486oy" path="res://assets/sprites/ui/Ilustracion_sin_titulo_1.png" id="4_6ohwt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hffaf"]
+
+[sub_resource type="Theme" id="Theme_io3ui"]
+VScrollBar/styles/scroll = SubResource("StyleBoxEmpty_hffaf")
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_natxt")
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.13
+anchor_right = 1.0
+anchor_bottom = 0.298
+offset_left = 2.0
+offset_top = -0.400009
+offset_bottom = 0.160004
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_1wv11")
+theme_override_font_sizes/font_size = 96
+text = "EXTINCT SPIRIT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.265
+anchor_right = 1.0
+anchor_bottom = 0.833
+offset_top = 29.8
+offset_bottom = 0.359924
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_io3ui")
+theme_override_fonts/normal_font = ExtResource("2_ntmwk")
+bbcode_enabled = true
+text = "[center]
+[font_size=40] A game by TurboButa Team [/font_size]
+
+[font_size=40] Made With Godot Engine [/font_size]
+
+[font_size=40] Assets Used: [/font_size]
+
+Visual:
+[url=https://aethrall.itch.io/demon-woods-parallax-background]
+Game Background[/url]
+[url=https://luizmelo.itch.io/monsters-creatures-fantasy]
+Mushroom Enemy[/url]
+[url=https://xzany.itch.io/samurai-4-pixel-art]
+Samurai Pixel Art[/url]
+[url=https://nimblebeastscollective.itch.io/magosfonts]
+Mago Fonts[/url]
+[url=https://srtoasty.itch.io/ui-assets-pack-2]
+UI Asset Pack[/url]
+[url=https://pimen.itch.io/smoke-vfx-1]
+Smoke VFX[/url]
+[url=https://leo-red.itch.io/lucid-icon-pack]
+Lucid Icon Pack[/url]
+[url=https://free-game-assets.itch.io/free-sky-with-clouds-background-pixel-art-set]
+Main menu background[/url]
+
+Sound effects and music:
+[url=https://opengameart.org/content/japanese-samurai-ninja-battle-trailer]Main Theme[/url]
+[url=https://freesound.org/people/morgantj/sounds/60756/]
+Whip sound[/url]
+[url=https://freesound.org/people/32cheeseman32/sounds/180837/]
+Sword Swing[/url]
+[url=https://freesound.org/people/wesleyextreme_gamer/sounds/574821/]
+Slash[/url]
+[url=https://freesound.org/people/beautifuldaymonster1968/sounds/706824/]
+Wood Dropped[/url]
+[url=https://freesound.org/people/zagi2/sounds/331734/]
+Starting cinematic song[/url]
+
+[font_size=32] Special Thanks to: [/font_size]
+
+The Godot Community, for creating such an amazing tool 🤖
+
+Mar, for her great art and visual counceling 🖌️
+
+Antonio, for his coding help and structured thinking 💻
+
+Dino, for his everyday support 🐸
+
+Javi, for his always available \"Linux Wizard\" help 🧙‍♂️
+
+[font_size=40][color=#ae2422] If you liked this game, please consider donating! <3[/color] [/font_size]
+
+
+
+"
+
+[node name="BackToMainButton" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.005
+anchor_top = 0.015
+anchor_right = 0.046
+anchor_bottom = 0.118
+offset_left = 0.0399997
+offset_top = -0.0799999
+offset_right = -0.232002
+offset_bottom = -0.0960007
+
+[node name="IlustracionSinTitulo" type="Sprite2D" parent="."]
+position = Vector2(961.788, 532)
+scale = Vector2(0.812383, 0.9)
+texture = ExtResource("4_6ohwt")

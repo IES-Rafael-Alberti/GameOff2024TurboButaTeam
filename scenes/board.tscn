@@ -1,18 +1,70 @@
-[gd_scene load_steps=9 format=3 uid="uid://bnng3hk0wi7a"]
+[gd_scene load_steps=20 format=3 uid="uid://bnng3hk0wi7a"]
 
 [ext_resource type="Script" path="res://scripts/board.gd" id="1_s4gqu"]
 [ext_resource type="Script" path="res://scenes/dialogue_point.gd" id="2_1tfi2"]
+[ext_resource type="Texture2D" uid="uid://bx6qs7t6di7vc" path="res://assets/sprites/ui/Ilustracion_sin_titulo_2.png" id="3_2tikr"]
+[ext_resource type="Shader" path="res://scripts/shaders/cardBurn.gdshader" id="4_7qit8"]
+[ext_resource type="Texture2D" uid="uid://bw22m4sj2ybpw" path="res://assets/sprites/healthBorder.png" id="4_lm17j"]
 [ext_resource type="AudioStream" uid="uid://e3eq16v3u58r" path="res://assets/sound/sfx/Fire.wav" id="4_pnmuv"]
+[ext_resource type="Theme" uid="uid://pnjv7finl36r" path="res://resources/themes/board_theme.tres" id="4_t0f75"]
 [ext_resource type="AudioStream" uid="uid://csu53guxew0wc" path="res://assets/sound/music/Forest Scary.mp3" id="5_y8wj6"]
 [ext_resource type="AudioStream" uid="uid://umrhj1fwf5ud" path="res://assets/sound/sfx/GettingHit.mp3" id="6_sxty8"]
+[ext_resource type="FontFile" uid="uid://b3vfy2vwgidc4" path="res://assets/fonts/Colorfiction - Messy.ttf" id="6_u7l7k"]
+[ext_resource type="Texture2D" uid="uid://bslxfut1486oy" path="res://assets/sprites/ui/Ilustracion_sin_titulo_1.png" id="8_km3ka"]
+[ext_resource type="PackedScene" uid="uid://c4qb8abvjnj7l" path="res://scenes/menus/pause_menu/pause_menu.tscn" id="10_yisfa"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_frf6y"]
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i6fo8"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mt2uq"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.0352941, 0.0352941, 0.0352941, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mepfe"]
+bg_color = Color(0.937255, 0.886275, 0.788235, 0.588235)
+corner_detail = 1
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5mgme"]
 bg_color = Color(0.937255, 0.886275, 0.788235, 1)
+border_color = Color(0.0352941, 0.0352941, 0.0352941, 1)
+corner_detail = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_75iii"]
+bg_color = Color(0, 0, 0, 1)
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sga13"]
+bg_color = Color(1, 1, 1, 1)
+corner_detail = 1
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_l14ma"]
+shader = ExtResource("4_7qit8")
+shader_parameter/isBurning = false
+shader_parameter/isHighlight = true
+shader_parameter/dissolve_value = null
+shader_parameter/burn_size = null
+shader_parameter/burn_color = null
+shader_parameter/speed = 1.0
+shader_parameter/line_width = 0.2
+shader_parameter/line_color = Vector4(0.682, 0.141, 0.133, 1)
+shader_parameter/pause_duration = 1.0
+shader_parameter/offset = 2.0
 
 [node name="Board" type="Control"]
 layout_mode = 3
@@ -21,9 +73,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("4_t0f75")
 script = ExtResource("1_s4gqu")
 
 [node name="BossContainer" type="VBoxContainer" parent="."]
+z_index = -1
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
@@ -45,6 +99,7 @@ position = Vector2(228, 30)
 script = ExtResource("2_1tfi2")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+z_index = 5
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.57
@@ -58,14 +113,15 @@ color = Color(0.937255, 0.886275, 0.788235, 1)
 [node name="BoardContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
+anchor_left = 0.11
 anchor_top = 0.6
 anchor_right = 1.0
 anchor_bottom = 0.97
+offset_left = 0.799988
 offset_bottom = 0.400024
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
-metadata/_edit_lock_ = true
 
 [node name="CenterContainer" type="CenterContainer" parent="BoardContainer"]
 layout_mode = 2
@@ -77,43 +133,53 @@ theme_override_constants/v_separation = 20
 columns = 8
 
 [node name="ProgressBarShield" type="ProgressBar" parent="."]
+z_index = 20
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.892
-anchor_top = 0.022
-anchor_right = 0.912
-anchor_bottom = 0.138
-offset_left = -0.640015
-offset_top = 0.239998
-offset_right = 0.959839
-offset_bottom = -0.0400085
+anchor_left = 0.912
+anchor_top = 0.015
+anchor_right = 0.933
+anchor_bottom = 0.131
+offset_left = 0.959839
+offset_top = -0.200001
+offset_right = 0.639893
+offset_bottom = -0.480026
 grow_horizontal = 0
 grow_vertical = 2
 theme_override_styles/background = SubResource("StyleBoxFlat_frf6y")
+theme_override_styles/fill = SubResource("StyleBoxFlat_mt2uq")
 max_value = 50.0
 fill_mode = 3
 show_percentage = false
 
+[node name="MarcoUiPrueba" type="Sprite2D" parent="."]
+z_index = 50
+position = Vector2(1722, 208)
+rotation = 1.5708
+scale = Vector2(0.34, 0.333)
+texture = ExtResource("3_2tikr")
+flip_h = true
+
 [node name="ProgressBar" type="ProgressBar" parent="."]
 z_index = 1
 layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = 800.0
-offset_top = -1056.0
-offset_right = 937.0
-offset_bottom = -480.0
+anchors_preset = -1
+anchor_left = 0.937312
+anchor_top = 0.0145926
+anchor_right = 0.990083
+anchor_bottom = 0.548593
+offset_left = 0.359985
+offset_top = 0.239998
+offset_right = 0.039917
+offset_bottom = 4.51996
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_styles/background = SubResource("StyleBoxFlat_i6fo8")
+tooltip_text = "YOUR_HP_TOOLTIP"
+theme_override_styles/background = SubResource("StyleBoxFlat_mepfe")
 theme_override_styles/fill = SubResource("StyleBoxFlat_5mgme")
 fill_mode = 3
 show_percentage = false
 metadata/_edit_use_anchors_ = true
-metadata/_edit_lock_ = true
 
 [node name="DamageBar" type="ProgressBar" parent="ProgressBar"]
 z_index = -1
@@ -123,27 +189,40 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+tooltip_text = "YOUR_HP_TOOLTIP"
+theme_override_styles/background = SubResource("StyleBoxFlat_75iii")
+theme_override_styles/fill = SubResource("StyleBoxFlat_sga13")
 fill_mode = 3
 show_percentage = false
 
 [node name="Timer" type="Timer" parent="ProgressBar"]
 wait_time = 0.4
 
+[node name="Border" type="Sprite2D" parent="ProgressBar"]
+material = SubResource("ShaderMaterial_l14ma")
+position = Vector2(51.0004, 290.456)
+scale = Vector2(1.049, 1.02102)
+texture = ExtResource("4_lm17j")
+
 [node name="ResetBoard" type="Button" parent="."]
+z_index = 5
+custom_minimum_size = Vector2(240, 0)
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.833
+anchor_left = 0.784
 anchor_top = 0.504
 anchor_right = 0.908
 anchor_bottom = 0.54
-offset_left = 0.639893
+offset_left = -0.280029
 offset_top = -0.320007
-offset_right = 0.639893
+offset_right = 1.64001
 offset_bottom = -0.200012
-text = "Reshuffle Board"
-metadata/_edit_lock_ = true
+tooltip_text = "RESHUFFLE_BOARD_TOOLTIP"
+theme = ExtResource("4_t0f75")
+text = "RESHUFFLE_BOARD_BUTTON"
 
 [node name="Pause" type="Button" parent="."]
+z_index = 5
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.946
@@ -154,7 +233,7 @@ offset_left = -0.320068
 offset_top = -0.440063
 offset_right = -1.04004
 offset_bottom = -2.36005
-text = "PAUSE"
+text = "PAUSE_BUTTON"
 
 [node name="Sounds" type="Node" parent="."]
 
@@ -177,5 +256,97 @@ bus = &"SFX"
 stream = ExtResource("6_sxty8")
 volume_db = 5.0
 
+[node name="TextEdit" type="LineEdit" parent="."]
+z_index = 10
+clip_contents = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -200.0
+offset_top = 24.0
+offset_right = 200.0
+offset_bottom = 74.0
+grow_horizontal = 2
+placeholder_text = "CheatCode"
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+z_index = 5
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.008
+anchor_top = 0.586
+anchor_right = 0.166
+anchor_bottom = 0.984
+offset_left = -0.360001
+offset_top = 0.119995
+offset_right = -0.720032
+offset_bottom = 0.280029
+grow_horizontal = 2
+grow_vertical = 2
+tooltip_text = "BATTLELOG_TOOLTIP"
+color = Color(1, 1, 1, 0.701961)
+
+[node name="HistoryTitle" type="Label" parent="ColorRect2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.14
+offset_bottom = -0.200001
+grow_horizontal = 2
+tooltip_text = "BATTLELOG_TOOLTIP"
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_u7l7k")
+theme_override_font_sizes/font_size = 16
+text = "HISTORY_TITLE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+z_index = 5
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.03
+anchor_top = 0.628
+anchor_right = 0.145
+anchor_bottom = 0.963
+offset_left = -0.600002
+offset_top = -0.240051
+offset_right = -0.400024
+offset_bottom = -0.0400391
+tooltip_text = "BATTLELOG_TOOLTIP"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+
+[node name="MarcoTexto" type="Sprite2D" parent="."]
+z_index = 5
+position = Vector2(169.5, 845)
+rotation = 1.5708
+scale = Vector2(0.189217, 0.265606)
+texture = ExtResource("8_km3ka")
+
+[node name="PauseMenu" parent="." instance=ExtResource("10_yisfa")]
+visible = false
+z_index = 50
+layout_mode = 1
+
+[node name="btnCheat" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.007
+anchor_top = 0.586
+anchor_right = 0.166
+anchor_bottom = 0.637
+offset_left = 0.559999
+offset_top = 0.119995
+offset_right = -0.720032
+offset_bottom = 0.039978
+
 [connection signal="timeout" from="ProgressBar/Timer" to="." method="_on_timer_timeout"]
-[connection signal="pressed" from="ResetBoard" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="ResetBoard" to="." method="_on_reset_board_pressed"]
+[connection signal="pressed" from="Pause" to="." method="_on_pause_pressed"]
+[connection signal="text_submitted" from="TextEdit" to="." method="_on_text_edit_text_submitted"]
+[connection signal="mouse_entered" from="btnCheat" to="." method="_on_btn_cheat_mouse_entered"]
+[connection signal="mouse_exited" from="btnCheat" to="." method="_on_btn_cheat_mouse_exited"]
+[connection signal="pressed" from="btnCheat" to="." method="_on_btn_cheat_pressed"]

@@ -1,6 +1,32 @@
-[gd_scene load_steps=2 format=3 uid="uid://xibnk2kph5sy"]
+[gd_scene load_steps=23 format=3 uid="uid://xibnk2kph5sy"]
 
+[ext_resource type="Theme" uid="uid://b2eu4jujeud0y" path="res://resources/themes/wiki_theme.tres" id="1_ermmr"]
 [ext_resource type="LabelSettings" uid="uid://bsjqw3m3umydi" path="res://resources/LabelSettings/big_textes.tres" id="1_lgk1o"]
+[ext_resource type="Script" path="res://scenes/menus/wiki_screen/wiki_screen.gd" id="1_rmd21"]
+[ext_resource type="Texture2D" uid="uid://bngb571kcpnn1" path="res://assets/sprites/cardsFullResolution/reverso.png" id="2_2ij6p"]
+[ext_resource type="Texture2D" uid="uid://6ave4onby881" path="res://assets/sprites/cardsFullResolution/grulla.png" id="3_3oy84"]
+[ext_resource type="Texture2D" uid="uid://ci8qdphoe3dwr" path="res://assets/sprites/cardsFullResolution/panda.png" id="5_0mg26"]
+[ext_resource type="Texture2D" uid="uid://bvu7q8dbflisn" path="res://assets/sprites/cardsFullResolution/mofeta.png" id="5_icmom"]
+[ext_resource type="Texture2D" uid="uid://b2p42888csxjn" path="res://assets/sprites/cardsFullResolution/pangolin.png" id="7_ai28s"]
+[ext_resource type="Texture2D" uid="uid://chjsg3uqlg3wu" path="res://assets/sprites/cardsFullResolution/tortuga.png" id="8_wxpqe"]
+[ext_resource type="Texture2D" uid="uid://cairqtcwkbt25" path="res://assets/sprites/cardsFullResolution/jerbo.png" id="9_nkxks"]
+[ext_resource type="Texture2D" uid="uid://cqn60ekjj8jmp" path="res://assets/sprites/cardsFullResolution/especial2.png" id="9_qmgvc"]
+[ext_resource type="Texture2D" uid="uid://bnf222ri1upp1" path="res://assets/sprites/cardsFullResolution/especial1.png" id="10_73aqc"]
+[ext_resource type="Texture2D" uid="uid://bn3te4j12vyfi" path="res://assets/sprites/cardsFullResolution/lince.png" id="11_ccrck"]
+[ext_resource type="Texture2D" uid="uid://dtnu1ywt8h6i0" path="res://assets/backgrounds/backgroundEspinas.png" id="12_yml3x"]
+[ext_resource type="Texture2D" uid="uid://bemvnyy1j0bc4" path="res://assets/sprites/boss/cobra wiki.png" id="13_6p8g8"]
+[ext_resource type="Texture2D" uid="uid://dqq5f6tuc02qo" path="res://assets/backgrounds/firstCinematic/bgComplete.png" id="13_dee20"]
+[ext_resource type="Texture2D" uid="uid://cfxydl116wgtb" path="res://assets/sprites/boss/buey wiki.png" id="14_uas08"]
+[ext_resource type="Texture2D" uid="uid://ctwh7j7yrnq7v" path="res://assets/sprites/cardsFullResolution/borde.png" id="18_nihod"]
+[ext_resource type="StyleBox" path="res://assets/new_style_box_flat.tres" id="19_mf3l7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jk85g"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ciwwa"]
+font_size = 30
+
+[sub_resource type="LabelSettings" id="LabelSettings_wxh3e"]
 
 [node name="WikiScreen" type="Control"]
 layout_mode = 3
@@ -9,6 +35,22 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_ermmr")
+script = ExtResource("1_rmd21")
+cardImgList = Array[Texture]([ExtResource("2_2ij6p"), ExtResource("3_3oy84"), ExtResource("5_0mg26"), ExtResource("5_icmom"), ExtResource("7_ai28s"), ExtResource("8_wxpqe"), ExtResource("9_nkxks"), ExtResource("11_ccrck"), ExtResource("10_73aqc"), ExtResource("9_qmgvc")])
+bossImgList = Array[Texture]([ExtResource("13_6p8g8"), ExtResource("14_uas08")])
+bgImgList = Array[Texture]([ExtResource("13_dee20"), ExtResource("12_yml3x")])
+cardNameList = Array[String](["REVERSO_NAME", "GRULLA_NAME", "PANDA_NAME", "MOFETA_NAME", "PANGOLIN_NAME", "TORTUGA_NAME", "RATA_NAME", "LINCE_NAME", "ESPECIAL_1_NAME", "ESPECIAL_2_NAME"])
+bossNameList = Array[String](["COBRA_NAME", "BUEY_NAME"])
+bgNameList = Array[String](["BOSQUE_NAME", "ESPINAS_NAME"])
+cardTextList = Array[String](["REVERSO_DATO", "GRULLA_DATO", "PANDA_DATO", "MOFETA_DATO", "PANGOLIN_DATO", "TORTUGA_DATO", "RATA_DATO", "LINCE_DATO", "ESPECIAL_1_DATO", "ESPECIAL_2_DATO"])
+bossTextList = Array[String](["COBRA_TEXT", "BUEY_TEXT"])
+bgTextList = Array[String](["BOSQUE_TEXT", "ESPINAS_TEXT"])
+cardHabilityList = Array[String](["REVERSO_HABILITY", "GRULLA_HABILITY", "PANDA_HABILITY", "MOFETA_HABILITY", "PANGOLIN_HABILITY", "TORTUGA_HABILITY", "RATA_HABILITY", "LINCE_HABILITY", "ESPECIAL_1_HABILITY", "ESPECIAL_2_HABILITY"])
+bossHabilityList = Array[String](["COBRA_HABILITY", "BUEY_HABILITY"])
+cardCreditsList = Array[String](["@alicegomrev", "@alicegomrev", "@alicegomrev", "@alicegomrev", "@alicegomrev", "@alicegomrev", "@alicegomrev", "@alicegomrev", "@alicegomrev", "@alicegomrev"])
+bossCreditsList = Array[String](["@alicegomrev", "@alicegomrev"])
+bgCreditsList = Array[String](["Paula Rumeu", "@alicegomrev"])
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -22,21 +64,273 @@ grow_horizontal = 2
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_jk85g")
 text = "WIKI"
 label_settings = ExtResource("1_lgk1o")
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+[node name="ButtonContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -493.0
+offset_top = -115.0
+offset_right = 493.0
+offset_bottom = -42.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="Cards" type="Button" parent="ButtonContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 10
+theme_override_font_sizes/font_size = 24
+text = "WIKI_CARDS_BUTTON"
+
+[node name="Bosses" type="Button" parent="ButtonContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 10
+theme_override_font_sizes/font_size = 24
+text = "WIKI_BOSSES_BUTTON"
+
+[node name="Backgrounds" type="Button" parent="ButtonContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 10
+theme_override_font_sizes/font_size = 24
+text = "WIKI_BACKGROUNDS_BUTTON"
+
+[node name="WikiHBox" type="Node" parent="."]
+
+[node name="CardButton" type="Button" parent="WikiHBox"]
+anchors_preset = -1
+anchor_left = 0.067
+anchor_top = 0.474
+anchor_right = 0.095
+anchor_bottom = 0.569
+offset_left = -0.639999
+offset_top = 0.0799561
+offset_right = -0.400009
+offset_bottom = 0.479919
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_ermmr")
+theme_override_font_sizes/font_size = 64
+text = "<"
+
+[node name="CenterContainer" type="CenterContainer" parent="WikiHBox"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -140.5
-offset_right = 140.5
+offset_left = -314.0
+offset_right = -314.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.2, 0.2)
 
-[node name="ColorRect" type="ColorRect" parent="VBoxContainer2"]
-custom_minimum_size = Vector2(500, 500)
+[node name="Texture" type="TextureRect" parent="WikiHBox/CenterContainer"]
 layout_mode = 2
+expand_mode = 1
+stretch_mode = 3
+
+[node name="infoPanel" type="Control" parent="WikiHBox"]
+layout_mode = 3
+anchor_left = 0.555
+anchor_top = 0.171
+anchor_right = 0.831
+anchor_bottom = 0.861
+offset_left = -1062.6
+offset_top = -184.68
+offset_right = -1592.52
+offset_bottom = -929.88
+
+[node name="ScrollContainer" type="ScrollContainer" parent="WikiHBox/infoPanel"]
+layout_mode = 0
+offset_left = 1122.0
+offset_top = 347.0
+offset_right = 1517.0
+offset_bottom = 870.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="WikiHBox/infoPanel/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 30
+
+[node name="nombre" type="Label" parent="WikiHBox/infoPanel/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+label_settings = SubResource("LabelSettings_ciwwa")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="utilidad" type="Label" parent="WikiHBox/infoPanel/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+label_settings = SubResource("LabelSettings_wxh3e")
+autowrap_mode = 2
+
+[node name="dato" type="Label" parent="WikiHBox/infoPanel/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+label_settings = SubResource("LabelSettings_wxh3e")
+autowrap_mode = 2
+
+[node name="Borde" type="Sprite2D" parent="WikiHBox/infoPanel"]
+position = Vector2(1322, 553)
+scale = Vector2(0.213426, 0.213426)
+texture = ExtResource("18_nihod")
+
+[node name="Button2" type="Button" parent="WikiHBox"]
+anchors_preset = -1
+anchor_left = 0.904
+anchor_top = 0.474
+anchor_right = 0.932
+anchor_bottom = 0.569
+offset_left = 0.319824
+offset_top = 0.0799561
+offset_right = 0.559814
+offset_bottom = 0.47998
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_ermmr")
+theme_override_font_sizes/font_size = 64
+text = ">"
+
+[node name="CardsLabel" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.474
+anchor_top = 0.198
+anchor_right = 0.529
+anchor_bottom = 0.249
+offset_left = -0.0800781
+offset_top = -469.84
+offset_right = -0.680054
+offset_bottom = -469.92
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "cards"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BossesLabel" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.467
+anchor_top = 0.198
+anchor_right = 0.536
+anchor_bottom = 0.249
+offset_left = -0.140015
+offset_top = -469.84
+offset_right = -0.619995
+offset_bottom = -469.92
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "Bosses"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BGLabel" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.436
+anchor_top = 0.198
+anchor_right = 0.567
+anchor_bottom = 0.249
+offset_left = -0.120056
+offset_top = -469.84
+offset_right = -0.640015
+offset_bottom = -469.92
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "Backgrounds"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WarningLabel" type="Label" parent="."]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.333
+anchor_top = 0.511
+anchor_right = 0.667
+anchor_bottom = 0.538
+offset_left = 0.640015
+offset_top = 0.119934
+offset_right = -0.640137
+offset_bottom = -0.0400391
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 24
+text = "SPOILER_ALERT_LABEL"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+
+[node name="BackButton" type="Button" parent="MarginContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "BACK_BUTTON"
+
+[node name="CardCredits" type="Label" parent="."]
+layout_mode = 0
+offset_left = 400.0
+offset_top = 896.0
+offset_right = 440.0
+offset_bottom = 926.0
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = ExtResource("19_mf3l7")
+vertical_alignment = 1
+
+[node name="BossCredits" type="Label" parent="."]
+layout_mode = 0
+offset_left = 816.0
+offset_top = 800.0
+offset_right = 903.0
+offset_bottom = 830.0
+theme_override_font_sizes/font_size = 25
+text = "edwfwf"
+vertical_alignment = 1
+
+[node name="BgCredits" type="Label" parent="."]
+layout_mode = 0
+offset_left = 848.0
+offset_top = 768.0
+offset_right = 1008.0
+offset_bottom = 804.0
+theme_override_font_sizes/font_size = 25
+text = "Paula Rumeu"
+vertical_alignment = 1
+
+[connection signal="pressed" from="ButtonContainer/Cards" to="." method="_on_cards_pressed"]
+[connection signal="pressed" from="ButtonContainer/Bosses" to="." method="_on_bosses_pressed"]
+[connection signal="pressed" from="ButtonContainer/Backgrounds" to="." method="_on_backgrounds_pressed"]
+[connection signal="pressed" from="WikiHBox/CardButton" to="." method="_on_left_arrow_pressed"]
+[connection signal="pressed" from="WikiHBox/Button2" to="." method="_on_right_arrow_pressed"]
+[connection signal="pressed" from="MarginContainer/BackButton" to="." method="_on_back_button_pressed"]

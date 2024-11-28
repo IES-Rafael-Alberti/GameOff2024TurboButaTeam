@@ -1,4 +1,7 @@
-[gd_resource type="LabelSettings" format=3 uid="uid://bsjqw3m3umydi"]
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://bsjqw3m3umydi"]
+
+[ext_resource type="FontFile" uid="uid://b8g5bl37fquk" path="res://assets/fonts/IMFellDWPicaSC-Regular.ttf" id="1_wl3op"]
 
 [resource]
-font_size = 128
+font = ExtResource("1_wl3op")
+font_size = 110

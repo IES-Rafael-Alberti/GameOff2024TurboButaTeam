@@ -34,9 +34,18 @@ directories/dtl_directory={
 "Ox_70HP": "res://dialogue/timelines/BF1_OX/Ox_70HP.dtl",
 "Ox_80HP": "res://dialogue/timelines/BF1_OX/Ox_80HP.dtl",
 "Ox_90HP": "res://dialogue/timelines/BF1_OX/Ox_90HP.dtl",
-"TestTL": "res://dialogue/timelines/TestTL.dtl"
+"Ox_Defeat": "res://dialogue/timelines/BF1_OX/Ox_Defeat.dtl",
+"TestTL": "res://dialogue/timelines/TestTL.dtl",
+"big_finale_1": "res://dialogue/timelines/ThirdCinematic/big_finale_1.dtl",
+"big_finale_2": "res://dialogue/timelines/ThirdCinematic/big_finale_2.dtl",
+"big_finale_3": "res://dialogue/timelines/ThirdCinematic/big_finale_3.dtl",
+"cobra_start": "res://dialogue/timelines/BF2_COBRA/cobra_start.dtl",
+"finale_start": "res://dialogue/timelines/ThirdCinematic/finale_start.dtl",
+"finale_start_2": "res://dialogue/timelines/ThirdCinematic/finale_start_2.dtl",
+"second_cinematic": "res://dialogue/timelines/SecondCinematic/second_cinematic.dtl",
+"third_cinematic": "res://dialogue/timelines/ThirdCinematic/third_cinematic.dtl"
 }
-layout/style_list=["res://dialogue/styles/textbubble.tres", "res://dialogue/styles/boxTest.tres", "res://dialogue/styles/cinematicStyle/cinematicStyle.tres", "res://dialogue/characters/cinematicCont.tres"]
+layout/style_list=["res://dialogue/styles/textbubble.tres", "res://dialogue/styles/boxTest.tres", "res://dialogue/styles/cinematicStyle/cinematicStyle.tres", "res://dialogue/characters/cinematicCont.tres", "res://dialogue/styles/cinematicStyle/finale_style.tres"]
 layout/default_style="res://dialogue/styles/cinematicStyle/cinematicStyle.tres"
 extensions_folder="res://addons/dialogic_additions"
 text/letter_speed=0.01
@@ -67,12 +76,14 @@ translation/add_separator=false
 variables={}
 translation/locales=[]
 translation/id_counter=16
+glossary/default_case_sensitive=true
 
 [display]
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/size/mode=3
+window/stretch/mode="canvas_items"
 
 [editor_plugins]
 
@@ -88,6 +99,11 @@ folder_colors={
 "res://scenes/": "green",
 "res://scripts/": "teal"
 }
+
+[gui]
+
+theme/custom="res://resources/main_theme.tres"
+theme/custom_font="res://assets/fonts/Tomorrow-Regular.ttf"
 
 [input]
 
@@ -105,7 +121,7 @@ dialogic_default_action={
 
 locale/translation_remaps={}
 locale/translations=PackedStringArray("res://dialogue/translations/EXES TRANSLATIONS - Sheet1.en.translation", "res://dialogue/translations/EXES TRANSLATIONS - Sheet1.es.translation", "res://dialogue/translations/EXES TRANSLATIONS - Sheet1.csv")
-locale/test="en"
+locale/test="es"
 
 [rendering]
 

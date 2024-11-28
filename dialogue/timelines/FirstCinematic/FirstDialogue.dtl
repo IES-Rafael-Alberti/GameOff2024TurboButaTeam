@@ -1,0 +1,16 @@
+cinematicCont: C1D4
+C1D5
+cinematicCont: C1D6
+C1D7
+cinematicCont: C1D8
+C1D9
+cinematicCont: C1D10
+cinematicCont: C1D11
+- C1D11O1
+	set {ox_selected} = true
+	cinematicCont: C1D11O1D
+- C1D11O2
+	cinematicCont: C1D11O2D
+	set {cobra_selected} = true
+cinematicCont: C1D14
+cinematicCont: C1D15

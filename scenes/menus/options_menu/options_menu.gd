@@ -1,11 +1,12 @@
 extends Control
 
-@onready var master_vol: HSlider = $VBoxContainer/VBoxContainer/HBoxContainer/MasterVol
-@onready var music_vol: HSlider = $VBoxContainer/VBoxContainer/HBoxContainer2/MusicVol
-@onready var sfx_vol: HSlider = $VBoxContainer/VBoxContainer/HBoxContainer3/SFXVol
-@onready var window_mode: OptionButton = $VBoxContainer/VBoxContainer2/HBoxContainer/WindowMode
-@onready var window_mode_hbox: HBoxContainer = $VBoxContainer/VBoxContainer2/WindowModeHbox
-@onready var language_sel = $VBoxContainer/VBoxContainer2/LanguageHbox/LanguageSel
+@onready var master_vol = $VBoxContainer/VBoxContainer3/VBoxContainer/HBoxContainer/MasterVol
+@onready var music_vol = $VBoxContainer/VBoxContainer3/VBoxContainer/HBoxContainer2/MusicVol
+@onready var sfx_vol = $VBoxContainer/VBoxContainer3/VBoxContainer/HBoxContainer3/SFXVol
+@onready var window_mode_hbox = $VBoxContainer/VBoxContainer3/VBoxContainer2/WindowModeHbox
+@onready var window_mode = $VBoxContainer/VBoxContainer3/VBoxContainer2/WindowModeHbox/WindowMode
+@onready var test_sfx = $VBoxContainer/VBoxContainer3/VBoxContainer/HBoxContainer3/testSFX
+@onready var language_sel = $VBoxContainer/VBoxContainer3/VBoxContainer2/LanguageHbox/LanguageSel
 
 var master_bus
 var music_bus
@@ -16,6 +17,9 @@ func _ready() -> void:
 	master_bus = AudioServer.get_bus_index("Master")
 	music_bus = AudioServer.get_bus_index("Music")
 	sfx_bus = AudioServer.get_bus_index("SFX")
+	master_vol.value = db_to_linear(AudioServer.get_bus_volume_db(master_bus))
+	music_vol.value = db_to_linear(AudioServer.get_bus_volume_db(music_bus))
+	sfx_vol.value = db_to_linear(AudioServer.get_bus_volume_db(sfx_bus))
 func _on_back_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/menus/main_menu/main_menu.tscn")
 
@@ -27,7 +31,6 @@ func _on_music_vol_value_changed(value: float) -> void:
 
 func _on_sfx_vol_value_changed(value: float) -> void:
 	AudioServer.set_bus_volume_db(sfx_bus,linear_to_db(value))
-
 func _on_option_button_item_selected(index: int) -> void:
 	match index:
 		0:
@@ -44,3 +47,7 @@ func _on_language_sel_item_selected(index):
 			TranslationServer.set_locale("en")
 		1:
 			TranslationServer.set_locale("es")
+
+
+func _on_sfx_vol_drag_ended(value_changed):
+	test_sfx.play()
