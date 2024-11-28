@@ -242,6 +242,20 @@ bus = &"SFX"
 stream = ExtResource("6_sxty8")
 volume_db = 5.0
 
+[node name="TextEdit" type="LineEdit" parent="."]
+z_index = 10
+clip_contents = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -200.0
+offset_top = 24.0
+offset_right = 200.0
+offset_bottom = 74.0
+grow_horizontal = 2
+placeholder_text = "CheatCode"
+
 [node name="ColorRect2" type="ColorRect" parent="."]
 z_index = 5
 layout_mode = 1
@@ -259,29 +273,34 @@ grow_vertical = 2
 tooltip_text = "BATTLELOG_TOOLTIP"
 color = Color(1, 1, 1, 0.701961)
 
-[node name="Label" type="Label" parent="ColorRect2"]
+[node name="HistoryTitle" type="Label" parent="ColorRect2"]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
-anchor_bottom = 0.126
-offset_bottom = 5.82
+anchor_bottom = 0.14
+offset_bottom = -0.200001
 grow_horizontal = 2
 tooltip_text = "BATTLELOG_TOOLTIP"
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("6_u7l7k")
+theme_override_font_sizes/font_size = 16
 text = "HISTORY_TITLE"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 z_index = 5
-layout_mode = 0
-offset_left = 57.0
-offset_top = 678.0
-offset_right = 278.0
-offset_bottom = 1041.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.03
+anchor_top = 0.628
+anchor_right = 0.145
+anchor_bottom = 0.963
+offset_left = -0.600002
+offset_top = -0.240051
+offset_right = -0.400024
+offset_bottom = -0.0400391
 tooltip_text = "BATTLELOG_TOOLTIP"
-horizontal_scroll_mode = 0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
 layout_mode = 2
@@ -298,6 +317,22 @@ visible = false
 z_index = 50
 layout_mode = 1
 
+[node name="btnCheat" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.007
+anchor_top = 0.586
+anchor_right = 0.166
+anchor_bottom = 0.637
+offset_left = 0.559999
+offset_top = 0.119995
+offset_right = -0.720032
+offset_bottom = 0.039978
+
 [connection signal="timeout" from="ProgressBar/Timer" to="." method="_on_timer_timeout"]
-[connection signal="pressed" from="ResetBoard" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="ResetBoard" to="." method="_on_reset_board_pressed"]
 [connection signal="pressed" from="Pause" to="." method="_on_pause_pressed"]
+[connection signal="text_submitted" from="TextEdit" to="." method="_on_text_edit_text_submitted"]
+[connection signal="mouse_entered" from="btnCheat" to="." method="_on_btn_cheat_mouse_entered"]
+[connection signal="mouse_exited" from="btnCheat" to="." method="_on_btn_cheat_mouse_exited"]
+[connection signal="pressed" from="btnCheat" to="." method="_on_btn_cheat_pressed"]

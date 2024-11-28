@@ -6,6 +6,6 @@
 
 [node name="Cobra" type="Node2D"]
 
-[node name="Boss" parent="." instance=ExtResource("1_six1i")]
+[node name="Cobra" parent="." instance=ExtResource("1_six1i")]
 scriptBoss = ExtResource("2_3hllc")
 textureBoss = ExtResource("3_ttear")

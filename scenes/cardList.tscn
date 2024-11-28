@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://tw844i3ew8b4" path="res://assets/sprites/cards140x198/pangolin.png" id="4_rilkp"]
 [ext_resource type="Texture2D" uid="uid://cj6gansknbcra" path="res://assets/sprites/cards140x198/especial1.png" id="5_fwgru"]
 [ext_resource type="Texture2D" uid="uid://b3dh17nqxsqbv" path="res://assets/sprites/cards140x198/especial2.png" id="6_354v5"]
-[ext_resource type="Texture2D" uid="uid://fxugd6ktg6st" path="res://assets/sprites/cards140x198/pangolinBlanco.png" id="8_0ljpd"]
+[ext_resource type="Texture2D" uid="uid://drmkt2t2gttuy" path="res://assets/sprites/cards140x198/tortuga.png" id="8_m4uxp"]
 [ext_resource type="Texture2D" uid="uid://4sxdmwsma3a" path="res://assets/sprites/cards140x198/Grulla.png" id="9_06jrk"]
 [ext_resource type="Script" path="res://scripts/cards/cardDecreaseDef.gd" id="10_1chyv"]
 [ext_resource type="Texture2D" uid="uid://bvj2alebiqgw1" path="res://assets/sprites/cards140x198/lince.png" id="11_3tg0a"]
@@ -133,7 +133,7 @@ faceSpecial2 = ExtResource("6_354v5")
 
 [node name="Card2" parent="." instance=ExtResource("1_c275a")]
 material = SubResource("ShaderMaterial_1qkai")
-face = ExtResource("8_0ljpd")
+face = ExtResource("8_m4uxp")
 scriptAnimal = ExtResource("13_qse35")
 faceSpecial1 = ExtResource("5_fwgru")
 faceSpecial2 = ExtResource("6_354v5")
