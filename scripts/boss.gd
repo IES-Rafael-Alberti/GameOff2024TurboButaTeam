@@ -8,7 +8,7 @@ extends Node2D
 @onready var animationBoss: AnimationPlayer = $Sprite2D/AnimationBoss
 @onready var border: Sprite2D = $ProgressBar/Border
 
-@export var maxHealthBoss = 200
+@export var maxHealthBoss = 100
 @export var damageBoss = 20
 @export var specialDamage = 10
 @export var scriptBoss: Script

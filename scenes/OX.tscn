@@ -7,5 +7,7 @@
 [node name="Ox" type="Node2D"]
 
 [node name="OX" parent="." instance=ExtResource("1_bo5ps")]
+damageBoss = 10
+specialDamage = 25
 scriptBoss = ExtResource("2_16ho8")
 textureBoss = ExtResource("3_dwe0t")
