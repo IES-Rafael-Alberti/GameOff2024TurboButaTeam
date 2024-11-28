@@ -25,6 +25,16 @@ var clicks = 0
 @onready var text_edit: LineEdit = $TextEdit
 @onready var history_title: Label = $ColorRect2/HistoryTitle
 @onready var animation_board: AnimationPlayer = $"../../AnimationBoard"
+# Tutorial
+@onready var tutorial: Control = $Tutorial
+@onready var label_list: Control = $Tutorial/LabelList
+@onready var skip_button: Button = $Tutorial/SkipButton
+@onready var backHistorial: ColorRect = $ColorRect2
+@onready var marcoHistorial: Sprite2D = $MarcoTexto
+@onready var marcoHealthBar: Sprite2D = $MarcoUiPrueba
+
+var labelCount = 0
+var labelListContent 
 
 @onready var fire_reroll = $Sounds/SFX/FireReroll
 @onready var getting_hit = $Sounds/SFX/GettingHit
@@ -74,6 +84,10 @@ func _ready():
 	cardListSpecialSceneTemp = cardListSpecialScene.instantiate()
 	GameManager.BoardCompleted.connect(restartBoard)
 	initBoard()
+	
+	labelListContent = label_list.get_children()
+	if GameManager.tutorialCompleted:
+		tutorial.visible = false
 
 func initBoard():
 	GameManager.doubleShift = true
@@ -280,3 +294,37 @@ func _on_btn_cheat_mouse_entered() -> void:
 
 func _on_btn_cheat_mouse_exited() -> void:
 	history_title.add_theme_font_size_override("font_size", 16)
+
+
+func _input(event):
+	if !GameManager.tutorialCompleted:
+		GameManager.canFlip = false
+		if event is InputEventMouseButton and event.pressed:
+			if labelCount < labelListContent.size():
+				label_list.get_child(labelCount).visible = false
+				labelCount = labelCount + 1
+				if label_list.get_child(labelCount):
+					label_list.get_child(labelCount).visible = true
+					
+				if labelCount == 1:
+					grid.z_index = 51
+				elif labelCount == 2:
+					grid.z_index = 0
+					historialContainer.z_index = 51
+					backHistorial.z_index = 51
+					marcoHistorial.z_index = 51
+				elif labelCount == 3:
+					historialContainer.z_index = 5
+					backHistorial.z_index = 5
+					marcoHistorial.z_index = 5
+					resetBoard.z_index = 51
+				elif labelCount == 4:
+					resetBoard.z_index = 5
+					progress_bar.z_index = 51
+					marcoHealthBar.z_index = 52
+					progress_bar.z_index = 1
+					marcoHealthBar.z_index = 5
+					GameManager.tutorialCompleted = true
+					tutorial.visible = false
+					GameManager.canFlip = true
+					GameManager.tutorialCompletedSignal.emit()
