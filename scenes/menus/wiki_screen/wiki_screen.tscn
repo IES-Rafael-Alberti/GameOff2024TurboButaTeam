@@ -51,7 +51,7 @@ cardHabilityList = Array[String](["REVERSO_HABILITY", "GRULLA_HABILITY", "PANDA_
 bossHabilityList = Array[String](["COBRA_HABILITY", "BUEY_HABILITY", ""])
 cardCreditsList = Array[String](["@alicegomrev", "@alicegomrev", "@alicegomrev", "@alicegomrev", "@alicegomrev", "@alicegomrev", "@alicegomrev", "@alicegomrev", "@alicegomrev", "@alicegomrev"])
 bossCreditsList = Array[String](["@alicegomrev", "@alicegomrev", "@alicegomrev"])
-bgCreditsList = Array[String](["Paula Rumeu", "[url=https://www.instagram.com/alicegomrev]Alicia Gomez Revilla[/url]"])
+bgCreditsList = Array[String](["Paula Rumeu", "@alicegomrev"])
 
 [node name="TextContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -306,35 +306,32 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 35
 text = "BACK_BUTTON"
 
-[node name="CardCredits" type="RichTextLabel" parent="."]
+[node name="CardCredits" type="Label" parent="."]
 layout_mode = 0
 offset_left = 400.0
 offset_top = 896.0
 offset_right = 592.0
 offset_bottom = 926.0
-theme_override_font_sizes/normal_font_size = 20
 theme_override_styles/normal = ExtResource("19_mf3l7")
-bbcode_enabled = true
+vertical_alignment = 1
 
-[node name="BossCredits" type="RichTextLabel" parent="."]
+[node name="BossCredits" type="Label" parent="."]
 layout_mode = 0
 offset_left = 816.0
 offset_top = 800.0
 offset_right = 992.0
 offset_bottom = 830.0
-theme_override_font_sizes/normal_font_size = 20
-bbcode_enabled = true
 text = "edwfwf"
+vertical_alignment = 1
 
-[node name="BgCredits" type="RichTextLabel" parent="."]
+[node name="BgCredits" type="Label" parent="."]
 layout_mode = 0
 offset_left = 800.0
 offset_top = 768.0
 offset_right = 1024.0
 offset_bottom = 804.0
-theme_override_font_sizes/normal_font_size = 20
-bbcode_enabled = true
 text = "Paula Rumeu"
+vertical_alignment = 1
 
 [connection signal="pressed" from="ButtonContainer/Cards" to="." method="_on_cards_pressed"]
 [connection signal="pressed" from="ButtonContainer/Bosses" to="." method="_on_bosses_pressed"]

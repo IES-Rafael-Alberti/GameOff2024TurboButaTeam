@@ -13,9 +13,9 @@ extends Control
 @onready var card_button: Button = $WikiHBox/CardButton
 @onready var button_2: Button = $WikiHBox/Button2
 
-@onready var card_credits: RichTextLabel = $CardCredits
-@onready var boss_credits: RichTextLabel = $BossCredits
-@onready var bg_credits: RichTextLabel = $BgCredits
+@onready var card_credits: Label = $CardCredits
+@onready var boss_credits: Label = $BossCredits
+@onready var bg_credits: Label = $BgCredits
 
 @export var cardImgList: Array[Texture] = []
 @export var bossImgList: Array[Texture] = []
