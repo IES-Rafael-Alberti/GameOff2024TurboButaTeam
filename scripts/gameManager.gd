@@ -32,6 +32,8 @@ var isPlayerPhase = true
 
 var numCombat = 0
 
+var isFinalCinematic = false
+
 #Senal para volver a llenar el tablero
 signal BoardCompleted
 
