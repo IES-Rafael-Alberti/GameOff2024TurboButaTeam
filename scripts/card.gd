@@ -195,3 +195,10 @@ func mostrarFace():
 	await get_tree().create_timer(0.2).timeout
 	set_texture_normal(face)
 	self.modulate = Color(1.0, 1.0, 1.0, 0.78)
+
+
+func _on_mouse_entered():
+	self.scale = Vector2(1.1, 1.1)
+
+func _on_mouse_exited():
+	self.scale = Vector2(1, 1)
