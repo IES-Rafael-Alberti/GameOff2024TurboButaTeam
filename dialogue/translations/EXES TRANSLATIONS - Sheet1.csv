@@ -302,8 +302,8 @@ Breve descripción:  El búfalo de agua salvaje es mayor y más pesado que el do
 
 Fun fact: El apelativo de «búfalo acuático» o «búfalo de agua» procede de su preferencia por las áreas encharcadas o pantanosas, donde se sumerge parcialmente y camina sobre el lodo del fondo sin dificultad, gracias a sus anchas pezuñas que le impiden hundirse en exceso."
 FINAL_BOSS_TEXT,,
-BOSQUE_TEXT,,
-ESPINAS_TEXT,,
+BOSQUE_TEXT,A supportive background that emphases you're getting into the spirit forest. Here's the first place we find the Dark Spirit.,Un fondo de apoyo que enfatiza tu entrada al bosque de espíritus. Es el primer lugar donde conocemos al Espíritu Oscuro.
+ESPINAS_TEXT,"This background delves into the idea that you're getting deep into the forest, fighting the Dark Spirit at his maximum core.","Este fondo refuerza la idea de que te estás adentrando en el bosque, luchando contra el Espíritu Oscuro a su máxima pureza."
 REVERSO_HABILITY,"Ability: No specific skill, but look how cool it is!","Habilidad: No tiene ninguna habilidad específica, ¡pero, mira que guay!"
 GRULLA_HABILITY,Ability: Makes a normal attack on the boss,Habilidad: Hace un ataque normal al boss
 PANDA_HABILITY,Ability: Lowers the boss's defense and your next attacks do more damage.,Habilidad: Le baja la defensa al boss y tus siguientes ataques hacen más daño
