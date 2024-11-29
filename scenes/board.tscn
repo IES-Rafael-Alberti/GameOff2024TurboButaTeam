@@ -78,7 +78,6 @@ theme = ExtResource("4_t0f75")
 script = ExtResource("1_s4gqu")
 
 [node name="Tutorial" type="Control" parent="."]
-visible = false
 z_index = 50
 layout_mode = 1
 anchors_preset = 15

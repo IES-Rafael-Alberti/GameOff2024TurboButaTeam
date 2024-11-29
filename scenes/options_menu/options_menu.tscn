@@ -135,6 +135,7 @@ attenuation = 0.000644293
 bus = &"SFX"
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 theme_override_constants/margin_left = 20
@@ -152,3 +153,5 @@ autoplay = true
 max_distance = 10000.0
 attenuation = 0.0126915
 bus = &"Music"
+
+[connection signal="pressed" from="MarginContainer/BackButton" to="." method="_on_back_button_pressed"]
