@@ -56,12 +56,15 @@ color = Color(1, 1, 1, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lk0w5"]
 texture = ExtResource("6_pf2r6")
+region_rect = Rect2(793.761, 161.186, 807.679, 3161.77)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rylci"]
 texture = ExtResource("7_r37lx")
+region_rect = Rect2(807.112, 178.042, 797.829, 3112.52)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6sdbq"]
 texture = ExtResource("7_r37lx")
+region_rect = Rect2(797.261, 158.342, 807.679, 3171.62)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_731fm"]
 bg_color = Color(0.682353, 0.141176, 0.133333, 1)
