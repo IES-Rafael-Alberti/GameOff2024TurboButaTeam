@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=24 format=3 uid="uid://c6qpt0gqj04fh"]
+[gd_resource type="Theme" load_steps=25 format=3 uid="uid://c6qpt0gqj04fh"]
 
 [ext_resource type="FontFile" uid="uid://c4s2a7yraa054" path="res://assets/fonts/Tomorrow-Regular.ttf" id="1_3vw85"]
 [ext_resource type="Texture2D" uid="uid://cfmr6hqoijshl" path="res://assets/ui/fantasyButtons/firstchosenoverlap-hover.svg" id="3_4ujmi"]

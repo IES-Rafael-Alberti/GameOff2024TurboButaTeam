@@ -1,3 +1,5 @@
+set {ox_selected} = false
+set {cobra_selected} = false
 C1D1
 C1D2
 C1D3
