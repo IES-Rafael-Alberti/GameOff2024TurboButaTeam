@@ -1,9 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://uxbvlxwenb4i"]
+[gd_scene load_steps=9 format=3 uid="uid://uxbvlxwenb4i"]
 
 [ext_resource type="Script" path="res://scenes/menus/main_menu/main_menu.gd" id="1_fjwii"]
-[ext_resource type="Texture2D" uid="uid://bslxfut1486oy" path="res://assets/sprites/ui/Ilustracion_sin_titulo_1.png" id="2_rjp2q"]
+[ext_resource type="Texture2D" uid="uid://72b24x5xnfgn" path="res://assets/backgrounds/mainMenuBackground.png" id="2_7aqd4"]
 [ext_resource type="FontFile" uid="uid://b8g5bl37fquk" path="res://assets/fonts/IMFellDWPicaSC-Regular.ttf" id="3_1d0j5"]
-[ext_resource type="Texture2D" uid="uid://brpyh61voue0j" path="res://assets/icons/scroll.png" id="4_ck1k8"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_00c3h"]
 font = ExtResource("3_1d0j5")
@@ -23,7 +22,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 0)]
+"values": [Color(1, 1, 1, 1)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -152,10 +151,9 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="IlustracionSinTitulo" type="Sprite2D" parent="CenterContainer"]
-modulate = Color(1, 1, 1, 0)
-position = Vector2(961.788, 532)
-scale = Vector2(0.812383, 0.9)
-texture = ExtResource("2_rjp2q")
+position = Vector2(962.086, 539)
+scale = Vector2(0.499955, 0.501852)
+texture = ExtResource("2_7aqd4")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -208,24 +206,8 @@ libraries = {
 "": SubResource("AnimationLibrary_tc5d4")
 }
 
-[node name="creditsButton" type="Button" parent="."]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.067
-anchor_top = 0.77
-anchor_right = 0.109
-anchor_bottom = 0.846
-offset_left = -0.639999
-offset_top = 0.399963
-offset_right = 462.72
-offset_bottom = 462.32
-scale = Vector2(0.15, 0.15)
-icon = ExtResource("4_ck1k8")
-
 [connection signal="pressed" from="VBoxContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/VBoxContainer/WikiButton" to="." method="_on_wiki_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
-[connection signal="pressed" from="creditsButton" to="." method="_on_credits_button_pressed"]

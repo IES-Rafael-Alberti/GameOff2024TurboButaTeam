@@ -23,27 +23,27 @@ PAUSE_BUTTON,Pause,Pausar
 ,,
 ,,
 TUTORIAL,,
-FIRST_LABEL,"You've just got yourself into a lot of trouble, but don't 
-worry, the animals in this forest will help you 
-out of it of this forest will help you out of this predicament","Te acabas de meter en un buen lío pero tranquilo, los animales 
+FIRST_LABEL,"You've just got yourself into a lot of trouble but don't 
+worry, The animals in this forest will help you.
+get out of this predicament","Te acabas de meter en un buen lío pero tranquilo, los animales 
 de este bosque te ayudarán a salir de este aprieto"
-SECOND_LABEL,"In order for them to help you first, you will have to look for partners 
-of the same animal to get out of this situation","Para que estos te ayuden primero, deberás buscar las parejas
-del mismo animal para salir de esta situación"
-THIRD_LABEL,"Use your history to find out how they can help you and what
- intentions the beast in front of you has.","Ayudate del historial para saber en que te pueden ayudar 
-y que intenciones tiene la bestia que tienes delante"
-FOURTH_LABEL,"If you see fit, every 3 pairs of animals you collect 
+SECOND_LABEL,"In order for them to help you though, you will have to look for partners 
+of the same animal to activate their secret power","Para que estos te ayuden, primero deberás buscar las parejas
+del mismo animal para activar su poder secreto."
+THIRD_LABEL,"Use the battle history to find out how they can help you and what
+ intentions the beast in front of you has.","Ayudate del historial de pelea para saber en qué te pueden ayudar,
+y qué intenciones tiene la bestia que tienes delante"
+FOURTH_LABEL,"If you see fit, for every 3 pairs of animals you collect,
 you can reset the board.","Si lo ves oportuno, cada 3 parejas de animales que reúnas
 puedes reiniciar el tablero"
-FIFTH_LABEL,"Defeat the threat before it kills you. good luck to you, good luck","Consigue vencer la amenaza antes de que esta acabe 
+FIFTH_LABEL,Defeat the evil spirit before it kills you. good luck.,"Consigue vencer la amenaza antes de que esta acabe 
 contigo, buena suerte"
 ,,
 ,,
 ,,
 GAME,,
-testboss_name,OX,BUEY
-secondboss,COBRA,COBRA
+ox,OX,BUEY
+cobra,COBRA,COBRA
 BOSS_ATTACK,The spirit starts charging torwards you,El espíritu empieza a cargar hacia ti
 BOSS_SHIELD,The spirit stands his ground,El espíritu mantiene su posición.
 BOSS_HABILITY,The spirit is reuniting forces...,El espíritu está reuniendo fuerzas...
