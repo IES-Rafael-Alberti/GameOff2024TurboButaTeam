@@ -1,19 +1,21 @@
 extends Control
 
-@onready var master_vol = $VBoxContainer/VBoxContainer3/VBoxContainer/HBoxContainer/MasterVol
-@onready var music_vol = $VBoxContainer/VBoxContainer3/VBoxContainer/HBoxContainer2/MusicVol
-@onready var sfx_vol = $VBoxContainer/VBoxContainer3/VBoxContainer/HBoxContainer3/SFXVol
-@onready var window_mode_hbox = $VBoxContainer/VBoxContainer3/VBoxContainer2/WindowModeHbox
-@onready var window_mode = $VBoxContainer/VBoxContainer3/VBoxContainer2/WindowModeHbox/WindowMode
-@onready var test_sfx = $VBoxContainer/VBoxContainer3/VBoxContainer/HBoxContainer3/testSFX
-@onready var language_sel = $VBoxContainer/VBoxContainer3/VBoxContainer2/LanguageHbox/LanguageSel
+@onready var master_vol: HSlider = $VBoxContainer/GridContainer/MasterVol
+@onready var music_vol: HSlider = $VBoxContainer/GridContainer/MusicVol
+@onready var sfx_vol: HSlider = $VBoxContainer/GridContainer/SFXVol
+@onready var window_mode: OptionButton = $VBoxContainer/GridContainer/WindowMode
+@onready var language_sel: OptionButton = $VBoxContainer/GridContainer/LanguageSel
+@onready var back_button: Button = $MarginContainer/BackButton
+@onready var label_4: Label = $VBoxContainer/GridContainer/Label4
+@onready var test_sfx: AudioStreamPlayer2D = $VBoxContainer/testSFX
 
 var master_bus
 var music_bus
 var sfx_bus
 func _ready() -> void:
 	if OS.get_name()=="Web":
-		window_mode_hbox.hide()
+		label_4.hide()
+		window_mode.hide()
 	master_bus = AudioServer.get_bus_index("Master")
 	music_bus = AudioServer.get_bus_index("Music")
 	sfx_bus = AudioServer.get_bus_index("SFX")
