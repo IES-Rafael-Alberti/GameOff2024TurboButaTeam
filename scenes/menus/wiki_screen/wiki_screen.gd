@@ -7,12 +7,14 @@ extends Control
 @onready var wiki_h_box: Node = $WikiHBox
 @onready var texture: TextureRect = $WikiHBox/CenterContainer/Texture
 @onready var info_panel: Control = $WikiHBox/infoPanel
-@onready var nombre: Label = $WikiHBox/infoPanel/ScrollContainer/VBoxContainer/nombre
+@onready var nombre: Label = $WikiHBox/infoPanel/nombre
 @onready var dato: Label = $WikiHBox/infoPanel/ScrollContainer/VBoxContainer/dato
 @onready var utilidad: Label = $WikiHBox/infoPanel/ScrollContainer/VBoxContainer/utilidad
 @onready var card_credits: Label = $CardCredits
 @onready var boss_credits: Label = $BossCredits
 @onready var bg_credits: Label = $BgCredits
+@onready var card_button: Button = $WikiHBox/CardButton
+@onready var button_2: Button = $WikiHBox/Button2
 
 @export var cardImgList: Array[Texture] = []
 @export var bossImgList: Array[Texture] = []
@@ -43,6 +45,11 @@ func _ready():
 	card_credits.visible = false
 	boss_credits.visible = false
 	bg_credits.visible = false
+	nombre.visible = false
+	dato.visible = false
+	utilidad.visible = false
+	card_button.visible = false
+	button_2.visible = false
 
 func _on_cards_pressed():
 	warning_label.visible = false
@@ -53,6 +60,11 @@ func _on_cards_pressed():
 	card_credits.visible = true
 	boss_credits.visible = false
 	bg_credits.visible = false
+	nombre.visible = true
+	dato.visible = true
+	utilidad.visible = true
+	card_button.visible = true
+	button_2.visible = true
 	
 	if cardImgList.size() > 0:
 		update_image()
@@ -66,6 +78,11 @@ func _on_bosses_pressed():
 	card_credits.visible = false
 	boss_credits.visible = true
 	bg_credits.visible = false
+	nombre.visible = true
+	dato.visible = true
+	utilidad.visible = true
+	card_button.visible = true
+	button_2.visible = true
 	
 	if bossImgList.size() > 0:
 		update_image()
@@ -79,6 +96,11 @@ func _on_backgrounds_pressed():
 	card_credits.visible = false
 	boss_credits.visible = false
 	bg_credits.visible = true
+	nombre.visible = true
+	dato.visible = true
+	utilidad.visible = false
+	card_button.visible = true
+	button_2.visible = true
 	
 	if bgImgList.size() > 0:
 		update_image()
@@ -127,11 +149,19 @@ func update_image():
 		card_credits.text = cardCreditsList[current_index_card]
 	
 	if bosses_label.visible:
+		card_credits.visible = false
+		boss_credits.visible = true
 		texture.texture = bossImgList[current_index_boss]
 		nombre.text = bossNameList[current_index_boss]
 		dato.text = bossTextList[current_index_boss]
 		utilidad.text = bossHabilityList[current_index_boss]
 		boss_credits.text = bossCreditsList[current_index_boss]
+		if current_index_boss == 2:
+			boss_credits.visible = false
+			card_credits.visible = true
+			card_credits.text = bossCreditsList[current_index_bg]
+		else:
+			boss_credits.text = bossCreditsList[current_index_bg]
 	
 	if bg_label.visible:
 		texture.texture = bgImgList[current_index_bg]

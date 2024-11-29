@@ -36,4 +36,4 @@ func _ready() -> void:
 	await get_tree().create_timer(4).timeout
 	Dialogic.Inputs.auto_advance.enabled_forced = false
 
-	get_tree().change_scene_to_file("res://scenes/menus/main_menu/main_menu.tscn")
+	get_tree().change_scene_to_file("res://scenes/menus/credits/credits.tscn")

@@ -21,7 +21,7 @@ func _ready() -> void:
 	music_vol.value = db_to_linear(AudioServer.get_bus_volume_db(music_bus))
 	sfx_vol.value = db_to_linear(AudioServer.get_bus_volume_db(sfx_bus))
 func _on_back_button_pressed() -> void:
-	queue_free()
+	visible = false
 func _on_master_vol_value_changed(value: float) -> void:
 	AudioServer.set_bus_volume_db(master_bus,linear_to_db(value))
 

@@ -43,7 +43,7 @@ func _on_option_button_item_selected(index: int) -> void:
 func _on_language_sel_item_selected(index):
 	match index:
 		0:
-			TranslationServer.set_locale("en")
+			TranslationServer.set_locale("en") #TODO bug viewport aquí
 		1:
 			TranslationServer.set_locale("es")
 
