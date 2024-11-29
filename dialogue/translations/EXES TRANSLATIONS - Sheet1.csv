@@ -21,6 +21,7 @@ WIKI_BACKGROUNDS_BUTTON,Backgrounds,Fondos
 RESHUFFLE_BOARD_BUTTON,Reshuffle Board,Refrescar Tablero
 PAUSE_BUTTON,Pause,Pausar
 CREDITS_BUTTON,Credits,Créditos
+QUIT_BUTTON,Quit,Salir
 ,,
 TUTORIAL,,
 FIRST_LABEL,"You've just got yourself into a lot of trouble but don't 
@@ -38,7 +39,6 @@ you can reset the board.","Si lo ves oportuno, cada 3 parejas de animales que re
 puedes reiniciar el tablero"
 FIFTH_LABEL,Defeat the evil spirit before it kills you. good luck.,"Consigue vencer la amenaza antes de que esta acabe 
 contigo, buena suerte"
-,,
 ,,
 ,,
 GAME,,
