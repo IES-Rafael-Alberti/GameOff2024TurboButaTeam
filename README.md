@@ -44,7 +44,6 @@ Memory card game about saving endangered animals, using their spirit against bew
 
 ![Screenshot 1](https://img.itch.zone/aW1hZ2UvMzA5NDQ3Ny8xODc3MDMyNS5wbmc=/original/dKq4ik.png)
 ![Screenshot 2](https://img.itch.zone/aW1hZ2UvMzA5NDQ3Ny8xODc3NTEyNy5wbmc=/original/dcdNNW.png)
-![Screenshot 3](https://img.itch.zone/aW1hZ2UvMzA5NDQ3Ny8xODc3NTE1OC5wbmc=/original/yEP17%2B.png)
 
 
 
