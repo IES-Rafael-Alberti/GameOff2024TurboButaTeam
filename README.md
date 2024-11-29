@@ -1,8 +1,6 @@
-
 <h1 align="center">
   
 ![Extinc Spirit](https://media.discordapp.net/attachments/1300861339509723207/1311828480714866688/Ilustracion_sin_titulo.png?ex=674a46fa&is=6748f57a&hm=138a6217519c0b1bf35073faac06199eca2ae0cbdbbed6d735bb6c760e9e668a&=&format=webp&quality=lossless&width=810&height=339)
-
 
 </h1>
 
@@ -19,9 +17,6 @@
 ![GitHub Pull Requests Badge](https://img.shields.io/github/issues-pr/IES-Rafael-Alberti/GameOff2024TurboButaTeam?style=for-the-badge)
 [![GitHub License Badge](https://img.shields.io/github/license/IES-Rafael-Alberti/GameOff2024TurboButaTeam?style=for-the-badge)](https://github.com/IES-Rafael-Alberti/GameOff2024TurboButaTeam/blob/main/LICENSE)
 
-
-
-
 ### 🕵️ For more information about the game and the animals, visit our
 
 [![GitHub Wiki](https://img.shields.io/badge/Wiki-0078D4?logo=github&logoColor=fff&style=for-the-badge)](https://github.com/IES-Rafael-Alberti/GameOff2024TurboButaTeam/wiki)
@@ -31,6 +26,7 @@
 ---
 
 📝 Table of Contents
+
 - [🧐 About](#-about)
 - [📷 Screenshots](#-screenshots)
 - [🛠️ Tools](#️-tools)
@@ -64,8 +60,10 @@ Memory card game about saving endangered animals, using their spirit against bew
 
 ## 📦 Assets
 
-#TODO: Add assets + licenses
+All external assets used in the game are listed in the following links:
 
+[![Wiki de recursos en Español](https://img.freepik.com/vector-gratis/ilustracion-bandera-espana_53876-18168.jpg?t=st=1730981714~exp=1730985314~hmac=93f44d000fb437353ebc7f29e2707243ad680dc7e5350e3911e2368253567d28&w=100)](https://github.com/IES-Rafael-Alberti/GameOff2024TurboButaTeam/wiki/es_Recursos)
+[![Resource wiki English](https://img.freepik.com/vector-gratis/ilustracion-bandera-reino-unido_53876-18166.jpg?t=st=1730982117~exp=1730985717~hmac=97ea5d525d7cfc9b55248566ef80d023817b6c20b7be6be69e9b5482a23bc0c0&w=100)](https://github.com/IES-Rafael-Alberti/GameOff2024TurboButaTeam/wiki/en_Resources)
 
 ## ✍️ Creators
 
@@ -77,5 +75,5 @@ Memory card game about saving endangered animals, using their spirit against bew
 
 ## 📞 Contact
 
-You can contact us at the following email address: 
+You can contact us at the following email address:
 <turbobutateam@gmail.com>
