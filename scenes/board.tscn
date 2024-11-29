@@ -78,6 +78,7 @@ theme = ExtResource("4_t0f75")
 script = ExtResource("1_s4gqu")
 
 [node name="Tutorial" type="Control" parent="."]
+visible = false
 z_index = 50
 layout_mode = 1
 anchors_preset = 15
@@ -210,7 +211,8 @@ anchor_left = 0.11
 anchor_top = 0.6
 anchor_right = 1.0
 anchor_bottom = 0.97
-offset_left = 0.799988
+offset_left = 160.8
+offset_right = -1.0
 offset_bottom = 0.400024
 grow_horizontal = 2
 grow_vertical = 2
@@ -318,14 +320,14 @@ text = "RESHUFFLE_BOARD_BUTTON"
 z_index = 5
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.946
-anchor_top = 0.593
-anchor_right = 0.987
-anchor_bottom = 0.667
-offset_left = -0.320068
-offset_top = -0.440063
-offset_right = -1.04004
-offset_bottom = -2.36005
+anchor_left = 0.874
+anchor_top = 0.473
+anchor_right = 0.874
+anchor_bottom = 0.473
+offset_left = -73.0801
+offset_top = -20.84
+offset_right = 71.9199
+offset_bottom = 21.16
 text = "PAUSE_BUTTON"
 
 [node name="Sounds" type="Node" parent="."]
@@ -373,7 +375,7 @@ anchor_right = 0.166
 anchor_bottom = 0.984
 offset_left = -0.360001
 offset_top = 0.119995
-offset_right = -0.720032
+offset_right = 48.28
 offset_bottom = 0.280029
 grow_horizontal = 2
 grow_vertical = 2
@@ -405,7 +407,7 @@ anchor_right = 0.145
 anchor_bottom = 0.963
 offset_left = -0.600002
 offset_top = -0.240051
-offset_right = -0.400024
+offset_right = 66.6
 offset_bottom = -0.0400391
 tooltip_text = "BATTLELOG_TOOLTIP"
 
@@ -414,9 +416,9 @@ layout_mode = 2
 
 [node name="MarcoTexto" type="Sprite2D" parent="."]
 z_index = 5
-position = Vector2(169.5, 845)
+position = Vector2(190.883, 844.405)
 rotation = 1.5708
-scale = Vector2(0.189217, 0.265606)
+scale = Vector2(0.189527, 0.322016)
 texture = ExtResource("8_km3ka")
 
 [node name="PauseMenu" parent="." instance=ExtResource("10_yisfa")]
