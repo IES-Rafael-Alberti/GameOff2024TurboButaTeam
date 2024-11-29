@@ -301,7 +301,7 @@ Estado de conservación: En peligro de extinción según la lista roja de especi
 Breve descripción:  El búfalo de agua salvaje es mayor y más pesado que el doméstico. La capa va del gris ceniza al negro. El pelo es moderadamente largo, con un mechón en la frente. Las orejas son relativamente pequeñas. La punta de la cola es peluda. Las pezuñas son grandes y abiertas.
 
 Fun fact: El apelativo de «búfalo acuático» o «búfalo de agua» procede de su preferencia por las áreas encharcadas o pantanosas, donde se sumerge parcialmente y camina sobre el lodo del fondo sin dificultad, gracias a sus anchas pezuñas que le impiden hundirse en exceso."
-FINAL_BOSS_TEXT,,
+FINAL_BOSS_TEXT,"The spirit of contamination itself (also known as the Dark Spirit), which is rotting the spirit of the endangered animals in the forest.","The spirit of contamination itself (also known as the Dark Spirit), which is rotting the spirit of the endangered animals in the forest. El espíritu de la contaminación en persona, el cual está pudriendo los espíritus de los animales en peligro de extinción."
 BOSQUE_TEXT,A supportive background that emphases you're getting into the spirit forest. Here's the first place we find the Dark Spirit.,Un fondo de apoyo que enfatiza tu entrada al bosque de espíritus. Es el primer lugar donde conocemos al Espíritu Oscuro.
 ESPINAS_TEXT,"This background delves into the idea that you're getting deep into the forest, fighting the Dark Spirit at his maximum core.","Este fondo refuerza la idea de que te estás adentrando en el bosque, luchando contra el Espíritu Oscuro a su máxima pureza."
 REVERSO_HABILITY,"Ability: No specific skill, but look how cool it is!","Habilidad: No tiene ninguna habilidad específica, ¡pero, mira que guay!"

@@ -10,7 +10,6 @@ config_version=5
 
 [application]
 
-
 config/name="Extinct Spirit"
 config/version="1.0"
 run/main_scene="res://scenes/menus/splash_screen/splash_screen.tscn"
@@ -29,6 +28,11 @@ directories/dch_directory={
 "testboss": "res://dialogue/characters/testboss.dch"
 }
 directories/dtl_directory={
+"BF1_OX/Ox_50HP": "res://dialogue/timelines/BF1_OX/Ox_50HP.dtl",
+"BF1_OX/Ox_60HP": "res://dialogue/timelines/BF1_OX/Ox_60HP.dtl",
+"BF1_OX/Ox_70HP": "res://dialogue/timelines/BF1_OX/Ox_70HP.dtl",
+"BF1_OX/Ox_80HP": "res://dialogue/timelines/BF1_OX/Ox_80HP.dtl",
+"BF1_OX/Ox_90HP": "res://dialogue/timelines/BF1_OX/Ox_90HP.dtl",
 "CB_50HP": "res://dialogue/timelines/BF2_COBRA/CB_50HP.dtl",
 "CB_60HP": "res://dialogue/timelines/BF2_COBRA/CB_60HP.dtl",
 "CB_70HP": "res://dialogue/timelines/BF2_COBRA/CB_70HP.dtl",
