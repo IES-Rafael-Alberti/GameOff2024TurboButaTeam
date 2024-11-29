@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://bdmih1wr4kgxk"]
+[gd_scene load_steps=8 format=3 uid="uid://bdmih1wr4kgxk"]
 
 [ext_resource type="Script" path="res://scenes/menus/splash_screen/splash_screen.gd" id="1_206vf"]
 [ext_resource type="Texture2D" uid="uid://c27cmdibh8hih" path="res://assets/logo/miniborde.png" id="2_0dqfr"]
 [ext_resource type="Texture2D" uid="uid://c78x5u624qo6m" path="res://assets/logo/godotbluelogo.svg" id="2_uj170"]
+[ext_resource type="Texture2D" uid="uid://bpn4x0g6yq3j8" path="res://assets/logo/gameoff.png" id="3_mkjmh"]
 
 [sub_resource type="Animation" id="Animation_vk21d"]
 length = 0.001
@@ -13,18 +14,6 @@ tracks/0/path = NodePath("TBTLogo/TBTLogo:self_modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("VBoxContainer/TextureRect:self_modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
@@ -49,7 +38,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("VBoxContainer/TextureRect:self_modulate")
+tracks/1/path = NodePath("CorpoLogos:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -102,24 +91,32 @@ self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 texture = ExtResource("2_0dqfr")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="CorpoLogos" type="HBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_left = -624.0
+offset_top = -370.5
+offset_right = 624.0
+offset_bottom = 370.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 200
+alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer"]
-self_modulate = Color(1, 1, 1, 0)
+[node name="TextureRect2" type="TextureRect" parent="CorpoLogos"]
+layout_mode = 2
+texture = ExtResource("3_mkjmh")
+expand_mode = 3
+
+[node name="TextureRect" type="TextureRect" parent="CorpoLogos"]
 layout_mode = 2
 texture = ExtResource("2_uj170")
+expand_mode = 2
+stretch_mode = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
