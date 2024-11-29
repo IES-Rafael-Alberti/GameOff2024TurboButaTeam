@@ -1,245 +1,82 @@
-# Extinct Spirit
+<h1 align="center">
+  
+![Extinc Spirit](https://media.discordapp.net/attachments/1300861339509723207/1311828480714866688/Ilustracion_sin_titulo.png?ex=674a46fa&is=6748f57a&hm=138a6217519c0b1bf35073faac06199eca2ae0cbdbbed6d735bb6c760e9e668a&=&format=webp&quality=lossless&width=810&height=339)
 
+</h1>
 
-# DESIGN DOCUMENT
-
-By TurboButa Team
-
+<div align="center">
+  <p> Participación en la Game Off 2024 </p>
+  <sub> TurboButaTeam </sub>
+</div>
 
 ---
 
-## Introduction
+<div align="center">
 
+[![GitHub Issues Badge](https://img.shields.io/github/issues/IES-Rafael-Alberti/GameOff2024TurboButaTeam?style=for-the-badge)](https://github.com/IES-Rafael-Alberti/GameOff2024TurboButaTeam/issues)
+![GitHub Pull Requests Badge](https://img.shields.io/github/issues-pr/IES-Rafael-Alberti/GameOff2024TurboButaTeam?style=for-the-badge)
+[![GitHub License Badge](https://img.shields.io/github/license/IES-Rafael-Alberti/GameOff2024TurboButaTeam?style=for-the-badge)](https://github.com/IES-Rafael-Alberti/GameOff2024TurboButaTeam/blob/main/LICENSE)
 
-### Game Summary
+### 🕵️ For more information about the game and the animals, visit our
 
+[![GitHub Wiki](https://img.shields.io/badge/Wiki-0078D4?logo=github&logoColor=fff&style=for-the-badge)](https://github.com/IES-Rafael-Alberti/GameOff2024TurboButaTeam/wiki)
 
-  Memory card game about saving endangered animals, using their spirit against bewitched creatures.
+</div>
 
+---
 
-### Inspiration
+📝 Table of Contents
 
+- [🧐 About](#-about)
+- [📷 Screenshots](#-screenshots)
+- [🛠️ Tools](#️-tools)
+- [📦 Assets](#-assets)
+- [✍️ Creators](#️-creators)
+- [📞 Contact](#-contact)
 
-  <span style="text-decoration:underline;">Inscryption</span>
+---
 
+## 🧐 About
 
-  Inscryption draws this general idea of a card game that’s not terrifying itself, but generates some tension for the player. Also, it also has animal cards with abilities.
+Memory card game about saving endangered animals, using their spirit against bewitched creatures.
 
+## 📷 Screenshots
 
-  <span style="text-decoration:underline;">Undertale</span>
+![Screenshot 1](https://img.itch.zone/aW1hZ2UvMzA5NDQ3Ny8xODc3MDMyNS5wbmc=/original/dKq4ik.png)
+![Screenshot 2](https://img.itch.zone/aW1hZ2UvMzA5NDQ3Ny8xODc3NTEyNy5wbmc=/original/dcdNNW.png)
 
 
-  The undertale concept we pick is the one of using half of the script just for narrative purposes, and see it fighting us.
 
+## 🛠️ Tools
 
-### 
-  Player experience
+[![Godot Engine](https://img.shields.io/badge/Godot_Engine-478CBF?logo=godot-engine&logoColor=fff&style=for-the-badge)](https://godotengine.org/)
+[![Dialogic](https://img.shields.io/badge/Dialogic-FF3C00?logo=dialogic&logoColor=fff&style=for-the-badge)](https://github.com/dialogic-godot/dialogic)
+[![Procreate](https://img.shields.io/badge/Procreate-000000?logo=procreate&logoColor=fff&style=for-the-badge)](https://procreate.art/)
+[![Penpot](https://img.shields.io/badge/Penpot-FF3C00?logo=penpot&logoColor=fff&style=for-the-badge)](https://penpot.app/)
+[![Git](https://img.shields.io/badge/Git-F05032?logo=git&logoColor=fff&style=for-the-badge)](https://git-scm.com/)
+![GitHub](https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=fff&style=for-the-badge)
+![GitHub Projects](https://img.shields.io/badge/GitHub_Projects-181717?logo=github&logoColor=fff&style=for-the-badge)
+[![Clockify](https://img.shields.io/badge/Clockify-404040?logo=clockify&logoColor=fff&style=for-the-badge)](https://clockify.me/)
+[![Discord](https://img.shields.io/badge/Discord-5865F2?logo=discord&logoColor=fff&style=for-the-badge)](https://discord.com/)
+[![Google Drive](https://img.shields.io/badge/Google_Drive-4285F4?logo=google-drive&logoColor=fff&style=for-the-badge)](https://drive.google.com/)
+[![Google Docs](https://img.shields.io/badge/Google_Docs-4285F4?logo=google-docs&logoColor=fff&style=for-the-badge)](https://docs.google.com)
 
-During all 3 boss fights, the player must search two similar cards to take action on the boss, losing its turn if it misses. The objective is getting the boss’ health down to 0, using the mechanics found on the board.
+## 📦 Assets
 
+All external assets used in the game are listed in the following links:
 
-### 
-  Plataform
+[![Wiki de recursos en Español](https://img.freepik.com/vector-gratis/ilustracion-bandera-espana_53876-18168.jpg?t=st=1730981714~exp=1730985314~hmac=93f44d000fb437353ebc7f29e2707243ad680dc7e5350e3911e2368253567d28&w=100)](https://github.com/IES-Rafael-Alberti/GameOff2024TurboButaTeam/wiki/es_Recursos)
+[![Resource wiki English](https://img.freepik.com/vector-gratis/ilustracion-bandera-reino-unido_53876-18166.jpg?t=st=1730982117~exp=1730985717~hmac=97ea5d525d7cfc9b55248566ef80d023817b6c20b7be6be69e9b5482a23bc0c0&w=100)](https://github.com/IES-Rafael-Alberti/GameOff2024TurboButaTeam/wiki/en_Resources)
 
+## ✍️ Creators
 
-  The game will be playable on the web on Itch.io, or downloaded for Windows, Linux and Mac.
+- [Javier Jiménez-Alfaro Hacha](https://github.com/javijjah)
+- [Sergio Hiniesta Mendoza](https://github.com/SergioHiniesta)
+- [Eduardo Daza Villanueva](https://github.com/edazvil878)
+- [Alicia Gómez Revilla](https://github.com/alicia2509)
+- [Paula Rumeu Romero](https://github.com/salem404)
 
-	
+## 📞 Contact
 
-
-### Development software
-
-
-
-* Godot 4.3
-* Affinity Designer for Graphics
-* Ableton and Audacity for music and SFX
-
-### Genre
-
-
-  Singleplayer, puzzle, cards
-
-
-### Target audience
-
-
-  Being a Game Jam game, the players will be mainly other devs, but the game itself is targeted to any public that’s slightly familiar with computers, and not for hardcore card game players, since it’s more casual.
-
-
-
-## Concept
-
-
-### Gameplay overview
-
-
-  The player picks two cards from a board. If you pick two similar ones, the card effect will be applied. If it’s not, you lose your turn. The objective is to deplete the boss’ health before he kills us, which we’ll be using the defensive cards for.
-
-
-### Theme Interpretation (Everyone is useful, go on with what you have)
-
-
-  <span style="text-decoration:underline;">“Utility” Interpretation  </span>- The player should use what it finds, not what it wants.
-
-
-  Attack cards are not the only and main way of advancing, since they will not always be available or we’ll know where they are.
-
-
-  That’s why we should use every card we find, with the same priority as the rest. Any pair we find means progress, even if all we want is to change the board, that’s why all cards are important.
-
-
-### Mecánicas principales
-
-
-<table>
-  <tr>
-   <td><strong>Mecánica</strong>
-   </td>
-   <td><strong>Mockup</strong>
-   </td>
-  </tr>
-  <tr>
-   <td><strong><span style="text-decoration:underline;">        Pairs
-</span></strong>
-<p>
-To be able to take an action, 
-<p>
-Two equal cards have to be picked. If you don’t pick a pair, you lose your turn.
-   </td>
-   <td>
-
-
-
-   </td>
-  </tr>
-  <tr>
-   <td><strong><span style="text-decoration:underline;">Health bars</span></strong>
-<p>
-The player’s objective is to get the boss bar to 0, without its own being depleted. The player must use its own health as a resource to discover the board.
-   </td>
-   <td>
-
-
-
-
-
-   </td>
-  </tr>
-  <tr>
-   <td><strong><span style="text-decoration:underline;">Combat log</span></strong>
-<p>
-The combat log will usually inform about what’s going on in combat, but when the player’s looking for a pair, it will give hints about the boss’ next move, so the player can plan in advance.
-   </td>
-   <td>
-
-
-
-<p style="text-align: center">
-
-
-
-
-
-   </td>
-  </tr>
-</table>
-
-
-	
-
-
-### Mecánicas secundarias
-
-
-<table>
-  <tr>
-   <td><strong>Mecánica</strong>
-   </td>
-   <td><strong>Mockup</strong>
-   </td>
-  </tr>
-  <tr>
-   <td><strong><span style="text-decoration:underline;">Special Cards</span></strong>
-<p>
-There are two cards that don’t need a pair to be activated, with a good and bad effect.
-   </td>
-   <td>
-   </td>
-  </tr>
-  <tr>
-   <td><strong><span style="text-decoration:underline;">Special attacks and boss cards</span></strong>
-<p>
-Each boss has a special attack with different effects.
-<p>
-When the player defeats a boss, this one will become a card that will apply this attack.
-   </td>
-   <td>
-
-
-   </td>
-  </tr>
-</table>
-
-
-
-## Art
-
-
-### Theme
-
-The palette centers red as the main accent color, and a non-radical black and white, using beige for the cards. The idea is to pick up a dark fantasy style.	
-
-
-### Design
-
-Half screen will be used for visual cues and narrative, while the other half will have the board. The idea is to pick a really natural style, not overcharging the game with unnecessary elements.
-
-
-
-
-
-## Audio
-
-
-### Music
-
-
-  Music will be not that common, since this will create a bigger tension to the player. It has to be tense, not specially upbeat, even being slightly ominous. 
-
-
-  Meanwhile, forest ambient sound will be used to further create immersion. 
-
-
-### SFX
-
-
-  To immerse the player even more, SFX are key, but these must fit on the context (forest), and the ones not on it must be subtle and/or few.
-
-
-  However, it’s important to include these sounds as feedback for the player of their progress.
-
-
-## Game Experience*
-
-
-### UI*
-
-
-### Controles
-
-
-  <span style="text-decoration:underline;">Mouse</span>
-
-
-  Clicks \
-<span style="text-decoration:underline;">Controller</span>
-
-
-  Joystick + X to select.
-
-  Clicks \
-<span style="text-decoration:underline;">Controller</span>
-
-
-  Joystick + X to select.
+You can contact us at the following email address:
+<turbobutateam@gmail.com>
