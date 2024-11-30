@@ -13,9 +13,16 @@ var master_bus
 var music_bus
 var sfx_bus
 func _ready() -> void:
+	var locale = TranslationServer.get_locale()
+	if locale == "en":
+		language_sel.select(0)
+	elif locale == "es":
+		language_sel.select(1)
 	if OS.get_name()=="Web":
 		label_4.hide()
 		window_mode.hide()
+	else:
+		window_mode.select(DisplayServer.window_get_mode()-1)
 	master_bus = AudioServer.get_bus_index("Master")
 	music_bus = AudioServer.get_bus_index("Music")
 	sfx_bus = AudioServer.get_bus_index("SFX")
