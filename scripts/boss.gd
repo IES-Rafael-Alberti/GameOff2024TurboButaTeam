@@ -14,6 +14,9 @@ extends Node2D
 @export var scriptBoss: Script
 @export var textureBoss = Texture
 
+@onready var forest_bg: Node2D = $ForestBG
+@onready var spine_bg: Node2D = $SpineBG
+
 var habilityScript
 var shieldMaxValue = 50
 var action
@@ -47,7 +50,10 @@ func _ready() -> void:
 	progressBarShield.visible = false
 	
 	selectAction()
-	
+	if Dialogic.VAR.ox_selected:
+		spine_bg.hide()
+	else:
+		forest_bg.hide()
 
 func turnBoss():
 	if shieldIsActive:

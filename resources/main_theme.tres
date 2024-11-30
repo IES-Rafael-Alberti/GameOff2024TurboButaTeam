@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://byyyqpe5kbvbw" path="res://assets/ui/slider_hover_resized.png" id="5_agbtj"]
 [ext_resource type="Texture2D" uid="uid://b8e0et24jg0jf" path="res://assets/ui/vbox_grabber.svg" id="6_pf2r6"]
 [ext_resource type="Texture2D" uid="uid://ci3nnd8sdjuv8" path="res://assets/ui/vbox_grabber_highlight.svg" id="7_r37lx"]
+[ext_resource type="Texture2D" uid="uid://cbdup4suu786t" path="res://assets/ui/emptypng.png" id="8_btuxc"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4ktk3"]
 texture = ExtResource("3_vgktk")
@@ -49,8 +50,6 @@ bg_color = Color(0.682353, 0.141176, 0.133333, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ngwvp"]
 bg_color = Color(0.682353, 0.141176, 0.133333, 1)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_1lqx0"]
-
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_g3sq5"]
 color = Color(1, 1, 1, 1)
 
@@ -90,7 +89,7 @@ HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_ngwvp")
 HSlider/styles/slider = null
 Label/fonts/font = ExtResource("1_3vw85")
 OptionButton/fonts/font = ExtResource("1_3vw85")
-OptionButton/icons/arrow = SubResource("ViewportTexture_1lqx0")
+OptionButton/icons/arrow = ExtResource("8_btuxc")
 PopupMenu/styles/panel = SubResource("StyleBoxLine_g3sq5")
 VScrollBar/styles/grabber = SubResource("StyleBoxTexture_lk0w5")
 VScrollBar/styles/grabber_highlight = SubResource("StyleBoxTexture_rylci")
