@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://c1he8kika8fof"]
+[gd_scene load_steps=33 format=3 uid="uid://c1he8kika8fof"]
 
 [ext_resource type="Script" path="res://scripts/boss.gd" id="1_0mmkp"]
 [ext_resource type="Shader" path="res://scripts/shaders/boss.gdshader" id="1_hrodq"]
@@ -7,7 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://d0nxypabjathg" path="res://assets/backgrounds/firstCinematic/arr_der.png" id="4_ecdqa"]
 [ext_resource type="Texture2D" uid="uid://cng70baed48wn" path="res://assets/backgrounds/firstCinematic/ab_der_plants.png" id="5_fb0se"]
 [ext_resource type="Texture2D" uid="uid://dsott1fpgb5ov" path="res://assets/backgrounds/firstCinematic/ab_izq_plants.png" id="6_3u0y5"]
+[ext_resource type="Texture2D" uid="uid://csbwnnj621623" path="res://assets/backgrounds/backgroundEspinas/1.png" id="7_jmyih"]
+[ext_resource type="Texture2D" uid="uid://bf4ij02ikgci7" path="res://assets/backgrounds/backgroundEspinas/2.png" id="8_5smn5"]
 [ext_resource type="Texture2D" uid="uid://db8sofyfwlvj5" path="res://assets/shadersTextures/smoke.png" id="8_g3lj1"]
+[ext_resource type="Texture2D" uid="uid://cyhumvgojaq34" path="res://assets/backgrounds/backgroundEspinas/3.png" id="9_rg0ge"]
 [ext_resource type="Texture2D" uid="uid://c63ruxqgmk0bp" path="res://assets/sprites/boss/buey.png" id="9_rmbif"]
 [ext_resource type="Texture2D" uid="uid://dtlyl6f1ea687" path="res://assets/sprites/ui/Ilustracion_sin_titulo.png" id="9_vrljt"]
 [ext_resource type="Texture2D" uid="uid://bw22m4sj2ybpw" path="res://assets/sprites/healthBorder.png" id="10_xs0jl"]
@@ -242,6 +245,31 @@ libraries = {
 "": SubResource("AnimationLibrary_aa1ra")
 }
 autoplay = "BackgroundFlashing"
+
+[node name="SpineBG" type="Node2D" parent="."]
+position = Vector2(-987, -333)
+scale = Vector2(1.065, 1.065)
+
+[node name="Parallax2D" type="Parallax2D" parent="SpineBG"]
+
+[node name="Sprite2D" type="Sprite2D" parent="SpineBG/Parallax2D"]
+position = Vector2(959.111, 539.5)
+scale = Vector2(0.500463, 0.500463)
+texture = ExtResource("7_jmyih")
+
+[node name="Parallax2D2" type="Parallax2D" parent="SpineBG"]
+
+[node name="Sprite2D" type="Sprite2D" parent="SpineBG/Parallax2D2"]
+position = Vector2(959.111, 539.5)
+scale = Vector2(0.500463, 0.500463)
+texture = ExtResource("8_5smn5")
+
+[node name="Parallax2D3" type="Parallax2D" parent="SpineBG"]
+
+[node name="Sprite2D" type="Sprite2D" parent="SpineBG/Parallax2D3"]
+position = Vector2(960, 540)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_rg0ge")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_gcfl5")
