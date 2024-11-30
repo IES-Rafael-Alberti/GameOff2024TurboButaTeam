@@ -1,4 +1,4 @@
-if {ox_selected} == true:
+if {cobra_selected} == true:
 	testboss: OX_BF_START1
 	testboss: OX_BF_START2
 else:
