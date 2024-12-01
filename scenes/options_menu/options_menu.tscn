@@ -135,9 +135,11 @@ attenuation = 0.000644293
 bus = &"SFX"
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+offset_left = 121.0
+offset_top = 115.0
+offset_right = 541.0
+offset_bottom = 209.0
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 20
 
@@ -149,9 +151,14 @@ text = "BACK_BUTTON"
 
 [node name="MusicPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_hlb3b")
-autoplay = true
 max_distance = 10000.0
 attenuation = 0.0126915
 bus = &"Music"
 
+[connection signal="value_changed" from="VBoxContainer/GridContainer/MasterVol" to="." method="_on_master_vol_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/GridContainer/MusicVol" to="." method="_on_music_vol_value_changed"]
+[connection signal="drag_ended" from="VBoxContainer/GridContainer/SFXVol" to="." method="_on_sfx_vol_drag_ended"]
+[connection signal="value_changed" from="VBoxContainer/GridContainer/SFXVol" to="." method="_on_sfx_vol_value_changed"]
+[connection signal="item_selected" from="VBoxContainer/GridContainer/WindowMode" to="." method="_on_option_button_item_selected"]
+[connection signal="item_selected" from="VBoxContainer/GridContainer/LanguageSel" to="." method="_on_language_sel_item_selected"]
 [connection signal="pressed" from="MarginContainer/BackButton" to="." method="_on_back_button_pressed"]

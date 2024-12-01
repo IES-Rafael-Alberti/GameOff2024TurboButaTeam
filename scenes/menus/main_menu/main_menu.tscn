@@ -1,8 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://uxbvlxwenb4i"]
+[gd_scene load_steps=11 format=3 uid="uid://uxbvlxwenb4i"]
 
 [ext_resource type="Script" path="res://scenes/menus/main_menu/main_menu.gd" id="1_fjwii"]
 [ext_resource type="Texture2D" uid="uid://72b24x5xnfgn" path="res://assets/backgrounds/mainMenuBackground.png" id="2_7aqd4"]
 [ext_resource type="FontFile" uid="uid://b8g5bl37fquk" path="res://assets/fonts/IMFellDWPicaSC-Regular.ttf" id="3_1d0j5"]
+[ext_resource type="AudioStream" uid="uid://c7tkshwdbj6t" path="res://assets/sound/music/main_menu_music.mp3" id="4_dmygy"]
+[ext_resource type="PackedScene" uid="uid://cef81phdrmqdd" path="res://scenes/options_menu/options_menu.tscn" id="5_mp818"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_00c3h"]
 font = ExtResource("3_1d0j5")
@@ -15,7 +17,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CenterContainer/IlustracionSinTitulo:modulate")
+tracks/0/path = NodePath("../CenterContainer/IlustracionSinTitulo:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -55,7 +57,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("CenterContainer/IlustracionSinTitulo:modulate")
+tracks/1/path = NodePath("../CenterContainer/IlustracionSinTitulo:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -95,7 +97,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("CenterContainer/IlustracionSinTitulo:modulate")
+tracks/1/path = NodePath("../CenterContainer/IlustracionSinTitulo:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -124,23 +126,11 @@ _data = {
 "fade_out": SubResource("Animation_aq85o")
 }
 
-[node name="MainMenu" type="Control"]
+[node name="MainMenuRoot" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("1_fjwii")
-
-[node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 1)
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 1
@@ -155,7 +145,21 @@ position = Vector2(962.086, 539)
 scale = Vector2(0.499955, 0.501852)
 texture = ExtResource("2_7aqd4")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="MainMenu" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = -3.0
+offset_right = 1876.0
+offset_bottom = 1040.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fjwii")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenu"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -170,54 +174,76 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 50
 
-[node name="Label" type="Label" parent="VBoxContainer"]
+[node name="Label" type="Label" parent="MainMenu/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 text = "EXTINCT SPIRIT"
 label_settings = SubResource("LabelSettings_00c3h")
 horizontal_alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenu/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 40
 
-[node name="PlayButton" type="Button" parent="VBoxContainer/VBoxContainer"]
+[node name="PlayButton" type="Button" parent="MainMenu/VBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 64
 text = "PLAY_BUTTON"
 
-[node name="OptionsButton" type="Button" parent="VBoxContainer/VBoxContainer"]
+[node name="OptionsButton" type="Button" parent="MainMenu/VBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 64
 text = "OPTIONS_BUTTON"
 
-[node name="WikiButton" type="Button" parent="VBoxContainer/VBoxContainer"]
+[node name="WikiButton" type="Button" parent="MainMenu/VBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 64
 text = "WIKI_BUTTON"
 
-[node name="ExitButton" type="Button" parent="VBoxContainer/VBoxContainer"]
+[node name="ExitButton" type="Button" parent="MainMenu/VBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 64
 text = "EXIT_BUTTON"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MainMenu"]
 libraries = {
 "": SubResource("AnimationLibrary_tc5d4")
 }
 
-[node name="creditsButton" type="Button" parent="."]
+[node name="creditsButton" type="Button" parent="MainMenu"]
 layout_mode = 2
 offset_left = 1569.0
-offset_top = 175.0
+offset_top = 160.0
 offset_right = 1767.0
-offset_bottom = 235.0
+offset_bottom = 220.0
 grow_horizontal = 0
 text = "CREDITS_BUTTON"
 
-[connection signal="pressed" from="VBoxContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/VBoxContainer/WikiButton" to="." method="_on_wiki_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
-[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
-[connection signal="pressed" from="creditsButton" to="." method="_on_credits_button_pressed"]
+[node name="menu_music" type="AudioStreamPlayer2D" parent="MainMenu"]
+stream = ExtResource("4_dmygy")
+volume_db = -5.0
+autoplay = true
+bus = &"Music"
+
+[node name="OptionsMenu" parent="." instance=ExtResource("5_mp818")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 24.075
+anchor_top = 13.45
+anchor_right = 24.075
+anchor_bottom = 13.45
+offset_left = -963.0
+offset_top = -537.0
+offset_right = 963.0
+offset_bottom = 537.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[connection signal="pressed" from="MainMenu/VBoxContainer/VBoxContainer/PlayButton" to="MainMenu" method="_on_play_button_pressed"]
+[connection signal="pressed" from="MainMenu/VBoxContainer/VBoxContainer/OptionsButton" to="MainMenu" method="_on_options_button_pressed"]
+[connection signal="pressed" from="MainMenu/VBoxContainer/VBoxContainer/WikiButton" to="MainMenu" method="_on_wiki_button_pressed"]
+[connection signal="pressed" from="MainMenu/VBoxContainer/VBoxContainer/ExitButton" to="MainMenu" method="_on_exit_button_pressed"]
+[connection signal="animation_finished" from="MainMenu/AnimationPlayer" to="MainMenu" method="_on_animation_player_animation_finished"]
+[connection signal="pressed" from="MainMenu/creditsButton" to="MainMenu" method="_on_credits_button_pressed"]

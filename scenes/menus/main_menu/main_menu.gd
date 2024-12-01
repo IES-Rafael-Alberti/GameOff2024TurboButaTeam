@@ -7,6 +7,7 @@ extends Control
 @onready var wiki_button: Button = $VBoxContainer/VBoxContainer/WikiButton
 @onready var exit_button: Button = $VBoxContainer/VBoxContainer/ExitButton
 @onready var credits_button = $creditsButton
+@onready var options_menu: Control = %OptionsMenu
 
 func _ready():
 	v_box_container.set_modulate(Color(0,0,0,0))
@@ -25,12 +26,14 @@ func _on_play_button_pressed():
 	get_tree().change_scene_to_file("res://scenes/cinematics/first_cinematic.tscn")
 
 func _on_options_button_pressed():
-	play_button.disabled = true
-	options_button.disabled = true
-	wiki_button.disabled = true
-	exit_button.disabled = true
-	credits_button.disabled = true
-	get_tree().change_scene_to_file("res://scenes/options_menu/options_menu.tscn")
+	#play_button.disabled = true
+	#options_button.disabled = true
+	#wiki_button.disabled = true
+	#exit_button.disabled = true
+	#credits_button.disabled = true
+#get_tree().change_scene_to_file("res://scenes/options_menu/options_menu.tscn")
+	hide()
+	options_menu.show()
 
 func _on_exit_button_pressed() -> void:
 	play_button.disabled = true
