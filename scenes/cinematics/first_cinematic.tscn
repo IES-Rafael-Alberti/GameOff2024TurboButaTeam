@@ -307,7 +307,6 @@ scroll_scale = Vector2(0.9, 0.9)
 
 [node name="Sprite2D" type="Sprite2D" parent="ForestBG/ForestBG"]
 position = Vector2(960, 540)
-scale = Vector2(1, 1)
 texture = ExtResource("6_d4xir")
 
 [node name="Details" type="Node2D" parent="ForestBG"]

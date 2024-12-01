@@ -250,14 +250,12 @@ autoplay = "start2"
 
 [node name="Sprite2D" type="Sprite2D" parent="ForestBG/Parallax2D"]
 position = Vector2(960, 540)
-scale = Vector2(1, 1)
 texture = ExtResource("3_tkhg6")
 
 [node name="Parallax2D2" type="Parallax2D" parent="ForestBG"]
 
 [node name="Sprite2D" type="Sprite2D" parent="ForestBG/Parallax2D2"]
 position = Vector2(960, 540)
-scale = Vector2(1, 1)
 texture = ExtResource("4_uqovv")
 
 [node name="Parallax2D3" type="Parallax2D" parent="ForestBG"]
