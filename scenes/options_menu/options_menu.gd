@@ -8,6 +8,7 @@ extends Control
 @onready var back_button: Button = $MarginContainer/BackButton
 @onready var label_4: Label = $VBoxContainer/GridContainer/Label4
 @onready var test_sfx: AudioStreamPlayer2D = $VBoxContainer/testSFX
+@onready var main_menu: Control = %MainMenu
 
 var master_bus
 var music_bus
@@ -31,7 +32,9 @@ func _ready() -> void:
 	music_vol.value = db_to_linear(AudioServer.get_bus_volume_db(music_bus))
 	sfx_vol.value = db_to_linear(AudioServer.get_bus_volume_db(sfx_bus))
 func _on_back_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/menus/main_menu/main_menu.tscn")
+	hide()
+	main_menu.show()
+	#get_tree().change_scene_to_file("res://scenes/menus/main_menu/main_menu.tscn")
 func _on_master_vol_value_changed(value: float) -> void:
 	AudioServer.set_bus_volume_db(master_bus,linear_to_db(value))
 
