@@ -136,10 +136,10 @@ bus = &"SFX"
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
-offset_left = 47.0
-offset_top = 63.0
-offset_right = 467.0
-offset_bottom = 157.0
+offset_left = 121.0
+offset_top = 115.0
+offset_right = 541.0
+offset_bottom = 209.0
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 20
 
