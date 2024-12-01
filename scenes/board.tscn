@@ -199,8 +199,8 @@ script = ExtResource("2_1tfi2")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = 5
-position = Vector2(954.717, 1131.5)
-scale = Vector2(0.560326, 0.560326)
+position = Vector2(976, 1136)
+scale = Vector2(1.01239, 1.01239)
 texture = ExtResource("4_2k5lf")
 
 [node name="BoardContainer" type="VBoxContainer" parent="."]

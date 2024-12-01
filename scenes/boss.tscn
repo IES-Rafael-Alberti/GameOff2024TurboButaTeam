@@ -203,22 +203,22 @@ scale = Vector2(1.065, 1.065)
 [node name="Parallax2D" type="Parallax2D" parent="SpineBG"]
 
 [node name="Sprite2D" type="Sprite2D" parent="SpineBG/Parallax2D"]
-position = Vector2(959.111, 539.5)
-scale = Vector2(0.500463, 0.500463)
+position = Vector2(964.841, 542.723)
+scale = Vector2(0.994609, 0.99461)
 texture = ExtResource("7_jmyih")
 
 [node name="Parallax2D2" type="Parallax2D" parent="SpineBG"]
 
 [node name="Sprite2D" type="Sprite2D" parent="SpineBG/Parallax2D2"]
-position = Vector2(959.111, 539.5)
-scale = Vector2(0.500463, 0.500463)
+position = Vector2(964.841, 542.723)
+scale = Vector2(0.99461, 0.99461)
 texture = ExtResource("8_5smn5")
 
 [node name="Parallax2D3" type="Parallax2D" parent="SpineBG"]
 
 [node name="Sprite2D" type="Sprite2D" parent="SpineBG/Parallax2D3"]
-position = Vector2(960, 540)
-scale = Vector2(0.5, 0.5)
+position = Vector2(964.841, 542.723)
+scale = Vector2(0.99461, 0.99461)
 texture = ExtResource("9_rg0ge")
 
 [node name="ForestBG" type="Node2D" parent="."]
@@ -230,8 +230,8 @@ scale = Vector2(1.065, 1.065)
 scroll_scale = Vector2(0.9, 0.9)
 
 [node name="Sprite2D" type="Sprite2D" parent="ForestBG/ForestBG"]
-position = Vector2(954.111, 539.5)
-scale = Vector2(0.500463, 0.500463)
+position = Vector2(959.841, 542.723)
+scale = Vector2(0.99461, 0.99461)
 texture = ExtResource("2_wj4js")
 
 [node name="ArrIzq" type="Parallax2D" parent="ForestBG"]
