@@ -21,7 +21,7 @@ func _ready() -> void:
 	animation_player.play("final_text_transition")
 	await animation_player.animation_finished
 	Dialogic.Inputs.auto_advance.enabled_forced = true
-	Dialogic.Inputs.auto_advance.fixed_delay = 0.5
+	Dialogic.Inputs.auto_advance.fixed_delay = 1
 	Dialogic.Inputs.auto_advance.per_character_delay = 0
 	animation_player.play("zoom1")
 	Dialogic.start("big_finale_1")

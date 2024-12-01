@@ -141,8 +141,8 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="IlustracionSinTitulo" type="Sprite2D" parent="CenterContainer"]
-position = Vector2(962.086, 539)
-scale = Vector2(0.499955, 0.501852)
+position = Vector2(960.315, 538)
+scale = Vector2(0.99991, 1.0037)
 texture = ExtResource("2_7aqd4")
 
 [node name="MainMenu" type="Control" parent="."]
